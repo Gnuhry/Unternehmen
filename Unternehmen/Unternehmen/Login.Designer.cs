@@ -36,23 +36,23 @@
             // 
             // txBbenutzername
             // 
-            this.txBbenutzername.Location = new System.Drawing.Point(297, 139);
+            this.txBbenutzername.Location = new System.Drawing.Point(346, 139);
             this.txBbenutzername.Name = "txBbenutzername";
-            this.txBbenutzername.Size = new System.Drawing.Size(100, 20);
+            this.txBbenutzername.Size = new System.Drawing.Size(116, 21);
             this.txBbenutzername.TabIndex = 0;
             // 
             // txBpasswort
             // 
-            this.txBpasswort.Location = new System.Drawing.Point(297, 165);
+            this.txBpasswort.Location = new System.Drawing.Point(346, 165);
             this.txBpasswort.Name = "txBpasswort";
-            this.txBpasswort.Size = new System.Drawing.Size(100, 20);
+            this.txBpasswort.Size = new System.Drawing.Size(116, 21);
             this.txBpasswort.TabIndex = 1;
             // 
             // btnRegistrieren
             // 
-            this.btnRegistrieren.Location = new System.Drawing.Point(267, 204);
+            this.btnRegistrieren.Location = new System.Drawing.Point(311, 204);
             this.btnRegistrieren.Name = "btnRegistrieren";
-            this.btnRegistrieren.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrieren.Size = new System.Drawing.Size(87, 23);
             this.btnRegistrieren.TabIndex = 2;
             this.btnRegistrieren.Text = "button1";
             this.btnRegistrieren.UseVisualStyleBackColor = true;
@@ -60,9 +60,9 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(372, 204);
+            this.btnLogin.Location = new System.Drawing.Point(434, 204);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(87, 23);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "button2";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -70,13 +70,15 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(972, 498);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnRegistrieren);
             this.Controls.Add(this.txBpasswort);
             this.Controls.Add(this.txBbenutzername);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
