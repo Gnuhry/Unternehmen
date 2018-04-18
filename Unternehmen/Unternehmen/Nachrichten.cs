@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Unternehmen
 {
+    [Serializable]
     public class Nachrichten
     {
         private List<Konto> Sender;

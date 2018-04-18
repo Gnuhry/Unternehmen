@@ -120,6 +120,7 @@
             this.Controls.Add(this.tLpKalender);
             this.Name = "Kalender";
             this.Text = "Kalender";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Kalender_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

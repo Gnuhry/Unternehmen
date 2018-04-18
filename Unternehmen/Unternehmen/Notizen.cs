@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Unternehmen
 {
+    [Serializable]
     public class Notizen
     {
         private List<string> Nachricht;
@@ -21,10 +22,10 @@ namespace Unternehmen
             if (this.Tag.Contains(Tag))
             {
                 if(Nachricht.Trim()!=""&&Nachricht.Trim()!=null)
-                    this.Nachricht[this.Tag.BinarySearch(Tag)] = Nachricht;
+                    this.Nachricht[this.Tag.IndexOf(Tag)] = Nachricht;
                 else
                 {
-                    this.Nachricht.RemoveAt(this.Tag.BinarySearch(Tag));
+                    this.Nachricht.RemoveAt(this.Tag.IndexOf(Tag));
                     this.Tag.Remove(Tag);
                 }
 
@@ -39,7 +40,7 @@ namespace Unternehmen
         public string GetNachricht(DateTime Tag)
         {
             if (this.Tag.Contains(Tag))
-                return Nachricht[this.Tag.BinarySearch(Tag)];
+                return Nachricht[this.Tag.IndexOf(Tag)];
             return "";
         }
     }

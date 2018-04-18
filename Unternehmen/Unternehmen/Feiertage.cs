@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Unternehmen
 {
+    [Serializable]
     public class Feiertage
     {
         private DateTime[] Feiertag;

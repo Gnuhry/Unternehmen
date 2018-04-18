@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.IO;
+using System.Windows.Forms;
 
 namespace Unternehmen
 {
@@ -11,13 +12,16 @@ namespace Unternehmen
         private Menue menue;
         private Messenger messenger;
         private Kalender kalender;
+        private static string Pfad = Directory.GetCurrentDirectory() + @"\Speichern.txt";
         
         public Verwaltung()
         {
+            if (!File.Exists(Pfad))
+                (new Firma()).Speichern(Pfad);
             WindowState = FormWindowState.Minimized;
             ShowInTaskbar = false;
-            firma = new Firma();
             InitializeComponent();
+            firma = (new Firma()).Laden(Pfad);
             LogIn();
         }
         public Firma GetFirma() => firma;
@@ -102,6 +106,7 @@ namespace Unternehmen
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             login = null;
+            firma.Speichern(Pfad);
             Close();
         }
         public void Konto_Loschen()
