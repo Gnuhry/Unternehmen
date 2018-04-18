@@ -102,12 +102,11 @@ namespace Unternehmen
             for (int f = 0; f < Mitarbeiter.Count; f++)
             {
                 if (Mitarbeiter[f].IsUrlaub(Tag)) temp++;
-                else if (DateTime.Today.AddDays(Mitarbeiter[f].GetKrankentage()) == Tag) temp++;
+                else if ((DateTime.Today.AddDays(Mitarbeiter[f].GetKrankentage())-Tag).TotalDays<0) temp++;
             }
             if (temp < 3)
-            {
                 angemeldet.SetUrlaub(Tag);
-            }
+            else throw new Exception();
         }
         private bool Urlaub_beantragen(DateTime Tag)
         {

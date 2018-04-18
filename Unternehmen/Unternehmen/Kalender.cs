@@ -118,42 +118,32 @@ namespace Unternehmen
         private void Speichern()
         {
             for (int f = 0; f < Inhalt.Length; f++)
-                if (Inhalt[f].Text == "1")               
-                    for (int g = f; g < Inhalt.Length; g++)                  
-                        if (Inhalt[g].BackColor == BeantragenC)                     
-                            Urlaubstage.Add(new DateTime(Year, Month, Convert.ToInt32(Inhalt[g].Text)));              
+                if (Inhalt[f].Text == "1")
+                    for (int g = f; g < Inhalt.Length; g++)
+                        if (Inhalt[g].BackColor == BeantragenC)
+                            if (!Urlaubstage.Contains(new DateTime(Year, Month, Convert.ToInt32(Inhalt[g].Text))))
+                                Urlaubstage.Add(new DateTime(Year, Month, Convert.ToInt32(Inhalt[g].Text)));
         }
         private void Laden(int erster)
-        {          
+        {
             for (int f = 0; f < Urlaubstage.Count; f++)
                 if (Urlaubstage[f].Month == Month && Urlaubstage[f].Year == Year)
-                {
                     Inhalt[erster + Urlaubstage[f].Day - 1].BackColor = BeantragenC;
-                    Urlaubstage.RemoveAt(f);
-                }
         }
 
         private void Kalender_FormClosing(object sender, FormClosingEventArgs e)
         {
             for(int f = 0; f < tage.Count; f++)
-            {
                 tage[f].Close();
-            }
         }
 
         private void LadenGenemigteUrlaube(int erster)
         {
            
-            List<DateTime> Urlaubstage2 = (verwaltung.GetAngemeldetePerson().GetUrlaubinMonat(Month, Year)).ToList();
-            for (int f = 0; f < Urlaubstage2.Count; f++)
-            {
-                MessageBox.Show(Urlaubstage2[f].ToShortDateString());
+            DateTime[] Urlaubstage2 = verwaltung.GetAngemeldetePerson().GetUrlaubinMonat(Month, Year);
+            for (int f = 0; f < Urlaubstage2.Length; f++)
                 if (Urlaubstage2[f].Month == Month && Urlaubstage2[f].Year == Year)
-                {
                     Inhalt[erster + Urlaubstage2[f].Day - 1].BackColor = UrlaubstageC;
-                    Urlaubstage2.RemoveAt(f);
-                }
-            }
         }
 
         private void btnBeantragen_Click(object sender, EventArgs e)

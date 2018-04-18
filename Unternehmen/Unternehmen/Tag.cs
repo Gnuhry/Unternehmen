@@ -37,6 +37,7 @@ namespace Unternehmen
             lbWochentag.Text = tag.ToShortDateString();
             lbFeiertag.Text = verwaltung.GetFirma().GetFeirtagname(tag);
             txBNotizen.Text = verwaltung.GetAngemeldetePerson().GetNotiz(tag);
+            txBGNtz.Text = verwaltung.GetFirma().GetNotiz(tag);
         }
         private void Speichern()
         {
