@@ -63,6 +63,16 @@ namespace Unternehmen.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gold_ingots {
+            get {
+                object obj = ResourceManager.GetObject("gold-ingots", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_android_black_24dp {
             get {
                 object obj = ResourceManager.GetObject("ic_android_black_24dp", resourceCulture);

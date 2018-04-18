@@ -84,5 +84,10 @@ namespace Unternehmen
         {
             lbStatus.Text = verwaltung.GetAngemeldetePerson().GetStatus();
         }
+
+        private void Beenden_Button_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

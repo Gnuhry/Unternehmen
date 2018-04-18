@@ -153,5 +153,8 @@
   <ItemGroup>
     <None Include="Resources\ic_android_black_24dp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gold-ingots.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

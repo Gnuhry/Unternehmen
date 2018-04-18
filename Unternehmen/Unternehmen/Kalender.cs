@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 //Farben RGBS
-//37; 41; 48 
+//37; 41; 48
+//web->White
+//67; 188; 180
 namespace Unternehmen
 {
     public partial class Kalender : Form
