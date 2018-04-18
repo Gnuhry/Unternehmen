@@ -22,10 +22,10 @@ namespace Unternehmen
         
         public Verwaltung()
         {
+            WindowState = FormWindowState.Minimized;
+            ShowInTaskbar = false;
             firma = new Firma();
             InitializeComponent();
-            Hide();
-            ShowInTaskbar = false;
             LogIn();
         }
         public Firma GetFirma() => firma;
