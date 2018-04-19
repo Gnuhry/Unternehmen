@@ -13,11 +13,10 @@ namespace Unternehmen
         private List<DateTime> Urlaubstage;
         private List<Tag> tage;
         private int Month, Year;
-        private static Color KrankentageC = Color.Orange, UrlaubstageC = Color.Red, VergangeneTageC = Color.LightGray, FeiertageC = Color.Green, BeantragenC = Color.Blue;
+        private static Color KrankentageC = Color.Orange, UrlaubstageC = Color.Red, VergangeneTageC = Color.LightGray, FeiertageC = Color.Green, BeantragenC = Color.Blue, keinArbeitstagC=Color.LightGray;
         public Kalender(Verwaltung verwaltung, bool Chef)
         {
             this.Chef = Chef;
-            btnBeantragen.Visible = !Chef;
             tage = new List<Tag>();
             this.verwaltung = verwaltung;
             InitializeComponent();
@@ -87,6 +86,7 @@ namespace Unternehmen
             LadenGenemigteUrlaube(erster+7);
             LadenKrankenTage(erster + 7);
             LadenFeiertage(erster + 7, DateTime.DaysInMonth(Year, Month));
+            LadenArbeitstage(erster + 7, DateTime.DaysInMonth(Year, Month));
         }
 
         private void Inhalt_Click(object sender, MouseEventArgs e)
@@ -176,9 +176,30 @@ namespace Unternehmen
                 if(verwaltung.GetFirma().IsFeiertag(new DateTime(Year, Month, f+1)))
                     Inhalt[f + erster].BackColor = FeiertageC;
         }
+        private void LadenArbeitstage(int erster, int maxTage)
+        {
+           /* MessageBox.Show(verwaltung.GetFirma().GetArbeitstag(0) + "\n" + verwaltung.GetFirma().GetArbeitstag(1) + "\n" +
+                verwaltung.GetFirma().GetArbeitstag(2) + "\n" + verwaltung.GetFirma().GetArbeitstag(3) + "\n" +
+                verwaltung.GetFirma().GetArbeitstag(4) + "\n" + verwaltung.GetFirma().GetArbeitstag(5) + "\n" +
+                verwaltung.GetFirma().GetArbeitstag(6) + "\n");*/
+            for(int f = erster; f < maxTage + erster; f++)
+            {
+                switch((new DateTime(Year, Month, f - erster + 1)).DayOfWeek)
+                {
+                    case DayOfWeek.Monday: if (!verwaltung.GetFirma().GetArbeitstag(0)) Inhalt[f].BackColor = keinArbeitstagC; break;
+                    case DayOfWeek.Tuesday: if (!verwaltung.GetFirma().GetArbeitstag(1)) Inhalt[f].BackColor = keinArbeitstagC; break;
+                    case DayOfWeek.Wednesday: if (!verwaltung.GetFirma().GetArbeitstag(2)) Inhalt[f].BackColor = keinArbeitstagC; break;
+                    case DayOfWeek.Thursday: if (!verwaltung.GetFirma().GetArbeitstag(3)) Inhalt[f].BackColor = keinArbeitstagC; break;
+                    case DayOfWeek.Friday: if (!verwaltung.GetFirma().GetArbeitstag(4)) Inhalt[f].BackColor = keinArbeitstagC; break;
+                    case DayOfWeek.Saturday: if (!verwaltung.GetFirma().GetArbeitstag(5)) Inhalt[f].BackColor = keinArbeitstagC; break;
+                    case DayOfWeek.Sunday: if (!verwaltung.GetFirma().GetArbeitstag(6)) Inhalt[f].BackColor = keinArbeitstagC; break;
+                }
+            }
+        }
 
         private void Init()
         {
+            btnBeantragen.Visible = !Chef;
             btnMonatzuruck.Enabled = false;
             Inhalt = new Label[47];
             for (int f = 0; f < Inhalt.Length; f++)

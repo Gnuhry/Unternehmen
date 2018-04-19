@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Unternehmen
@@ -12,6 +13,7 @@ namespace Unternehmen
         private Menue menue;
         private Messenger messenger;
         private Kalender kalender;
+        private Admin chef;
         private static string Pfad = Directory.GetCurrentDirectory() + @"\Speichern.txt";
         
         public Verwaltung()
@@ -44,12 +46,28 @@ namespace Unternehmen
         public void SetAngemeldetePerson(Konto Person) => angemeldete_Person = Person;
         public void Menue()
         {
+            Chef();
             if (menue != null) { menue.Show(); return; }
             login.Hide();
             menue = new Menue(this);
             menue.FormClosing += Menue_FormClosing;
             menue.Show();
         }
+
+        private void Chef()
+        {
+            if (firma.GetMitarbeiter(0) != angemeldete_Person) return;
+            if (chef != null) { chef.Show(); return; }
+            chef = new Admin(this);
+            chef.FormClosing += Chef_FormClosing;
+            chef.Show();
+        }
+
+        private void Chef_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            chef = null;
+        }
+
         public void Kalender()
         {
             if (kalender != null) { kalender.Show(); return; }

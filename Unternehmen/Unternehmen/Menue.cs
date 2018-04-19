@@ -20,16 +20,11 @@ namespace Unternehmen
             this.verwaltung = verwaltung;
             StatusAbfrage();
             if (verwaltung.GetFirma().GetWeb() == "none") btnWebsite.Visible = false;
-            if (verwaltung.GetAngemeldetePerson().GetStatus() == "Gegangen")
-            {
-                btnGehen.Enabled = false;
-                btnAnwesend.Enabled = true;
-            }
-            else
-            {
-                btnGehen.Enabled = true;
+            if (verwaltung.GetAngemeldetePerson().GetStatus() == "Anwesend")
                 btnAnwesend.Enabled = false;
-            }
+            else
+                btnGehen.Enabled = false;
+            numKrankentage.Value = verwaltung.GetAngemeldetePerson().GetKrankentage();
         }
 
         private void btnKalender_Click(object sender, EventArgs e)
