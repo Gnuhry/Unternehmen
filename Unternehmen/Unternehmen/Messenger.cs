@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Unternehmen
@@ -20,9 +14,7 @@ namespace Unternehmen
             InitializeComponent();
             this.verwaltung = verwaltung;
             for(int f = 0; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
-            {
                 comBEmpfanger.Items.Add(verwaltung.GetFirma().GetMitarbeiter(f).GetKontoInhaber());
-            }
             NachrichtenLaden();
         }
 
@@ -31,36 +23,26 @@ namespace Unternehmen
             if (verwaltung.GetAngemeldetePerson().GetNachrichtenAnzahl() != 0)
             {
                 for (int f = 0; f < verwaltung.GetAngemeldetePerson().GetNachrichtenAnzahl(); f++)
-                {
                     lBoxNachrichten.Items.Add(verwaltung.GetAngemeldetePerson().GetAnhang(f));
-                }
                 lBoxNachrichten.MouseDown += LBoxNachrichten_MouseDown;
                 lBoxNachrichten.MouseDoubleClick += LBoxNachrichten_MouseDoubleClick;
             }
             else
-            {
                 lBoxNachrichten.Enabled = false;
-            }
         }
 
         private void LBoxNachrichten_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
-            {
-                int index = lBoxNachrichten.IndexFromPoint(e.Location);
-                if (index != ListBox.NoMatches)
-                {
-                    comBEmpfanger.SelectedIndex = index;
-                }
-            }
+                if (lBoxNachrichten.IndexFromPoint(e.Location) != ListBox.NoMatches)
+                    comBEmpfanger.SelectedIndex = lBoxNachrichten.IndexFromPoint(e.Location);
         }
 
         private void LBoxNachrichten_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            int index = lBoxNachrichten.IndexFromPoint(e.Location);
-            if (index != ListBox.NoMatches)
+            if (lBoxNachrichten.IndexFromPoint(e.Location) != ListBox.NoMatches)
             {
-                nachrichtAnzeiges.Add(new NachrichtAnzeige(index, verwaltung));
+                nachrichtAnzeiges.Add(new NachrichtAnzeige(lBoxNachrichten.IndexFromPoint(e.Location), verwaltung));
                 nachrichtAnzeiges[nachrichtAnzeiges.Count - 1].Show();
                 nachrichtAnzeiges[nachrichtAnzeiges.Count - 1].FormClosing += NachrichtAnzeiges_FormClosing;
 

@@ -32,8 +32,13 @@
             this.numDay = new System.Windows.Forms.NumericUpDown();
             this.numYear = new System.Windows.Forms.NumericUpDown();
             this.numMonth = new System.Windows.Forms.NumericUpDown();
+            this.txBInhaber = new System.Windows.Forms.TextBox();
+            this.txBBenutzername = new System.Windows.Forms.TextBox();
+            this.txBPasswort = new System.Windows.Forms.TextBox();
+            this.txBPasswort2 = new System.Windows.Forms.TextBox();
             this.btnRegistrieren = new System.Windows.Forms.Button();
             this.btnLoschen = new System.Windows.Forms.Button();
+
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.Panel_Left = new System.Windows.Forms.Panel();
             this.Firmen_Motto = new System.Windows.Forms.Label();
@@ -82,6 +87,40 @@
             this.numMonth.Name = "numMonth";
             this.numMonth.Size = new System.Drawing.Size(73, 20);
             this.numMonth.TabIndex = 6;
+            this.pcBProfilbild = new System.Windows.Forms.PictureBox();
+            this.cBoxTag = new System.Windows.Forms.ComboBox();
+            this.cBoxMonat = new System.Windows.Forms.ComboBox();
+            this.cBoxJahr = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBProfilbild)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // txBInhaber
+            // 
+            this.txBInhaber.Location = new System.Drawing.Point(357, 123);
+            this.txBInhaber.Name = "txBInhaber";
+            this.txBInhaber.Size = new System.Drawing.Size(100, 20);
+            this.txBInhaber.TabIndex = 0;
+            // 
+            // txBBenutzername
+            // 
+            this.txBBenutzername.Location = new System.Drawing.Point(357, 149);
+            this.txBBenutzername.Name = "txBBenutzername";
+            this.txBBenutzername.Size = new System.Drawing.Size(100, 20);
+            this.txBBenutzername.TabIndex = 1;
+            // 
+            // txBPasswort
+            // 
+            this.txBPasswort.Location = new System.Drawing.Point(357, 232);
+            this.txBPasswort.Name = "txBPasswort";
+            this.txBPasswort.Size = new System.Drawing.Size(100, 20);
+            this.txBPasswort.TabIndex = 2;
+            // 
+            // txBPasswort2
+            // 
+            this.txBPasswort2.Location = new System.Drawing.Point(357, 258);
+            this.txBPasswort2.Name = "txBPasswort2";
+            this.txBPasswort2.Size = new System.Drawing.Size(100, 20);
+            this.txBPasswort2.TabIndex = 3;
             // 
             // btnRegistrieren
             // 
@@ -396,6 +435,51 @@
             this.Sign_Up_Label.Size = new System.Drawing.Size(92, 25);
             this.Sign_Up_Label.TabIndex = 10;
             this.Sign_Up_Label.Text = "Sign Up";
+           // pcBProfilbild
+            // 
+            this.pcBProfilbild.Location = new System.Drawing.Point(518, 37);
+            this.pcBProfilbild.Name = "pcBProfilbild";
+            this.pcBProfilbild.Size = new System.Drawing.Size(100, 50);
+            this.pcBProfilbild.TabIndex = 10;
+            this.pcBProfilbild.TabStop = false;
+            // 
+            // cBoxTag
+            // 
+            this.cBoxTag.FormattingEnabled = true;
+            this.cBoxTag.Location = new System.Drawing.Point(357, 205);
+            this.cBoxTag.Name = "cBoxTag";
+            this.cBoxTag.Size = new System.Drawing.Size(121, 21);
+            this.cBoxTag.TabIndex = 11;
+            // 
+            // cBoxMonat
+            // 
+            this.cBoxMonat.FormattingEnabled = true;
+            this.cBoxMonat.Items.AddRange(new object[] {
+            "Januar",
+            "Februar",
+            "März",
+            "April",
+            "Mai",
+            "Juni",
+            "Juli",
+            "August",
+            "September",
+            "Oktober",
+            "November",
+            "Dezember"});
+            this.cBoxMonat.Location = new System.Drawing.Point(511, 206);
+            this.cBoxMonat.Name = "cBoxMonat";
+            this.cBoxMonat.Size = new System.Drawing.Size(121, 21);
+            this.cBoxMonat.TabIndex = 12;
+            this.cBoxMonat.SelectedIndexChanged += new System.EventHandler(this.cBoxMonat_SelectedIndexChanged);
+            // 
+            // cBoxJahr
+            // 
+            this.cBoxJahr.FormattingEnabled = true;
+            this.cBoxJahr.Location = new System.Drawing.Point(638, 206);
+            this.cBoxJahr.Name = "cBoxJahr";
+            this.cBoxJahr.Size = new System.Drawing.Size(121, 21);
+            this.cBoxJahr.TabIndex = 13;
             // 
             // Registrieren
             // 
@@ -415,6 +499,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).EndInit();
             this.Panel_right.ResumeLayout(false);
             this.Panel_right.PerformLayout();
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Registrieren_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Registrieren_DragEnter);
+            ((System.ComponentModel.ISupportInitialize)(this.pcBProfilbild)).EndInit();
+            this.Controls.Add(this.cBoxJahr);
+            this.Controls.Add(this.cBoxMonat);
+            this.Controls.Add(this.cBoxTag);
+            this.Controls.Add(this.pcBProfilbild);
+            this.Controls.Add(this.btnLoschen);
+            this.Controls.Add(this.txBPasswortA);
+            this.Controls.Add(this.btnRegistrieren);
+            this.Controls.Add(this.txBPasswort2);
+            this.Controls.Add(this.txBPasswort);
+            this.Controls.Add(this.txBBenutzername);
+            this.Controls.Add(this.txBInhaber);
+         
             this.ResumeLayout(false);
 
         }
@@ -423,6 +522,11 @@
         private System.Windows.Forms.NumericUpDown numDay;
         private System.Windows.Forms.NumericUpDown numYear;
         private System.Windows.Forms.NumericUpDown numMonth;
+
+        private System.Windows.Forms.TextBox txBInhaber;
+        private System.Windows.Forms.TextBox txBBenutzername;
+        private System.Windows.Forms.TextBox txBPasswort;
+        private System.Windows.Forms.TextBox txBPasswort2;
         private System.Windows.Forms.Button btnRegistrieren;
         private System.Windows.Forms.Button btnLoschen;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
@@ -445,5 +549,9 @@
         private System.Windows.Forms.Label New_Password_Label;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txBPasswortA;
         private System.Windows.Forms.Label Beenden_Label;
+        private System.Windows.Forms.PictureBox pcBProfilbild;
+        private System.Windows.Forms.ComboBox cBoxTag;
+        private System.Windows.Forms.ComboBox cBoxMonat;
+        private System.Windows.Forms.ComboBox cBoxJahr;
     }
 }

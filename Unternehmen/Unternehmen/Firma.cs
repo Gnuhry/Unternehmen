@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Unternehmen
 {
@@ -17,6 +14,7 @@ namespace Unternehmen
         private Feiertage feiertage;
         private DateTime date_zero;
         private string Web;
+        private int MaxTage;
 
         public Firma()
         {
@@ -27,7 +25,15 @@ namespace Unternehmen
             Arbeitstage[5] = Arbeitstage[6] = false;
             Mitarbeiter = new List<Konto>();
             date_zero = DateTime.Today;
+            notizen = new Notizen();
         }
+        public void SetMaxTage(int MaxTage)
+        {
+            this.MaxTage = MaxTage;
+            for (int f = 0; f < Mitarbeiter.Count; f++)
+                Mitarbeiter[f].SetMaxTage(MaxTage);
+        }
+        public int GetMaxTage() => MaxTage;
         public int Einloggen(string benutzername, string passwort, Verwaltung verwaltung)
         {
             for(int f = 0; f < Mitarbeiter.Count; f++)
@@ -47,9 +53,8 @@ namespace Unternehmen
         public bool AddMitarbeiter(Konto Person)
         {
             for (int f = 0; f < Mitarbeiter.Count; f++)
-            {
                 if (Person.GetBenutzername() == Mitarbeiter[f].GetBenutzername()) return false;
-            }
+            Person.SetMaxTage(MaxTage);
             Mitarbeiter.Add(Person);
             return true;
         }
@@ -83,14 +88,18 @@ namespace Unternehmen
             List<string> temp = new List<string>();
             for (int f = 0; f < Mitarbeiter.Count; f++)
                 if (Mitarbeiter[f].IsGeburtstag(Tag))
-                    temp.Add(Mitarbeiter[f].GetBenutzername());
+                    temp.Add(Mitarbeiter[f].GetBenutzername()+" ("+(Mitarbeiter[f].GetGeburtstag().Year-DateTime.Today.Year)+")");
             return temp.ToArray();
         }
         public bool GetArbeitstag(int Tag) => Arbeitstage[Tag];
 
         public void SetArbeitstag(bool[] Arbeitstage) => this.Arbeitstage = Arbeitstage;
 
-        public void SetFeiertag(DateTime Feiertag, string name)=>feiertage.SetFeiertag(name, Feiertag);
+        public void SetFeiertag(DateTime Feiertag, string name)
+        {
+            feiertage.SetFeiertag(name, Feiertag);
+            Urlaubstag_Entfernen(Feiertag);
+        }
 
         public string GetFeirtagname(DateTime Tag) => feiertage.getFeierTag(Tag);
         public bool IsFeiertag(DateTime Tag) => feiertage.getFeierTag(Tag)!=null;
@@ -102,12 +111,11 @@ namespace Unternehmen
             for (int f = 0; f < Mitarbeiter.Count; f++)
             {
                 if (Mitarbeiter[f].IsUrlaub(Tag)) temp++;
-                else if (DateTime.Today.AddDays(Mitarbeiter[f].GetKrankentage()) == Tag) temp++;
+                else if ((DateTime.Today.AddDays(Mitarbeiter[f].GetKrankentage())-Tag).TotalDays<0) temp++;
             }
             if (temp < 3)
-            {
                 angemeldet.SetUrlaub(Tag);
-            }
+            else throw new Exception();
         }
         private bool Urlaub_beantragen(DateTime Tag)
         {
@@ -125,6 +133,19 @@ namespace Unternehmen
             {
                 Mitarbeiter[f].RemoveUrlaub(Tag);
             }
+        }
+        public void UrlaubDeleten(DateTime tag, int index)
+        {
+            int temp = 0;
+            for (int f = 0; f < Mitarbeiter.Count; f++)
+                for (int g = 0; g < Mitarbeiter[f].GetUrlaubinMonat(tag.Month,tag.Year).Length; g++)
+                    if (Mitarbeiter[f].GetUrlaubinMonat(tag.Month, tag.Year)[g].Day == tag.Day)
+                    {
+                        if (temp++ == index)
+                        {
+                            Mitarbeiter[f].RemoveUrlaub(tag);
+                        }
+                    }
         }
 
         public void Uerberprufung(DateTime Tag)

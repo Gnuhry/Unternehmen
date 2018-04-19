@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 //Farben RGBS
 //37; 41; 48
@@ -15,14 +10,17 @@ namespace Unternehmen
 {
     public partial class Kalender : Form
     {
+        private bool Chef;
+        private static int MaxJahre = 10;
         Verwaltung verwaltung;
         private Label[] Inhalt;
         private List<DateTime> Urlaubstage;
         private List<Tag> tage;
         private int Month, Year;
-        private static Color KrankentageC = Color.Orange, UrlaubstageC = Color.Red, VergangeneTageC = Color.LightGray, FeiertageC = Color.Green, BeantragenC = Color.Blue;
-        public Kalender(Verwaltung verwaltung)
+        private static Color KrankentageC = Color.Orange, UrlaubstageC = Color.Red, VergangeneTageC = Color.LightGray, FeiertageC = Color.Green, BeantragenC = Color.Blue, keinArbeitstagC=Color.LightGray;
+        public Kalender(Verwaltung verwaltung, bool Chef)
         {
+            this.Chef = Chef;
             tage = new List<Tag>();
             this.verwaltung = verwaltung;
             InitializeComponent();
@@ -32,6 +30,7 @@ namespace Unternehmen
             Init();
             KalenderLaden();
         }
+        
 
         private void KalenderLaden()
         {
@@ -49,22 +48,8 @@ namespace Unternehmen
                 case DayOfWeek.Saturday: erster = 5; break;
                 case DayOfWeek.Sunday: erster = 6; break;
             }
-            switch (Month)
-            {
-                case 1: lbMonat.Text = "Januar"; break;
-                case 3: lbMonat.Text = "März"; break;
-                case 5: lbMonat.Text = "Mai"; break;
-                case 7: lbMonat.Text = "Juli"; break;
-                case 8: lbMonat.Text = "August"; break;
-                case 10: lbMonat.Text = "Oktober"; break;
-                case 12:  lbMonat.Text = "Dezember"; break;
-                case 4:  lbMonat.Text = "April"; break;
-                case 6:  lbMonat.Text = "Juni"; break;
-                case 9: lbMonat.Text = "September"; break;
-                case 11:  lbMonat.Text = "November"; break;
-                case 2: lbMonat.Text = "Februar"; break;
-            }
-            lbJahr.Text = Year + "";
+            cBoxMonat.SelectedIndex = Month - 1;
+            cBoxJahr.SelectedIndex = Year-DateTime.Today.Year;
             //Leeren
             for (int f = 7; f < Inhalt.Length; f++)
             {
@@ -80,7 +65,7 @@ namespace Unternehmen
                 Inhalt[f].MouseDown += Inhalt_Click;
             }
             //Abfangen
-            if (Month == DateTime.Today.Month)
+            if (Month == DateTime.Today.Month&&Year==DateTime.Today.Year)
                 for (int f = erster + 7; f < DateTime.Today.Day + erster + 6; f++)
                 {
                     Inhalt[f].BackColor =VergangeneTageC;
@@ -91,18 +76,19 @@ namespace Unternehmen
             LadenGenemigteUrlaube(erster+7);
             LadenKrankenTage(erster + 7);
             LadenFeiertage(erster + 7, DateTime.DaysInMonth(Year, Month));
+            LadenArbeitstage(erster + 7, DateTime.DaysInMonth(Year, Month));
         }
 
         private void Inhalt_Click(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right&&!Chef)
             {
                 if ((sender as Label).BackColor == BeantragenC) (sender as Label).BackColor = Color.Transparent;
                 else if ((sender as Label).BackColor == Color.Transparent) (sender as Label).BackColor = BeantragenC;
             }
             else
             {
-                tage.Add(new Tag(verwaltung, new DateTime(Year, Month, Convert.ToInt32((sender as Label).Text))));
+                tage.Add(new Tag(verwaltung, new DateTime(Year, Month, Convert.ToInt32((sender as Label).Text)),Chef));
                 tage[tage.Count - 1].Show();
             }
         }
@@ -121,42 +107,43 @@ namespace Unternehmen
         private void Speichern()
         {
             for (int f = 0; f < Inhalt.Length; f++)
-                if (Inhalt[f].Text == "1")               
-                    for (int g = f; g < Inhalt.Length; g++)                  
-                        if (Inhalt[g].BackColor == BeantragenC)                     
-                            Urlaubstage.Add(new DateTime(Year, Month, Convert.ToInt32(Inhalt[g].Text)));              
+                if (Inhalt[f].Text == "1")
+                    for (int g = f; g < Inhalt.Length; g++)
+                        if (Inhalt[g].BackColor == BeantragenC)
+                            if (!Urlaubstage.Contains(new DateTime(Year, Month, Convert.ToInt32(Inhalt[g].Text))))
+                                Urlaubstage.Add(new DateTime(Year, Month, Convert.ToInt32(Inhalt[g].Text)));
         }
         private void Laden(int erster)
-        {          
+        {
             for (int f = 0; f < Urlaubstage.Count; f++)
                 if (Urlaubstage[f].Month == Month && Urlaubstage[f].Year == Year)
-                {
                     Inhalt[erster + Urlaubstage[f].Day - 1].BackColor = BeantragenC;
-                    Urlaubstage.RemoveAt(f);
-                }
         }
 
         private void Kalender_FormClosing(object sender, FormClosingEventArgs e)
         {
             for(int f = 0; f < tage.Count; f++)
-            {
                 tage[f].Close();
-            }
         }
 
         private void LadenGenemigteUrlaube(int erster)
         {
-           
-            List<DateTime> Urlaubstage2 = (verwaltung.GetAngemeldetePerson().GetUrlaubinMonat(Month, Year)).ToList();
-            for (int f = 0; f < Urlaubstage2.Count; f++)
-            {
-                MessageBox.Show(Urlaubstage2[f].ToShortDateString());
+            DateTime[] Urlaubstage2 = verwaltung.GetAngemeldetePerson().GetUrlaubinMonat(Month, Year);
+            for (int f = 0; f < Urlaubstage2.Length; f++)
                 if (Urlaubstage2[f].Month == Month && Urlaubstage2[f].Year == Year)
-                {
                     Inhalt[erster + Urlaubstage2[f].Day - 1].BackColor = UrlaubstageC;
-                    Urlaubstage2.RemoveAt(f);
-                }
-            }
+        }
+
+        private void cBoxMonat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Month = cBoxMonat.SelectedIndex + 1;
+            KalenderLaden();
+        }
+
+        private void cBoxJahr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Year = cBoxJahr.SelectedIndex + DateTime.Today.Year;
+            KalenderLaden();
         }
 
         private void btnBeantragen_Click(object sender, EventArgs e)
@@ -191,9 +178,30 @@ namespace Unternehmen
                 if(verwaltung.GetFirma().IsFeiertag(new DateTime(Year, Month, f+1)))
                     Inhalt[f + erster].BackColor = FeiertageC;
         }
+        private void LadenArbeitstage(int erster, int maxTage)
+        {
+           /* MessageBox.Show(verwaltung.GetFirma().GetArbeitstag(0) + "\n" + verwaltung.GetFirma().GetArbeitstag(1) + "\n" +
+                verwaltung.GetFirma().GetArbeitstag(2) + "\n" + verwaltung.GetFirma().GetArbeitstag(3) + "\n" +
+                verwaltung.GetFirma().GetArbeitstag(4) + "\n" + verwaltung.GetFirma().GetArbeitstag(5) + "\n" +
+                verwaltung.GetFirma().GetArbeitstag(6) + "\n");*/
+            for(int f = erster; f < maxTage + erster; f++)
+            {
+                switch((new DateTime(Year, Month, f - erster + 1)).DayOfWeek)
+                {
+                    case DayOfWeek.Monday: if (!verwaltung.GetFirma().GetArbeitstag(0)) Inhalt[f].BackColor = keinArbeitstagC; break;
+                    case DayOfWeek.Tuesday: if (!verwaltung.GetFirma().GetArbeitstag(1)) Inhalt[f].BackColor = keinArbeitstagC; break;
+                    case DayOfWeek.Wednesday: if (!verwaltung.GetFirma().GetArbeitstag(2)) Inhalt[f].BackColor = keinArbeitstagC; break;
+                    case DayOfWeek.Thursday: if (!verwaltung.GetFirma().GetArbeitstag(3)) Inhalt[f].BackColor = keinArbeitstagC; break;
+                    case DayOfWeek.Friday: if (!verwaltung.GetFirma().GetArbeitstag(4)) Inhalt[f].BackColor = keinArbeitstagC; break;
+                    case DayOfWeek.Saturday: if (!verwaltung.GetFirma().GetArbeitstag(5)) Inhalt[f].BackColor = keinArbeitstagC; break;
+                    case DayOfWeek.Sunday: if (!verwaltung.GetFirma().GetArbeitstag(6)) Inhalt[f].BackColor = keinArbeitstagC; break;
+                }
+            }
+        }
 
         private void Init()
         {
+            btnBeantragen.Visible = !Chef;
             btnMonatzuruck.Enabled = false;
             Inhalt = new Label[47];
             for (int f = 0; f < Inhalt.Length; f++)
@@ -208,6 +216,9 @@ namespace Unternehmen
             Inhalt[4].Text = "FR";
             Inhalt[5].Text = "SA";
             Inhalt[6].Text = "SO";
+            for(int f = 0; f < MaxJahre; f++)
+                cBoxJahr.Items.Add(DateTime.Today.Year+f);
+            cBoxJahr.SelectedIndex = 0;
         }
     }
 }

@@ -160,7 +160,9 @@
             this.txBpasswort.Name = "txBpasswort";
             this.txBpasswort.Size = new System.Drawing.Size(300, 33);
             this.txBpasswort.TabIndex = 9;
-            this.txBpasswort.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txBpasswort.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+             this.txBpasswort.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txBpasswort_KeyDown);
+
             // 
             // Password_Label
             // 

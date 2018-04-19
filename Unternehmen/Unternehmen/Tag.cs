@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Unternehmen
@@ -14,12 +8,24 @@ namespace Unternehmen
     {
         Verwaltung verwaltung;
         private DateTime tag;
-        public Tag(Verwaltung verwaltung,DateTime Tag)
+        bool Chef;
+        private List<Termin> termins;
+        public Tag(Verwaltung verwaltung,DateTime Tag, bool Chef)
         {
             this.verwaltung = verwaltung;
+            termins = new List<Termin>();
             tag = Tag;
+            this.Chef = Chef;
             InitializeComponent();
             Laden();
+            LadenTagesplan();
+        }
+
+        private void LadenTagesplan()
+        {
+           for(int f = 0; f < verwaltung.GetAngemeldetePerson().GetTerminAnzahl(); f++)
+                LBTagesplan.Items.Add(verwaltung.GetAngemeldetePerson().GetTerminVon(f).ToShortDateString()+", "+verwaltung.GetAngemeldetePerson().GetTerminVon(f).ToShortTimeString() + "-" +verwaltung.GetAngemeldetePerson().GetTerminBis(f).ToShortDateString() +", "+ verwaltung.GetAngemeldetePerson().GetTerminBis(f).ToShortTimeString());
+            LBTagesplan.Items.Add("Neues Ereignis");
         }
 
         private void Laden()
@@ -37,10 +43,26 @@ namespace Unternehmen
             lbWochentag.Text = tag.ToShortDateString();
             lbFeiertag.Text = verwaltung.GetFirma().GetFeirtagname(tag);
             txBNotizen.Text = verwaltung.GetAngemeldetePerson().GetNotiz(tag);
+            txBGNtz.Text = verwaltung.GetFirma().GetNotiz(tag);
+            if (Chef)
+            {
+                txBeFeiertag.Visible = true;
+                txBeFeiertag.Text = verwaltung.GetFirma().GetFeirtagname(tag);
+                chBeFeiertag.Checked = verwaltung.GetFirma().GetFeirtagname(tag) != null;
+                chBeFeiertag.Visible = true;
+                chBLUrlaub.Visible = true;
+                for (int f = 0; f < verwaltung.GetFirma().Urlaubliste(tag).Length; f++)
+                    chBLUrlaub.Items.Add(verwaltung.GetFirma().Urlaubliste(tag)[f]);
+                lbFeiertag.Visible = false;
+                txBNotizen.Visible = false;
+                label4.Visible = false;
+            }
         }
         private void Speichern()
         {
             verwaltung.GetAngemeldetePerson().SetNotizen(txBNotizen.Text, tag);
+            if (Chef)
+                verwaltung.GetFirma().SetNotizen(txBGNtz.Text, tag);
         }
        
         private void btnVor_Click(object sender, EventArgs e)
@@ -60,6 +82,47 @@ namespace Unternehmen
         private void Tag_FormClosing(object sender, FormClosingEventArgs e)
         {
             Speichern();
+            for (int f = 0; f < termins.Count; f++)
+                termins[f].Close();
+        }
+
+        private void chBeFeiertag_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chBeFeiertag.Checked) 
+                verwaltung.GetFirma().SetFeiertag(tag, txBeFeiertag.Text);
+            else
+                verwaltung.GetFirma().DeleteFeiertag(tag);
+        }
+
+        private void txBeFeiertag_TextChanged(object sender, EventArgs e)
+        {
+            if(chBeFeiertag.Checked)
+                verwaltung.GetFirma().SetFeiertag(tag, txBeFeiertag.Text);
+        }
+
+        private void chBLUrlaub_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Unchecked)
+                verwaltung.GetFirma().UrlaubDeleten(tag, e.Index);
+        }
+
+        private void LBTagesplan_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (LBTagesplan.IndexFromPoint(e.Location) != ListBox.NoMatches)
+            {
+                if (LBTagesplan.IndexFromPoint(e.Location) == LBTagesplan.Items.Count - 1)
+                    termins.Add(new Termin(verwaltung, -1));
+                else
+                    termins.Add(new Termin(verwaltung,LBTagesplan.IndexFromPoint(e.Location)));
+                termins[termins.Count - 1].Show();
+                termins[termins.Count - 1].FormClosing += Tag_FormClosing1; 
+            }
+        }
+
+        private void Tag_FormClosing1(object sender, FormClosingEventArgs e)
+        {
+            LBTagesplan.Items.Clear();
+            LadenTagesplan();
         }
     }
 }
