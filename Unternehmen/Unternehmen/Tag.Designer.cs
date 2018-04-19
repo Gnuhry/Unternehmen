@@ -45,13 +45,14 @@
             this.chBLUrlaub = new System.Windows.Forms.CheckedListBox();
             this.chBeFeiertag = new System.Windows.Forms.CheckBox();
             this.txBeFeiertag = new System.Windows.Forms.TextBox();
+            this.LBTagesplan = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(401, 265);
+            this.label5.Location = new System.Drawing.Point(240, 258);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 13);
             this.label5.TabIndex = 30;
@@ -59,7 +60,7 @@
             // 
             // txBGNtz
             // 
-            this.txBGNtz.Location = new System.Drawing.Point(402, 281);
+            this.txBGNtz.Location = new System.Drawing.Point(241, 274);
             this.txBGNtz.Multiline = true;
             this.txBGNtz.Name = "txBGNtz";
             this.txBGNtz.Size = new System.Drawing.Size(100, 70);
@@ -68,7 +69,7 @@
             // lbFeiertag
             // 
             this.lbFeiertag.AutoSize = true;
-            this.lbFeiertag.Location = new System.Drawing.Point(363, 115);
+            this.lbFeiertag.Location = new System.Drawing.Point(202, 108);
             this.lbFeiertag.Name = "lbFeiertag";
             this.lbFeiertag.Size = new System.Drawing.Size(44, 13);
             this.lbFeiertag.TabIndex = 28;
@@ -78,7 +79,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(401, 143);
+            this.label4.Location = new System.Drawing.Point(240, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 27;
@@ -88,7 +89,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(273, 322);
+            this.label3.Location = new System.Drawing.Point(112, 315);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 26;
@@ -98,7 +99,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(275, 242);
+            this.label2.Location = new System.Drawing.Point(114, 235);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 25;
@@ -108,7 +109,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(273, 142);
+            this.label1.Location = new System.Drawing.Point(112, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 24;
@@ -116,7 +117,7 @@
             // 
             // btnZuruck
             // 
-            this.btnZuruck.Location = new System.Drawing.Point(266, 87);
+            this.btnZuruck.Location = new System.Drawing.Point(105, 80);
             this.btnZuruck.Name = "btnZuruck";
             this.btnZuruck.Size = new System.Drawing.Size(25, 23);
             this.btnZuruck.TabIndex = 23;
@@ -126,7 +127,7 @@
             // 
             // btnVor
             // 
-            this.btnVor.Location = new System.Drawing.Point(506, 87);
+            this.btnVor.Location = new System.Drawing.Point(345, 80);
             this.btnVor.Name = "btnVor";
             this.btnVor.Size = new System.Drawing.Size(28, 23);
             this.btnVor.TabIndex = 22;
@@ -137,7 +138,7 @@
             // lbGeburtstag
             // 
             this.lbGeburtstag.AutoSize = true;
-            this.lbGeburtstag.Location = new System.Drawing.Point(273, 338);
+            this.lbGeburtstag.Location = new System.Drawing.Point(112, 331);
             this.lbGeburtstag.Name = "lbGeburtstag";
             this.lbGeburtstag.Size = new System.Drawing.Size(67, 26);
             this.lbGeburtstag.TabIndex = 21;
@@ -145,7 +146,7 @@
             // 
             // txBNotizen
             // 
-            this.txBNotizen.Location = new System.Drawing.Point(404, 159);
+            this.txBNotizen.Location = new System.Drawing.Point(243, 152);
             this.txBNotizen.Multiline = true;
             this.txBNotizen.Name = "txBNotizen";
             this.txBNotizen.Size = new System.Drawing.Size(100, 100);
@@ -154,7 +155,7 @@
             // lbUrlaub
             // 
             this.lbUrlaub.AutoSize = true;
-            this.lbUrlaub.Location = new System.Drawing.Point(287, 262);
+            this.lbUrlaub.Location = new System.Drawing.Point(126, 255);
             this.lbUrlaub.Name = "lbUrlaub";
             this.lbUrlaub.Size = new System.Drawing.Size(36, 39);
             this.lbUrlaub.TabIndex = 19;
@@ -163,7 +164,7 @@
             // lbKrank
             // 
             this.lbKrank.AutoSize = true;
-            this.lbKrank.Location = new System.Drawing.Point(275, 155);
+            this.lbKrank.Location = new System.Drawing.Point(114, 148);
             this.lbKrank.Name = "lbKrank";
             this.lbKrank.Size = new System.Drawing.Size(42, 65);
             this.lbKrank.TabIndex = 18;
@@ -172,7 +173,7 @@
             // lbWochentag
             // 
             this.lbWochentag.AutoSize = true;
-            this.lbWochentag.Location = new System.Drawing.Point(340, 87);
+            this.lbWochentag.Location = new System.Drawing.Point(179, 80);
             this.lbWochentag.Name = "lbWochentag";
             this.lbWochentag.Size = new System.Drawing.Size(114, 13);
             this.lbWochentag.TabIndex = 17;
@@ -181,7 +182,7 @@
             // chBLUrlaub
             // 
             this.chBLUrlaub.FormattingEnabled = true;
-            this.chBLUrlaub.Location = new System.Drawing.Point(266, 258);
+            this.chBLUrlaub.Location = new System.Drawing.Point(105, 251);
             this.chBLUrlaub.Name = "chBLUrlaub";
             this.chBLUrlaub.Size = new System.Drawing.Size(68, 49);
             this.chBLUrlaub.TabIndex = 31;
@@ -191,7 +192,7 @@
             // chBeFeiertag
             // 
             this.chBeFeiertag.AutoSize = true;
-            this.chBeFeiertag.Location = new System.Drawing.Point(290, 43);
+            this.chBeFeiertag.Location = new System.Drawing.Point(129, 36);
             this.chBeFeiertag.Name = "chBeFeiertag";
             this.chBeFeiertag.Size = new System.Drawing.Size(80, 17);
             this.chBeFeiertag.TabIndex = 32;
@@ -202,18 +203,28 @@
             // 
             // txBeFeiertag
             // 
-            this.txBeFeiertag.Location = new System.Drawing.Point(377, 43);
+            this.txBeFeiertag.Location = new System.Drawing.Point(216, 36);
             this.txBeFeiertag.Name = "txBeFeiertag";
             this.txBeFeiertag.Size = new System.Drawing.Size(100, 20);
             this.txBeFeiertag.TabIndex = 33;
             this.txBeFeiertag.Visible = false;
             this.txBeFeiertag.TextChanged += new System.EventHandler(this.txBeFeiertag_TextChanged);
             // 
+            // LBTagesplan
+            // 
+            this.LBTagesplan.FormattingEnabled = true;
+            this.LBTagesplan.Location = new System.Drawing.Point(403, 148);
+            this.LBTagesplan.Name = "LBTagesplan";
+            this.LBTagesplan.Size = new System.Drawing.Size(218, 95);
+            this.LBTagesplan.TabIndex = 34;
+            this.LBTagesplan.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LBTagesplan_MouseDoubleClick);
+            // 
             // Tag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LBTagesplan);
             this.Controls.Add(this.txBeFeiertag);
             this.Controls.Add(this.chBeFeiertag);
             this.Controls.Add(this.label5);
@@ -257,5 +268,6 @@
         private System.Windows.Forms.CheckedListBox chBLUrlaub;
         private System.Windows.Forms.CheckBox chBeFeiertag;
         private System.Windows.Forms.TextBox txBeFeiertag;
+        private System.Windows.Forms.ListBox LBTagesplan;
     }
 }

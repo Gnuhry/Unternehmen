@@ -14,25 +14,24 @@ namespace Unternehmen
         private string benutzername, Kontoinhaber;
         private byte[] passwort;
         private List<DateTime> Urlaubstage;
-        private int Krankendauer, status, _Versuche, krankenC, UrlaubsC;//0-gesperrt,1-Aktiv(Zuhause),2-Krank,3-Urlaub,4-Aktiv(arbeitend)
+        private int Krankendauer, status, _Versuche, krankenC, UrlaubsC,maxTage;//0-gesperrt,1-Aktiv(Zuhause),2-Krank,3-Urlaub,4-Aktiv(arbeitend)
         private Image Profilbild;
         private double Arbeitszeit;
         private DateTime Geburtstag, _Anfang;
         private Notizen notizen;
         private Nachrichten nachrichten;
-        //Tagesplan
+        private Tagesplan tagesplan;
 
         public Konto()
         {
+            tagesplan = new Tagesplan();
             Urlaubstage = new List<DateTime>();
             notizen = new Notizen();
             nachrichten = new Nachrichten();
-            Arbeitszeit = Krankendauer = status = 0;
-            Profilbild = Properties.Resources.ic_android_black_24dp;
-            krankenC = UrlaubsC = 0;
+            Arbeitszeit = Krankendauer = status = krankenC = UrlaubsC = 0;
         }
 
-        public string Registrieren(string Kontoinhaber, string benutzername, string passwort, DateTime Geburtstag)
+        public string Registrieren(string Kontoinhaber, string benutzername, string passwort, DateTime Geburtstag,Image Profilbild)
         {
             char[] x = benutzername.ToCharArray();
             bool GrB = false, KlB = false, Zahl = false;
@@ -62,6 +61,7 @@ namespace Unternehmen
             status = 1;
             this.Geburtstag = Geburtstag;
             this.Kontoinhaber = Kontoinhaber;
+            this.Profilbild = Profilbild;
 
             return "";
         }
@@ -155,6 +155,15 @@ namespace Unternehmen
             if (status == 1 && this.status == 0) this.status = 1;
             else status = 0;
         }
+        public void SetMaxTage(int MaxTage) => maxTage = MaxTage;
+        public void SetTermin(DateTime von, DateTime bis, string Beschreibung) => tagesplan.SetTermin(von, bis, Beschreibung);
+        public void SetTermin(DateTime von, DateTime bis, string Beschreibung,int index) => tagesplan.SetTermin(von, bis, Beschreibung,index);
+
+        public DateTime GetTerminVon(int index) => tagesplan.GetVon(index);
+        public DateTime GetTerminBis(int index) => tagesplan.GetBis(index);
+        public string GetTerminBeschreibung(int index) => tagesplan.GetBeschreibung(index);
+        public void DeleteTermin(int index) => tagesplan.DeleteBeschreibung(index);
+        public int GetTerminAnzahl() => tagesplan.GetAnzahl();
         public void Neuer_Tag()
         {
             if (IsUrlaub(DateTime.Today)) { status = 3; UrlaubsC++; }

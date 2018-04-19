@@ -18,21 +18,34 @@ namespace Unternehmen
         {
             this.verwaltung = verwaltung;
             InitializeComponent();
+            InitComboBox();
+            pcBProfilbild.Image = Properties.Resources.ic_android_black_24dp;
         }
         public Registrieren(Verwaltung verwaltung, Konto angemeldet)
         {
+            
             this.verwaltung = verwaltung;
             InitializeComponent();
             this.angemeldet = angemeldet;
+            InitComboBox();
             txBPasswortA.Visible = true;
             txBInhaber.Text = angemeldet.GetKontoInhaber();
             txBBenutzername.Text = angemeldet.GetBenutzername();
-            numDay.Value = angemeldet.GetGeburtstag().Day;
-            numMonth.Value = angemeldet.GetGeburtstag().Month;
-            numYear.Value = angemeldet.GetGeburtstag().Year;
             btnLoschen.Visible = true;
+            pcBProfilbild.Image = angemeldet.GetProfilbild();
+            cBoxTag.SelectedIndex = angemeldet.GetGeburtstag().Day - 1;
+            cBoxMonat.SelectedIndex = angemeldet.GetGeburtstag().Month - 1;
+            cBoxJahr.SelectedIndex = angemeldet.GetGeburtstag().Year - 1;
         }
 
+        private void InitComboBox()
+        {
+            for (int f = 0; f < 31; f++)
+                cBoxTag.Items.Add(f + 1);
+            for (int f = DateTime.Today.Year; f > DateTime.Today.Year - 100; f--)
+                cBoxJahr.Items.Add(f);
+            cBoxTag.SelectedIndex = cBoxMonat.SelectedIndex = cBoxJahr.SelectedIndex = 0;
+        }
 
         private void btnRegistrieren_Click(object sender, EventArgs e)
         {
@@ -51,13 +64,16 @@ namespace Unternehmen
             string temp;
             try
             {
-                temp = angemeldet.Registrieren(txBInhaber.Text, txBBenutzername.Text, txBPasswort.Text, new DateTime((int)numYear.Value, (int)numMonth.Value, (int)numMonth.Value));
+                //MessageBox.Show(new DateTime(DateTime.Today.Year - cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex + 1, cBoxTag.SelectedIndex + 1).ToShortDateString());
+                temp = angemeldet.Registrieren(txBInhaber.Text, txBBenutzername.Text, txBPasswort.Text, new DateTime(DateTime.Today.Year-cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex + 1, cBoxTag.SelectedIndex + 1), pcBProfilbild.Image);
             }
             catch (Exception) { temp = "Falsches Datum"; }
             if (temp == "")
             {
-                verwaltung.GetFirma().AddMitarbeiter(angemeldet);
-                Close();
+                if (verwaltung.GetFirma().AddMitarbeiter(angemeldet))
+                    Close();
+                else
+                    MessageBox.Show("Benutzername existiert schon");
             }
             else
                 MessageBox.Show(temp);       
@@ -66,6 +82,28 @@ namespace Unternehmen
         private void btnLoschen_Click(object sender, EventArgs e)
         {
             verwaltung.Konto_Loschen();
+        }
+
+        private void Registrieren_DragEnter(object sender, DragEventArgs e)
+        {
+            string[] validExtensions = new string[] { ".png", ".jpg" };
+            foreach (var ext in ((IEnumerable<string>)e.Data.GetData(DataFormats.FileDrop)).Select((f) => System.IO.Path.GetExtension(f)))
+                if (!validExtensions.Contains(ext))
+                    e.Effect = DragDropEffects.None;
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void Registrieren_DragDrop(object sender, DragEventArgs e)
+        {
+            pcBProfilbild.Image = new Bitmap(((string[])e.Data.GetData(DataFormats.FileDrop))[0]);
+        }
+
+        private void cBoxMonat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cBoxTag.Items.Clear();
+            for (int f = 0; f < DateTime.DaysInMonth(cBoxJahr.SelectedIndex+1, cBoxMonat.SelectedIndex+1); f++)
+                cBoxTag.Items.Add(f + 1);
+            cBoxTag.SelectedIndex = 0;
         }
     }
 }

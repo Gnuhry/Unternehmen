@@ -23,7 +23,7 @@ namespace Unternehmen
                 comBMitarbeiter.Items.Add(verwaltung.GetFirma().GetMitarbeiter(f));
             for(int f = 0; f < 7; f++)
                 chbLArbeitstage.SetItemChecked(f, verwaltung.GetFirma().GetArbeitstag(f));
-            // numUrlaubstage.Value=verwaltung.GetFirma()
+            numUrlaubstage.Value = verwaltung.GetFirma().GetMaxTage();
             txBWebsite.Text = verwaltung.GetFirma().GetWeb();
             if (txBWebsite.Text == "none")
                 txBWebsite.Enabled = false;
@@ -70,7 +70,15 @@ namespace Unternehmen
 
         private void btnUrlaub_Click(object sender, EventArgs e)
         {
+            if(kalender!=null) { kalender.Show();return; }
+            kalender = new Kalender(verwaltung, true);
+            kalender.FormClosing += Kalender_FormClosing;
+            kalender.Show();
+        }
 
+        private void Kalender_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            kalender = null;
         }
 
         private void comBMitarbeiter_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,8 +104,7 @@ namespace Unternehmen
 
         private void numUrlaubstage_ValueChanged(object sender, EventArgs e)
         {
-           // verwaltung.GetFirma().SetUrlaubstage_pro_Jahr((int)numUrlaubstage.Value);
-
+            verwaltung.GetFirma().SetMaxTage((int)numUrlaubstage.Value);
         }
 
         private void chbLArbeitstage_SelectedValueChanged(object sender, EventArgs e)

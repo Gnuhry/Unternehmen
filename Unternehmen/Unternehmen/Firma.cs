@@ -14,6 +14,7 @@ namespace Unternehmen
         private Feiertage feiertage;
         private DateTime date_zero;
         private string Web;
+        private int MaxTage;
 
         public Firma()
         {
@@ -24,7 +25,15 @@ namespace Unternehmen
             Arbeitstage[5] = Arbeitstage[6] = false;
             Mitarbeiter = new List<Konto>();
             date_zero = DateTime.Today;
+            notizen = new Notizen();
         }
+        public void SetMaxTage(int MaxTage)
+        {
+            this.MaxTage = MaxTage;
+            for (int f = 0; f < Mitarbeiter.Count; f++)
+                Mitarbeiter[f].SetMaxTage(MaxTage);
+        }
+        public int GetMaxTage() => MaxTage;
         public int Einloggen(string benutzername, string passwort, Verwaltung verwaltung)
         {
             for(int f = 0; f < Mitarbeiter.Count; f++)
@@ -44,9 +53,8 @@ namespace Unternehmen
         public bool AddMitarbeiter(Konto Person)
         {
             for (int f = 0; f < Mitarbeiter.Count; f++)
-            {
                 if (Person.GetBenutzername() == Mitarbeiter[f].GetBenutzername()) return false;
-            }
+            Person.SetMaxTage(MaxTage);
             Mitarbeiter.Add(Person);
             return true;
         }
@@ -80,7 +88,7 @@ namespace Unternehmen
             List<string> temp = new List<string>();
             for (int f = 0; f < Mitarbeiter.Count; f++)
                 if (Mitarbeiter[f].IsGeburtstag(Tag))
-                    temp.Add(Mitarbeiter[f].GetBenutzername());
+                    temp.Add(Mitarbeiter[f].GetBenutzername()+" ("+(Mitarbeiter[f].GetGeburtstag().Year-DateTime.Today.Year)+")");
             return temp.ToArray();
         }
         public bool GetArbeitstag(int Tag) => Arbeitstage[Tag];

@@ -75,7 +75,7 @@ namespace Unternehmen
                 Inhalt[f].MouseDown += Inhalt_Click;
             }
             //Abfangen
-            if (Month == DateTime.Today.Month)
+            if (Month == DateTime.Today.Month&&Year==DateTime.Today.Year)
                 for (int f = erster + 7; f < DateTime.Today.Day + erster + 6; f++)
                 {
                     Inhalt[f].BackColor =VergangeneTageC;
