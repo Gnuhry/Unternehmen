@@ -8,6 +8,7 @@ namespace Unternehmen
     public partial class Kalender : Form
     {
         private bool Chef;
+        private static int MaxJahre = 10;
         Verwaltung verwaltung;
         private Label[] Inhalt;
         private List<DateTime> Urlaubstage;
@@ -44,22 +45,8 @@ namespace Unternehmen
                 case DayOfWeek.Saturday: erster = 5; break;
                 case DayOfWeek.Sunday: erster = 6; break;
             }
-            switch (Month)
-            {
-                case 1: lbMonat.Text = "Januar"; break;
-                case 3: lbMonat.Text = "März"; break;
-                case 5: lbMonat.Text = "Mai"; break;
-                case 7: lbMonat.Text = "Juli"; break;
-                case 8: lbMonat.Text = "August"; break;
-                case 10: lbMonat.Text = "Oktober"; break;
-                case 12:  lbMonat.Text = "Dezember"; break;
-                case 4:  lbMonat.Text = "April"; break;
-                case 6:  lbMonat.Text = "Juni"; break;
-                case 9: lbMonat.Text = "September"; break;
-                case 11:  lbMonat.Text = "November"; break;
-                case 2: lbMonat.Text = "Februar"; break;
-            }
-            lbJahr.Text = Year + "";
+            cBoxMonat.SelectedIndex = Month - 1;
+            cBoxJahr.SelectedIndex = Year-DateTime.Today.Year;
             //Leeren
             for (int f = 7; f < Inhalt.Length; f++)
             {
@@ -144,6 +131,18 @@ namespace Unternehmen
                     Inhalt[erster + Urlaubstage2[f].Day - 1].BackColor = UrlaubstageC;
         }
 
+        private void cBoxMonat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Month = cBoxMonat.SelectedIndex + 1;
+            KalenderLaden();
+        }
+
+        private void cBoxJahr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Year = cBoxJahr.SelectedIndex + DateTime.Today.Year;
+            KalenderLaden();
+        }
+
         private void btnBeantragen_Click(object sender, EventArgs e)
         {
             Speichern();
@@ -214,6 +213,9 @@ namespace Unternehmen
             Inhalt[4].Text = "FR";
             Inhalt[5].Text = "SA";
             Inhalt[6].Text = "SO";
+            for(int f = 0; f < MaxJahre; f++)
+                cBoxJahr.Items.Add(DateTime.Today.Year+f);
+            cBoxJahr.SelectedIndex = 0;
         }
     }
 }
