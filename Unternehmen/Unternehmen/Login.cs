@@ -35,7 +35,9 @@ namespace Unternehmen
             }
             txBpasswort.Text = txBbenutzername.Text = null;
         }
-
+        private void Beenden_Label_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         private void txBpasswort_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter) btnLogin_Click(sender, e);

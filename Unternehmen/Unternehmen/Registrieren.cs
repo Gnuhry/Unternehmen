@@ -29,6 +29,7 @@ namespace Unternehmen
             this.angemeldet = angemeldet;
             InitComboBox();
             txBPasswortA.Visible = true;
+            New_Password_Label.Visible = true;
             txBInhaber.Text = angemeldet.GetKontoInhaber();
             txBBenutzername.Text = angemeldet.GetBenutzername();
             btnLoschen.Visible = true;
@@ -60,7 +61,7 @@ namespace Unternehmen
             if (txBInhaber.Text.Trim() == null || txBInhaber.Text.Trim() == "") { MessageBox.Show("Kein Inhaber"); return; }
             if (txBBenutzername.Text.Trim() == null || txBBenutzername.Text.Trim() == "") { MessageBox.Show("Keinen Benutzernamen"); return; }
             if (txBPasswort.Text.Trim() == null || txBPasswort.Text.Trim() == "") { MessageBox.Show("Kein Passwort"); return; }
-            if (txBPasswort.Text != txBPasswort2.Text) { MessageBox.Show("Passwörter überstimmen nicht ein"); return; }
+            if (txBPasswort.Text != txBPasswort2.Text) { MessageBox.Show("Passwörter stimmen nicht überein"); return; }
             string temp;
             try
             {
@@ -84,6 +85,10 @@ namespace Unternehmen
             verwaltung.Konto_Loschen();
         }
 
+        private void Beenden_Label_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+}
         private void Registrieren_DragEnter(object sender, DragEventArgs e)
         {
             string[] validExtensions = new string[] { ".png", ".jpg" };

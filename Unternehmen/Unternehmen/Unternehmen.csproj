@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AlphaBlendTextBox">
+      <HintPath>..\..\..\..\..\Desktop\Kalender_V.0.1.2\AlphaBlendTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\..\Desktop\Kalender_V.0.1.2\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -147,6 +153,8 @@
     <EmbeddedResource Include="Tag.resx">
       <DependentUpon>Tag.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Verwaltung.resx">
+      <DependentUpon>Verwaltung.cs</DependentUpon>
     <EmbeddedResource Include="Termin.resx">
       <DependentUpon>Termin.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +173,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ic_android_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gold-ingots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\japanese-kanji.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-
+//Farben RGBS
+//37; 41; 48
+//web->White
+//67; 188; 180
 namespace Unternehmen
 {
     public partial class Kalender : Form

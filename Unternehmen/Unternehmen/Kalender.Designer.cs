@@ -46,7 +46,7 @@
             this.tLpKalender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tLpKalender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tLpKalender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tLpKalender.Location = new System.Drawing.Point(69, 33);
+            this.tLpKalender.Location = new System.Drawing.Point(355, 97);
             this.tLpKalender.Name = "tLpKalender";
             this.tLpKalender.RowCount = 7;
             this.tLpKalender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -56,36 +56,36 @@
             this.tLpKalender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tLpKalender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tLpKalender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tLpKalender.Size = new System.Drawing.Size(459, 329);
+            this.tLpKalender.Size = new System.Drawing.Size(535, 329);
             this.tLpKalender.TabIndex = 0;
             // 
             // btnMonatzuruck
             // 
-            this.btnMonatzuruck.Location = new System.Drawing.Point(12, 4);
+            this.btnMonatzuruck.Location = new System.Drawing.Point(355, 44);
             this.btnMonatzuruck.Name = "btnMonatzuruck";
-            this.btnMonatzuruck.Size = new System.Drawing.Size(75, 23);
+            this.btnMonatzuruck.Size = new System.Drawing.Size(87, 23);
             this.btnMonatzuruck.TabIndex = 1;
-            this.btnMonatzuruck.Text = "button1";
+            this.btnMonatzuruck.Text = "<-";
             this.btnMonatzuruck.UseVisualStyleBackColor = true;
             this.btnMonatzuruck.Click += new System.EventHandler(this.btnMonatzuruck_Click);
             // 
             // btnMonatvor
             // 
-            this.btnMonatvor.Location = new System.Drawing.Point(698, 12);
+            this.btnMonatvor.Location = new System.Drawing.Point(801, 49);
             this.btnMonatvor.Name = "btnMonatvor";
-            this.btnMonatvor.Size = new System.Drawing.Size(75, 23);
+            this.btnMonatvor.Size = new System.Drawing.Size(87, 23);
             this.btnMonatvor.TabIndex = 2;
-            this.btnMonatvor.Text = "button1";
+            this.btnMonatvor.Text = "->";
             this.btnMonatvor.UseVisualStyleBackColor = true;
             this.btnMonatvor.Click += new System.EventHandler(this.btnMonatvor_Click);
             // 
             // btnBeantragen
             // 
-            this.btnBeantragen.Location = new System.Drawing.Point(346, 401);
+            this.btnBeantragen.Location = new System.Drawing.Point(499, 44);
             this.btnBeantragen.Name = "btnBeantragen";
-            this.btnBeantragen.Size = new System.Drawing.Size(75, 23);
+            this.btnBeantragen.Size = new System.Drawing.Size(87, 23);
             this.btnBeantragen.TabIndex = 4;
-            this.btnBeantragen.Text = "button1";
+            this.btnBeantragen.Text = "beantragen";
             this.btnBeantragen.UseVisualStyleBackColor = true;
             this.btnBeantragen.Click += new System.EventHandler(this.btnBeantragen_Click);
             // 
@@ -122,15 +122,16 @@
             // 
             // Kalender
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(954, 473);
             this.Controls.Add(this.cBoxJahr);
             this.Controls.Add(this.cBoxMonat);
             this.Controls.Add(this.btnBeantragen);
             this.Controls.Add(this.btnMonatvor);
             this.Controls.Add(this.btnMonatzuruck);
             this.Controls.Add(this.tLpKalender);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Kalender";
             this.Text = "Kalender";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Kalender_FormClosing);
