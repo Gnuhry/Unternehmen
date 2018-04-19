@@ -47,6 +47,7 @@
             this.txBpasswort.Name = "txBpasswort";
             this.txBpasswort.Size = new System.Drawing.Size(100, 20);
             this.txBpasswort.TabIndex = 1;
+            this.txBpasswort.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txBpasswort_KeyDown);
             // 
             // btnRegistrieren
             // 

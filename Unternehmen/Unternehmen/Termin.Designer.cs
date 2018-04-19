@@ -68,6 +68,7 @@
             this.dTPVon.Size = new System.Drawing.Size(200, 20);
             this.dTPVon.TabIndex = 1;
             this.dTPVon.Value = new System.DateTime(2018, 4, 19, 0, 0, 0, 0);
+            this.dTPVon.ValueChanged += new System.EventHandler(this.dTPVon_ValueChanged);
             // 
             // txBUhrzeitBis
             // 

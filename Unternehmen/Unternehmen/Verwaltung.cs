@@ -111,6 +111,12 @@ namespace Unternehmen
         private void Menue_FormClosing(object sender, FormClosingEventArgs e)
         {
             menue = null;
+            if(messenger!=null)
+            messenger.Close();
+            if(kalender!=null)
+            kalender.Close();
+            if(chef!=null)
+            chef.Close();
             angemeldete_Person = null;
             LogIn();
         }

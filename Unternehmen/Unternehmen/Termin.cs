@@ -41,5 +41,10 @@ namespace Unternehmen
                 verwaltung.GetAngemeldetePerson().SetTermin(von.AddMinutes(Convert.ToDouble(txBUhrzeitVon.Text.Split(':')[1])), bis.AddMinutes(Convert.ToDouble(txBUhrzeitBis.Text.Split(':')[1])), txBBeschreibung.Text,index);
             Close();
         }
+
+        private void dTPVon_ValueChanged(object sender, EventArgs e)
+        {
+            dTpBis.MinDate = dTPVon.Value;
+        }
     }
 }

@@ -35,5 +35,10 @@ namespace Unternehmen
             }
             txBpasswort.Text = txBbenutzername.Text = null;
         }
+
+        private void txBpasswort_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter) btnLogin_Click(sender, e);
+        }
     }
 }
