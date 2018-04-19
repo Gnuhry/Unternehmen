@@ -39,21 +39,21 @@
             this.Firmen_Motto = new System.Windows.Forms.Label();
             this.Logo_Picturebox = new System.Windows.Forms.PictureBox();
             this.Panel_right = new System.Windows.Forms.Panel();
-            this.Sign_Up_Label = new System.Windows.Forms.Label();
-            this.Ownername_Label = new System.Windows.Forms.Label();
-            this.txBInhaber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.Username_Label = new System.Windows.Forms.Label();
-            this.txBBenutzername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.Geburtstag_Label = new System.Windows.Forms.Label();
-            this.Passwort_Label = new System.Windows.Forms.Label();
-            this.txBPasswort = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txBPasswort2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.Beenden_Label = new System.Windows.Forms.Label();
+            this.Termsandconditions_Label = new System.Windows.Forms.Label();
+            this.TermsandConditionsCheckbox = new Bunifu.Framework.UI.BunifuCheckbox();
             this.New_Password_Label = new System.Windows.Forms.Label();
             this.txBPasswortA = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.TermsandConditionsCheckbox = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.Termsandconditions_Label = new System.Windows.Forms.Label();
-            this.Beenden_Label = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txBPasswort2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.Passwort_Label = new System.Windows.Forms.Label();
+            this.txBPasswort = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.Geburtstag_Label = new System.Windows.Forms.Label();
+            this.Username_Label = new System.Windows.Forms.Label();
+            this.txBBenutzername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.Ownername_Label = new System.Windows.Forms.Label();
+            this.txBInhaber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.Sign_Up_Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numDay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMonth)).BeginInit();
@@ -151,6 +151,7 @@
             // 
             // Panel_right
             // 
+            this.Panel_right.BackColor = System.Drawing.Color.White;
             this.Panel_right.Controls.Add(this.Beenden_Label);
             this.Panel_right.Controls.Add(this.Termsandconditions_Label);
             this.Panel_right.Controls.Add(this.TermsandConditionsCheckbox);
@@ -177,155 +178,40 @@
             this.Panel_right.Size = new System.Drawing.Size(683, 658);
             this.Panel_right.TabIndex = 11;
             // 
-            // Sign_Up_Label
+            // Beenden_Label
             // 
-            this.Sign_Up_Label.AutoSize = true;
-            this.Sign_Up_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sign_Up_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Sign_Up_Label.Location = new System.Drawing.Point(344, 40);
-            this.Sign_Up_Label.Name = "Sign_Up_Label";
-            this.Sign_Up_Label.Size = new System.Drawing.Size(92, 25);
-            this.Sign_Up_Label.TabIndex = 10;
-            this.Sign_Up_Label.Text = "Sign Up";
+            this.Beenden_Label.AutoSize = true;
+            this.Beenden_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Beenden_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.Beenden_Label.Location = new System.Drawing.Point(654, 7);
+            this.Beenden_Label.Name = "Beenden_Label";
+            this.Beenden_Label.Size = new System.Drawing.Size(22, 25);
+            this.Beenden_Label.TabIndex = 27;
+            this.Beenden_Label.Text = "x";
+            this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
             // 
-            // Ownername_Label
+            // Termsandconditions_Label
             // 
-            this.Ownername_Label.AutoSize = true;
-            this.Ownername_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ownername_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Ownername_Label.Location = new System.Drawing.Point(344, 75);
-            this.Ownername_Label.Name = "Ownername_Label";
-            this.Ownername_Label.Size = new System.Drawing.Size(112, 20);
-            this.Ownername_Label.TabIndex = 12;
-            this.Ownername_Label.Text = "Ownername:";
+            this.Termsandconditions_Label.AutoSize = true;
+            this.Termsandconditions_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Termsandconditions_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.Termsandconditions_Label.Location = new System.Drawing.Point(395, 497);
+            this.Termsandconditions_Label.Name = "Termsandconditions_Label";
+            this.Termsandconditions_Label.Size = new System.Drawing.Size(238, 20);
+            this.Termsandconditions_Label.TabIndex = 26;
+            this.Termsandconditions_Label.Text = "I Agree Terms and Conditions";
             // 
-            // txBInhaber
+            // TermsandConditionsCheckbox
             // 
-            this.txBInhaber.BackColor = System.Drawing.SystemColors.Control;
-            this.txBInhaber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txBInhaber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txBInhaber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txBInhaber.ForeColor = System.Drawing.Color.Black;
-            this.txBInhaber.HintForeColor = System.Drawing.SystemColors.GrayText;
-            this.txBInhaber.HintText = "Ownername";
-            this.txBInhaber.isPassword = false;
-            this.txBInhaber.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBInhaber.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBInhaber.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBInhaber.LineThickness = 3;
-            this.txBInhaber.Location = new System.Drawing.Point(348, 99);
-            this.txBInhaber.Margin = new System.Windows.Forms.Padding(4);
-            this.txBInhaber.Name = "txBInhaber";
-            this.txBInhaber.Size = new System.Drawing.Size(300, 33);
-            this.txBInhaber.TabIndex = 11;
-            this.txBInhaber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // Username_Label
-            // 
-            this.Username_Label.AutoSize = true;
-            this.Username_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Username_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Username_Label.Location = new System.Drawing.Point(345, 146);
-            this.Username_Label.Name = "Username_Label";
-            this.Username_Label.Size = new System.Drawing.Size(91, 20);
-            this.Username_Label.TabIndex = 14;
-            this.Username_Label.Text = "Username:";
-            // 
-            // txBBenutzername
-            // 
-            this.txBBenutzername.BackColor = System.Drawing.SystemColors.Control;
-            this.txBBenutzername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txBBenutzername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txBBenutzername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txBBenutzername.ForeColor = System.Drawing.Color.Black;
-            this.txBBenutzername.HintForeColor = System.Drawing.SystemColors.GrayText;
-            this.txBBenutzername.HintText = "Username";
-            this.txBBenutzername.isPassword = false;
-            this.txBBenutzername.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBBenutzername.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBBenutzername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBBenutzername.LineThickness = 3;
-            this.txBBenutzername.Location = new System.Drawing.Point(348, 170);
-            this.txBBenutzername.Margin = new System.Windows.Forms.Padding(4);
-            this.txBBenutzername.Name = "txBBenutzername";
-            this.txBBenutzername.Size = new System.Drawing.Size(300, 33);
-            this.txBBenutzername.TabIndex = 13;
-            this.txBBenutzername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // Geburtstag_Label
-            // 
-            this.Geburtstag_Label.AutoSize = true;
-            this.Geburtstag_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Geburtstag_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Geburtstag_Label.Location = new System.Drawing.Point(345, 217);
-            this.Geburtstag_Label.Name = "Geburtstag_Label";
-            this.Geburtstag_Label.Size = new System.Drawing.Size(77, 20);
-            this.Geburtstag_Label.TabIndex = 16;
-            this.Geburtstag_Label.Text = "Birthday:";
-            // 
-            // Passwort_Label
-            // 
-            this.Passwort_Label.AutoSize = true;
-            this.Passwort_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Passwort_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Passwort_Label.Location = new System.Drawing.Point(345, 278);
-            this.Passwort_Label.Name = "Passwort_Label";
-            this.Passwort_Label.Size = new System.Drawing.Size(85, 20);
-            this.Passwort_Label.TabIndex = 20;
-            this.Passwort_Label.Text = "Password:";
-            // 
-            // txBPasswort
-            // 
-            this.txBPasswort.BackColor = System.Drawing.SystemColors.Control;
-            this.txBPasswort.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txBPasswort.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txBPasswort.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txBPasswort.ForeColor = System.Drawing.Color.Black;
-            this.txBPasswort.HintForeColor = System.Drawing.Color.Transparent;
-            this.txBPasswort.HintText = "";
-            this.txBPasswort.isPassword = true;
-            this.txBPasswort.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswort.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswort.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswort.LineThickness = 3;
-            this.txBPasswort.Location = new System.Drawing.Point(348, 302);
-            this.txBPasswort.Margin = new System.Windows.Forms.Padding(4);
-            this.txBPasswort.Name = "txBPasswort";
-            this.txBPasswort.Size = new System.Drawing.Size(300, 33);
-            this.txBPasswort.TabIndex = 19;
-            this.txBPasswort.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.label1.Location = new System.Drawing.Point(345, 348);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 20);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Repeat Password:";
-            // 
-            // txBPasswort2
-            // 
-            this.txBPasswort2.BackColor = System.Drawing.SystemColors.Control;
-            this.txBPasswort2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txBPasswort2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txBPasswort2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txBPasswort2.ForeColor = System.Drawing.Color.Black;
-            this.txBPasswort2.HintForeColor = System.Drawing.Color.Transparent;
-            this.txBPasswort2.HintText = "";
-            this.txBPasswort2.isPassword = true;
-            this.txBPasswort2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswort2.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswort2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswort2.LineThickness = 3;
-            this.txBPasswort2.Location = new System.Drawing.Point(348, 372);
-            this.txBPasswort2.Margin = new System.Windows.Forms.Padding(4);
-            this.txBPasswort2.Name = "txBPasswort2";
-            this.txBPasswort2.Size = new System.Drawing.Size(300, 33);
-            this.txBPasswort2.TabIndex = 21;
-            this.txBPasswort2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TermsandConditionsCheckbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.TermsandConditionsCheckbox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.TermsandConditionsCheckbox.Checked = true;
+            this.TermsandConditionsCheckbox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.TermsandConditionsCheckbox.ForeColor = System.Drawing.Color.White;
+            this.TermsandConditionsCheckbox.Location = new System.Drawing.Point(369, 497);
+            this.TermsandConditionsCheckbox.Name = "TermsandConditionsCheckbox";
+            this.TermsandConditionsCheckbox.Size = new System.Drawing.Size(20, 20);
+            this.TermsandConditionsCheckbox.TabIndex = 25;
             // 
             // New_Password_Label
             // 
@@ -341,7 +227,7 @@
             // 
             // txBPasswortA
             // 
-            this.txBPasswortA.BackColor = System.Drawing.SystemColors.Control;
+            this.txBPasswortA.BackColor = System.Drawing.Color.White;
             this.txBPasswortA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txBPasswortA.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txBPasswortA.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -361,40 +247,155 @@
             this.txBPasswortA.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txBPasswortA.Visible = false;
             // 
-            // TermsandConditionsCheckbox
+            // label1
             // 
-            this.TermsandConditionsCheckbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.TermsandConditionsCheckbox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.TermsandConditionsCheckbox.Checked = true;
-            this.TermsandConditionsCheckbox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.TermsandConditionsCheckbox.ForeColor = System.Drawing.Color.White;
-            this.TermsandConditionsCheckbox.Location = new System.Drawing.Point(369, 497);
-            this.TermsandConditionsCheckbox.Name = "TermsandConditionsCheckbox";
-            this.TermsandConditionsCheckbox.Size = new System.Drawing.Size(20, 20);
-            this.TermsandConditionsCheckbox.TabIndex = 25;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.label1.Location = new System.Drawing.Point(345, 348);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 20);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Repeat Password:";
             // 
-            // Termsandconditions_Label
+            // txBPasswort2
             // 
-            this.Termsandconditions_Label.AutoSize = true;
-            this.Termsandconditions_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Termsandconditions_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Termsandconditions_Label.Location = new System.Drawing.Point(395, 497);
-            this.Termsandconditions_Label.Name = "Termsandconditions_Label";
-            this.Termsandconditions_Label.Size = new System.Drawing.Size(238, 20);
-            this.Termsandconditions_Label.TabIndex = 26;
-            this.Termsandconditions_Label.Text = "I Agree Terms and Conditions";
+            this.txBPasswort2.BackColor = System.Drawing.Color.White;
+            this.txBPasswort2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txBPasswort2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txBPasswort2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txBPasswort2.ForeColor = System.Drawing.Color.Black;
+            this.txBPasswort2.HintForeColor = System.Drawing.Color.Black;
+            this.txBPasswort2.HintText = "";
+            this.txBPasswort2.isPassword = true;
+            this.txBPasswort2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBPasswort2.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBPasswort2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBPasswort2.LineThickness = 3;
+            this.txBPasswort2.Location = new System.Drawing.Point(348, 372);
+            this.txBPasswort2.Margin = new System.Windows.Forms.Padding(4);
+            this.txBPasswort2.Name = "txBPasswort2";
+            this.txBPasswort2.Size = new System.Drawing.Size(300, 33);
+            this.txBPasswort2.TabIndex = 21;
+            this.txBPasswort2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // Beenden_Label
+            // Passwort_Label
             // 
-            this.Beenden_Label.AutoSize = true;
-            this.Beenden_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Beenden_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Beenden_Label.Location = new System.Drawing.Point(654, 7);
-            this.Beenden_Label.Name = "Beenden_Label";
-            this.Beenden_Label.Size = new System.Drawing.Size(22, 25);
-            this.Beenden_Label.TabIndex = 27;
-            this.Beenden_Label.Text = "x";
-            this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
+            this.Passwort_Label.AutoSize = true;
+            this.Passwort_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Passwort_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.Passwort_Label.Location = new System.Drawing.Point(345, 278);
+            this.Passwort_Label.Name = "Passwort_Label";
+            this.Passwort_Label.Size = new System.Drawing.Size(85, 20);
+            this.Passwort_Label.TabIndex = 20;
+            this.Passwort_Label.Text = "Password:";
+            // 
+            // txBPasswort
+            // 
+            this.txBPasswort.BackColor = System.Drawing.Color.White;
+            this.txBPasswort.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txBPasswort.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txBPasswort.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txBPasswort.ForeColor = System.Drawing.Color.Black;
+            this.txBPasswort.HintForeColor = System.Drawing.Color.Black;
+            this.txBPasswort.HintText = "";
+            this.txBPasswort.isPassword = true;
+            this.txBPasswort.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBPasswort.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBPasswort.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBPasswort.LineThickness = 3;
+            this.txBPasswort.Location = new System.Drawing.Point(348, 302);
+            this.txBPasswort.Margin = new System.Windows.Forms.Padding(4);
+            this.txBPasswort.Name = "txBPasswort";
+            this.txBPasswort.Size = new System.Drawing.Size(300, 33);
+            this.txBPasswort.TabIndex = 19;
+            this.txBPasswort.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // Geburtstag_Label
+            // 
+            this.Geburtstag_Label.AutoSize = true;
+            this.Geburtstag_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Geburtstag_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.Geburtstag_Label.Location = new System.Drawing.Point(345, 217);
+            this.Geburtstag_Label.Name = "Geburtstag_Label";
+            this.Geburtstag_Label.Size = new System.Drawing.Size(77, 20);
+            this.Geburtstag_Label.TabIndex = 16;
+            this.Geburtstag_Label.Text = "Birthday:";
+            // 
+            // Username_Label
+            // 
+            this.Username_Label.AutoSize = true;
+            this.Username_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Username_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.Username_Label.Location = new System.Drawing.Point(345, 146);
+            this.Username_Label.Name = "Username_Label";
+            this.Username_Label.Size = new System.Drawing.Size(91, 20);
+            this.Username_Label.TabIndex = 14;
+            this.Username_Label.Text = "Username:";
+            // 
+            // txBBenutzername
+            // 
+            this.txBBenutzername.BackColor = System.Drawing.Color.White;
+            this.txBBenutzername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txBBenutzername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txBBenutzername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txBBenutzername.ForeColor = System.Drawing.Color.Black;
+            this.txBBenutzername.HintForeColor = System.Drawing.SystemColors.GrayText;
+            this.txBBenutzername.HintText = "Username";
+            this.txBBenutzername.isPassword = false;
+            this.txBBenutzername.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBBenutzername.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBBenutzername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBBenutzername.LineThickness = 3;
+            this.txBBenutzername.Location = new System.Drawing.Point(348, 170);
+            this.txBBenutzername.Margin = new System.Windows.Forms.Padding(4);
+            this.txBBenutzername.Name = "txBBenutzername";
+            this.txBBenutzername.Size = new System.Drawing.Size(300, 33);
+            this.txBBenutzername.TabIndex = 13;
+            this.txBBenutzername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // Ownername_Label
+            // 
+            this.Ownername_Label.AutoSize = true;
+            this.Ownername_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ownername_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.Ownername_Label.Location = new System.Drawing.Point(344, 75);
+            this.Ownername_Label.Name = "Ownername_Label";
+            this.Ownername_Label.Size = new System.Drawing.Size(112, 20);
+            this.Ownername_Label.TabIndex = 12;
+            this.Ownername_Label.Text = "Ownername:";
+            // 
+            // txBInhaber
+            // 
+            this.txBInhaber.BackColor = System.Drawing.Color.White;
+            this.txBInhaber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txBInhaber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txBInhaber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txBInhaber.ForeColor = System.Drawing.Color.Black;
+            this.txBInhaber.HintForeColor = System.Drawing.SystemColors.GrayText;
+            this.txBInhaber.HintText = "Ownername";
+            this.txBInhaber.isPassword = false;
+            this.txBInhaber.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBInhaber.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBInhaber.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBInhaber.LineThickness = 3;
+            this.txBInhaber.Location = new System.Drawing.Point(348, 99);
+            this.txBInhaber.Margin = new System.Windows.Forms.Padding(4);
+            this.txBInhaber.Name = "txBInhaber";
+            this.txBInhaber.Size = new System.Drawing.Size(300, 33);
+            this.txBInhaber.TabIndex = 11;
+            this.txBInhaber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // Sign_Up_Label
+            // 
+            this.Sign_Up_Label.AutoSize = true;
+            this.Sign_Up_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sign_Up_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.Sign_Up_Label.Location = new System.Drawing.Point(344, 40);
+            this.Sign_Up_Label.Name = "Sign_Up_Label";
+            this.Sign_Up_Label.Size = new System.Drawing.Size(92, 25);
+            this.Sign_Up_Label.TabIndex = 10;
+            this.Sign_Up_Label.Text = "Sign Up";
             // 
             // Registrieren
             // 

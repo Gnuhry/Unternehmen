@@ -33,15 +33,15 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.Panel_Left = new System.Windows.Forms.Panel();
+            this.Firmen_Motto = new System.Windows.Forms.Label();
             this.Logo_Picturebox = new System.Windows.Forms.PictureBox();
             this.Panel_Right = new System.Windows.Forms.Panel();
-            this.Firmen_Motto = new System.Windows.Forms.Label();
-            this.Log_In_Label = new System.Windows.Forms.Label();
-            this.txBbenutzername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.Username_Label = new System.Windows.Forms.Label();
-            this.Password_Label = new System.Windows.Forms.Label();
-            this.txBpasswort = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Beenden_Label = new System.Windows.Forms.Label();
+            this.txBpasswort = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.Password_Label = new System.Windows.Forms.Label();
+            this.Username_Label = new System.Windows.Forms.Label();
+            this.txBbenutzername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.Log_In_Label = new System.Windows.Forms.Label();
             this.Panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).BeginInit();
             this.Panel_Right.SuspendLayout();
@@ -91,6 +91,17 @@
             this.Panel_Left.Size = new System.Drawing.Size(325, 557);
             this.Panel_Left.TabIndex = 4;
             // 
+            // Firmen_Motto
+            // 
+            this.Firmen_Motto.AutoSize = true;
+            this.Firmen_Motto.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Firmen_Motto.ForeColor = System.Drawing.Color.White;
+            this.Firmen_Motto.Location = new System.Drawing.Point(49, 325);
+            this.Firmen_Motto.Name = "Firmen_Motto";
+            this.Firmen_Motto.Size = new System.Drawing.Size(223, 50);
+            this.Firmen_Motto.TabIndex = 4;
+            this.Firmen_Motto.Text = "We Create, We Plan \r\n       in your Way";
+            // 
             // Logo_Picturebox
             // 
             this.Logo_Picturebox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
@@ -103,6 +114,7 @@
             // 
             // Panel_Right
             // 
+            this.Panel_Right.BackColor = System.Drawing.Color.White;
             this.Panel_Right.Controls.Add(this.Beenden_Label);
             this.Panel_Right.Controls.Add(this.txBpasswort);
             this.Panel_Right.Controls.Add(this.Password_Label);
@@ -117,74 +129,21 @@
             this.Panel_Right.Size = new System.Drawing.Size(358, 557);
             this.Panel_Right.TabIndex = 5;
             // 
-            // Firmen_Motto
+            // Beenden_Label
             // 
-            this.Firmen_Motto.AutoSize = true;
-            this.Firmen_Motto.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Firmen_Motto.ForeColor = System.Drawing.Color.White;
-            this.Firmen_Motto.Location = new System.Drawing.Point(49, 325);
-            this.Firmen_Motto.Name = "Firmen_Motto";
-            this.Firmen_Motto.Size = new System.Drawing.Size(223, 50);
-            this.Firmen_Motto.TabIndex = 4;
-            this.Firmen_Motto.Text = "We Create, We Plan \r\n       in your Way";
-            // 
-            // Log_In_Label
-            // 
-            this.Log_In_Label.AutoSize = true;
-            this.Log_In_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Log_In_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Log_In_Label.Location = new System.Drawing.Point(25, 54);
-            this.Log_In_Label.Name = "Log_In_Label";
-            this.Log_In_Label.Size = new System.Drawing.Size(78, 25);
-            this.Log_In_Label.TabIndex = 4;
-            this.Log_In_Label.Text = "Log in";
-            // 
-            // txBbenutzername
-            // 
-            this.txBbenutzername.BackColor = System.Drawing.SystemColors.Control;
-            this.txBbenutzername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txBbenutzername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txBbenutzername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txBbenutzername.ForeColor = System.Drawing.Color.Black;
-            this.txBbenutzername.HintForeColor = System.Drawing.Color.Gray;
-            this.txBbenutzername.HintText = "Username";
-            this.txBbenutzername.isPassword = false;
-            this.txBbenutzername.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBbenutzername.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBbenutzername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBbenutzername.LineThickness = 3;
-            this.txBbenutzername.Location = new System.Drawing.Point(30, 161);
-            this.txBbenutzername.Margin = new System.Windows.Forms.Padding(4);
-            this.txBbenutzername.Name = "txBbenutzername";
-            this.txBbenutzername.Size = new System.Drawing.Size(300, 33);
-            this.txBbenutzername.TabIndex = 5;
-            this.txBbenutzername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // Username_Label
-            // 
-            this.Username_Label.AutoSize = true;
-            this.Username_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Username_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Username_Label.Location = new System.Drawing.Point(26, 137);
-            this.Username_Label.Name = "Username_Label";
-            this.Username_Label.Size = new System.Drawing.Size(91, 20);
-            this.Username_Label.TabIndex = 6;
-            this.Username_Label.Text = "Username:";
-            // 
-            // Password_Label
-            // 
-            this.Password_Label.AutoSize = true;
-            this.Password_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Password_Label.Location = new System.Drawing.Point(26, 227);
-            this.Password_Label.Name = "Password_Label";
-            this.Password_Label.Size = new System.Drawing.Size(85, 20);
-            this.Password_Label.TabIndex = 8;
-            this.Password_Label.Text = "Password:";
+            this.Beenden_Label.AutoSize = true;
+            this.Beenden_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Beenden_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.Beenden_Label.Location = new System.Drawing.Point(330, 4);
+            this.Beenden_Label.Name = "Beenden_Label";
+            this.Beenden_Label.Size = new System.Drawing.Size(22, 25);
+            this.Beenden_Label.TabIndex = 28;
+            this.Beenden_Label.Text = "x";
+            this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
             // 
             // txBpasswort
             // 
-            this.txBpasswort.BackColor = System.Drawing.SystemColors.Control;
+            this.txBpasswort.BackColor = System.Drawing.Color.White;
             this.txBpasswort.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txBpasswort.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txBpasswort.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -203,17 +162,59 @@
             this.txBpasswort.TabIndex = 9;
             this.txBpasswort.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // Beenden_Label
+            // Password_Label
             // 
-            this.Beenden_Label.AutoSize = true;
-            this.Beenden_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Beenden_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Beenden_Label.Location = new System.Drawing.Point(330, 4);
-            this.Beenden_Label.Name = "Beenden_Label";
-            this.Beenden_Label.Size = new System.Drawing.Size(22, 25);
-            this.Beenden_Label.TabIndex = 28;
-            this.Beenden_Label.Text = "x";
-            this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
+            this.Password_Label.AutoSize = true;
+            this.Password_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.Password_Label.Location = new System.Drawing.Point(26, 227);
+            this.Password_Label.Name = "Password_Label";
+            this.Password_Label.Size = new System.Drawing.Size(85, 20);
+            this.Password_Label.TabIndex = 8;
+            this.Password_Label.Text = "Password:";
+            // 
+            // Username_Label
+            // 
+            this.Username_Label.AutoSize = true;
+            this.Username_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Username_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.Username_Label.Location = new System.Drawing.Point(26, 137);
+            this.Username_Label.Name = "Username_Label";
+            this.Username_Label.Size = new System.Drawing.Size(91, 20);
+            this.Username_Label.TabIndex = 6;
+            this.Username_Label.Text = "Username:";
+            // 
+            // txBbenutzername
+            // 
+            this.txBbenutzername.BackColor = System.Drawing.Color.White;
+            this.txBbenutzername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txBbenutzername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txBbenutzername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txBbenutzername.ForeColor = System.Drawing.Color.Black;
+            this.txBbenutzername.HintForeColor = System.Drawing.Color.Gray;
+            this.txBbenutzername.HintText = "Username";
+            this.txBbenutzername.isPassword = false;
+            this.txBbenutzername.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBbenutzername.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBbenutzername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.txBbenutzername.LineThickness = 3;
+            this.txBbenutzername.Location = new System.Drawing.Point(30, 161);
+            this.txBbenutzername.Margin = new System.Windows.Forms.Padding(4);
+            this.txBbenutzername.Name = "txBbenutzername";
+            this.txBbenutzername.Size = new System.Drawing.Size(300, 33);
+            this.txBbenutzername.TabIndex = 5;
+            this.txBbenutzername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // Log_In_Label
+            // 
+            this.Log_In_Label.AutoSize = true;
+            this.Log_In_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Log_In_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.Log_In_Label.Location = new System.Drawing.Point(25, 54);
+            this.Log_In_Label.Name = "Log_In_Label";
+            this.Log_In_Label.Size = new System.Drawing.Size(78, 25);
+            this.Log_In_Label.TabIndex = 4;
+            this.Log_In_Label.Text = "Log in";
             // 
             // Login
             // 
