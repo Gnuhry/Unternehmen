@@ -1,25 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Unternehmen
 {
     public partial class Kalender : Form
     {
+        private bool Chef;
         Verwaltung verwaltung;
         private Label[] Inhalt;
         private List<DateTime> Urlaubstage;
         private List<Tag> tage;
         private int Month, Year;
         private static Color KrankentageC = Color.Orange, UrlaubstageC = Color.Red, VergangeneTageC = Color.LightGray, FeiertageC = Color.Green, BeantragenC = Color.Blue;
-        public Kalender(Verwaltung verwaltung)
+        public Kalender(Verwaltung verwaltung, bool Chef)
         {
+            this.Chef = Chef;
+            btnBeantragen.Visible = !Chef;
             tage = new List<Tag>();
             this.verwaltung = verwaltung;
             InitializeComponent();
@@ -29,6 +27,7 @@ namespace Unternehmen
             Init();
             KalenderLaden();
         }
+        
 
         private void KalenderLaden()
         {
@@ -92,14 +91,14 @@ namespace Unternehmen
 
         private void Inhalt_Click(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right&&!Chef)
             {
                 if ((sender as Label).BackColor == BeantragenC) (sender as Label).BackColor = Color.Transparent;
                 else if ((sender as Label).BackColor == Color.Transparent) (sender as Label).BackColor = BeantragenC;
             }
             else
             {
-                tage.Add(new Tag(verwaltung, new DateTime(Year, Month, Convert.ToInt32((sender as Label).Text))));
+                tage.Add(new Tag(verwaltung, new DateTime(Year, Month, Convert.ToInt32((sender as Label).Text)),Chef));
                 tage[tage.Count - 1].Show();
             }
         }
@@ -139,7 +138,6 @@ namespace Unternehmen
 
         private void LadenGenemigteUrlaube(int erster)
         {
-           
             DateTime[] Urlaubstage2 = verwaltung.GetAngemeldetePerson().GetUrlaubinMonat(Month, Year);
             for (int f = 0; f < Urlaubstage2.Length; f++)
                 if (Urlaubstage2[f].Month == Month && Urlaubstage2[f].Year == Year)

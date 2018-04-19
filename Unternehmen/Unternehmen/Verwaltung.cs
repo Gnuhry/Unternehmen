@@ -53,7 +53,7 @@ namespace Unternehmen
         public void Kalender()
         {
             if (kalender != null) { kalender.Show(); return; }
-            kalender = new Kalender(this);
+            kalender = new Kalender(this,false);
             kalender.FormClosing += Kalender_FormClosing;
             kalender.Show();
 

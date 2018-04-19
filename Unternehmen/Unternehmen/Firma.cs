@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Unternehmen
 {
@@ -90,7 +87,11 @@ namespace Unternehmen
 
         public void SetArbeitstag(bool[] Arbeitstage) => this.Arbeitstage = Arbeitstage;
 
-        public void SetFeiertag(DateTime Feiertag, string name)=>feiertage.SetFeiertag(name, Feiertag);
+        public void SetFeiertag(DateTime Feiertag, string name)
+        {
+            feiertage.SetFeiertag(name, Feiertag);
+            Urlaubstag_Entfernen(Feiertag);
+        }
 
         public string GetFeirtagname(DateTime Tag) => feiertage.getFeierTag(Tag);
         public bool IsFeiertag(DateTime Tag) => feiertage.getFeierTag(Tag)!=null;
@@ -124,6 +125,19 @@ namespace Unternehmen
             {
                 Mitarbeiter[f].RemoveUrlaub(Tag);
             }
+        }
+        public void UrlaubDeleten(DateTime tag, int index)
+        {
+            int temp = 0;
+            for (int f = 0; f < Mitarbeiter.Count; f++)
+                for (int g = 0; g < Mitarbeiter[f].GetUrlaubinMonat(tag.Month,tag.Year).Length; g++)
+                    if (Mitarbeiter[f].GetUrlaubinMonat(tag.Month, tag.Year)[g].Day == tag.Day)
+                    {
+                        if (temp++ == index)
+                        {
+                            Mitarbeiter[f].RemoveUrlaub(tag);
+                        }
+                    }
         }
 
         public void Uerberprufung(DateTime Tag)

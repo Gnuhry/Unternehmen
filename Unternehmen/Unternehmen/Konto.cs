@@ -150,7 +150,11 @@ namespace Unternehmen
         public int GetNachrichtenAnzahl() => nachrichten.GetAnzahl();
         public void RemoveNachricht(int index) => nachrichten.DeleteNachricht(index);
         public string GetZeiten() => "Mitarbeiter: "+Kontoinhaber+"\nArbeitszeit: " + Arbeitszeit + "\nUrlaubstage dieses Jahr: " + UrlaubsC + "\nKrankentage dieses Jahr: " + krankenC;
-
+        public void SetStatus(int status)
+        {
+            if (status == 1 && this.status == 0) this.status = 1;
+            else status = 0;
+        }
         public void Neuer_Tag()
         {
             if (IsUrlaub(DateTime.Today)) { status = 3; UrlaubsC++; }

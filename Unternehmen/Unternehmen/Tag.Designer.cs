@@ -42,6 +42,9 @@
             this.lbUrlaub = new System.Windows.Forms.Label();
             this.lbKrank = new System.Windows.Forms.Label();
             this.lbWochentag = new System.Windows.Forms.Label();
+            this.chBLUrlaub = new System.Windows.Forms.CheckedListBox();
+            this.chBeFeiertag = new System.Windows.Forms.CheckBox();
+            this.txBeFeiertag = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label5
@@ -65,7 +68,7 @@
             // lbFeiertag
             // 
             this.lbFeiertag.AutoSize = true;
-            this.lbFeiertag.Location = new System.Drawing.Point(364, 114);
+            this.lbFeiertag.Location = new System.Drawing.Point(363, 115);
             this.lbFeiertag.Name = "lbFeiertag";
             this.lbFeiertag.Size = new System.Drawing.Size(44, 13);
             this.lbFeiertag.TabIndex = 28;
@@ -175,11 +178,44 @@
             this.lbWochentag.TabIndex = 17;
             this.lbWochentag.Text = "Montag 1.Januar 2000";
             // 
+            // chBLUrlaub
+            // 
+            this.chBLUrlaub.FormattingEnabled = true;
+            this.chBLUrlaub.Location = new System.Drawing.Point(266, 258);
+            this.chBLUrlaub.Name = "chBLUrlaub";
+            this.chBLUrlaub.Size = new System.Drawing.Size(68, 49);
+            this.chBLUrlaub.TabIndex = 31;
+            this.chBLUrlaub.Visible = false;
+            this.chBLUrlaub.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chBLUrlaub_ItemCheck);
+            // 
+            // chBeFeiertag
+            // 
+            this.chBeFeiertag.AutoSize = true;
+            this.chBeFeiertag.Location = new System.Drawing.Point(290, 43);
+            this.chBeFeiertag.Name = "chBeFeiertag";
+            this.chBeFeiertag.Size = new System.Drawing.Size(80, 17);
+            this.chBeFeiertag.TabIndex = 32;
+            this.chBeFeiertag.Text = "checkBox1";
+            this.chBeFeiertag.UseVisualStyleBackColor = true;
+            this.chBeFeiertag.Visible = false;
+            this.chBeFeiertag.CheckedChanged += new System.EventHandler(this.chBeFeiertag_CheckedChanged);
+            // 
+            // txBeFeiertag
+            // 
+            this.txBeFeiertag.Location = new System.Drawing.Point(377, 43);
+            this.txBeFeiertag.Name = "txBeFeiertag";
+            this.txBeFeiertag.Size = new System.Drawing.Size(100, 20);
+            this.txBeFeiertag.TabIndex = 33;
+            this.txBeFeiertag.Visible = false;
+            this.txBeFeiertag.TextChanged += new System.EventHandler(this.txBeFeiertag_TextChanged);
+            // 
             // Tag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txBeFeiertag);
+            this.Controls.Add(this.chBeFeiertag);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txBGNtz);
             this.Controls.Add(this.lbFeiertag);
@@ -194,6 +230,7 @@
             this.Controls.Add(this.lbUrlaub);
             this.Controls.Add(this.lbKrank);
             this.Controls.Add(this.lbWochentag);
+            this.Controls.Add(this.chBLUrlaub);
             this.Name = "Tag";
             this.Text = "Tag";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Tag_FormClosing);
@@ -217,5 +254,8 @@
         private System.Windows.Forms.Label lbUrlaub;
         private System.Windows.Forms.Label lbKrank;
         private System.Windows.Forms.Label lbWochentag;
+        private System.Windows.Forms.CheckedListBox chBLUrlaub;
+        private System.Windows.Forms.CheckBox chBeFeiertag;
+        private System.Windows.Forms.TextBox txBeFeiertag;
     }
 }

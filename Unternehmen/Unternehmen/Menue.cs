@@ -19,6 +19,7 @@ namespace Unternehmen
             InitializeComponent();
             this.verwaltung = verwaltung;
             StatusAbfrage();
+            if (verwaltung.GetFirma().GetWeb() == "none") btnWebsite.Visible = false;
             if (verwaltung.GetAngemeldetePerson().GetStatus() == "Gegangen")
             {
                 btnGehen.Enabled = false;
@@ -59,7 +60,7 @@ namespace Unternehmen
 
         private void btnZeiten_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Noch in Arbeit");
+            MessageBox.Show(verwaltung.GetAngemeldetePerson().GetZeiten());
         }
 
         private void btnKrankentage_Click(object sender, EventArgs e)
