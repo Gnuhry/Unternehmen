@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Unternehmen
 {
+    [Serializable]
     public class Konto
     {
         private string benutzername, Kontoinhaber;

@@ -56,7 +56,7 @@
             // 
             // txBGNtz
             // 
-            this.txBGNtz.Location = new System.Drawing.Point(404, 281);
+            this.txBGNtz.Location = new System.Drawing.Point(402, 281);
             this.txBGNtz.Multiline = true;
             this.txBGNtz.Name = "txBGNtz";
             this.txBGNtz.Size = new System.Drawing.Size(100, 70);
@@ -196,6 +196,7 @@
             this.Controls.Add(this.lbWochentag);
             this.Name = "Tag";
             this.Text = "Tag";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Tag_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

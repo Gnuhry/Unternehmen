@@ -17,11 +17,13 @@ namespace Unternehmen
     {
         Verwaltung verwaltung;
         private Label[] Inhalt;
-        private List<DateTime> Urlaubstage,Urlaubstage2;
+        private List<DateTime> Urlaubstage;
+        private List<Tag> tage;
         private int Month, Year;
         private static Color KrankentageC = Color.Orange, UrlaubstageC = Color.Red, VergangeneTageC = Color.LightGray, FeiertageC = Color.Green, BeantragenC = Color.Blue;
         public Kalender(Verwaltung verwaltung)
         {
+            tage = new List<Tag>();
             this.verwaltung = verwaltung;
             InitializeComponent();
             Urlaubstage = new List<DateTime>();
@@ -98,6 +100,11 @@ namespace Unternehmen
                 if ((sender as Label).BackColor == BeantragenC) (sender as Label).BackColor = Color.Transparent;
                 else if ((sender as Label).BackColor == Color.Transparent) (sender as Label).BackColor = BeantragenC;
             }
+            else
+            {
+                tage.Add(new Tag(verwaltung, new DateTime(Year, Month, Convert.ToInt32((sender as Label).Text))));
+                tage[tage.Count - 1].Show();
+            }
         }
 
         private void btnMonatzuruck_Click(object sender, EventArgs e)
@@ -128,20 +135,33 @@ namespace Unternehmen
                     Urlaubstage.RemoveAt(f);
                 }
         }
+
+        private void Kalender_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            for(int f = 0; f < tage.Count; f++)
+            {
+                tage[f].Close();
+            }
+        }
+
         private void LadenGenemigteUrlaube(int erster)
         {
-            Urlaubstage2 = new List<DateTime>();
-            Urlaubstage2.AddRange(verwaltung.GetAngemeldetePerson().GetUrlaubinMonat(Month, Year));
+           
+            List<DateTime> Urlaubstage2 = (verwaltung.GetAngemeldetePerson().GetUrlaubinMonat(Month, Year)).ToList();
             for (int f = 0; f < Urlaubstage2.Count; f++)
+            {
+                MessageBox.Show(Urlaubstage2[f].ToShortDateString());
                 if (Urlaubstage2[f].Month == Month && Urlaubstage2[f].Year == Year)
                 {
                     Inhalt[erster + Urlaubstage2[f].Day - 1].BackColor = UrlaubstageC;
                     Urlaubstage2.RemoveAt(f);
                 }
+            }
         }
 
         private void btnBeantragen_Click(object sender, EventArgs e)
         {
+            Speichern();
             for (int f = 0; f < Urlaubstage.Count; f++) 
                 verwaltung.GetFirma().Urlaub_beantragen(Urlaubstage[f],verwaltung.GetAngemeldetePerson());
             Urlaubstage = new List<DateTime>();

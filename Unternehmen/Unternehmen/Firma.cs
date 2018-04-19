@@ -62,11 +62,11 @@ namespace Unternehmen
         public Konto GetMitarbeiter(int index) => Mitarbeiter[index];
         public int GetMitarbeiterAnzahl() => Mitarbeiter.Count;
 
-        public string[] Krankenliste(int Tag)
+        public string[] Krankenliste(DateTime Tag)
         {
             List<string> temp = new List<string>();
             for(int f = 0; f < Mitarbeiter.Count; f++)
-                if (Tag < Mitarbeiter[f].GetKrankentage())
+                if ((Tag-DateTime.Today).TotalDays < Mitarbeiter[f].GetKrankentage())
                     temp.Add(Mitarbeiter[f].GetBenutzername());
             return temp.ToArray();
         }
@@ -76,6 +76,14 @@ namespace Unternehmen
             for (int f = 0; f < Mitarbeiter.Count; f++)
                     if (Mitarbeiter[f].IsUrlaub(Tag))
                         temp.Add(Mitarbeiter[f].GetBenutzername());
+            return temp.ToArray();
+        }
+        public string[] Geburtstagliste(DateTime Tag)
+        {
+            List<string> temp = new List<string>();
+            for (int f = 0; f < Mitarbeiter.Count; f++)
+                if (Mitarbeiter[f].IsGeburtstag(Tag))
+                    temp.Add(Mitarbeiter[f].GetBenutzername());
             return temp.ToArray();
         }
         public bool GetArbeitstag(int Tag) => Arbeitstage[Tag];
