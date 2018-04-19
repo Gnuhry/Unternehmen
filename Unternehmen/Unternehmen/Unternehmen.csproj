@@ -155,6 +155,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Verwaltung.resx">
       <DependentUpon>Verwaltung.cs</DependentUpon>
+          </EmbeddedResource>
     <EmbeddedResource Include="Termin.resx">
       <DependentUpon>Termin.cs</DependentUpon>
     </EmbeddedResource>
