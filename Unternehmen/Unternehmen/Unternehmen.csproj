@@ -32,6 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AlphaBlendTextBox, Version=1.0.1270.35793, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\AlphaBlendTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Dropbox (11BGTI)\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -165,6 +173,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ic_android_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\japanese-kanji.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

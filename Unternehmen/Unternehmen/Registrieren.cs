@@ -105,5 +105,10 @@ namespace Unternehmen
                 cBoxTag.Items.Add(f + 1);
             cBoxTag.SelectedIndex = 0;
         }
+
+        private void Beenden_Label_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

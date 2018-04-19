@@ -40,5 +40,10 @@ namespace Unternehmen
         {
             if (e.KeyData == Keys.Enter) btnLogin_Click(sender, e);
         }
+
+        private void Beenden_Label_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
