@@ -25,6 +25,7 @@ namespace Unternehmen
             InitializeComponent();
             this.angemeldet = angemeldet;
             txBPasswortA.Visible = true;
+            New_Password_Label.Visible = true;
             txBInhaber.Text = angemeldet.GetKontoInhaber();
             txBBenutzername.Text = angemeldet.GetBenutzername();
             numDay.Value = angemeldet.GetGeburtstag().Day;
@@ -47,7 +48,7 @@ namespace Unternehmen
             if (txBInhaber.Text.Trim() == null || txBInhaber.Text.Trim() == "") { MessageBox.Show("Kein Inhaber"); return; }
             if (txBBenutzername.Text.Trim() == null || txBBenutzername.Text.Trim() == "") { MessageBox.Show("Keinen Benutzernamen"); return; }
             if (txBPasswort.Text.Trim() == null || txBPasswort.Text.Trim() == "") { MessageBox.Show("Kein Passwort"); return; }
-            if (txBPasswort.Text != txBPasswort2.Text) { MessageBox.Show("Passwörter überstimmen nicht ein"); return; }
+            if (txBPasswort.Text != txBPasswort2.Text) { MessageBox.Show("Passwörter stimmen nicht überein"); return; }
             string temp;
             try
             {
@@ -66,6 +67,11 @@ namespace Unternehmen
         private void btnLoschen_Click(object sender, EventArgs e)
         {
             verwaltung.Konto_Loschen();
+        }
+
+        private void Beenden_Label_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

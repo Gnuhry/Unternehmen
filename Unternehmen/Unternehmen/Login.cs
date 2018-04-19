@@ -35,5 +35,10 @@ namespace Unternehmen
             }
             txBpasswort.Text = txBbenutzername.Text = null;
         }
+
+        private void Beenden_Label_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
