@@ -16,6 +16,8 @@ namespace Unternehmen
         int index;
         public NachrichtAnzeige(int index,Verwaltung verwaltung)
         {
+            this.verwaltung = verwaltung;
+            this.index = index;
             InitializeComponent();
             lbSender.Text = verwaltung.GetAngemeldetePerson().GetAnzeige()[index];
             lbAnzeige.Text = verwaltung.GetAngemeldetePerson().GetNachricht(index) ;

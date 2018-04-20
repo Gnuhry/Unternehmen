@@ -76,7 +76,9 @@
             this.Controls.Add(this.txBNachricht);
             this.Controls.Add(this.lBoxNachrichten);
             this.Controls.Add(this.comBEmpfanger);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Messenger";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Messenger";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Messenger_FormClosing);
             this.ResumeLayout(false);

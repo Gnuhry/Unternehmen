@@ -23,7 +23,6 @@ namespace Unternehmen
         }
         public Registrieren(Verwaltung verwaltung, Konto angemeldet)
         {
-            
             this.verwaltung = verwaltung;
             InitializeComponent();
             this.angemeldet = angemeldet;

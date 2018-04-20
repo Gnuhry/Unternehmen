@@ -71,7 +71,7 @@
             // 
             // btnMonatvor
             // 
-            this.btnMonatvor.Location = new System.Drawing.Point(698, 12);
+            this.btnMonatvor.Location = new System.Drawing.Point(539, 6);
             this.btnMonatvor.Name = "btnMonatvor";
             this.btnMonatvor.Size = new System.Drawing.Size(75, 23);
             this.btnMonatvor.TabIndex = 2;
@@ -81,7 +81,7 @@
             // 
             // btnBeantragen
             // 
-            this.btnBeantragen.Location = new System.Drawing.Point(346, 401);
+            this.btnBeantragen.Location = new System.Drawing.Point(257, 377);
             this.btnBeantragen.Name = "btnBeantragen";
             this.btnBeantragen.Size = new System.Drawing.Size(75, 23);
             this.btnBeantragen.TabIndex = 4;
@@ -122,16 +122,22 @@
             // 
             // Kalender
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(623, 422);
+            this.ControlBox = false;
             this.Controls.Add(this.cBoxJahr);
             this.Controls.Add(this.cBoxMonat);
             this.Controls.Add(this.btnBeantragen);
             this.Controls.Add(this.btnMonatvor);
             this.Controls.Add(this.btnMonatzuruck);
             this.Controls.Add(this.tLpKalender);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Kalender";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Kalender";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Kalender_FormClosing);
             this.ResumeLayout(false);

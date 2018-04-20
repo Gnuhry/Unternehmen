@@ -70,22 +70,33 @@ namespace Unternehmen
 
         public void Kalender()
         {
+            SchliesenMenues();
             if (kalender != null) { kalender.Show(); return; }
             kalender = new Kalender(this,false);
+            kalender.MdiParent = menue;
             kalender.FormClosing += Kalender_FormClosing;
             kalender.Show();
 
+        }
+
+        private void SchliesenMenues()
+        {
+            for (int f = 0; f < menue.MdiChildren.Length; f++)
+                menue.MdiChildren[f].Close();
         }
 
         private void Kalender_FormClosing(object sender, FormClosingEventArgs e)
         {
             kalender = null;
         }
+        
 
         public void Messenger()
         {
+            SchliesenMenues();
             if (messenger != null) { messenger.Show(); return; }
             messenger = new Messenger(this);
+            messenger.MdiParent = menue;
             messenger.FormClosing += Messenger_FormClosing;
             messenger.Show();
         }
@@ -97,8 +108,10 @@ namespace Unternehmen
 
         public void Andern()
         {
+            SchliesenMenues();
             if (registrieren != null) { registrieren.Show(); return; }
             registrieren = new Registrieren(this,angemeldete_Person);
+            registrieren.MdiParent = menue;
             registrieren.FormClosed += Registrieren2_FormClosed;
             registrieren.Show();
         }
