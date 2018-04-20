@@ -150,6 +150,7 @@ namespace Unternehmen
         public Konto GetSender(int index) => nachrichten.GetSender(index);
         public int GetNachrichtenAnzahl() => nachrichten.GetAnzahl();
         public void RemoveNachricht(int index) => nachrichten.DeleteNachricht(index);
+        public DateTime GetSendeDatum(int index) => nachrichten.GetSendeDatum(index);
         public string GetZeiten() => "Mitarbeiter: "+Kontoinhaber+"\nArbeitszeit: " + Arbeitszeit + "\nUrlaubstage dieses Jahr: " + UrlaubsC + "\nKrankentage dieses Jahr: " + krankenC;
         public void SetStatus(int status)
         {

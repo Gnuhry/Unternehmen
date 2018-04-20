@@ -16,12 +16,15 @@ namespace Unternehmen
             InitializeComponent();
             if (Chef)
             {
-                lbSender.Text = verwaltung.GetFirma().GetAdminNachrichtSender(index).GetKontoInhaber();
+                lbSender.Text ="Von :"+ verwaltung.GetFirma().GetAdminNachrichtSender(index).GetKontoInhaber();
                 lbAnzeige.Text = verwaltung.GetFirma().GetAdminNachricht(index);
+                lbSendeDatum.Text = verwaltung.GetFirma().GetSendeDatum(index).ToShortDateString();
                 return;
             }
             lbSender.Text = verwaltung.GetAngemeldetePerson().GetSender(index).GetKontoInhaber();
             lbAnzeige.Text = verwaltung.GetAngemeldetePerson().GetNachricht(index) ;
+            lbSendeDatum.Text = verwaltung.GetAngemeldetePerson().GetSendeDatum(index).ToShortDateString();
+
         }
 
         private void btnLoschen_Click(object sender, EventArgs e)

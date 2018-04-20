@@ -31,6 +31,7 @@
             this.btnLoschen = new System.Windows.Forms.Button();
             this.lbAnzeige = new System.Windows.Forms.Label();
             this.lbSender = new System.Windows.Forms.Label();
+            this.lbSendeDatum = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLoschen
@@ -61,11 +62,21 @@
             this.lbSender.TabIndex = 2;
             this.lbSender.Text = "label1";
             // 
+            // lbSendeDatum
+            // 
+            this.lbSendeDatum.AutoSize = true;
+            this.lbSendeDatum.Location = new System.Drawing.Point(152, 9);
+            this.lbSendeDatum.Name = "lbSendeDatum";
+            this.lbSendeDatum.Size = new System.Drawing.Size(35, 13);
+            this.lbSendeDatum.TabIndex = 3;
+            this.lbSendeDatum.Text = "label1";
+            // 
             // NachrichtAnzeige
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbSendeDatum);
             this.Controls.Add(this.lbSender);
             this.Controls.Add(this.lbAnzeige);
             this.Controls.Add(this.btnLoschen);
@@ -81,5 +92,6 @@
         private System.Windows.Forms.Button btnLoschen;
         private System.Windows.Forms.Label lbAnzeige;
         private System.Windows.Forms.Label lbSender;
+        private System.Windows.Forms.Label lbSendeDatum;
     }
 }

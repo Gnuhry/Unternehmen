@@ -173,6 +173,7 @@ namespace Unternehmen
         public Konto GetAdminNachrichtSender(int index) => Adminnachrichten.GetSender(index);
         public int GetAdminNachrichtAnzahl() => Adminnachrichten.GetAnzahl();
         public string[] GetAdminAnzeige() => Adminnachrichten.GetAnzeige();
+        public DateTime GetSendeDatum(int index) => Adminnachrichten.GetSendeDatum(index);
         public void RemoveNachricht(int index) => Adminnachrichten.DeleteNachricht(index);
 
 
