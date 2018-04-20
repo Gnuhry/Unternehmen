@@ -23,6 +23,7 @@ namespace Unternehmen
         }
         public Registrieren(Verwaltung verwaltung, Konto angemeldet)
         {
+           // WindowState = FormWindowState.Maximized;
             this.verwaltung = verwaltung;
             InitializeComponent();
             this.angemeldet = angemeldet;

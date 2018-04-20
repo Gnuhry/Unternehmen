@@ -34,7 +34,12 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.Panel_Left = new System.Windows.Forms.Panel();
             this.Firmen_Motto = new System.Windows.Forms.Label();
+            this.Logo_Picturebox = new System.Windows.Forms.PictureBox();
             this.Panel_right = new System.Windows.Forms.Panel();
+            this.cBoxJahr = new System.Windows.Forms.ComboBox();
+            this.cBoxMonat = new System.Windows.Forms.ComboBox();
+            this.cBoxTag = new System.Windows.Forms.ComboBox();
+            this.pcBProfilbild = new System.Windows.Forms.PictureBox();
             this.Beenden_Label = new System.Windows.Forms.Label();
             this.Termsandconditions_Label = new System.Windows.Forms.Label();
             this.TermsandConditionsCheckbox = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -50,14 +55,9 @@
             this.Ownername_Label = new System.Windows.Forms.Label();
             this.txBInhaber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Sign_Up_Label = new System.Windows.Forms.Label();
-            this.cBoxTag = new System.Windows.Forms.ComboBox();
-            this.cBoxMonat = new System.Windows.Forms.ComboBox();
-            this.cBoxJahr = new System.Windows.Forms.ComboBox();
-            this.Logo_Picturebox = new System.Windows.Forms.PictureBox();
-            this.pcBProfilbild = new System.Windows.Forms.PictureBox();
             this.Panel_Left.SuspendLayout();
-            this.Panel_right.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).BeginInit();
+            this.Panel_right.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBProfilbild)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,6 +117,16 @@
             this.Firmen_Motto.TabIndex = 4;
             this.Firmen_Motto.Text = "We Create, We Plan \r\n       in your Way";
             // 
+            // Logo_Picturebox
+            // 
+            this.Logo_Picturebox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
+            this.Logo_Picturebox.Location = new System.Drawing.Point(54, 110);
+            this.Logo_Picturebox.Name = "Logo_Picturebox";
+            this.Logo_Picturebox.Size = new System.Drawing.Size(200, 200);
+            this.Logo_Picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Logo_Picturebox.TabIndex = 0;
+            this.Logo_Picturebox.TabStop = false;
+            // 
             // Panel_right
             // 
             this.Panel_right.BackColor = System.Drawing.Color.White;
@@ -148,6 +158,52 @@
             this.Panel_right.TabIndex = 11;
             this.Panel_right.DragDrop += new System.Windows.Forms.DragEventHandler(this.Registrieren_DragDrop);
             this.Panel_right.DragEnter += new System.Windows.Forms.DragEventHandler(this.Registrieren_DragEnter);
+            // 
+            // cBoxJahr
+            // 
+            this.cBoxJahr.FormattingEnabled = true;
+            this.cBoxJahr.Location = new System.Drawing.Point(548, 241);
+            this.cBoxJahr.Name = "cBoxJahr";
+            this.cBoxJahr.Size = new System.Drawing.Size(121, 21);
+            this.cBoxJahr.TabIndex = 31;
+            // 
+            // cBoxMonat
+            // 
+            this.cBoxMonat.FormattingEnabled = true;
+            this.cBoxMonat.Items.AddRange(new object[] {
+            "Januar",
+            "Februar",
+            "März",
+            "April",
+            "Mai",
+            "Juni",
+            "Juli",
+            "August",
+            "September",
+            "Oktober",
+            "November",
+            "Dezember"});
+            this.cBoxMonat.Location = new System.Drawing.Point(415, 241);
+            this.cBoxMonat.Name = "cBoxMonat";
+            this.cBoxMonat.Size = new System.Drawing.Size(121, 21);
+            this.cBoxMonat.TabIndex = 30;
+            this.cBoxMonat.SelectedIndexChanged += new System.EventHandler(this.cBoxMonat_SelectedIndexChanged);
+            // 
+            // cBoxTag
+            // 
+            this.cBoxTag.FormattingEnabled = true;
+            this.cBoxTag.Location = new System.Drawing.Point(350, 241);
+            this.cBoxTag.Name = "cBoxTag";
+            this.cBoxTag.Size = new System.Drawing.Size(49, 21);
+            this.cBoxTag.TabIndex = 29;
+            // 
+            // pcBProfilbild
+            // 
+            this.pcBProfilbild.Location = new System.Drawing.Point(548, 30);
+            this.pcBProfilbild.Name = "pcBProfilbild";
+            this.pcBProfilbild.Size = new System.Drawing.Size(100, 50);
+            this.pcBProfilbild.TabIndex = 28;
+            this.pcBProfilbild.TabStop = false;
             // 
             // Beenden_Label
             // 
@@ -368,62 +424,6 @@
             this.Sign_Up_Label.TabIndex = 10;
             this.Sign_Up_Label.Text = "Sign Up";
             // 
-            // cBoxTag
-            // 
-            this.cBoxTag.FormattingEnabled = true;
-            this.cBoxTag.Location = new System.Drawing.Point(350, 241);
-            this.cBoxTag.Name = "cBoxTag";
-            this.cBoxTag.Size = new System.Drawing.Size(49, 21);
-            this.cBoxTag.TabIndex = 29;
-            // 
-            // cBoxMonat
-            // 
-            this.cBoxMonat.FormattingEnabled = true;
-            this.cBoxMonat.Items.AddRange(new object[] {
-            "Januar",
-            "Februar",
-            "März",
-            "April",
-            "Mai",
-            "Juni",
-            "Juli",
-            "August",
-            "September",
-            "Oktober",
-            "November",
-            "Dezember"});
-            this.cBoxMonat.Location = new System.Drawing.Point(415, 241);
-            this.cBoxMonat.Name = "cBoxMonat";
-            this.cBoxMonat.Size = new System.Drawing.Size(121, 21);
-            this.cBoxMonat.TabIndex = 30;
-            this.cBoxMonat.SelectedIndexChanged += new System.EventHandler(this.cBoxMonat_SelectedIndexChanged);
-            // 
-            // cBoxJahr
-            // 
-            this.cBoxJahr.FormattingEnabled = true;
-            this.cBoxJahr.Location = new System.Drawing.Point(548, 241);
-            this.cBoxJahr.Name = "cBoxJahr";
-            this.cBoxJahr.Size = new System.Drawing.Size(121, 21);
-            this.cBoxJahr.TabIndex = 31;
-            // 
-            // Logo_Picturebox
-            // 
-            this.Logo_Picturebox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
-            this.Logo_Picturebox.Location = new System.Drawing.Point(54, 110);
-            this.Logo_Picturebox.Name = "Logo_Picturebox";
-            this.Logo_Picturebox.Size = new System.Drawing.Size(200, 200);
-            this.Logo_Picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Logo_Picturebox.TabIndex = 0;
-            this.Logo_Picturebox.TabStop = false;
-            // 
-            // pcBProfilbild
-            // 
-            this.pcBProfilbild.Location = new System.Drawing.Point(548, 30);
-            this.pcBProfilbild.Name = "pcBProfilbild";
-            this.pcBProfilbild.Size = new System.Drawing.Size(100, 50);
-            this.pcBProfilbild.TabIndex = 28;
-            this.pcBProfilbild.TabStop = false;
-            // 
             // Registrieren
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,9 +436,9 @@
             this.Text = "Registrieren";
             this.Panel_Left.ResumeLayout(false);
             this.Panel_Left.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).EndInit();
             this.Panel_right.ResumeLayout(false);
             this.Panel_right.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBProfilbild)).EndInit();
             this.ResumeLayout(false);
 

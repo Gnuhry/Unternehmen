@@ -125,6 +125,7 @@
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(623, 422);
             this.ControlBox = false;
             this.Controls.Add(this.cBoxJahr);
@@ -137,6 +138,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Kalender";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Kalender";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Kalender_FormClosing);

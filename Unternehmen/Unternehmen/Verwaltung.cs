@@ -70,10 +70,11 @@ namespace Unternehmen
 
         public void Kalender()
         {
-            SchliesenMenues();
             if (kalender != null) { kalender.Show(); return; }
+            SchliesenMenues();
             kalender = new Kalender(this,false);
             kalender.MdiParent = menue;
+            kalender.Dock = DockStyle.Fill;
             kalender.FormClosing += Kalender_FormClosing;
             kalender.Show();
 
@@ -82,7 +83,12 @@ namespace Unternehmen
         private void SchliesenMenues()
         {
             for (int f = 0; f < menue.MdiChildren.Length; f++)
-                menue.MdiChildren[f].Close();
+                if (menue.MdiChildren[f].Visible == true)
+                {
+                    Form temp = menue.MdiChildren[f];
+                    temp.MdiParent = null;
+                    temp.Close();       
+                }
         }
 
         private void Kalender_FormClosing(object sender, FormClosingEventArgs e)
@@ -93,10 +99,11 @@ namespace Unternehmen
 
         public void Messenger()
         {
-            SchliesenMenues();
             if (messenger != null) { messenger.Show(); return; }
+            SchliesenMenues();
             messenger = new Messenger(this);
             messenger.MdiParent = menue;
+            messenger.Dock = DockStyle.Fill;
             messenger.FormClosing += Messenger_FormClosing;
             messenger.Show();
         }
@@ -108,10 +115,11 @@ namespace Unternehmen
 
         public void Andern()
         {
-            SchliesenMenues();
             if (registrieren != null) { registrieren.Show(); return; }
+            SchliesenMenues();
             registrieren = new Registrieren(this,angemeldete_Person);
             registrieren.MdiParent = menue;
+            registrieren.Dock = DockStyle.Fill;
             registrieren.FormClosed += Registrieren2_FormClosed;
             registrieren.Show();
         }
