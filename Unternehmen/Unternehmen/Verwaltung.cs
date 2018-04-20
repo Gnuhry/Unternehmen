@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Windows.Forms;
 
 namespace Unternehmen
@@ -13,6 +12,7 @@ namespace Unternehmen
         private Menue menue;
         private Messenger messenger;
         private Kalender kalender;
+        private Menue_standart menue_Standart;
         private Admin chef;
         private static string Pfad = Directory.GetCurrentDirectory() + @"\Speichern.txt";
         
@@ -61,6 +61,21 @@ namespace Unternehmen
             chef = new Admin(this);
             chef.FormClosing += Chef_FormClosing;
             chef.Show();
+        }
+        public void menue_standart()
+        {
+            if (menue_Standart != null) { menue_Standart.Show(); return; }
+            SchliesenMenues();
+            menue_Standart = new Menue_standart(this);
+            menue_Standart.MdiParent = menue;
+            menue_Standart.Dock = DockStyle.Fill;
+            menue_Standart.FormClosing += Menue_Standart_FormClosing;
+            menue_Standart.Show();
+        }
+
+        private void Menue_Standart_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            menue_Standart = null;
         }
 
         private void Chef_FormClosing(object sender, FormClosingEventArgs e)

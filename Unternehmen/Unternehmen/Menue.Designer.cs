@@ -29,76 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnAnwesend = new System.Windows.Forms.Button();
-            this.btnGehen = new System.Windows.Forms.Button();
-            this.btnZeiten = new System.Windows.Forms.Button();
-            this.numKrankentage = new System.Windows.Forms.NumericUpDown();
-            this.lbStatus = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnWebsite = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Beenden_Button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.Krankentage_Button = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnMessenger = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Daten_andern_Button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.KalenderButton = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.Messenger_Button = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnMenue = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.numKrankentage)).BeginInit();
+            this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnAnwesend
-            // 
-            this.btnAnwesend.Location = new System.Drawing.Point(601, 209);
-            this.btnAnwesend.Name = "btnAnwesend";
-            this.btnAnwesend.Size = new System.Drawing.Size(150, 23);
-            this.btnAnwesend.TabIndex = 2;
-            this.btnAnwesend.Text = "Anwesend";
-            this.btnAnwesend.UseVisualStyleBackColor = true;
-            this.btnAnwesend.Click += new System.EventHandler(this.btnAnwesend_Click);
-            // 
-            // btnGehen
-            // 
-            this.btnGehen.Location = new System.Drawing.Point(601, 238);
-            this.btnGehen.Name = "btnGehen";
-            this.btnGehen.Size = new System.Drawing.Size(150, 23);
-            this.btnGehen.TabIndex = 3;
-            this.btnGehen.Text = "Gehen";
-            this.btnGehen.UseVisualStyleBackColor = true;
-            this.btnGehen.Click += new System.EventHandler(this.btnGehen_Click);
-            // 
-            // btnZeiten
-            // 
-            this.btnZeiten.Location = new System.Drawing.Point(601, 268);
-            this.btnZeiten.Name = "btnZeiten";
-            this.btnZeiten.Size = new System.Drawing.Size(149, 23);
-            this.btnZeiten.TabIndex = 4;
-            this.btnZeiten.Text = "Zeiten einsehen";
-            this.btnZeiten.UseVisualStyleBackColor = true;
-            this.btnZeiten.Click += new System.EventHandler(this.btnZeiten_Click);
-            // 
-            // numKrankentage
-            // 
-            this.numKrankentage.Location = new System.Drawing.Point(601, 297);
-            this.numKrankentage.Name = "numKrankentage";
-            this.numKrankentage.Size = new System.Drawing.Size(54, 21);
-            this.numKrankentage.TabIndex = 5;
-            // 
-            // lbStatus
-            // 
-            this.lbStatus.AutoSize = true;
-            this.lbStatus.Location = new System.Drawing.Point(614, 193);
-            this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(41, 16);
-            this.lbStatus.TabIndex = 10;
-            this.lbStatus.Text = "label1";
             // 
             // bunifuElipse1
             // 
@@ -111,10 +59,10 @@
             this.panel2.Controls.Add(this.btnWebsite);
             this.panel2.Controls.Add(this.Beenden_Button);
             this.panel2.Controls.Add(this.bunifuFlatButton4);
-            this.panel2.Controls.Add(this.Krankentage_Button);
+            this.panel2.Controls.Add(this.btnMessenger);
             this.panel2.Controls.Add(this.Daten_andern_Button);
             this.panel2.Controls.Add(this.KalenderButton);
-            this.panel2.Controls.Add(this.Messenger_Button);
+            this.panel2.Controls.Add(this.btnMenue);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 124);
             this.panel2.Name = "panel2";
@@ -228,41 +176,41 @@
             this.bunifuFlatButton4.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // Krankentage_Button
+            // btnMessenger
             // 
-            this.Krankentage_Button.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.Krankentage_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.Krankentage_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Krankentage_Button.BorderRadius = 0;
-            this.Krankentage_Button.ButtonText = "Krankentage";
-            this.Krankentage_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Krankentage_Button.DisabledColor = System.Drawing.Color.Gray;
-            this.Krankentage_Button.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Krankentage_Button.Iconcolor = System.Drawing.Color.Transparent;
-            this.Krankentage_Button.Iconimage = null;
-            this.Krankentage_Button.Iconimage_right = null;
-            this.Krankentage_Button.Iconimage_right_Selected = null;
-            this.Krankentage_Button.Iconimage_Selected = null;
-            this.Krankentage_Button.IconMarginLeft = 0;
-            this.Krankentage_Button.IconMarginRight = 0;
-            this.Krankentage_Button.IconRightVisible = true;
-            this.Krankentage_Button.IconRightZoom = 0D;
-            this.Krankentage_Button.IconVisible = true;
-            this.Krankentage_Button.IconZoom = 90D;
-            this.Krankentage_Button.IsTab = false;
-            this.Krankentage_Button.Location = new System.Drawing.Point(0, 144);
-            this.Krankentage_Button.Name = "Krankentage_Button";
-            this.Krankentage_Button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.Krankentage_Button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.Krankentage_Button.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
-            this.Krankentage_Button.selected = false;
-            this.Krankentage_Button.Size = new System.Drawing.Size(233, 48);
-            this.Krankentage_Button.TabIndex = 7;
-            this.Krankentage_Button.Text = "Krankentage";
-            this.Krankentage_Button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Krankentage_Button.Textcolor = System.Drawing.Color.White;
-            this.Krankentage_Button.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Krankentage_Button.Click += new System.EventHandler(this.btnKrankentage_Click);
+            this.btnMessenger.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnMessenger.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnMessenger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMessenger.BorderRadius = 0;
+            this.btnMessenger.ButtonText = "Messenger";
+            this.btnMessenger.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMessenger.DisabledColor = System.Drawing.Color.Gray;
+            this.btnMessenger.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMessenger.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnMessenger.Iconimage = null;
+            this.btnMessenger.Iconimage_right = null;
+            this.btnMessenger.Iconimage_right_Selected = null;
+            this.btnMessenger.Iconimage_Selected = null;
+            this.btnMessenger.IconMarginLeft = 0;
+            this.btnMessenger.IconMarginRight = 0;
+            this.btnMessenger.IconRightVisible = true;
+            this.btnMessenger.IconRightZoom = 0D;
+            this.btnMessenger.IconVisible = true;
+            this.btnMessenger.IconZoom = 90D;
+            this.btnMessenger.IsTab = false;
+            this.btnMessenger.Location = new System.Drawing.Point(0, 144);
+            this.btnMessenger.Name = "btnMessenger";
+            this.btnMessenger.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnMessenger.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnMessenger.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
+            this.btnMessenger.selected = false;
+            this.btnMessenger.Size = new System.Drawing.Size(233, 48);
+            this.btnMessenger.TabIndex = 7;
+            this.btnMessenger.Text = "Messenger";
+            this.btnMessenger.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnMessenger.Textcolor = System.Drawing.Color.White;
+            this.btnMessenger.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMessenger.Click += new System.EventHandler(this.btnMessenger_Click);
             // 
             // Daten_andern_Button
             // 
@@ -336,41 +284,41 @@
             this.KalenderButton.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KalenderButton.Click += new System.EventHandler(this.btnKalender_Click);
             // 
-            // Messenger_Button
+            // btnMenue
             // 
-            this.Messenger_Button.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.Messenger_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.Messenger_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Messenger_Button.BorderRadius = 0;
-            this.Messenger_Button.ButtonText = "Messenger";
-            this.Messenger_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Messenger_Button.DisabledColor = System.Drawing.Color.Gray;
-            this.Messenger_Button.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Messenger_Button.Iconcolor = System.Drawing.Color.Transparent;
-            this.Messenger_Button.Iconimage = null;
-            this.Messenger_Button.Iconimage_right = null;
-            this.Messenger_Button.Iconimage_right_Selected = null;
-            this.Messenger_Button.Iconimage_Selected = null;
-            this.Messenger_Button.IconMarginLeft = 0;
-            this.Messenger_Button.IconMarginRight = 0;
-            this.Messenger_Button.IconRightVisible = true;
-            this.Messenger_Button.IconRightZoom = 0D;
-            this.Messenger_Button.IconVisible = true;
-            this.Messenger_Button.IconZoom = 90D;
-            this.Messenger_Button.IsTab = false;
-            this.Messenger_Button.Location = new System.Drawing.Point(0, 0);
-            this.Messenger_Button.Name = "Messenger_Button";
-            this.Messenger_Button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.Messenger_Button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.Messenger_Button.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
-            this.Messenger_Button.selected = false;
-            this.Messenger_Button.Size = new System.Drawing.Size(233, 48);
-            this.Messenger_Button.TabIndex = 3;
-            this.Messenger_Button.Text = "Messenger";
-            this.Messenger_Button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Messenger_Button.Textcolor = System.Drawing.Color.White;
-            this.Messenger_Button.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Messenger_Button.Click += new System.EventHandler(this.btnMessenger_Click);
+            this.btnMenue.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnMenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnMenue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenue.BorderRadius = 0;
+            this.btnMenue.ButtonText = "Hauptmenue";
+            this.btnMenue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenue.DisabledColor = System.Drawing.Color.Gray;
+            this.btnMenue.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenue.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnMenue.Iconimage = null;
+            this.btnMenue.Iconimage_right = null;
+            this.btnMenue.Iconimage_right_Selected = null;
+            this.btnMenue.Iconimage_Selected = null;
+            this.btnMenue.IconMarginLeft = 0;
+            this.btnMenue.IconMarginRight = 0;
+            this.btnMenue.IconRightVisible = true;
+            this.btnMenue.IconRightZoom = 0D;
+            this.btnMenue.IconVisible = true;
+            this.btnMenue.IconZoom = 90D;
+            this.btnMenue.IsTab = false;
+            this.btnMenue.Location = new System.Drawing.Point(0, 0);
+            this.btnMenue.Name = "btnMenue";
+            this.btnMenue.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnMenue.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnMenue.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
+            this.btnMenue.selected = false;
+            this.btnMenue.Size = new System.Drawing.Size(233, 48);
+            this.btnMenue.TabIndex = 3;
+            this.btnMenue.Text = "Hauptmenue";
+            this.btnMenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnMenue.Textcolor = System.Drawing.Color.White;
+            this.btnMenue.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenue.Click += new System.EventHandler(this.btnMenue_Click);
             // 
             // panel3
             // 
@@ -380,16 +328,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(233, 124);
             this.panel3.TabIndex = 0;
-            // 
-            // Firmenlogo_pictureBox
-            // 
-            this.Firmenlogo_pictureBox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
-            this.Firmenlogo_pictureBox.Location = new System.Drawing.Point(70, 18);
-            this.Firmenlogo_pictureBox.Name = "Firmenlogo_pictureBox";
-            this.Firmenlogo_pictureBox.Size = new System.Drawing.Size(90, 90);
-            this.Firmenlogo_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Firmenlogo_pictureBox.TabIndex = 1;
-            this.Firmenlogo_pictureBox.TabStop = false;
             // 
             // bunifuCustomLabel1
             // 
@@ -414,6 +352,16 @@
             this.panel1.Size = new System.Drawing.Size(1181, 124);
             this.panel1.TabIndex = 11;
             // 
+            // Firmenlogo_pictureBox
+            // 
+            this.Firmenlogo_pictureBox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
+            this.Firmenlogo_pictureBox.Location = new System.Drawing.Point(70, 18);
+            this.Firmenlogo_pictureBox.Name = "Firmenlogo_pictureBox";
+            this.Firmenlogo_pictureBox.Size = new System.Drawing.Size(90, 90);
+            this.Firmenlogo_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Firmenlogo_pictureBox.TabIndex = 1;
+            this.Firmenlogo_pictureBox.TabStop = false;
+            // 
             // Menue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -421,41 +369,29 @@
             this.ClientSize = new System.Drawing.Size(1181, 765);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lbStatus);
-            this.Controls.Add(this.numKrankentage);
-            this.Controls.Add(this.btnZeiten);
-            this.Controls.Add(this.btnGehen);
-            this.Controls.Add(this.btnAnwesend);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "Menue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menue";
-            ((System.ComponentModel.ISupportInitialize)(this.numKrankentage)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnAnwesend;
-        private System.Windows.Forms.Button btnGehen;
-        private System.Windows.Forms.Button btnZeiten;
-        private System.Windows.Forms.NumericUpDown numKrankentage;
-        private System.Windows.Forms.Label lbStatus;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuFlatButton Messenger_Button;
+        private Bunifu.Framework.UI.BunifuFlatButton btnMenue;
         private Bunifu.Framework.UI.BunifuFlatButton KalenderButton;
         private Bunifu.Framework.UI.BunifuFlatButton Beenden_Button;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
-        private Bunifu.Framework.UI.BunifuFlatButton Krankentage_Button;
+        private Bunifu.Framework.UI.BunifuFlatButton btnMessenger;
         private Bunifu.Framework.UI.BunifuFlatButton Daten_andern_Button;
         private Bunifu.Framework.UI.BunifuFlatButton btnWebsite;
         private System.Windows.Forms.Panel panel1;

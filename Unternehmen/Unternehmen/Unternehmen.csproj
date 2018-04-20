@@ -80,6 +80,12 @@
     <Compile Include="Menue.Designer.cs">
       <DependentUpon>Menue.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menue_standart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menue_standart.Designer.cs">
+      <DependentUpon>Menue_standart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Messenger.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menue.resx">
       <DependentUpon>Menue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menue_standart.resx">
+      <DependentUpon>Menue_standart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Messenger.resx">
       <DependentUpon>Messenger.cs</DependentUpon>
