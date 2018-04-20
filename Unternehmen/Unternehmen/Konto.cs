@@ -147,6 +147,7 @@ namespace Unternehmen
         public string[] GetAnzeige() => nachrichten.GetAnzeige();
         public string GetNachricht(int index) => nachrichten.GetNachricht(index);
         public object GetAnhang(int index) => nachrichten.GetAnhang(index);
+        public Konto GetSender(int index) => nachrichten.GetSender(index);
         public int GetNachrichtenAnzahl() => nachrichten.GetAnzahl();
         public void RemoveNachricht(int index) => nachrichten.DeleteNachricht(index);
         public string GetZeiten() => "Mitarbeiter: "+Kontoinhaber+"\nArbeitszeit: " + Arbeitszeit + "\nUrlaubstage dieses Jahr: " + UrlaubsC + "\nKrankentage dieses Jahr: " + krankenC;

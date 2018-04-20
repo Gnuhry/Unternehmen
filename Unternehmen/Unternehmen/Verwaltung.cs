@@ -117,7 +117,17 @@ namespace Unternehmen
         {
             if (messenger != null) { messenger.Show(); return; }
             SchliesenMenues();
-            messenger = new Messenger(this);
+            messenger = new Messenger(this,false);
+            messenger.MdiParent = menue;
+            messenger.Dock = DockStyle.Fill;
+            messenger.FormClosing += Messenger_FormClosing;
+            messenger.Show();
+        }
+        public void Postfach()
+        {
+            if (messenger != null) { messenger.Show(); return; }
+            SchliesenMenues();
+            messenger = new Messenger(this, true);
             messenger.MdiParent = menue;
             messenger.Dock = DockStyle.Fill;
             messenger.FormClosing += Messenger_FormClosing;

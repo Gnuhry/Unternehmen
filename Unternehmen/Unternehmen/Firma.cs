@@ -16,9 +16,11 @@ namespace Unternehmen
         private string Web;
         private int MaxTage;
         private bool AutoRegistrieren;
+        private Nachrichten Adminnachrichten;
 
         public Firma()
         {
+            Adminnachrichten = new Nachrichten();
             AutoRegistrieren = true;
             Web = "http://www.google.com";
             feiertage = new Feiertage();
@@ -165,6 +167,13 @@ namespace Unternehmen
         public string GetNotiz(DateTime Tag) => notizen.GetNachricht(Tag);
         public void SetAutoRegistrieren(bool Auto) => AutoRegistrieren = Auto;
         public bool GetAutoRegistrieren() => AutoRegistrieren;
+        public void ReciveAdminNachricht(string Nachricht, object Anhang, Konto Sender) => Adminnachrichten.Recive(Sender, Nachricht, Anhang);
+        public string GetAdminNachricht(int index) => Adminnachrichten.GetNachricht(index);
+        public object GetAdminAnhang(int index) => Adminnachrichten.GetAnhang(index);
+        public Konto GetAdminNachrichtSender(int index) => Adminnachrichten.GetSender(index);
+        public int GetAdminNachrichtAnzahl() => Adminnachrichten.GetAnzahl();
+        public string[] GetAdminAnzeige() => Adminnachrichten.GetAnzeige();
+        public void RemoveNachricht(int index) => Adminnachrichten.DeleteNachricht(index);
 
 
         public void Speichern(string path)

@@ -8,22 +8,38 @@ namespace Unternehmen
     {
         Verwaltung verwaltung;
         List<NachrichtAnzeige> nachrichtAnzeiges;
-        public Messenger(Verwaltung verwaltung)
+        bool Chef;
+        public Messenger(Verwaltung verwaltung, bool Chef)
         {
+            this.Chef = Chef;
             nachrichtAnzeiges = new List<NachrichtAnzeige>();
             InitializeComponent();
             this.verwaltung = verwaltung;
+            comBEmpfanger.Items.Add("Admin");
             for(int f = 0; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
-                comBEmpfanger.Items.Add(verwaltung.GetFirma().GetMitarbeiter(f).GetKontoInhaber());
+                    comBEmpfanger.Items.Add(verwaltung.GetFirma().GetMitarbeiter(f).GetKontoInhaber());
             NachrichtenLaden();
         }
 
         private void NachrichtenLaden()
         {
+            if (Chef)
+            {
+                if (verwaltung.GetFirma().GetAdminNachrichtAnzahl() != 0)
+                {
+                    for (int f = 0; f < verwaltung.GetFirma().GetAdminNachrichtAnzahl(); f++)
+                        lBoxNachrichten.Items.Add(verwaltung.GetFirma().GetAdminAnzeige()[f]);
+                    lBoxNachrichten.MouseDown += LBoxNachrichten_MouseDown;
+                    lBoxNachrichten.MouseDoubleClick += LBoxNachrichten_MouseDoubleClick;
+                }
+                else
+                    lBoxNachrichten.Enabled = false;
+                return;
+            }
             if (verwaltung.GetAngemeldetePerson().GetNachrichtenAnzahl() != 0)
             {
                 for (int f = 0; f < verwaltung.GetAngemeldetePerson().GetNachrichtenAnzahl(); f++)
-                    lBoxNachrichten.Items.Add(verwaltung.GetAngemeldetePerson().GetAnhang(f));
+                    lBoxNachrichten.Items.Add(verwaltung.GetAngemeldetePerson().GetAnzeige()[f]);
                 lBoxNachrichten.MouseDown += LBoxNachrichten_MouseDown;
                 lBoxNachrichten.MouseDoubleClick += LBoxNachrichten_MouseDoubleClick;
             }
@@ -35,14 +51,16 @@ namespace Unternehmen
         {
             if (e.Button == MouseButtons.Right)
                 if (lBoxNachrichten.IndexFromPoint(e.Location) != ListBox.NoMatches)
-                    comBEmpfanger.SelectedIndex = lBoxNachrichten.IndexFromPoint(e.Location);
+                    for (int f = 0; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
+                        if (verwaltung.GetFirma().GetMitarbeiter(f) == verwaltung.GetAngemeldetePerson().GetSender(lBoxNachrichten.IndexFromPoint(e.Location)))
+                            comBEmpfanger.SelectedIndex = f;
         }
 
         private void LBoxNachrichten_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (lBoxNachrichten.IndexFromPoint(e.Location) != ListBox.NoMatches)
             {
-                nachrichtAnzeiges.Add(new NachrichtAnzeige(lBoxNachrichten.IndexFromPoint(e.Location), verwaltung));
+                nachrichtAnzeiges.Add(new NachrichtAnzeige(lBoxNachrichten.IndexFromPoint(e.Location), verwaltung,Chef));
                 nachrichtAnzeiges[nachrichtAnzeiges.Count - 1].Show();
                 nachrichtAnzeiges[nachrichtAnzeiges.Count - 1].FormClosing += NachrichtAnzeiges_FormClosing;
 
@@ -57,10 +75,16 @@ namespace Unternehmen
 
         private void btnSenden_Click(object sender, EventArgs e)
         {
+
             txBNachricht.Text = txBNachricht.Text.Trim();
-            if (txBNachricht.Text != "" && txBNachricht.Text != null && comBEmpfanger.SelectedIndex > -1)
+            if(txBNachricht.Text != "" && txBNachricht.Text != null && comBEmpfanger.SelectedIndex == 0)
             {
-                verwaltung.GetFirma().GetMitarbeiter(comBEmpfanger.SelectedIndex).ReciveNachricht(txBNachricht.Text, "nu", verwaltung.GetAngemeldetePerson());
+                verwaltung.GetFirma().ReciveAdminNachricht(txBNachricht.Text, "nu", verwaltung.GetAngemeldetePerson());
+                txBNachricht.Text = null;
+            }
+            else if (txBNachricht.Text != "" && txBNachricht.Text != null && comBEmpfanger.SelectedIndex > -1)
+            {
+                verwaltung.GetFirma().GetMitarbeiter(comBEmpfanger.SelectedIndex+1).ReciveNachricht(txBNachricht.Text, "nu", verwaltung.GetAngemeldetePerson());
                 txBNachricht.Text = null;
             }
         }

@@ -113,5 +113,10 @@ namespace Unternehmen
         {
             verwaltung.GetFirma().SetAutoRegistrieren(chBAutoAktiv.Checked);
         }
+
+        private void btnMessenger_Click(object sender, EventArgs e)
+        {
+            verwaltung.Postfach();
+        }
     }
 }

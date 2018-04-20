@@ -55,6 +55,7 @@
             this.Ownername_Label = new System.Windows.Forms.Label();
             this.txBInhaber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Sign_Up_Label = new System.Windows.Forms.Label();
+            this.btnHochladen = new System.Windows.Forms.Button();
             this.Panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).BeginInit();
             this.Panel_right.SuspendLayout();
@@ -130,6 +131,7 @@
             // Panel_right
             // 
             this.Panel_right.BackColor = System.Drawing.Color.White;
+            this.Panel_right.Controls.Add(this.btnHochladen);
             this.Panel_right.Controls.Add(this.cBoxJahr);
             this.Panel_right.Controls.Add(this.cBoxMonat);
             this.Panel_right.Controls.Add(this.cBoxTag);
@@ -424,6 +426,20 @@
             this.Sign_Up_Label.TabIndex = 10;
             this.Sign_Up_Label.Text = "Sign Up";
             // 
+            // btnHochladen
+            // 
+            this.btnHochladen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnHochladen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHochladen.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHochladen.ForeColor = System.Drawing.Color.White;
+            this.btnHochladen.Location = new System.Drawing.Point(397, 7);
+            this.btnHochladen.Name = "btnHochladen";
+            this.btnHochladen.Size = new System.Drawing.Size(139, 25);
+            this.btnHochladen.TabIndex = 32;
+            this.btnHochladen.Text = "Profilbild hochladen";
+            this.btnHochladen.UseVisualStyleBackColor = false;
+            this.btnHochladen.Click += new System.EventHandler(this.btnHochladen_Click);
+            // 
             // Registrieren
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,5 +488,6 @@
         private System.Windows.Forms.ComboBox cBoxJahr;
         private System.Windows.Forms.ComboBox cBoxMonat;
         private System.Windows.Forms.ComboBox cBoxTag;
+        private System.Windows.Forms.Button btnHochladen;
     }
 }

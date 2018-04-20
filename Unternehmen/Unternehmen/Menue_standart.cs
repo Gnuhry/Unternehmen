@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Unternehmen
@@ -50,11 +52,40 @@ namespace Unternehmen
             StatusAbfrage();
             for (int f = 0; f < (int)numKrankentage.Value; f++)
                 verwaltung.GetFirma().Uerberprufung(DateTime.Today.AddDays(f));
+
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             verwaltung.Chef();
+        }
+
+
+        private void btnBescheinigung_Click(object sender, EventArgs e)
+        {
+            Stream myStream = null;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
+            openFileDialog1.FilterIndex = 2;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                try
+                {
+                    if ((myStream = openFileDialog1.OpenFile()) != null)
+                        using (myStream)
+                        {
+                            pcBBescheinigung.Image = new Bitmap(myStream);
+                            btnKrank.Enabled = true;
+                        }
+                            
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
         }
     }
 }

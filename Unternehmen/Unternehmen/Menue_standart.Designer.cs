@@ -35,12 +35,15 @@
             this.btnGehen = new System.Windows.Forms.Button();
             this.btnAnwesend = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
+            this.btnBescheinigung = new System.Windows.Forms.Button();
+            this.pcBBescheinigung = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numKrankentage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBBescheinigung)).BeginInit();
             this.SuspendLayout();
             // 
             // btnKrank
             // 
-            this.btnKrank.Location = new System.Drawing.Point(98, 119);
+            this.btnKrank.Location = new System.Drawing.Point(12, 220);
             this.btnKrank.Name = "btnKrank";
             this.btnKrank.Size = new System.Drawing.Size(156, 23);
             this.btnKrank.TabIndex = 20;
@@ -96,7 +99,7 @@
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(21, 147);
+            this.btnAdmin.Location = new System.Drawing.Point(206, 33);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(150, 23);
             this.btnAdmin.TabIndex = 21;
@@ -105,11 +108,31 @@
             this.btnAdmin.Visible = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
+            // btnBescheinigung
+            // 
+            this.btnBescheinigung.Location = new System.Drawing.Point(12, 191);
+            this.btnBescheinigung.Name = "btnBescheinigung";
+            this.btnBescheinigung.Size = new System.Drawing.Size(179, 23);
+            this.btnBescheinigung.TabIndex = 22;
+            this.btnBescheinigung.Text = "Krankenbescheinigung hochladen";
+            this.btnBescheinigung.UseVisualStyleBackColor = true;
+            this.btnBescheinigung.Click += new System.EventHandler(this.btnBescheinigung_Click);
+            // 
+            // pcBBescheinigung
+            // 
+            this.pcBBescheinigung.Location = new System.Drawing.Point(91, 121);
+            this.pcBBescheinigung.Name = "pcBBescheinigung";
+            this.pcBBescheinigung.Size = new System.Drawing.Size(100, 50);
+            this.pcBBescheinigung.TabIndex = 23;
+            this.pcBBescheinigung.TabStop = false;
+            // 
             // Menue_standart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pcBBescheinigung);
+            this.Controls.Add(this.btnBescheinigung);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnKrank);
             this.Controls.Add(this.lbStatus);
@@ -121,6 +144,7 @@
             this.Name = "Menue_standart";
             this.Text = "Menue_standart";
             ((System.ComponentModel.ISupportInitialize)(this.numKrankentage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBBescheinigung)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +159,7 @@
         private System.Windows.Forms.Button btnGehen;
         private System.Windows.Forms.Button btnAnwesend;
         private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Button btnBescheinigung;
+        private System.Windows.Forms.PictureBox pcBBescheinigung;
     }
 }

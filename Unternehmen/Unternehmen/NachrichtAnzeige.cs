@@ -7,18 +7,29 @@ namespace Unternehmen
     { 
         Verwaltung verwaltung;
         int index;
-        public NachrichtAnzeige(int index,Verwaltung verwaltung)
+        bool Chef;
+        public NachrichtAnzeige(int index,Verwaltung verwaltung,bool Chef)
         {
+            this.Chef = Chef;
             this.verwaltung = verwaltung;
             this.index = index;
             InitializeComponent();
-            lbSender.Text = verwaltung.GetAngemeldetePerson().GetAnzeige()[index];
+            if (Chef)
+            {
+                lbSender.Text = verwaltung.GetFirma().GetAdminNachrichtSender(index).GetKontoInhaber();
+                lbAnzeige.Text = verwaltung.GetFirma().GetAdminNachricht(index);
+                return;
+            }
+            lbSender.Text = verwaltung.GetAngemeldetePerson().GetSender(index).GetKontoInhaber();
             lbAnzeige.Text = verwaltung.GetAngemeldetePerson().GetNachricht(index) ;
         }
 
         private void btnLoschen_Click(object sender, EventArgs e)
         {
-            verwaltung.GetAngemeldetePerson().RemoveNachricht(index);
+            if (Chef)
+                verwaltung.GetFirma().RemoveNachricht(index);
+            else
+                verwaltung.GetAngemeldetePerson().RemoveNachricht(index);
             Close();
         }
     }
