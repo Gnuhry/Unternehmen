@@ -433,6 +433,7 @@
             this.Controls.Add(this.Panel_right);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Registrieren";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrieren";
             this.Panel_Left.ResumeLayout(false);
             this.Panel_Left.PerformLayout();

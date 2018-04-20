@@ -16,6 +16,8 @@ namespace Unternehmen
             else
                 btnGehen.Enabled = false;
             numKrankentage.Value = verwaltung.GetAngemeldetePerson().GetKrankentage();
+            if (verwaltung.GetAngemeldetePerson() == verwaltung.GetFirma().GetMitarbeiter(0))
+                btnAdmin.Visible = true;
         }
         private void btnAnwesend_Click(object sender, EventArgs e)
         {
@@ -48,6 +50,11 @@ namespace Unternehmen
             StatusAbfrage();
             for (int f = 0; f < (int)numKrankentage.Value; f++)
                 verwaltung.GetFirma().Uerberprufung(DateTime.Today.AddDays(f));
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            verwaltung.Chef();
         }
     }
 }

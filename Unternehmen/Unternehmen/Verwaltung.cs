@@ -51,10 +51,11 @@ namespace Unternehmen
             login.Hide();
             menue = new Menue(this);
             menue.FormClosing += Menue_FormClosing;
+            menue_standart();
             menue.Show();
         }
 
-        private void Chef()
+        public void Chef()
         {
             if (firma.GetMitarbeiter(0) != angemeldete_Person) return;
             if (chef != null) { chef.Show(); return; }

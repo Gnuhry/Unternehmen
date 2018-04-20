@@ -42,6 +42,7 @@
             this.btnUrlaub = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFeuern = new System.Windows.Forms.Button();
+            this.chBAutoAktiv = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numUrlaubstage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,11 +195,25 @@
             this.btnFeuern.UseVisualStyleBackColor = true;
             this.btnFeuern.Click += new System.EventHandler(this.btnFeuern_Click);
             // 
+            // chBAutoAktiv
+            // 
+            this.chBAutoAktiv.AutoSize = true;
+            this.chBAutoAktiv.Checked = true;
+            this.chBAutoAktiv.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chBAutoAktiv.Location = new System.Drawing.Point(433, 96);
+            this.chBAutoAktiv.Name = "chBAutoAktiv";
+            this.chBAutoAktiv.Size = new System.Drawing.Size(208, 17);
+            this.chBAutoAktiv.TabIndex = 33;
+            this.chBAutoAktiv.Text = "Automatisch Aktiv bei Neuregistrierung";
+            this.chBAutoAktiv.UseVisualStyleBackColor = true;
+            this.chBAutoAktiv.CheckedChanged += new System.EventHandler(this.chBAutoAktiv_CheckedChanged);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chBAutoAktiv);
             this.Controls.Add(this.chBWebsite);
             this.Controls.Add(this.txBWebsite);
             this.Controls.Add(this.btnEinsehen);
@@ -237,5 +252,6 @@
         private System.Windows.Forms.Button btnUrlaub;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFeuern;
+        private System.Windows.Forms.CheckBox chBAutoAktiv;
     }
 }

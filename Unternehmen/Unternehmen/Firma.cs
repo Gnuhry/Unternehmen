@@ -15,9 +15,11 @@ namespace Unternehmen
         private DateTime date_zero;
         private string Web;
         private int MaxTage;
+        private bool AutoRegistrieren;
 
         public Firma()
         {
+            AutoRegistrieren = true;
             Web = "http://www.google.com";
             feiertage = new Feiertage();
             Arbeitstage = new bool[7];
@@ -161,6 +163,8 @@ namespace Unternehmen
         }
         public void SetNotizen(string Nachricht, DateTime Tag) => notizen.AddNotiz(Nachricht, Tag);
         public string GetNotiz(DateTime Tag) => notizen.GetNachricht(Tag);
+        public void SetAutoRegistrieren(bool Auto) => AutoRegistrieren = Auto;
+        public bool GetAutoRegistrieren() => AutoRegistrieren;
 
 
         public void Speichern(string path)
@@ -204,5 +208,6 @@ namespace Unternehmen
             BF.Serialize(FS, new Firma());
             FS.Dispose();
         }
+        
     }
 }

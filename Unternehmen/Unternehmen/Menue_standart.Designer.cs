@@ -34,6 +34,7 @@
             this.btnZeiten = new System.Windows.Forms.Button();
             this.btnGehen = new System.Windows.Forms.Button();
             this.btnAnwesend = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numKrankentage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,11 +94,23 @@
             this.btnAnwesend.UseVisualStyleBackColor = true;
             this.btnAnwesend.Click += new System.EventHandler(this.btnAnwesend_Click);
             // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Location = new System.Drawing.Point(21, 147);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(150, 23);
+            this.btnAdmin.TabIndex = 21;
+            this.btnAdmin.Text = "Adminfenster";
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Visible = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
             // Menue_standart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnKrank);
             this.Controls.Add(this.lbStatus);
             this.Controls.Add(this.numKrankentage);
@@ -121,5 +134,6 @@
         private System.Windows.Forms.Button btnZeiten;
         private System.Windows.Forms.Button btnGehen;
         private System.Windows.Forms.Button btnAnwesend;
+        private System.Windows.Forms.Button btnAdmin;
     }
 }

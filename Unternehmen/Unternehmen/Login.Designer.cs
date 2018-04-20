@@ -34,6 +34,7 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.Panel_Left = new System.Windows.Forms.Panel();
             this.Firmen_Motto = new System.Windows.Forms.Label();
+            this.Logo_Picturebox = new System.Windows.Forms.PictureBox();
             this.Panel_Right = new System.Windows.Forms.Panel();
             this.Beenden_Label = new System.Windows.Forms.Label();
             this.txBpasswort = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -41,10 +42,9 @@
             this.Username_Label = new System.Windows.Forms.Label();
             this.txBbenutzername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Log_In_Label = new System.Windows.Forms.Label();
-            this.Logo_Picturebox = new System.Windows.Forms.PictureBox();
             this.Panel_Left.SuspendLayout();
-            this.Panel_Right.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).BeginInit();
+            this.Panel_Right.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRegistrieren
@@ -101,6 +101,16 @@
             this.Firmen_Motto.Size = new System.Drawing.Size(221, 48);
             this.Firmen_Motto.TabIndex = 4;
             this.Firmen_Motto.Text = "We Create, We Plan \r\n       in your Way";
+            // 
+            // Logo_Picturebox
+            // 
+            this.Logo_Picturebox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
+            this.Logo_Picturebox.Location = new System.Drawing.Point(54, 110);
+            this.Logo_Picturebox.Name = "Logo_Picturebox";
+            this.Logo_Picturebox.Size = new System.Drawing.Size(200, 200);
+            this.Logo_Picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Logo_Picturebox.TabIndex = 0;
+            this.Logo_Picturebox.TabStop = false;
             // 
             // Panel_Right
             // 
@@ -207,16 +217,6 @@
             this.Log_In_Label.TabIndex = 4;
             this.Log_In_Label.Text = "Log in";
             // 
-            // Logo_Picturebox
-            // 
-            this.Logo_Picturebox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
-            this.Logo_Picturebox.Location = new System.Drawing.Point(54, 110);
-            this.Logo_Picturebox.Name = "Logo_Picturebox";
-            this.Logo_Picturebox.Size = new System.Drawing.Size(200, 200);
-            this.Logo_Picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Logo_Picturebox.TabIndex = 0;
-            this.Logo_Picturebox.TabStop = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -228,13 +228,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Panel_Left.ResumeLayout(false);
             this.Panel_Left.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).EndInit();
             this.Panel_Right.ResumeLayout(false);
             this.Panel_Right.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).EndInit();
             this.ResumeLayout(false);
 
         }

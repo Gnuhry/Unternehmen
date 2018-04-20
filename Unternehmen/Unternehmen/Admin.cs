@@ -13,13 +13,14 @@ namespace Unternehmen
             InitializeComponent();
             this.verwaltung = verwaltung;
             for (int f = 1; f<verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
-                comBMitarbeiter.Items.Add(verwaltung.GetFirma().GetMitarbeiter(f));
+                comBMitarbeiter.Items.Add(verwaltung.GetFirma().GetMitarbeiter(f).GetKontoInhaber());
             for(int f = 0; f < 7; f++)
                 chbLArbeitstage.SetItemChecked(f, verwaltung.GetFirma().GetArbeitstag(f));
             numUrlaubstage.Value = verwaltung.GetFirma().GetMaxTage();
             txBWebsite.Text = verwaltung.GetFirma().GetWeb();
             if (txBWebsite.Text == "none")
                 txBWebsite.Enabled = false;
+            chBAutoAktiv.Checked = verwaltung.GetFirma().GetAutoRegistrieren();
         }
 
         private void btnFeuern_Click(object sender, EventArgs e)
@@ -106,6 +107,11 @@ namespace Unternehmen
             for (int f = 0; f < 7; f++)
                 erg[f] = chbLArbeitstage.GetItemChecked(f);
             verwaltung.GetFirma().SetArbeitstag(erg);
+        }
+
+        private void chBAutoAktiv_CheckedChanged(object sender, EventArgs e)
+        {
+            verwaltung.GetFirma().SetAutoRegistrieren(chBAutoAktiv.Checked);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Unternehmen
@@ -12,16 +13,17 @@ namespace Unternehmen
             InitializeComponent();
             this.verwaltung = verwaltung;
             if (verwaltung.GetFirma().GetWeb() == "none") btnWebsite.Visible = false;
-            verwaltung.menue_standart();
         }
 
         private void btnKalender_Click(object sender, EventArgs e)
         {
+            pnAktivAktualisieren(1);
             verwaltung.Kalender();
         }
 
         private void btnMessenger_Click(object sender, EventArgs e)
         {
+            pnAktivAktualisieren(3);
             verwaltung.Messenger();
         }
 
@@ -35,6 +37,7 @@ namespace Unternehmen
 
         private void btnAndern_Click(object sender, EventArgs e)
         {
+            pnAktivAktualisieren(2);
             verwaltung.Andern();
         }
        
@@ -47,7 +50,12 @@ namespace Unternehmen
 
         private void btnMenue_Click(object sender, EventArgs e)
         {
+            pnAktivAktualisieren(0);
             verwaltung.menue_standart();
+        }
+        private void pnAktivAktualisieren(int index)
+        {
+            pnAktiv.Location = new Point(0,48*index);
         }
     }
 }

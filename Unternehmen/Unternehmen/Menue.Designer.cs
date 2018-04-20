@@ -39,13 +39,14 @@
             this.KalenderButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenue = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
+            this.pnAktiv = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -56,6 +57,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.panel2.Controls.Add(this.pnAktiv);
             this.panel2.Controls.Add(this.btnWebsite);
             this.panel2.Controls.Add(this.Beenden_Button);
             this.panel2.Controls.Add(this.bunifuFlatButton4);
@@ -66,7 +68,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 124);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(233, 641);
+            this.panel2.Size = new System.Drawing.Size(233, 585);
             this.panel2.TabIndex = 12;
             // 
             // btnWebsite
@@ -127,7 +129,7 @@
             this.Beenden_Button.IconVisible = true;
             this.Beenden_Button.IconZoom = 90D;
             this.Beenden_Button.IsTab = false;
-            this.Beenden_Button.Location = new System.Drawing.Point(0, 593);
+            this.Beenden_Button.Location = new System.Drawing.Point(0, 537);
             this.Beenden_Button.Name = "Beenden_Button";
             this.Beenden_Button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.Beenden_Button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
@@ -329,6 +331,16 @@
             this.panel3.Size = new System.Drawing.Size(233, 124);
             this.panel3.TabIndex = 0;
             // 
+            // Firmenlogo_pictureBox
+            // 
+            this.Firmenlogo_pictureBox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
+            this.Firmenlogo_pictureBox.Location = new System.Drawing.Point(70, 18);
+            this.Firmenlogo_pictureBox.Name = "Firmenlogo_pictureBox";
+            this.Firmenlogo_pictureBox.Size = new System.Drawing.Size(90, 90);
+            this.Firmenlogo_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Firmenlogo_pictureBox.TabIndex = 1;
+            this.Firmenlogo_pictureBox.TabStop = false;
+            // 
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
@@ -352,21 +364,19 @@
             this.panel1.Size = new System.Drawing.Size(1181, 124);
             this.panel1.TabIndex = 11;
             // 
-            // Firmenlogo_pictureBox
+            // pnAktiv
             // 
-            this.Firmenlogo_pictureBox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
-            this.Firmenlogo_pictureBox.Location = new System.Drawing.Point(70, 18);
-            this.Firmenlogo_pictureBox.Name = "Firmenlogo_pictureBox";
-            this.Firmenlogo_pictureBox.Size = new System.Drawing.Size(90, 90);
-            this.Firmenlogo_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Firmenlogo_pictureBox.TabIndex = 1;
-            this.Firmenlogo_pictureBox.TabStop = false;
+            this.pnAktiv.BackColor = System.Drawing.Color.Red;
+            this.pnAktiv.Location = new System.Drawing.Point(0, 0);
+            this.pnAktiv.Name = "pnAktiv";
+            this.pnAktiv.Size = new System.Drawing.Size(15, 48);
+            this.pnAktiv.TabIndex = 14;
             // 
             // Menue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1181, 765);
+            this.ClientSize = new System.Drawing.Size(1181, 709);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -377,9 +387,9 @@
             this.Text = "Menue";
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,5 +408,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox Firmenlogo_pictureBox;
+        private System.Windows.Forms.Panel pnAktiv;
     }
 }

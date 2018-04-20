@@ -29,7 +29,7 @@ namespace Unternehmen
             Arbeitszeit = Krankendauer = status = krankenC = UrlaubsC = 0;
         }
 
-        public string Registrieren(string Kontoinhaber, string benutzername, string passwort, DateTime Geburtstag,Image Profilbild)
+        public string Registrieren(string Kontoinhaber, string benutzername, string passwort, DateTime Geburtstag,Image Profilbild, bool Autoregistrieren)
         {
             char[] x = benutzername.ToCharArray();
             bool GrB = false, KlB = false, Zahl = false;
@@ -55,8 +55,10 @@ namespace Unternehmen
             if (!Zahl) return "Zahl fehlt";
             this.passwort = new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.ASCII.GetBytes(passwort));
 
-
-            status = 1;
+            if (Autoregistrieren)
+                status = 1;
+            else
+                status = 0;
             this.Geburtstag = Geburtstag;
             this.Kontoinhaber = Kontoinhaber;
             this.Profilbild = Profilbild;
@@ -65,7 +67,7 @@ namespace Unternehmen
         }
         public int Login(string benutzername, string passwort) //0-erfolgreich; -1-Falscher Benutzername; -2-Falsches Passwort; -3-Gesperrt
         {
-            if (_Versuche++ == 3)
+            if (_Versuche++ == 3||status==0)
             {
                 status = 0; return -3;
             }
