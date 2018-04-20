@@ -46,7 +46,6 @@ namespace Unternehmen
         public void SetAngemeldetePerson(Konto Person) => angemeldete_Person = Person;
         public void Menue()
         {
-            Chef();
             if (menue != null) { menue.Show(); return; }
             login.Hide();
             menue = new Menue(this);
@@ -60,6 +59,8 @@ namespace Unternehmen
             if (firma.GetMitarbeiter(0) != angemeldete_Person) return;
             if (chef != null) { chef.Show(); return; }
             chef = new Admin(this);
+            chef.MdiParent = menue;
+            chef.Dock = DockStyle.Fill;
             chef.FormClosing += Chef_FormClosing;
             chef.Show();
         }

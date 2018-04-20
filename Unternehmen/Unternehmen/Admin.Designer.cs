@@ -52,7 +52,7 @@
             this.chBWebsite.AutoSize = true;
             this.chBWebsite.Checked = true;
             this.chBWebsite.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chBWebsite.Location = new System.Drawing.Point(246, 318);
+            this.chBWebsite.Location = new System.Drawing.Point(38, 247);
             this.chBWebsite.Name = "chBWebsite";
             this.chBWebsite.Size = new System.Drawing.Size(88, 17);
             this.chBWebsite.TabIndex = 32;
@@ -62,7 +62,7 @@
             // 
             // txBWebsite
             // 
-            this.txBWebsite.Location = new System.Drawing.Point(340, 316);
+            this.txBWebsite.Location = new System.Drawing.Point(132, 245);
             this.txBWebsite.Name = "txBWebsite";
             this.txBWebsite.Size = new System.Drawing.Size(209, 20);
             this.txBWebsite.TabIndex = 31;
@@ -71,7 +71,7 @@
             // btnEinsehen
             // 
             this.btnEinsehen.Enabled = false;
-            this.btnEinsehen.Location = new System.Drawing.Point(433, 263);
+            this.btnEinsehen.Location = new System.Drawing.Point(225, 192);
             this.btnEinsehen.Name = "btnEinsehen";
             this.btnEinsehen.Size = new System.Drawing.Size(97, 23);
             this.btnEinsehen.TabIndex = 30;
@@ -82,7 +82,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(259, 286);
+            this.label3.Location = new System.Drawing.Point(51, 215);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 29;
@@ -90,7 +90,7 @@
             // 
             // numUrlaubstage
             // 
-            this.numUrlaubstage.Location = new System.Drawing.Point(332, 284);
+            this.numUrlaubstage.Location = new System.Drawing.Point(124, 213);
             this.numUrlaubstage.Name = "numUrlaubstage";
             this.numUrlaubstage.Size = new System.Drawing.Size(40, 20);
             this.numUrlaubstage.TabIndex = 28;
@@ -99,7 +99,7 @@
             // btnPassword
             // 
             this.btnPassword.Enabled = false;
-            this.btnPassword.Location = new System.Drawing.Point(433, 234);
+            this.btnPassword.Location = new System.Drawing.Point(225, 163);
             this.btnPassword.Name = "btnPassword";
             this.btnPassword.Size = new System.Drawing.Size(97, 23);
             this.btnPassword.TabIndex = 27;
@@ -110,7 +110,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(252, 146);
+            this.label2.Location = new System.Drawing.Point(44, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 26;
@@ -129,7 +129,7 @@
             "Freitag",
             "Samstag",
             "Sontag"});
-            this.chbLArbeitstage.Location = new System.Drawing.Point(252, 168);
+            this.chbLArbeitstage.Location = new System.Drawing.Point(44, 97);
             this.chbLArbeitstage.Name = "chbLArbeitstage";
             this.chbLArbeitstage.Size = new System.Drawing.Size(120, 105);
             this.chbLArbeitstage.TabIndex = 25;
@@ -138,7 +138,7 @@
             // btnSperren
             // 
             this.btnSperren.Enabled = false;
-            this.btnSperren.Location = new System.Drawing.Point(433, 205);
+            this.btnSperren.Location = new System.Drawing.Point(225, 134);
             this.btnSperren.Name = "btnSperren";
             this.btnSperren.Size = new System.Drawing.Size(97, 23);
             this.btnSperren.TabIndex = 24;
@@ -149,7 +149,7 @@
             // btnAktivieren
             // 
             this.btnAktivieren.Enabled = false;
-            this.btnAktivieren.Location = new System.Drawing.Point(433, 176);
+            this.btnAktivieren.Location = new System.Drawing.Point(225, 105);
             this.btnAktivieren.Name = "btnAktivieren";
             this.btnAktivieren.Size = new System.Drawing.Size(97, 23);
             this.btnAktivieren.TabIndex = 23;
@@ -160,7 +160,7 @@
             // comBMitarbeiter
             // 
             this.comBMitarbeiter.FormattingEnabled = true;
-            this.comBMitarbeiter.Location = new System.Drawing.Point(433, 119);
+            this.comBMitarbeiter.Location = new System.Drawing.Point(225, 48);
             this.comBMitarbeiter.Name = "comBMitarbeiter";
             this.comBMitarbeiter.Size = new System.Drawing.Size(121, 21);
             this.comBMitarbeiter.TabIndex = 22;
@@ -168,7 +168,7 @@
             // 
             // btnUrlaub
             // 
-            this.btnUrlaub.Location = new System.Drawing.Point(433, 292);
+            this.btnUrlaub.Location = new System.Drawing.Point(225, 221);
             this.btnUrlaub.Name = "btnUrlaub";
             this.btnUrlaub.Size = new System.Drawing.Size(97, 23);
             this.btnUrlaub.TabIndex = 21;
@@ -179,7 +179,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(249, 115);
+            this.label1.Location = new System.Drawing.Point(41, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 20;
@@ -188,7 +188,7 @@
             // btnFeuern
             // 
             this.btnFeuern.Enabled = false;
-            this.btnFeuern.Location = new System.Drawing.Point(433, 146);
+            this.btnFeuern.Location = new System.Drawing.Point(225, 75);
             this.btnFeuern.Name = "btnFeuern";
             this.btnFeuern.Size = new System.Drawing.Size(97, 23);
             this.btnFeuern.TabIndex = 19;
@@ -201,7 +201,7 @@
             this.chBAutoAktiv.AutoSize = true;
             this.chBAutoAktiv.Checked = true;
             this.chBAutoAktiv.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chBAutoAktiv.Location = new System.Drawing.Point(433, 96);
+            this.chBAutoAktiv.Location = new System.Drawing.Point(225, 25);
             this.chBAutoAktiv.Name = "chBAutoAktiv";
             this.chBAutoAktiv.Size = new System.Drawing.Size(208, 17);
             this.chBAutoAktiv.TabIndex = 33;
@@ -211,7 +211,7 @@
             // 
             // btnMessenger
             // 
-            this.btnMessenger.Location = new System.Drawing.Point(367, 343);
+            this.btnMessenger.Location = new System.Drawing.Point(159, 272);
             this.btnMessenger.Name = "btnMessenger";
             this.btnMessenger.Size = new System.Drawing.Size(75, 23);
             this.btnMessenger.TabIndex = 34;
@@ -223,7 +223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(462, 358);
             this.Controls.Add(this.btnMessenger);
             this.Controls.Add(this.chBAutoAktiv);
             this.Controls.Add(this.chBWebsite);
@@ -240,6 +240,7 @@
             this.Controls.Add(this.btnUrlaub);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnFeuern);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admin";
             this.Text = "Admin";
             ((System.ComponentModel.ISupportInitialize)(this.numUrlaubstage)).EndInit();

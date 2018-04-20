@@ -47,6 +47,11 @@ namespace Unternehmen
 
         private void btnRegistrieren_Click(object sender, EventArgs e)
         {
+            if (!TermsandConditionsCheckbox.Checked)
+            {
+                MessageBox.Show("Terms and Condition annehmen");
+                return;
+            }
             if (angemeldet == null)
             {
                 angemeldet = new Konto();

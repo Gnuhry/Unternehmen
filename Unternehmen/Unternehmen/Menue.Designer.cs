@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pnAktiv = new System.Windows.Forms.Panel();
             this.btnWebsite = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Beenden_Button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -42,7 +43,7 @@
             this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnAktiv = new System.Windows.Forms.Panel();
+            this.btnAdmin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).BeginInit();
@@ -57,6 +58,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.panel2.Controls.Add(this.btnAdmin);
             this.panel2.Controls.Add(this.pnAktiv);
             this.panel2.Controls.Add(this.btnWebsite);
             this.panel2.Controls.Add(this.Beenden_Button);
@@ -70,6 +72,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(233, 585);
             this.panel2.TabIndex = 12;
+            // 
+            // pnAktiv
+            // 
+            this.pnAktiv.BackColor = System.Drawing.Color.Red;
+            this.pnAktiv.Location = new System.Drawing.Point(0, 0);
+            this.pnAktiv.Name = "pnAktiv";
+            this.pnAktiv.Size = new System.Drawing.Size(15, 48);
+            this.pnAktiv.TabIndex = 14;
             // 
             // btnWebsite
             // 
@@ -364,13 +374,42 @@
             this.panel1.Size = new System.Drawing.Size(1181, 124);
             this.panel1.TabIndex = 11;
             // 
-            // pnAktiv
+            // btnAdmin
             // 
-            this.pnAktiv.BackColor = System.Drawing.Color.Red;
-            this.pnAktiv.Location = new System.Drawing.Point(0, 0);
-            this.pnAktiv.Name = "pnAktiv";
-            this.pnAktiv.Size = new System.Drawing.Size(15, 48);
-            this.pnAktiv.TabIndex = 14;
+            this.btnAdmin.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdmin.BorderRadius = 0;
+            this.btnAdmin.ButtonText = "Admin";
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmin.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAdmin.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAdmin.Iconimage = null;
+            this.btnAdmin.Iconimage_right = null;
+            this.btnAdmin.Iconimage_right_Selected = null;
+            this.btnAdmin.Iconimage_Selected = null;
+            this.btnAdmin.IconMarginLeft = 0;
+            this.btnAdmin.IconMarginRight = 0;
+            this.btnAdmin.IconRightVisible = true;
+            this.btnAdmin.IconRightZoom = 0D;
+            this.btnAdmin.IconVisible = true;
+            this.btnAdmin.IconZoom = 90D;
+            this.btnAdmin.IsTab = false;
+            this.btnAdmin.Location = new System.Drawing.Point(0, 478);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdmin.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdmin.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
+            this.btnAdmin.selected = false;
+            this.btnAdmin.Size = new System.Drawing.Size(233, 59);
+            this.btnAdmin.TabIndex = 15;
+            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdmin.Textcolor = System.Drawing.Color.White;
+            this.btnAdmin.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // Menue
             // 
@@ -409,5 +448,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox Firmenlogo_pictureBox;
         private System.Windows.Forms.Panel pnAktiv;
+        private Bunifu.Framework.UI.BunifuFlatButton btnAdmin;
     }
 }

@@ -13,6 +13,7 @@ namespace Unternehmen
             InitializeComponent();
             this.verwaltung = verwaltung;
             if (verwaltung.GetFirma().GetWeb() == "none") btnWebsite.Visible = false;
+            if (verwaltung.GetAngemeldetePerson() == verwaltung.GetFirma().GetMitarbeiter(0)) btnAdmin.Visible = true;
         }
 
         private void btnKalender_Click(object sender, EventArgs e)
@@ -56,6 +57,11 @@ namespace Unternehmen
         private void pnAktivAktualisieren(int index)
         {
             pnAktiv.Location = new Point(0,48*index);
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            verwaltung.Chef();
         }
     }
 }

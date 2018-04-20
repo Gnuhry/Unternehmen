@@ -36,6 +36,7 @@
             this.Firmen_Motto = new System.Windows.Forms.Label();
             this.Logo_Picturebox = new System.Windows.Forms.PictureBox();
             this.Panel_right = new System.Windows.Forms.Panel();
+            this.btnHochladen = new System.Windows.Forms.Button();
             this.cBoxJahr = new System.Windows.Forms.ComboBox();
             this.cBoxMonat = new System.Windows.Forms.ComboBox();
             this.cBoxTag = new System.Windows.Forms.ComboBox();
@@ -55,7 +56,6 @@
             this.Ownername_Label = new System.Windows.Forms.Label();
             this.txBInhaber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Sign_Up_Label = new System.Windows.Forms.Label();
-            this.btnHochladen = new System.Windows.Forms.Button();
             this.Panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).BeginInit();
             this.Panel_right.SuspendLayout();
@@ -161,6 +161,20 @@
             this.Panel_right.DragDrop += new System.Windows.Forms.DragEventHandler(this.Registrieren_DragDrop);
             this.Panel_right.DragEnter += new System.Windows.Forms.DragEventHandler(this.Registrieren_DragEnter);
             // 
+            // btnHochladen
+            // 
+            this.btnHochladen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnHochladen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHochladen.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHochladen.ForeColor = System.Drawing.Color.White;
+            this.btnHochladen.Location = new System.Drawing.Point(397, 7);
+            this.btnHochladen.Name = "btnHochladen";
+            this.btnHochladen.Size = new System.Drawing.Size(139, 25);
+            this.btnHochladen.TabIndex = 32;
+            this.btnHochladen.Text = "Profilbild hochladen";
+            this.btnHochladen.UseVisualStyleBackColor = false;
+            this.btnHochladen.Click += new System.EventHandler(this.btnHochladen_Click);
+            // 
             // cBoxJahr
             // 
             this.cBoxJahr.FormattingEnabled = true;
@@ -232,9 +246,9 @@
             // 
             // TermsandConditionsCheckbox
             // 
-            this.TermsandConditionsCheckbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.TermsandConditionsCheckbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.TermsandConditionsCheckbox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.TermsandConditionsCheckbox.Checked = true;
+            this.TermsandConditionsCheckbox.Checked = false;
             this.TermsandConditionsCheckbox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.TermsandConditionsCheckbox.ForeColor = System.Drawing.Color.White;
             this.TermsandConditionsCheckbox.Location = new System.Drawing.Point(369, 497);
@@ -249,9 +263,9 @@
             this.New_Password_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.New_Password_Label.Location = new System.Drawing.Point(345, 416);
             this.New_Password_Label.Name = "New_Password_Label";
-            this.New_Password_Label.Size = new System.Drawing.Size(126, 21);
+            this.New_Password_Label.Size = new System.Drawing.Size(118, 21);
             this.New_Password_Label.TabIndex = 24;
-            this.New_Password_Label.Text = "New Password:";
+            this.New_Password_Label.Text = "Old Password:";
             this.New_Password_Label.Visible = false;
             // 
             // txBPasswortA
@@ -425,20 +439,6 @@
             this.Sign_Up_Label.Size = new System.Drawing.Size(89, 25);
             this.Sign_Up_Label.TabIndex = 10;
             this.Sign_Up_Label.Text = "Sign Up";
-            // 
-            // btnHochladen
-            // 
-            this.btnHochladen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.btnHochladen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHochladen.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHochladen.ForeColor = System.Drawing.Color.White;
-            this.btnHochladen.Location = new System.Drawing.Point(397, 7);
-            this.btnHochladen.Name = "btnHochladen";
-            this.btnHochladen.Size = new System.Drawing.Size(139, 25);
-            this.btnHochladen.TabIndex = 32;
-            this.btnHochladen.Text = "Profilbild hochladen";
-            this.btnHochladen.UseVisualStyleBackColor = false;
-            this.btnHochladen.Click += new System.EventHandler(this.btnHochladen_Click);
             // 
             // Registrieren
             // 
