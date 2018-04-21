@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAdminPostfach = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnAdminKalender = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnAdmin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnAktiv = new System.Windows.Forms.Panel();
             this.btnWebsite = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Beenden_Button = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -43,7 +46,6 @@
             this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAdmin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).BeginInit();
@@ -58,6 +60,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.panel2.Controls.Add(this.btnAdminPostfach);
+            this.panel2.Controls.Add(this.btnAdminKalender);
             this.panel2.Controls.Add(this.btnAdmin);
             this.panel2.Controls.Add(this.pnAktiv);
             this.panel2.Controls.Add(this.btnWebsite);
@@ -72,6 +76,114 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(233, 585);
             this.panel2.TabIndex = 12;
+            // 
+            // btnAdminPostfach
+            // 
+            this.btnAdminPostfach.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminPostfach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminPostfach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdminPostfach.BorderRadius = 0;
+            this.btnAdminPostfach.ButtonText = "Admin Postfach";
+            this.btnAdminPostfach.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdminPostfach.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAdminPostfach.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAdminPostfach.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAdminPostfach.Iconimage = null;
+            this.btnAdminPostfach.Iconimage_right = null;
+            this.btnAdminPostfach.Iconimage_right_Selected = null;
+            this.btnAdminPostfach.Iconimage_Selected = null;
+            this.btnAdminPostfach.IconMarginLeft = 0;
+            this.btnAdminPostfach.IconMarginRight = 0;
+            this.btnAdminPostfach.IconRightVisible = true;
+            this.btnAdminPostfach.IconRightZoom = 0D;
+            this.btnAdminPostfach.IconVisible = true;
+            this.btnAdminPostfach.IconZoom = 90D;
+            this.btnAdminPostfach.IsTab = false;
+            this.btnAdminPostfach.Location = new System.Drawing.Point(0, 332);
+            this.btnAdminPostfach.Name = "btnAdminPostfach";
+            this.btnAdminPostfach.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminPostfach.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminPostfach.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
+            this.btnAdminPostfach.selected = false;
+            this.btnAdminPostfach.Size = new System.Drawing.Size(233, 73);
+            this.btnAdminPostfach.TabIndex = 17;
+            this.btnAdminPostfach.Text = "Admin Postfach";
+            this.btnAdminPostfach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdminPostfach.Textcolor = System.Drawing.Color.White;
+            this.btnAdminPostfach.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminPostfach.Click += new System.EventHandler(this.btnAdminPostfach_Click);
+            // 
+            // btnAdminKalender
+            // 
+            this.btnAdminKalender.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminKalender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminKalender.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdminKalender.BorderRadius = 0;
+            this.btnAdminKalender.ButtonText = "Admin Kalender";
+            this.btnAdminKalender.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdminKalender.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAdminKalender.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAdminKalender.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAdminKalender.Iconimage = null;
+            this.btnAdminKalender.Iconimage_right = null;
+            this.btnAdminKalender.Iconimage_right_Selected = null;
+            this.btnAdminKalender.Iconimage_Selected = null;
+            this.btnAdminKalender.IconMarginLeft = 0;
+            this.btnAdminKalender.IconMarginRight = 0;
+            this.btnAdminKalender.IconRightVisible = true;
+            this.btnAdminKalender.IconRightZoom = 0D;
+            this.btnAdminKalender.IconVisible = true;
+            this.btnAdminKalender.IconZoom = 90D;
+            this.btnAdminKalender.IsTab = false;
+            this.btnAdminKalender.Location = new System.Drawing.Point(0, 405);
+            this.btnAdminKalender.Name = "btnAdminKalender";
+            this.btnAdminKalender.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminKalender.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminKalender.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
+            this.btnAdminKalender.selected = false;
+            this.btnAdminKalender.Size = new System.Drawing.Size(233, 73);
+            this.btnAdminKalender.TabIndex = 16;
+            this.btnAdminKalender.Text = "Admin Kalender";
+            this.btnAdminKalender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdminKalender.Textcolor = System.Drawing.Color.White;
+            this.btnAdminKalender.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminKalender.Click += new System.EventHandler(this.btnAdminKalender_Click);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdmin.BorderRadius = 0;
+            this.btnAdmin.ButtonText = "Admin Menue";
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmin.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAdmin.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAdmin.Iconimage = null;
+            this.btnAdmin.Iconimage_right = null;
+            this.btnAdmin.Iconimage_right_Selected = null;
+            this.btnAdmin.Iconimage_Selected = null;
+            this.btnAdmin.IconMarginLeft = 0;
+            this.btnAdmin.IconMarginRight = 0;
+            this.btnAdmin.IconRightVisible = true;
+            this.btnAdmin.IconRightZoom = 0D;
+            this.btnAdmin.IconVisible = true;
+            this.btnAdmin.IconZoom = 90D;
+            this.btnAdmin.IsTab = false;
+            this.btnAdmin.Location = new System.Drawing.Point(0, 478);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdmin.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdmin.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
+            this.btnAdmin.selected = false;
+            this.btnAdmin.Size = new System.Drawing.Size(233, 59);
+            this.btnAdmin.TabIndex = 15;
+            this.btnAdmin.Text = "Admin Menue";
+            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdmin.Textcolor = System.Drawing.Color.White;
+            this.btnAdmin.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // pnAktiv
             // 
@@ -374,43 +486,6 @@
             this.panel1.Size = new System.Drawing.Size(1181, 124);
             this.panel1.TabIndex = 11;
             // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdmin.BorderRadius = 0;
-            this.btnAdmin.ButtonText = "Admin";
-            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmin.DisabledColor = System.Drawing.Color.Gray;
-            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnAdmin.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnAdmin.Iconimage = null;
-            this.btnAdmin.Iconimage_right = null;
-            this.btnAdmin.Iconimage_right_Selected = null;
-            this.btnAdmin.Iconimage_Selected = null;
-            this.btnAdmin.IconMarginLeft = 0;
-            this.btnAdmin.IconMarginRight = 0;
-            this.btnAdmin.IconRightVisible = true;
-            this.btnAdmin.IconRightZoom = 0D;
-            this.btnAdmin.IconVisible = true;
-            this.btnAdmin.IconZoom = 90D;
-            this.btnAdmin.IsTab = false;
-            this.btnAdmin.Location = new System.Drawing.Point(0, 478);
-            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdmin.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdmin.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
-            this.btnAdmin.selected = false;
-            this.btnAdmin.Size = new System.Drawing.Size(233, 59);
-            this.btnAdmin.TabIndex = 15;
-            this.btnAdmin.Text = "Admin";
-            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAdmin.Textcolor = System.Drawing.Color.White;
-            this.btnAdmin.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
             // Menue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -449,5 +524,7 @@
         private System.Windows.Forms.PictureBox Firmenlogo_pictureBox;
         private System.Windows.Forms.Panel pnAktiv;
         private Bunifu.Framework.UI.BunifuFlatButton btnAdmin;
+        private Bunifu.Framework.UI.BunifuFlatButton btnAdminPostfach;
+        private Bunifu.Framework.UI.BunifuFlatButton btnAdminKalender;
     }
 }

@@ -12,6 +12,7 @@ namespace Unternehmen
             this.verwaltung = verwaltung;
             this.index = index;
             InitializeComponent();
+            dTPVon.MinDate = dTpBis.MinDate = DateTime.Today;
             if (index == -1) return;
             btnLoschen.Visible = true;
             //Eintragen

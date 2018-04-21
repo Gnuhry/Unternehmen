@@ -14,6 +14,7 @@ namespace Unternehmen
         private List<DateTime> Urlaubstage;
         private List<Tag> tage;
         private int Month, Year;
+        private static string[] Monat = { "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" };
         private static Color KrankentageC = Color.Orange, UrlaubstageC = Color.Red, VergangeneTageC = Color.LightGray, FeiertageC = Color.Green, BeantragenC = Color.Blue, keinArbeitstagC=Color.LightGray;
         public Kalender(Verwaltung verwaltung, bool Chef)
         {
@@ -45,8 +46,13 @@ namespace Unternehmen
                 case DayOfWeek.Saturday: erster = 5; break;
                 case DayOfWeek.Sunday: erster = 6; break;
             }
-            cBoxMonat.SelectedIndex = Month - 1;
-            cBoxJahr.SelectedIndex = Year-DateTime.Today.Year;
+            if (DateTime.Today.Year == Year)
+                try {
+                    cBoxMonat.SelectedIndex = Month - DateTime.Today.Month; }
+                catch (Exception) { }
+            else
+                cBoxMonat.SelectedIndex = Month - 1;
+            cBoxJahr.SelectedIndex = Year - DateTime.Today.Year;
             //Leeren
             for (int f = 7; f < Inhalt.Length; f++)
             {
@@ -133,13 +139,38 @@ namespace Unternehmen
 
         private void cBoxMonat_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Month = cBoxMonat.SelectedIndex + 1;
+            if (DateTime.Today.Year == Year)
+                Month = cBoxMonat.SelectedIndex  + DateTime.Today.Month;
+            else
+                Month = cBoxMonat.SelectedIndex + 1;
             KalenderLaden();
         }
 
         private void cBoxJahr_SelectedIndexChanged(object sender, EventArgs e)
         {
             Year = cBoxJahr.SelectedIndex + DateTime.Today.Year;
+            if (Year == DateTime.Today.Year)
+            {
+                for (int f = 0; f < DateTime.Today.Month - 1; f++)
+                    cBoxMonat.Items.Remove(Monat[f]);
+                if (Month < DateTime.Today.Month) Month = DateTime.Today.Month;
+            }
+            else if (cBoxMonat.Items.Count != 12)
+            {
+                cBoxMonat.Items.Clear();
+                cBoxMonat.Items.Add("Januar");
+                cBoxMonat.Items.Add("Februar");
+                cBoxMonat.Items.Add("März");
+                cBoxMonat.Items.Add("April");
+                cBoxMonat.Items.Add("Mai");
+                cBoxMonat.Items.Add("Juni");
+                cBoxMonat.Items.Add("Juli");
+                cBoxMonat.Items.Add("August");
+                cBoxMonat.Items.Add("September");
+                cBoxMonat.Items.Add("Oktober");
+                cBoxMonat.Items.Add("November");
+                cBoxMonat.Items.Add("Dezember");
+            }
             KalenderLaden();
         }
 
@@ -216,6 +247,22 @@ namespace Unternehmen
             for(int f = 0; f < MaxJahre; f++)
                 cBoxJahr.Items.Add(DateTime.Today.Year+f);
             cBoxJahr.SelectedIndex = 0;
+                cBoxMonat.Items.Clear();
+            cBoxMonat.Items.Add(Monat[0]);
+            cBoxMonat.Items.Add(Monat[1]);
+            cBoxMonat.Items.Add(Monat[2]);
+            cBoxMonat.Items.Add(Monat[3]);
+            cBoxMonat.Items.Add(Monat[4]);
+            cBoxMonat.Items.Add(Monat[5]);
+            cBoxMonat.Items.Add(Monat[6]);
+            cBoxMonat.Items.Add(Monat[7]);
+            cBoxMonat.Items.Add(Monat[8]);
+            cBoxMonat.Items.Add(Monat[9]);
+            cBoxMonat.Items.Add(Monat[10]);
+            cBoxMonat.Items.Add(Monat[11]);
+            for (int f = 0; f < DateTime.Today.Month-1; f++)
+                cBoxMonat.Items.Remove(Monat[f]);
+            cBoxMonat.SelectedIndex = 0;
         }
     }
 }

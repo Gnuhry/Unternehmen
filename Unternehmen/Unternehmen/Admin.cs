@@ -9,7 +9,6 @@ namespace Unternehmen
 {
     public partial class Admin : Form
     {
-        Kalender kalender;
         Registrieren registrieren;
         Verwaltung verwaltung;
         public Admin(Verwaltung verwaltung)
@@ -31,7 +30,7 @@ namespace Unternehmen
         private void btnFeuern_Click(object sender, EventArgs e)
         {
             verwaltung.GetFirma().Mitarbeiter_feuern(verwaltung.GetFirma().GetMitarbeiter(comBMitarbeiter.SelectedIndex + 1));
-            btnAktivieren.Enabled = btnFeuern.Enabled = btnPassword.Enabled = btnSperren.Enabled = btnUrlaub.Enabled = false;
+            btnAktivieren.Enabled = btnFeuern.Enabled = btnPassword.Enabled = btnSperren.Enabled = false;
             comBMitarbeiter.Items.RemoveAt(comBMitarbeiter.SelectedIndex);
         }
 
@@ -67,22 +66,9 @@ namespace Unternehmen
 
         }
 
-        private void btnUrlaub_Click(object sender, EventArgs e)
-        {
-            if(kalender!=null) { kalender.Show();return; }
-            kalender = new Kalender(verwaltung, true);
-            kalender.FormClosing += Kalender_FormClosing;
-            kalender.Show();
-        }
-
-        private void Kalender_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            kalender = null;
-        }
-
         private void comBMitarbeiter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnAktivieren.Enabled = btnFeuern.Enabled = btnPassword.Enabled = btnSperren.Enabled = btnUrlaub.Enabled = btnEinsehen.Enabled = true;
+            btnAktivieren.Enabled = btnFeuern.Enabled = btnPassword.Enabled = btnSperren.Enabled = btnEinsehen.Enabled = true;
             if (verwaltung.GetFirma().GetMitarbeiter(comBMitarbeiter.SelectedIndex + 1).GetStatus() != "gesperrt")
                 btnAktivieren.Enabled = false;
             else
@@ -119,10 +105,6 @@ namespace Unternehmen
             verwaltung.GetFirma().SetAutoRegistrieren(chBAutoAktiv.Checked);
         }
 
-        private void btnMessenger_Click(object sender, EventArgs e)
-        {
-            verwaltung.Postfach();
-        }
 
         private void Admin_DragDrop(object sender, DragEventArgs e)
         {

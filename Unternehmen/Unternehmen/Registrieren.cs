@@ -36,7 +36,7 @@ namespace Unternehmen
             pcBProfilbild.Image = angemeldet.GetProfilbild();
             cBoxTag.SelectedIndex = angemeldet.GetGeburtstag().Day - 1;
             cBoxMonat.SelectedIndex = angemeldet.GetGeburtstag().Month - 1;
-            cBoxJahr.SelectedIndex = angemeldet.GetGeburtstag().Year - 1;
+            cBoxJahr.SelectedIndex = angemeldet.GetGeburtstag().Year%DateTime.Today.Year;
             Logo_Picturebox.Image = verwaltung.GetFirma().GetFirmenLogo();
             aa = false;
         }

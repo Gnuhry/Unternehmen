@@ -41,7 +41,9 @@ namespace Unternehmen
         }
         public void Sortieren()
         {
-            List<DateTime> copie = TerminVon;
+            List<DateTime> copie = new List<DateTime>();
+            for(int f = 0; f < TerminVon.Count; f++)
+                copie.Add(TerminVon[f]);
             if (TerminVon.Count < 2) return;
             int[] temp = new int[copie.Count];
             int tempC = 0;

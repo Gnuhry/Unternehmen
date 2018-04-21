@@ -52,12 +52,29 @@ namespace Unternehmen
         }
         private void pnAktivAktualisieren(int index)
         {
-            pnAktiv.Location = new Point(0,48*index);
+           // MessageBox.Show(48 * index - pnAktiv.Location.Y + "");
+             pnAktiv.Location = new Point(0,48*index);
+           // pnAktiv.Location.Offset(0, 48 * index - pnAktiv.Location.Y);
+           // MessageBox.Show(pnAktiv.Location.ToString());
+            //pnAktiv.Location.Offset(0, 48 * index - pnAktiv.Location.Y);
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
+            pnAktivAktualisieren(10);
             verwaltung.Chef();
+        }
+
+        private void btnAdminKalender_Click(object sender, EventArgs e)
+        {
+            pnAktivAktualisieren(9);
+            verwaltung.AdminKalender();
+        }
+
+        private void btnAdminPostfach_Click(object sender, EventArgs e)
+        {
+            pnAktivAktualisieren(8);
+            verwaltung.Postfach();
         }
     }
 }

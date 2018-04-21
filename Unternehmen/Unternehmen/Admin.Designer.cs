@@ -39,11 +39,9 @@
             this.btnSperren = new System.Windows.Forms.Button();
             this.btnAktivieren = new System.Windows.Forms.Button();
             this.comBMitarbeiter = new System.Windows.Forms.ComboBox();
-            this.btnUrlaub = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFeuern = new System.Windows.Forms.Button();
             this.chBAutoAktiv = new System.Windows.Forms.CheckBox();
-            this.btnMessenger = new System.Windows.Forms.Button();
             this.btnLogoHochladen = new System.Windows.Forms.Button();
             this.pcBFirmenlogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numUrlaubstage)).BeginInit();
@@ -169,16 +167,6 @@
             this.comBMitarbeiter.TabIndex = 22;
             this.comBMitarbeiter.SelectedIndexChanged += new System.EventHandler(this.comBMitarbeiter_SelectedIndexChanged);
             // 
-            // btnUrlaub
-            // 
-            this.btnUrlaub.Location = new System.Drawing.Point(225, 221);
-            this.btnUrlaub.Name = "btnUrlaub";
-            this.btnUrlaub.Size = new System.Drawing.Size(97, 23);
-            this.btnUrlaub.TabIndex = 21;
-            this.btnUrlaub.Text = "Kalender öffnen";
-            this.btnUrlaub.UseVisualStyleBackColor = true;
-            this.btnUrlaub.Click += new System.EventHandler(this.btnUrlaub_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -212,16 +200,6 @@
             this.chBAutoAktiv.UseVisualStyleBackColor = true;
             this.chBAutoAktiv.CheckedChanged += new System.EventHandler(this.chBAutoAktiv_CheckedChanged);
             // 
-            // btnMessenger
-            // 
-            this.btnMessenger.Location = new System.Drawing.Point(159, 272);
-            this.btnMessenger.Name = "btnMessenger";
-            this.btnMessenger.Size = new System.Drawing.Size(75, 23);
-            this.btnMessenger.TabIndex = 34;
-            this.btnMessenger.Text = "Postfach";
-            this.btnMessenger.UseVisualStyleBackColor = true;
-            this.btnMessenger.Click += new System.EventHandler(this.btnMessenger_Click);
-            // 
             // btnLogoHochladen
             // 
             this.btnLogoHochladen.Location = new System.Drawing.Point(416, 328);
@@ -247,7 +225,6 @@
             this.ClientSize = new System.Drawing.Size(600, 358);
             this.Controls.Add(this.pcBFirmenlogo);
             this.Controls.Add(this.btnLogoHochladen);
-            this.Controls.Add(this.btnMessenger);
             this.Controls.Add(this.chBAutoAktiv);
             this.Controls.Add(this.chBWebsite);
             this.Controls.Add(this.txBWebsite);
@@ -260,7 +237,6 @@
             this.Controls.Add(this.btnSperren);
             this.Controls.Add(this.btnAktivieren);
             this.Controls.Add(this.comBMitarbeiter);
-            this.Controls.Add(this.btnUrlaub);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnFeuern);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -288,11 +264,9 @@
         private System.Windows.Forms.Button btnSperren;
         private System.Windows.Forms.Button btnAktivieren;
         private System.Windows.Forms.ComboBox comBMitarbeiter;
-        private System.Windows.Forms.Button btnUrlaub;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFeuern;
         private System.Windows.Forms.CheckBox chBAutoAktiv;
-        private System.Windows.Forms.Button btnMessenger;
         private System.Windows.Forms.Button btnLogoHochladen;
         private System.Windows.Forms.PictureBox pcBFirmenlogo;
     }

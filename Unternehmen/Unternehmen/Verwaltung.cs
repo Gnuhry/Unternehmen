@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Unternehmen
@@ -11,7 +12,7 @@ namespace Unternehmen
         private Registrieren registrieren;
         private Menue menue;
         private Messenger messenger;
-        private Kalender kalender;
+        private Kalender kalender,akalender;
         private Menue_standart menue_Standart;
         private Admin chef;
         private static string Pfad = Directory.GetCurrentDirectory() + @"\Speichern.txt";
@@ -24,7 +25,18 @@ namespace Unternehmen
             ShowInTaskbar = false;
             InitializeComponent();
             firma = (new Firma()).Laden(Pfad);
+
+
+
+            Konto x = new Konto();
+            x.Registrieren("Admin", "Admin", "Admin1", DateTime.Today, null, true);
+            firma.AddMitarbeiter(x);
+
             LogIn();
+
+
+
+            
         }
         public Firma GetFirma() => firma;
         public Konto GetAngemeldetePerson() => angemeldete_Person;
@@ -58,6 +70,7 @@ namespace Unternehmen
         {
             if (firma.GetMitarbeiter(0) != angemeldete_Person) return;
             if (chef != null) { chef.Show(); return; }
+            SchliesenMenues();
             chef = new Admin(this)
             {
                 MdiParent = menue,
@@ -87,6 +100,25 @@ namespace Unternehmen
         private void Chef_FormClosing(object sender, FormClosingEventArgs e)
         {
             chef = null;
+        }
+
+        public void AdminKalender()
+        {
+            if (akalender != null) { akalender.Show(); return; }
+            SchliesenMenues();
+            akalender = new Kalender(this, true)
+            {
+                MdiParent = menue,
+                Dock = DockStyle.Fill
+            };
+            akalender.FormClosing += Akalender_FormClosing;
+            akalender.Show();
+
+        }
+
+        private void Akalender_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            akalender = null;
         }
 
         public void Kalender()
