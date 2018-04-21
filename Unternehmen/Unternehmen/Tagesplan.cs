@@ -21,12 +21,14 @@ namespace Unternehmen
             TerminVon.Add(von);
             TerminBis.Add(bis);
             this.Beschreibung.Add(Beschreibung);
+            Sortieren();
         }
         public void SetTermin(DateTime von, DateTime bis, string Beschreibung,int index)
         {
             TerminVon[index]=von;
             TerminBis[index]=bis;
             this.Beschreibung[index]=Beschreibung;
+            Sortieren();
         }
         public DateTime GetVon(int index) => TerminVon[index];
         public DateTime GetBis(int index) => TerminBis[index];
@@ -36,6 +38,35 @@ namespace Unternehmen
             TerminVon.RemoveAt(index);
             TerminBis.RemoveAt(index);
             Beschreibung.RemoveAt(index);
+        }
+        public void Sortieren()
+        {
+            List<DateTime> copie = TerminVon;
+            if (TerminVon.Count < 2) return;
+            int[] temp = new int[copie.Count];
+            int tempC = 0;
+            for (int g = 0; g < temp.Length; g++)
+            {
+                DateTime min = copie[0];
+                for (int f = 1; f < copie.Count; f++)
+                    if (min > copie[f])
+                    {
+                        min = copie[f];
+                        temp[tempC] = f;
+                    }
+                copie.RemoveAt(temp[tempC++]);
+            }
+            List<DateTime> temp1=new List<DateTime>(), temp2 = new List<DateTime>();
+            List<string> tempB = new List<string>();
+            for(int f = 0; f < temp.Length; f++)
+            {
+                temp1.Add(TerminVon[temp[f]]);
+                temp2.Add(TerminBis[temp[f]]);
+                tempB.Add(Beschreibung[temp[f]]);
+            }
+            TerminVon = temp1;
+            TerminBis = temp2;
+            Beschreibung = tempB;
         }
     }
 }

@@ -44,7 +44,10 @@
             this.btnFeuern = new System.Windows.Forms.Button();
             this.chBAutoAktiv = new System.Windows.Forms.CheckBox();
             this.btnMessenger = new System.Windows.Forms.Button();
+            this.btnLogoHochladen = new System.Windows.Forms.Button();
+            this.pcBFirmenlogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numUrlaubstage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBFirmenlogo)).BeginInit();
             this.SuspendLayout();
             // 
             // chBWebsite
@@ -219,11 +222,31 @@
             this.btnMessenger.UseVisualStyleBackColor = true;
             this.btnMessenger.Click += new System.EventHandler(this.btnMessenger_Click);
             // 
+            // btnLogoHochladen
+            // 
+            this.btnLogoHochladen.Location = new System.Drawing.Point(416, 328);
+            this.btnLogoHochladen.Name = "btnLogoHochladen";
+            this.btnLogoHochladen.Size = new System.Drawing.Size(104, 23);
+            this.btnLogoHochladen.TabIndex = 35;
+            this.btnLogoHochladen.Text = "Logo Hochladen";
+            this.btnLogoHochladen.UseVisualStyleBackColor = true;
+            this.btnLogoHochladen.Click += new System.EventHandler(this.btnLogoHochladen_Click);
+            // 
+            // pcBFirmenlogo
+            // 
+            this.pcBFirmenlogo.Location = new System.Drawing.Point(420, 272);
+            this.pcBFirmenlogo.Name = "pcBFirmenlogo";
+            this.pcBFirmenlogo.Size = new System.Drawing.Size(100, 50);
+            this.pcBFirmenlogo.TabIndex = 36;
+            this.pcBFirmenlogo.TabStop = false;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 358);
+            this.ClientSize = new System.Drawing.Size(600, 358);
+            this.Controls.Add(this.pcBFirmenlogo);
+            this.Controls.Add(this.btnLogoHochladen);
             this.Controls.Add(this.btnMessenger);
             this.Controls.Add(this.chBAutoAktiv);
             this.Controls.Add(this.chBWebsite);
@@ -243,7 +266,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admin";
             this.Text = "Admin";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Admin_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Admin_DragEnter);
             ((System.ComponentModel.ISupportInitialize)(this.numUrlaubstage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBFirmenlogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,5 +293,7 @@
         private System.Windows.Forms.Button btnFeuern;
         private System.Windows.Forms.CheckBox chBAutoAktiv;
         private System.Windows.Forms.Button btnMessenger;
+        private System.Windows.Forms.Button btnLogoHochladen;
+        private System.Windows.Forms.PictureBox pcBFirmenlogo;
     }
 }

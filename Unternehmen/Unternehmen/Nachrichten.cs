@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace Unternehmen
 {
@@ -8,17 +9,17 @@ namespace Unternehmen
     {
         private List<Konto> Sender;
         private List<string> Nachricht;
-        private List<object> Anhang;
+        private List<Image> Anhang;
         private List<DateTime> SendeDatum;
 
         public Nachrichten()
         {
             Sender = new List<Konto>();
             Nachricht = new List<string>();
-            Anhang = new List<object>();
+            Anhang = new List<Image>();
             SendeDatum = new List<DateTime>();
         }
-        public void Recive(Konto Sender,string Nachricht, object Anhang)
+        public void Recive(Konto Sender,string Nachricht, Image Anhang)
         {
             this.Sender.Add(Sender);
             this.Nachricht.Add(Nachricht);
@@ -33,7 +34,7 @@ namespace Unternehmen
             return temp;
         }
         public string GetNachricht(int index) => Nachricht[index];
-        public object GetAnhang(int index) => Anhang[index];
+        public Image GetAnhang(int index) => Anhang[index];
         public Konto GetSender(int index) => Sender[index];
         public int GetAnzahl() => Nachricht.Count;
         public DateTime GetSendeDatum(int index) => SendeDatum[index];

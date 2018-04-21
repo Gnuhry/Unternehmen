@@ -50,7 +50,7 @@ namespace Unternehmen
             login.Hide();
             menue = new Menue(this);
             menue.FormClosing += Menue_FormClosing;
-            menue_standart();
+            Menue_standart();
             menue.Show();
         }
 
@@ -58,19 +58,23 @@ namespace Unternehmen
         {
             if (firma.GetMitarbeiter(0) != angemeldete_Person) return;
             if (chef != null) { chef.Show(); return; }
-            chef = new Admin(this);
-            chef.MdiParent = menue;
-            chef.Dock = DockStyle.Fill;
+            chef = new Admin(this)
+            {
+                MdiParent = menue,
+                Dock = DockStyle.Fill
+            };
             chef.FormClosing += Chef_FormClosing;
             chef.Show();
         }
-        public void menue_standart()
+        public void Menue_standart()
         {
             if (menue_Standart != null) { menue_Standart.Show(); return; }
             SchliesenMenues();
-            menue_Standart = new Menue_standart(this);
-            menue_Standart.MdiParent = menue;
-            menue_Standart.Dock = DockStyle.Fill;
+            menue_Standart = new Menue_standart(this)
+            {
+                MdiParent = menue,
+                Dock = DockStyle.Fill
+            };
             menue_Standart.FormClosing += Menue_Standart_FormClosing;
             menue_Standart.Show();
         }
@@ -89,9 +93,11 @@ namespace Unternehmen
         {
             if (kalender != null) { kalender.Show(); return; }
             SchliesenMenues();
-            kalender = new Kalender(this,false);
-            kalender.MdiParent = menue;
-            kalender.Dock = DockStyle.Fill;
+            kalender = new Kalender(this, false)
+            {
+                MdiParent = menue,
+                Dock = DockStyle.Fill
+            };
             kalender.FormClosing += Kalender_FormClosing;
             kalender.Show();
 
@@ -118,9 +124,11 @@ namespace Unternehmen
         {
             if (messenger != null) { messenger.Show(); return; }
             SchliesenMenues();
-            messenger = new Messenger(this,false);
-            messenger.MdiParent = menue;
-            messenger.Dock = DockStyle.Fill;
+            messenger = new Messenger(this, false)
+            {
+                MdiParent = menue,
+                Dock = DockStyle.Fill
+            };
             messenger.FormClosing += Messenger_FormClosing;
             messenger.Show();
         }
@@ -128,9 +136,11 @@ namespace Unternehmen
         {
             if (messenger != null) { messenger.Show(); return; }
             SchliesenMenues();
-            messenger = new Messenger(this, true);
-            messenger.MdiParent = menue;
-            messenger.Dock = DockStyle.Fill;
+            messenger = new Messenger(this, true)
+            {
+                MdiParent = menue,
+                Dock = DockStyle.Fill
+            };
             messenger.FormClosing += Messenger_FormClosing;
             messenger.Show();
         }
@@ -144,9 +154,11 @@ namespace Unternehmen
         {
             if (registrieren != null) { registrieren.Show(); return; }
             SchliesenMenues();
-            registrieren = new Registrieren(this,angemeldete_Person);
-            registrieren.MdiParent = menue;
-            registrieren.Dock = DockStyle.Fill;
+            registrieren = new Registrieren(this, angemeldete_Person)
+            {
+                MdiParent = menue,
+                Dock = DockStyle.Fill
+            };
             registrieren.FormClosed += Registrieren2_FormClosed;
             registrieren.Show();
         }

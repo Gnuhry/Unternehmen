@@ -32,6 +32,8 @@
             this.lbAnzeige = new System.Windows.Forms.Label();
             this.lbSender = new System.Windows.Forms.Label();
             this.lbSendeDatum = new System.Windows.Forms.Label();
+            this.pcBAnhang = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBAnhang)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLoschen
@@ -71,17 +73,27 @@
             this.lbSendeDatum.TabIndex = 3;
             this.lbSendeDatum.Text = "label1";
             // 
+            // pcBAnhang
+            // 
+            this.pcBAnhang.Location = new System.Drawing.Point(114, 37);
+            this.pcBAnhang.Name = "pcBAnhang";
+            this.pcBAnhang.Size = new System.Drawing.Size(100, 50);
+            this.pcBAnhang.TabIndex = 4;
+            this.pcBAnhang.TabStop = false;
+            // 
             // NachrichtAnzeige
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pcBAnhang);
             this.Controls.Add(this.lbSendeDatum);
             this.Controls.Add(this.lbSender);
             this.Controls.Add(this.lbAnzeige);
             this.Controls.Add(this.btnLoschen);
             this.Name = "NachrichtAnzeige";
             this.Text = "NachrichtAnzeige";
+            ((System.ComponentModel.ISupportInitialize)(this.pcBAnhang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,5 +105,6 @@
         private System.Windows.Forms.Label lbAnzeige;
         private System.Windows.Forms.Label lbSender;
         private System.Windows.Forms.Label lbSendeDatum;
+        private System.Windows.Forms.PictureBox pcBAnhang;
     }
 }

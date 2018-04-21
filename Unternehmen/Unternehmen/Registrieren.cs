@@ -12,12 +12,15 @@ namespace Unternehmen
     {
         Verwaltung verwaltung;
         Konto angemeldet;
+        bool aa;
         public Registrieren(Verwaltung verwaltung)
         {
             this.verwaltung = verwaltung;
             InitializeComponent();
             InitComboBox();
             pcBProfilbild.Image = Properties.Resources.ic_android_black_24dp;
+            Logo_Picturebox.Image =  verwaltung.GetFirma().GetFirmenLogo();
+            aa = true;
         }
         public Registrieren(Verwaltung verwaltung, Konto angemeldet)
         {
@@ -34,6 +37,8 @@ namespace Unternehmen
             cBoxTag.SelectedIndex = angemeldet.GetGeburtstag().Day - 1;
             cBoxMonat.SelectedIndex = angemeldet.GetGeburtstag().Month - 1;
             cBoxJahr.SelectedIndex = angemeldet.GetGeburtstag().Year - 1;
+            Logo_Picturebox.Image = verwaltung.GetFirma().GetFirmenLogo();
+            aa = false;
         }
 
         private void InitComboBox()
@@ -52,14 +57,9 @@ namespace Unternehmen
                 MessageBox.Show("Terms and Condition annehmen");
                 return;
             }
-            if (angemeldet == null)
-            {
+            if (aa)
                 angemeldet = new Konto();
-            }
-            else
-            {
-                if (angemeldet.Login(angemeldet.GetBenutzername(), txBPasswortA.Text) != 0) { MessageBox.Show("Altes Passwort stimmt nicht"); return; }
-            }
+            else if (angemeldet.Login(angemeldet.GetBenutzername(), txBPasswortA.Text) != 0) { MessageBox.Show("Altes Passwort stimmt nicht"); return; }
             if (txBInhaber.Text.Trim() == null || txBInhaber.Text.Trim() == "") { MessageBox.Show("Kein Inhaber"); return; }
             if (txBBenutzername.Text.Trim() == null || txBBenutzername.Text.Trim() == "") { MessageBox.Show("Keinen Benutzernamen"); return; }
             if (txBPasswort.Text.Trim() == null || txBPasswort.Text.Trim() == "") { MessageBox.Show("Kein Passwort"); return; }
@@ -117,12 +117,13 @@ namespace Unternehmen
         private void btnHochladen_Click(object sender, EventArgs e)
         {
             Stream myStream = null;
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-
-            openFileDialog1.InitialDirectory = "c:\\";
-            openFileDialog1.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
-            openFileDialog1.FilterIndex = 2;
-            openFileDialog1.RestoreDirectory = true;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                InitialDirectory = "c:\\",
+                Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG",
+                FilterIndex = 2,
+                RestoreDirectory = true
+            };
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 try

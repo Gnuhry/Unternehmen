@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Unternehmen
@@ -21,6 +25,7 @@ namespace Unternehmen
             if (txBWebsite.Text == "none")
                 txBWebsite.Enabled = false;
             chBAutoAktiv.Checked = verwaltung.GetFirma().GetAutoRegistrieren();
+            pcBFirmenlogo.Image = verwaltung.GetFirma().GetFirmenLogo();
         }
 
         private void btnFeuern_Click(object sender, EventArgs e)
@@ -118,5 +123,48 @@ namespace Unternehmen
         {
             verwaltung.Postfach();
         }
+
+        private void Admin_DragDrop(object sender, DragEventArgs e)
+        {
+            pcBFirmenlogo.Image=new Bitmap(((string[])e.Data.GetData(DataFormats.FileDrop))[0]);
+            verwaltung.GetFirma().SetFirmenLogo(pcBFirmenlogo.Image);
+        }
+
+        private void Admin_DragEnter(object sender, DragEventArgs e)
+        {
+            string[] validExtensions = new string[] { ".png", ".jpg" };
+            foreach (var ext in ((IEnumerable<string>)e.Data.GetData(DataFormats.FileDrop)).Select((f) => System.IO.Path.GetExtension(f)))
+                if (!validExtensions.Contains(ext))
+                    e.Effect = DragDropEffects.None;
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void btnLogoHochladen_Click(object sender, EventArgs e)
+        {
+            Stream myStream = null;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                InitialDirectory = "c:\\",
+                Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG",
+                FilterIndex = 2,
+                RestoreDirectory = true
+            };
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                try
+                {
+                    if ((myStream = openFileDialog1.OpenFile()) != null)
+                        using (myStream)
+                        {
+                            pcBFirmenlogo.Image = new Bitmap(myStream);
+                            verwaltung.GetFirma().SetFirmenLogo(pcBFirmenlogo.Image);
+                        }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+        }
+
     }
 }

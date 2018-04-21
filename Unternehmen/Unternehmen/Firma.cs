@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -8,6 +9,7 @@ namespace Unternehmen
     [Serializable]
     public class Firma
     {
+        private Image Logo;
         private List<Konto> Mitarbeiter;
         private Notizen notizen;
         private bool[] Arbeitstage;
@@ -20,6 +22,7 @@ namespace Unternehmen
 
         public Firma()
         {
+            Logo = Properties.Resources.japanese_kanji;
             Adminnachrichten = new Nachrichten();
             AutoRegistrieren = true;
             Web = "http://www.google.com";
@@ -108,6 +111,8 @@ namespace Unternehmen
         public string GetFeirtagname(DateTime Tag) => feiertage.getFeierTag(Tag);
         public bool IsFeiertag(DateTime Tag) => feiertage.getFeierTag(Tag)!=null;
         public void DeleteFeiertag(DateTime Tag) => feiertage.RemoveFeiertag(Tag);
+        public void SetFirmenLogo(Image Logo) => this.Logo = Logo;
+        public Image GetFirmenLogo() => Logo;
 
         public void Urlaub_beantragen(DateTime Tag, Konto angemeldet)
         {
@@ -167,15 +172,14 @@ namespace Unternehmen
         public string GetNotiz(DateTime Tag) => notizen.GetNachricht(Tag);
         public void SetAutoRegistrieren(bool Auto) => AutoRegistrieren = Auto;
         public bool GetAutoRegistrieren() => AutoRegistrieren;
-        public void ReciveAdminNachricht(string Nachricht, object Anhang, Konto Sender) => Adminnachrichten.Recive(Sender, Nachricht, Anhang);
+        public void ReciveAdminNachricht(string Nachricht, Image Anhang, Konto Sender) => Adminnachrichten.Recive(Sender, Nachricht, Anhang);
         public string GetAdminNachricht(int index) => Adminnachrichten.GetNachricht(index);
-        public object GetAdminAnhang(int index) => Adminnachrichten.GetAnhang(index);
+        public Image GetAdminAnhang(int index) => Adminnachrichten.GetAnhang(index);
         public Konto GetAdminNachrichtSender(int index) => Adminnachrichten.GetSender(index);
         public int GetAdminNachrichtAnzahl() => Adminnachrichten.GetAnzahl();
         public string[] GetAdminAnzeige() => Adminnachrichten.GetAnzeige();
         public DateTime GetSendeDatum(int index) => Adminnachrichten.GetSendeDatum(index);
         public void RemoveNachricht(int index) => Adminnachrichten.DeleteNachricht(index);
-
 
         public void Speichern(string path)
         {

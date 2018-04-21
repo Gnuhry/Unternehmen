@@ -143,10 +143,10 @@ namespace Unternehmen
         }
         public void SetNotizen(string Nachricht, DateTime Tag) => notizen.AddNotiz(Nachricht, Tag);
         public string GetNotiz(DateTime Tag) => notizen.GetNachricht(Tag);
-        public void ReciveNachricht(string nachricht, object Anhang, Konto sender) => nachrichten.Recive(sender, nachricht, Anhang);
+        public void ReciveNachricht(string nachricht, Image Anhang, Konto sender) => nachrichten.Recive(sender, nachricht, Anhang);
         public string[] GetAnzeige() => nachrichten.GetAnzeige();
         public string GetNachricht(int index) => nachrichten.GetNachricht(index);
-        public object GetAnhang(int index) => nachrichten.GetAnhang(index);
+        public Image GetAnhang(int index) => nachrichten.GetAnhang(index);
         public Konto GetSender(int index) => nachrichten.GetSender(index);
         public int GetNachrichtenAnzahl() => nachrichten.GetAnzahl();
         public void RemoveNachricht(int index) => nachrichten.DeleteNachricht(index);

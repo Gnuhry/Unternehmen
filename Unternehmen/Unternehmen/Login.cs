@@ -10,6 +10,7 @@ namespace Unternehmen
         {
             InitializeComponent();
             this.verwaltung = verwaltung;
+            Logo_Picturebox.Image = verwaltung.GetFirma().GetFirmenLogo();
         }
 
         private void btnRegistrieren_Click(object sender, EventArgs e)

@@ -14,8 +14,8 @@ namespace Unternehmen
             this.verwaltung = verwaltung;
             if (verwaltung.GetFirma().GetWeb() == "none") btnWebsite.Visible = false;
             if (verwaltung.GetAngemeldetePerson() == verwaltung.GetFirma().GetMitarbeiter(0)) btnAdmin.Visible = true;
+            Firmenlogo_pictureBox.Image = verwaltung.GetFirma().GetFirmenLogo();
         }
-
         private void btnKalender_Click(object sender, EventArgs e)
         {
             pnAktivAktualisieren(1);
@@ -27,10 +27,6 @@ namespace Unternehmen
             pnAktivAktualisieren(3);
             verwaltung.Messenger();
         }
-
-       
-
-
         private void btnWebsite_Click(object sender, EventArgs e)
         {
             Process.Start(verwaltung.GetFirma().GetWeb());
@@ -52,7 +48,7 @@ namespace Unternehmen
         private void btnMenue_Click(object sender, EventArgs e)
         {
             pnAktivAktualisieren(0);
-            verwaltung.menue_standart();
+            verwaltung.Menue_standart();
         }
         private void pnAktivAktualisieren(int index)
         {

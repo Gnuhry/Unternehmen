@@ -19,11 +19,13 @@ namespace Unternehmen
                 lbSender.Text ="Von :"+ verwaltung.GetFirma().GetAdminNachrichtSender(index).GetKontoInhaber();
                 lbAnzeige.Text = verwaltung.GetFirma().GetAdminNachricht(index);
                 lbSendeDatum.Text = verwaltung.GetFirma().GetSendeDatum(index).ToShortDateString();
+                pcBAnhang.Image = verwaltung.GetFirma().GetAdminAnhang(index);
                 return;
             }
             lbSender.Text = verwaltung.GetAngemeldetePerson().GetSender(index).GetKontoInhaber();
             lbAnzeige.Text = verwaltung.GetAngemeldetePerson().GetNachricht(index) ;
             lbSendeDatum.Text = verwaltung.GetAngemeldetePerson().GetSendeDatum(index).ToShortDateString();
+            pcBAnhang.Image = verwaltung.GetAngemeldetePerson().GetAnhang(index);
 
         }
 
