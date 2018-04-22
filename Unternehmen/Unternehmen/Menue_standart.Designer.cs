@@ -34,7 +34,6 @@
             this.btnZeiten = new System.Windows.Forms.Button();
             this.btnGehen = new System.Windows.Forms.Button();
             this.btnAnwesend = new System.Windows.Forms.Button();
-            this.btnAdmin = new System.Windows.Forms.Button();
             this.btnBescheinigung = new System.Windows.Forms.Button();
             this.pcBBescheinigung = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numKrankentage)).BeginInit();
@@ -43,6 +42,7 @@
             // 
             // btnKrank
             // 
+            this.btnKrank.Enabled = false;
             this.btnKrank.Location = new System.Drawing.Point(12, 220);
             this.btnKrank.Name = "btnKrank";
             this.btnKrank.Size = new System.Drawing.Size(156, 23);
@@ -97,17 +97,6 @@
             this.btnAnwesend.UseVisualStyleBackColor = true;
             this.btnAnwesend.Click += new System.EventHandler(this.btnAnwesend_Click);
             // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Location = new System.Drawing.Point(206, 33);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(150, 23);
-            this.btnAdmin.TabIndex = 21;
-            this.btnAdmin.Text = "Adminfenster";
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Visible = false;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
             // btnBescheinigung
             // 
             this.btnBescheinigung.Location = new System.Drawing.Point(12, 191);
@@ -133,7 +122,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pcBBescheinigung);
             this.Controls.Add(this.btnBescheinigung);
-            this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnKrank);
             this.Controls.Add(this.lbStatus);
             this.Controls.Add(this.numKrankentage);
@@ -158,7 +146,6 @@
         private System.Windows.Forms.Button btnZeiten;
         private System.Windows.Forms.Button btnGehen;
         private System.Windows.Forms.Button btnAnwesend;
-        private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnBescheinigung;
         private System.Windows.Forms.PictureBox pcBBescheinigung;
     }

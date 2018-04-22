@@ -34,6 +34,7 @@
             this.btnBeantragen = new System.Windows.Forms.Button();
             this.cBoxMonat = new System.Windows.Forms.ComboBox();
             this.cBoxJahr = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // tLpKalender
@@ -46,7 +47,7 @@
             this.tLpKalender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tLpKalender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tLpKalender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tLpKalender.Location = new System.Drawing.Point(69, 33);
+            this.tLpKalender.Location = new System.Drawing.Point(175, 169);
             this.tLpKalender.Name = "tLpKalender";
             this.tLpKalender.RowCount = 7;
             this.tLpKalender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -61,32 +62,44 @@
             // 
             // btnMonatzuruck
             // 
-            this.btnMonatzuruck.Location = new System.Drawing.Point(12, 4);
+            this.btnMonatzuruck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnMonatzuruck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMonatzuruck.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMonatzuruck.ForeColor = System.Drawing.Color.White;
+            this.btnMonatzuruck.Location = new System.Drawing.Point(175, 102);
             this.btnMonatzuruck.Name = "btnMonatzuruck";
-            this.btnMonatzuruck.Size = new System.Drawing.Size(75, 23);
+            this.btnMonatzuruck.Size = new System.Drawing.Size(75, 34);
             this.btnMonatzuruck.TabIndex = 1;
-            this.btnMonatzuruck.Text = "button1";
-            this.btnMonatzuruck.UseVisualStyleBackColor = true;
+            this.btnMonatzuruck.Text = "<-";
+            this.btnMonatzuruck.UseVisualStyleBackColor = false;
             this.btnMonatzuruck.Click += new System.EventHandler(this.btnMonatzuruck_Click);
             // 
             // btnMonatvor
             // 
-            this.btnMonatvor.Location = new System.Drawing.Point(539, 6);
+            this.btnMonatvor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnMonatvor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMonatvor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMonatvor.ForeColor = System.Drawing.Color.White;
+            this.btnMonatvor.Location = new System.Drawing.Point(559, 102);
             this.btnMonatvor.Name = "btnMonatvor";
-            this.btnMonatvor.Size = new System.Drawing.Size(75, 23);
+            this.btnMonatvor.Size = new System.Drawing.Size(75, 34);
             this.btnMonatvor.TabIndex = 2;
-            this.btnMonatvor.Text = "button1";
-            this.btnMonatvor.UseVisualStyleBackColor = true;
+            this.btnMonatvor.Text = "->";
+            this.btnMonatvor.UseVisualStyleBackColor = false;
             this.btnMonatvor.Click += new System.EventHandler(this.btnMonatvor_Click);
             // 
             // btnBeantragen
             // 
-            this.btnBeantragen.Location = new System.Drawing.Point(257, 377);
+            this.btnBeantragen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnBeantragen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBeantragen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBeantragen.ForeColor = System.Drawing.Color.White;
+            this.btnBeantragen.Location = new System.Drawing.Point(175, 519);
             this.btnBeantragen.Name = "btnBeantragen";
-            this.btnBeantragen.Size = new System.Drawing.Size(75, 23);
+            this.btnBeantragen.Size = new System.Drawing.Size(125, 40);
             this.btnBeantragen.TabIndex = 4;
-            this.btnBeantragen.Text = "button1";
-            this.btnBeantragen.UseVisualStyleBackColor = true;
+            this.btnBeantragen.Text = "Beantragen";
+            this.btnBeantragen.UseVisualStyleBackColor = false;
             this.btnBeantragen.Click += new System.EventHandler(this.btnBeantragen_Click);
             // 
             // cBoxMonat
@@ -105,7 +118,7 @@
             "Oktober",
             "November",
             "Dezember"});
-            this.cBoxMonat.Location = new System.Drawing.Point(170, 6);
+            this.cBoxMonat.Location = new System.Drawing.Point(175, 142);
             this.cBoxMonat.Name = "cBoxMonat";
             this.cBoxMonat.Size = new System.Drawing.Size(121, 21);
             this.cBoxMonat.TabIndex = 5;
@@ -114,20 +127,31 @@
             // cBoxJahr
             // 
             this.cBoxJahr.FormattingEnabled = true;
-            this.cBoxJahr.Location = new System.Drawing.Point(346, 6);
+            this.cBoxJahr.Location = new System.Drawing.Point(513, 142);
             this.cBoxJahr.Name = "cBoxJahr";
             this.cBoxJahr.Size = new System.Drawing.Size(121, 21);
             this.cBoxJahr.TabIndex = 6;
             this.cBoxJahr.SelectedIndexChanged += new System.EventHandler(this.cBoxJahr_SelectedIndexChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(807, 38);
+            this.panel1.TabIndex = 7;
             // 
             // Kalender
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(623, 422);
+            this.ClientSize = new System.Drawing.Size(807, 585);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.cBoxJahr);
             this.Controls.Add(this.cBoxMonat);
             this.Controls.Add(this.btnBeantragen);
@@ -155,5 +179,6 @@
         private System.Windows.Forms.Button btnBeantragen;
         private System.Windows.Forms.ComboBox cBoxMonat;
         private System.Windows.Forms.ComboBox cBoxJahr;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -36,13 +36,13 @@
             this.Firmen_Motto = new System.Windows.Forms.Label();
             this.Logo_Picturebox = new System.Windows.Forms.PictureBox();
             this.Panel_Right = new System.Windows.Forms.Panel();
+            this.lbFehlermeldung = new System.Windows.Forms.Label();
             this.Beenden_Label = new System.Windows.Forms.Label();
             this.txBpasswort = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Password_Label = new System.Windows.Forms.Label();
             this.Username_Label = new System.Windows.Forms.Label();
             this.txBbenutzername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Log_In_Label = new System.Windows.Forms.Label();
-            this.lbFehlermeldung = new System.Windows.Forms.Label();
             this.Panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).BeginInit();
             this.Panel_Right.SuspendLayout();
@@ -102,7 +102,7 @@
             this.Firmen_Motto.ForeColor = System.Drawing.Color.White;
             this.Firmen_Motto.Location = new System.Drawing.Point(49, 325);
             this.Firmen_Motto.Name = "Firmen_Motto";
-            this.Firmen_Motto.Size = new System.Drawing.Size(221, 48);
+            this.Firmen_Motto.Size = new System.Drawing.Size(223, 50);
             this.Firmen_Motto.TabIndex = 4;
             this.Firmen_Motto.Text = "We Create, We Plan \r\n       in your Way";
             // 
@@ -137,6 +137,14 @@
             this.Panel_Right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_Right_MouseMove);
             this.Panel_Right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseUp);
             // 
+            // lbFehlermeldung
+            // 
+            this.lbFehlermeldung.AutoSize = true;
+            this.lbFehlermeldung.Location = new System.Drawing.Point(3, 334);
+            this.lbFehlermeldung.Name = "lbFehlermeldung";
+            this.lbFehlermeldung.Size = new System.Drawing.Size(0, 13);
+            this.lbFehlermeldung.TabIndex = 29;
+            // 
             // Beenden_Label
             // 
             this.Beenden_Label.AutoSize = true;
@@ -144,7 +152,7 @@
             this.Beenden_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Beenden_Label.Location = new System.Drawing.Point(330, 4);
             this.Beenden_Label.Name = "Beenden_Label";
-            this.Beenden_Label.Size = new System.Drawing.Size(20, 24);
+            this.Beenden_Label.Size = new System.Drawing.Size(22, 25);
             this.Beenden_Label.TabIndex = 28;
             this.Beenden_Label.Text = "x";
             this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
@@ -178,7 +186,7 @@
             this.Password_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Password_Label.Location = new System.Drawing.Point(26, 227);
             this.Password_Label.Name = "Password_Label";
-            this.Password_Label.Size = new System.Drawing.Size(86, 21);
+            this.Password_Label.Size = new System.Drawing.Size(85, 20);
             this.Password_Label.TabIndex = 8;
             this.Password_Label.Text = "Password:";
             // 
@@ -189,7 +197,7 @@
             this.Username_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Username_Label.Location = new System.Drawing.Point(26, 137);
             this.Username_Label.Name = "Username_Label";
-            this.Username_Label.Size = new System.Drawing.Size(92, 21);
+            this.Username_Label.Size = new System.Drawing.Size(91, 20);
             this.Username_Label.TabIndex = 6;
             this.Username_Label.Text = "Username:";
             // 
@@ -221,22 +229,13 @@
             this.Log_In_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Log_In_Label.Location = new System.Drawing.Point(25, 54);
             this.Log_In_Label.Name = "Log_In_Label";
-            this.Log_In_Label.Size = new System.Drawing.Size(72, 25);
+            this.Log_In_Label.Size = new System.Drawing.Size(78, 25);
             this.Log_In_Label.TabIndex = 4;
             this.Log_In_Label.Text = "Log in";
             // 
-            // lbFehlermeldung
-            // 
-            this.lbFehlermeldung.AutoSize = true;
-            this.lbFehlermeldung.Location = new System.Drawing.Point(-3, 333);
-            this.lbFehlermeldung.Name = "lbFehlermeldung";
-            this.lbFehlermeldung.Size = new System.Drawing.Size(351, 16);
-            this.lbFehlermeldung.TabIndex = 29;
-            this.lbFehlermeldung.Text = "Das ist das LAbel für die Fehlermeldungen, kannst du bearbeiten";
-            // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 557);
             this.Controls.Add(this.Panel_Right);

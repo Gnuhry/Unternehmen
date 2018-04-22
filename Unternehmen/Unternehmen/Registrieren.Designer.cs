@@ -36,6 +36,7 @@
             this.Firmen_Motto = new System.Windows.Forms.Label();
             this.Logo_Picturebox = new System.Windows.Forms.PictureBox();
             this.Panel_right = new System.Windows.Forms.Panel();
+            this.lbFehlermeldung = new System.Windows.Forms.Label();
             this.btnHochladen = new System.Windows.Forms.Button();
             this.cBoxJahr = new System.Windows.Forms.ComboBox();
             this.cBoxMonat = new System.Windows.Forms.ComboBox();
@@ -56,7 +57,6 @@
             this.Ownername_Label = new System.Windows.Forms.Label();
             this.txBInhaber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Sign_Up_Label = new System.Windows.Forms.Label();
-            this.lbFehlermeldung = new System.Windows.Forms.Label();
             this.Panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).BeginInit();
             this.Panel_right.SuspendLayout();
@@ -69,7 +69,7 @@
             this.btnRegistrieren.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrieren.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrieren.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrieren.Location = new System.Drawing.Point(348, 535);
+            this.btnRegistrieren.Location = new System.Drawing.Point(350, 605);
             this.btnRegistrieren.Name = "btnRegistrieren";
             this.btnRegistrieren.Size = new System.Drawing.Size(300, 38);
             this.btnRegistrieren.TabIndex = 7;
@@ -83,7 +83,7 @@
             this.btnLoschen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoschen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoschen.ForeColor = System.Drawing.Color.White;
-            this.btnLoschen.Location = new System.Drawing.Point(349, 592);
+            this.btnLoschen.Location = new System.Drawing.Point(351, 662);
             this.btnLoschen.Name = "btnLoschen";
             this.btnLoschen.Size = new System.Drawing.Size(299, 38);
             this.btnLoschen.TabIndex = 9;
@@ -105,7 +105,7 @@
             this.Panel_Left.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panel_Left.Location = new System.Drawing.Point(0, 0);
             this.Panel_Left.Name = "Panel_Left";
-            this.Panel_Left.Size = new System.Drawing.Size(325, 658);
+            this.Panel_Left.Size = new System.Drawing.Size(325, 707);
             this.Panel_Left.TabIndex = 10;
             this.Panel_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseDown);
             this.Panel_Left.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseMove);
@@ -116,16 +116,16 @@
             this.Firmen_Motto.AutoSize = true;
             this.Firmen_Motto.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Firmen_Motto.ForeColor = System.Drawing.Color.White;
-            this.Firmen_Motto.Location = new System.Drawing.Point(49, 325);
+            this.Firmen_Motto.Location = new System.Drawing.Point(49, 386);
             this.Firmen_Motto.Name = "Firmen_Motto";
-            this.Firmen_Motto.Size = new System.Drawing.Size(221, 48);
+            this.Firmen_Motto.Size = new System.Drawing.Size(223, 50);
             this.Firmen_Motto.TabIndex = 4;
             this.Firmen_Motto.Text = "We Create, We Plan \r\n       in your Way";
             // 
             // Logo_Picturebox
             // 
             this.Logo_Picturebox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
-            this.Logo_Picturebox.Location = new System.Drawing.Point(54, 110);
+            this.Logo_Picturebox.Location = new System.Drawing.Point(54, 168);
             this.Logo_Picturebox.Name = "Logo_Picturebox";
             this.Logo_Picturebox.Size = new System.Drawing.Size(200, 200);
             this.Logo_Picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -161,11 +161,20 @@
             this.Panel_right.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_right.Location = new System.Drawing.Point(0, 0);
             this.Panel_right.Name = "Panel_right";
-            this.Panel_right.Size = new System.Drawing.Size(683, 658);
+            this.Panel_right.Size = new System.Drawing.Size(682, 707);
             this.Panel_right.TabIndex = 11;
             this.Panel_right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseDown);
             this.Panel_right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseMove);
             this.Panel_right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseUp);
+            // 
+            // lbFehlermeldung
+            // 
+            this.lbFehlermeldung.AutoSize = true;
+            this.lbFehlermeldung.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFehlermeldung.Location = new System.Drawing.Point(412, 546);
+            this.lbFehlermeldung.Name = "lbFehlermeldung";
+            this.lbFehlermeldung.Size = new System.Drawing.Size(0, 13);
+            this.lbFehlermeldung.TabIndex = 33;
             // 
             // btnHochladen
             // 
@@ -173,7 +182,7 @@
             this.btnHochladen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHochladen.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHochladen.ForeColor = System.Drawing.Color.White;
-            this.btnHochladen.Location = new System.Drawing.Point(397, 7);
+            this.btnHochladen.Location = new System.Drawing.Point(350, 65);
             this.btnHochladen.Name = "btnHochladen";
             this.btnHochladen.Size = new System.Drawing.Size(139, 25);
             this.btnHochladen.TabIndex = 32;
@@ -184,7 +193,7 @@
             // cBoxJahr
             // 
             this.cBoxJahr.FormattingEnabled = true;
-            this.cBoxJahr.Location = new System.Drawing.Point(548, 241);
+            this.cBoxJahr.Location = new System.Drawing.Point(551, 314);
             this.cBoxJahr.Name = "cBoxJahr";
             this.cBoxJahr.Size = new System.Drawing.Size(121, 21);
             this.cBoxJahr.TabIndex = 31;
@@ -205,7 +214,7 @@
             "Oktober",
             "November",
             "Dezember"});
-            this.cBoxMonat.Location = new System.Drawing.Point(415, 241);
+            this.cBoxMonat.Location = new System.Drawing.Point(418, 314);
             this.cBoxMonat.Name = "cBoxMonat";
             this.cBoxMonat.Size = new System.Drawing.Size(121, 21);
             this.cBoxMonat.TabIndex = 30;
@@ -214,16 +223,16 @@
             // cBoxTag
             // 
             this.cBoxTag.FormattingEnabled = true;
-            this.cBoxTag.Location = new System.Drawing.Point(350, 241);
+            this.cBoxTag.Location = new System.Drawing.Point(353, 314);
             this.cBoxTag.Name = "cBoxTag";
             this.cBoxTag.Size = new System.Drawing.Size(49, 21);
             this.cBoxTag.TabIndex = 29;
             // 
             // pcBProfilbild
             // 
-            this.pcBProfilbild.Location = new System.Drawing.Point(548, 30);
+            this.pcBProfilbild.Location = new System.Drawing.Point(531, 22);
             this.pcBProfilbild.Name = "pcBProfilbild";
-            this.pcBProfilbild.Size = new System.Drawing.Size(100, 50);
+            this.pcBProfilbild.Size = new System.Drawing.Size(100, 100);
             this.pcBProfilbild.TabIndex = 28;
             this.pcBProfilbild.TabStop = false;
             // 
@@ -234,7 +243,7 @@
             this.Beenden_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Beenden_Label.Location = new System.Drawing.Point(654, 7);
             this.Beenden_Label.Name = "Beenden_Label";
-            this.Beenden_Label.Size = new System.Drawing.Size(20, 24);
+            this.Beenden_Label.Size = new System.Drawing.Size(22, 25);
             this.Beenden_Label.TabIndex = 27;
             this.Beenden_Label.Text = "x";
             this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
@@ -244,9 +253,9 @@
             this.Termsandconditions_Label.AutoSize = true;
             this.Termsandconditions_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Termsandconditions_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Termsandconditions_Label.Location = new System.Drawing.Point(395, 497);
+            this.Termsandconditions_Label.Location = new System.Drawing.Point(393, 568);
             this.Termsandconditions_Label.Name = "Termsandconditions_Label";
-            this.Termsandconditions_Label.Size = new System.Drawing.Size(239, 21);
+            this.Termsandconditions_Label.Size = new System.Drawing.Size(238, 20);
             this.Termsandconditions_Label.TabIndex = 26;
             this.Termsandconditions_Label.Text = "I Agree Terms and Conditions";
             // 
@@ -257,7 +266,7 @@
             this.TermsandConditionsCheckbox.Checked = false;
             this.TermsandConditionsCheckbox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.TermsandConditionsCheckbox.ForeColor = System.Drawing.Color.White;
-            this.TermsandConditionsCheckbox.Location = new System.Drawing.Point(369, 497);
+            this.TermsandConditionsCheckbox.Location = new System.Drawing.Point(351, 568);
             this.TermsandConditionsCheckbox.Name = "TermsandConditionsCheckbox";
             this.TermsandConditionsCheckbox.Size = new System.Drawing.Size(20, 20);
             this.TermsandConditionsCheckbox.TabIndex = 25;
@@ -267,9 +276,9 @@
             this.New_Password_Label.AutoSize = true;
             this.New_Password_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.New_Password_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.New_Password_Label.Location = new System.Drawing.Point(345, 416);
+            this.New_Password_Label.Location = new System.Drawing.Point(348, 489);
             this.New_Password_Label.Name = "New_Password_Label";
-            this.New_Password_Label.Size = new System.Drawing.Size(118, 21);
+            this.New_Password_Label.Size = new System.Drawing.Size(117, 20);
             this.New_Password_Label.TabIndex = 24;
             this.New_Password_Label.Text = "Old Password:";
             this.New_Password_Label.Visible = false;
@@ -288,7 +297,7 @@
             this.txBPasswortA.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.txBPasswortA.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.txBPasswortA.LineThickness = 3;
-            this.txBPasswortA.Location = new System.Drawing.Point(348, 440);
+            this.txBPasswortA.Location = new System.Drawing.Point(351, 513);
             this.txBPasswortA.Margin = new System.Windows.Forms.Padding(4);
             this.txBPasswortA.Name = "txBPasswortA";
             this.txBPasswortA.Size = new System.Drawing.Size(300, 33);
@@ -301,9 +310,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.label1.Location = new System.Drawing.Point(345, 348);
+            this.label1.Location = new System.Drawing.Point(348, 421);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 21);
+            this.label1.Size = new System.Drawing.Size(148, 20);
             this.label1.TabIndex = 22;
             this.label1.Text = "Repeat Password:";
             // 
@@ -321,7 +330,7 @@
             this.txBPasswort2.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.txBPasswort2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.txBPasswort2.LineThickness = 3;
-            this.txBPasswort2.Location = new System.Drawing.Point(348, 372);
+            this.txBPasswort2.Location = new System.Drawing.Point(351, 445);
             this.txBPasswort2.Margin = new System.Windows.Forms.Padding(4);
             this.txBPasswort2.Name = "txBPasswort2";
             this.txBPasswort2.Size = new System.Drawing.Size(300, 33);
@@ -333,9 +342,9 @@
             this.Passwort_Label.AutoSize = true;
             this.Passwort_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Passwort_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Passwort_Label.Location = new System.Drawing.Point(345, 278);
+            this.Passwort_Label.Location = new System.Drawing.Point(348, 351);
             this.Passwort_Label.Name = "Passwort_Label";
-            this.Passwort_Label.Size = new System.Drawing.Size(86, 21);
+            this.Passwort_Label.Size = new System.Drawing.Size(85, 20);
             this.Passwort_Label.TabIndex = 20;
             this.Passwort_Label.Text = "Password:";
             // 
@@ -353,7 +362,7 @@
             this.txBPasswort.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.txBPasswort.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.txBPasswort.LineThickness = 3;
-            this.txBPasswort.Location = new System.Drawing.Point(348, 302);
+            this.txBPasswort.Location = new System.Drawing.Point(351, 375);
             this.txBPasswort.Margin = new System.Windows.Forms.Padding(4);
             this.txBPasswort.Name = "txBPasswort";
             this.txBPasswort.Size = new System.Drawing.Size(300, 33);
@@ -365,9 +374,9 @@
             this.Geburtstag_Label.AutoSize = true;
             this.Geburtstag_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Geburtstag_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Geburtstag_Label.Location = new System.Drawing.Point(345, 217);
+            this.Geburtstag_Label.Location = new System.Drawing.Point(348, 290);
             this.Geburtstag_Label.Name = "Geburtstag_Label";
-            this.Geburtstag_Label.Size = new System.Drawing.Size(78, 21);
+            this.Geburtstag_Label.Size = new System.Drawing.Size(77, 20);
             this.Geburtstag_Label.TabIndex = 16;
             this.Geburtstag_Label.Text = "Birthday:";
             // 
@@ -376,9 +385,9 @@
             this.Username_Label.AutoSize = true;
             this.Username_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Username_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Username_Label.Location = new System.Drawing.Point(345, 146);
+            this.Username_Label.Location = new System.Drawing.Point(347, 222);
             this.Username_Label.Name = "Username_Label";
-            this.Username_Label.Size = new System.Drawing.Size(92, 21);
+            this.Username_Label.Size = new System.Drawing.Size(91, 20);
             this.Username_Label.TabIndex = 14;
             this.Username_Label.Text = "Username:";
             // 
@@ -396,7 +405,7 @@
             this.txBBenutzername.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.txBBenutzername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.txBBenutzername.LineThickness = 3;
-            this.txBBenutzername.Location = new System.Drawing.Point(348, 170);
+            this.txBBenutzername.Location = new System.Drawing.Point(350, 246);
             this.txBBenutzername.Margin = new System.Windows.Forms.Padding(4);
             this.txBBenutzername.Name = "txBBenutzername";
             this.txBBenutzername.Size = new System.Drawing.Size(300, 33);
@@ -408,9 +417,9 @@
             this.Ownername_Label.AutoSize = true;
             this.Ownername_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ownername_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Ownername_Label.Location = new System.Drawing.Point(344, 75);
+            this.Ownername_Label.Location = new System.Drawing.Point(346, 135);
             this.Ownername_Label.Name = "Ownername_Label";
-            this.Ownername_Label.Size = new System.Drawing.Size(113, 21);
+            this.Ownername_Label.Size = new System.Drawing.Size(112, 20);
             this.Ownername_Label.TabIndex = 12;
             this.Ownername_Label.Text = "Ownername:";
             // 
@@ -428,7 +437,7 @@
             this.txBInhaber.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.txBInhaber.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.txBInhaber.LineThickness = 3;
-            this.txBInhaber.Location = new System.Drawing.Point(348, 99);
+            this.txBInhaber.Location = new System.Drawing.Point(350, 159);
             this.txBInhaber.Margin = new System.Windows.Forms.Padding(4);
             this.txBInhaber.Name = "txBInhaber";
             this.txBInhaber.Size = new System.Drawing.Size(300, 33);
@@ -440,27 +449,18 @@
             this.Sign_Up_Label.AutoSize = true;
             this.Sign_Up_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sign_Up_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Sign_Up_Label.Location = new System.Drawing.Point(344, 40);
+            this.Sign_Up_Label.Location = new System.Drawing.Point(348, 22);
             this.Sign_Up_Label.Name = "Sign_Up_Label";
-            this.Sign_Up_Label.Size = new System.Drawing.Size(89, 25);
+            this.Sign_Up_Label.Size = new System.Drawing.Size(92, 25);
             this.Sign_Up_Label.TabIndex = 10;
             this.Sign_Up_Label.Text = "Sign Up";
-            // 
-            // lbFehlermeldung
-            // 
-            this.lbFehlermeldung.AutoSize = true;
-            this.lbFehlermeldung.Location = new System.Drawing.Point(479, 99);
-            this.lbFehlermeldung.Name = "lbFehlermeldung";
-            this.lbFehlermeldung.Size = new System.Drawing.Size(195, 13);
-            this.lbFehlermeldung.TabIndex = 33;
-            this.lbFehlermeldung.Text = "Suche Platz für das FehlerAnzeigeLabel";
             // 
             // Registrieren
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 658);
+            this.ClientSize = new System.Drawing.Size(682, 707);
             this.Controls.Add(this.Panel_Left);
             this.Controls.Add(this.Panel_right);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

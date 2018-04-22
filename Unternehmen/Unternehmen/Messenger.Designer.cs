@@ -34,46 +34,55 @@
             this.btnSenden = new System.Windows.Forms.Button();
             this.pcBAnhang = new System.Windows.Forms.PictureBox();
             this.btnBildHochladen = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pcBAnhang)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // comBEmpfanger
             // 
             this.comBEmpfanger.FormattingEnabled = true;
-            this.comBEmpfanger.Location = new System.Drawing.Point(44, 32);
+            this.comBEmpfanger.Location = new System.Drawing.Point(648, 171);
             this.comBEmpfanger.Name = "comBEmpfanger";
-            this.comBEmpfanger.Size = new System.Drawing.Size(121, 21);
+            this.comBEmpfanger.Size = new System.Drawing.Size(147, 21);
             this.comBEmpfanger.TabIndex = 0;
             // 
             // lBoxNachrichten
             // 
             this.lBoxNachrichten.FormattingEnabled = true;
-            this.lBoxNachrichten.Location = new System.Drawing.Point(302, 32);
+            this.lBoxNachrichten.Location = new System.Drawing.Point(17, 125);
             this.lBoxNachrichten.Name = "lBoxNachrichten";
-            this.lBoxNachrichten.Size = new System.Drawing.Size(120, 95);
+            this.lBoxNachrichten.Size = new System.Drawing.Size(289, 95);
             this.lBoxNachrichten.TabIndex = 1;
             // 
             // txBNachricht
             // 
-            this.txBNachricht.Location = new System.Drawing.Point(44, 88);
+            this.txBNachricht.Location = new System.Drawing.Point(439, 171);
             this.txBNachricht.Multiline = true;
             this.txBNachricht.Name = "txBNachricht";
-            this.txBNachricht.Size = new System.Drawing.Size(193, 121);
+            this.txBNachricht.Size = new System.Drawing.Size(193, 143);
             this.txBNachricht.TabIndex = 2;
             // 
             // btnSenden
             // 
-            this.btnSenden.Location = new System.Drawing.Point(162, 394);
+            this.btnSenden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnSenden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSenden.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSenden.ForeColor = System.Drawing.Color.White;
+            this.btnSenden.Location = new System.Drawing.Point(439, 506);
             this.btnSenden.Name = "btnSenden";
-            this.btnSenden.Size = new System.Drawing.Size(75, 23);
+            this.btnSenden.Size = new System.Drawing.Size(193, 23);
             this.btnSenden.TabIndex = 3;
-            this.btnSenden.Text = "button1";
-            this.btnSenden.UseVisualStyleBackColor = true;
+            this.btnSenden.Text = "Senden";
+            this.btnSenden.UseVisualStyleBackColor = false;
             this.btnSenden.Click += new System.EventHandler(this.btnSenden_Click);
             // 
             // pcBAnhang
             // 
-            this.pcBAnhang.Location = new System.Drawing.Point(44, 215);
+            this.pcBAnhang.Location = new System.Drawing.Point(439, 320);
             this.pcBAnhang.Name = "pcBAnhang";
             this.pcBAnhang.Size = new System.Drawing.Size(193, 103);
             this.pcBAnhang.TabIndex = 4;
@@ -81,26 +90,74 @@
             // 
             // btnBildHochladen
             // 
-            this.btnBildHochladen.Location = new System.Drawing.Point(44, 324);
+            this.btnBildHochladen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnBildHochladen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBildHochladen.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBildHochladen.ForeColor = System.Drawing.Color.White;
+            this.btnBildHochladen.Location = new System.Drawing.Point(439, 429);
             this.btnBildHochladen.Name = "btnBildHochladen";
-            this.btnBildHochladen.Size = new System.Drawing.Size(75, 23);
+            this.btnBildHochladen.Size = new System.Drawing.Size(100, 23);
             this.btnBildHochladen.TabIndex = 5;
-            this.btnBildHochladen.Text = "button1";
-            this.btnBildHochladen.UseVisualStyleBackColor = true;
+            this.btnBildHochladen.Text = "Hochladen";
+            this.btnBildHochladen.UseVisualStyleBackColor = false;
             this.btnBildHochladen.Click += new System.EventHandler(this.btnBildHochladen_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(807, 108);
+            this.panel1.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Eingang";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(692, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Ausgang";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.panel2.Location = new System.Drawing.Point(386, 107);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 495);
+            this.panel2.TabIndex = 7;
             // 
             // Messenger
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 430);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(807, 585);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.lBoxNachrichten);
             this.Controls.Add(this.btnBildHochladen);
             this.Controls.Add(this.pcBAnhang);
             this.Controls.Add(this.btnSenden);
             this.Controls.Add(this.txBNachricht);
-            this.Controls.Add(this.lBoxNachrichten);
             this.Controls.Add(this.comBEmpfanger);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Messenger";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
@@ -109,6 +166,8 @@
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Messenger_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Messenger_DragEnter);
             ((System.ComponentModel.ISupportInitialize)(this.pcBAnhang)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +181,9 @@
         private System.Windows.Forms.Button btnSenden;
         private System.Windows.Forms.PictureBox pcBAnhang;
         private System.Windows.Forms.Button btnBildHochladen;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

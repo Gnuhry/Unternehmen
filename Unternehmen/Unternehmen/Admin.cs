@@ -154,7 +154,5 @@ namespace Unternehmen
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
         }
-
-      
     }
 }
