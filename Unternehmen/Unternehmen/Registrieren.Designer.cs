@@ -56,6 +56,7 @@
             this.Ownername_Label = new System.Windows.Forms.Label();
             this.txBInhaber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Sign_Up_Label = new System.Windows.Forms.Label();
+            this.lbFehlermeldung = new System.Windows.Forms.Label();
             this.Panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).BeginInit();
             this.Panel_right.SuspendLayout();
@@ -106,6 +107,9 @@
             this.Panel_Left.Name = "Panel_Left";
             this.Panel_Left.Size = new System.Drawing.Size(325, 658);
             this.Panel_Left.TabIndex = 10;
+            this.Panel_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseDown);
+            this.Panel_Left.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseMove);
+            this.Panel_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseUp);
             // 
             // Firmen_Motto
             // 
@@ -131,6 +135,7 @@
             // Panel_right
             // 
             this.Panel_right.BackColor = System.Drawing.Color.White;
+            this.Panel_right.Controls.Add(this.lbFehlermeldung);
             this.Panel_right.Controls.Add(this.btnHochladen);
             this.Panel_right.Controls.Add(this.cBoxJahr);
             this.Panel_right.Controls.Add(this.cBoxMonat);
@@ -158,8 +163,9 @@
             this.Panel_right.Name = "Panel_right";
             this.Panel_right.Size = new System.Drawing.Size(683, 658);
             this.Panel_right.TabIndex = 11;
-            this.Panel_right.DragDrop += new System.Windows.Forms.DragEventHandler(this.Registrieren_DragDrop);
-            this.Panel_right.DragEnter += new System.Windows.Forms.DragEventHandler(this.Registrieren_DragEnter);
+            this.Panel_right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseDown);
+            this.Panel_right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseMove);
+            this.Panel_right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseUp);
             // 
             // btnHochladen
             // 
@@ -440,8 +446,18 @@
             this.Sign_Up_Label.TabIndex = 10;
             this.Sign_Up_Label.Text = "Sign Up";
             // 
+            // lbFehlermeldung
+            // 
+            this.lbFehlermeldung.AutoSize = true;
+            this.lbFehlermeldung.Location = new System.Drawing.Point(479, 99);
+            this.lbFehlermeldung.Name = "lbFehlermeldung";
+            this.lbFehlermeldung.Size = new System.Drawing.Size(195, 13);
+            this.lbFehlermeldung.TabIndex = 33;
+            this.lbFehlermeldung.Text = "Suche Platz für das FehlerAnzeigeLabel";
+            // 
             // Registrieren
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 658);
@@ -451,6 +467,8 @@
             this.Name = "Registrieren";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrieren";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Registrieren_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Registrieren_DragEnter);
             this.Panel_Left.ResumeLayout(false);
             this.Panel_Left.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).EndInit();
@@ -489,5 +507,6 @@
         private System.Windows.Forms.ComboBox cBoxMonat;
         private System.Windows.Forms.ComboBox cBoxTag;
         private System.Windows.Forms.Button btnHochladen;
+        private System.Windows.Forms.Label lbFehlermeldung;
     }
 }

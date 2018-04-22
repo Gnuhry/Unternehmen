@@ -56,7 +56,7 @@ namespace Unternehmen
                 if (lBoxNachrichten.IndexFromPoint(e.Location) != ListBox.NoMatches)
                     for (int f = 0; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
                         if (verwaltung.GetFirma().GetMitarbeiter(f) == verwaltung.GetAngemeldetePerson().GetSender(lBoxNachrichten.IndexFromPoint(e.Location)))
-                            comBEmpfanger.SelectedIndex = f;
+                            comBEmpfanger.SelectedIndex = f+1;
         }
 
         private void LBoxNachrichten_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -103,7 +103,7 @@ namespace Unternehmen
             OpenFileDialog openFileDialog1 = new OpenFileDialog
             {
                 InitialDirectory = "c:\\",
-                Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG",
+                Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG",//Powerpoint Excel pdf word  |Dateien(*.ppt;*.pptx;*.xls;*.doc;.txt)|*.ppt;*.pptx;*.xls;*.doc;.txt"
                 FilterIndex = 2,
                 RestoreDirectory = true
             };
@@ -112,12 +112,12 @@ namespace Unternehmen
                 try
                 {
                     if ((myStream = openFileDialog1.OpenFile()) != null)
-                        using (myStream)
+                        using (myStream) 
                             pcBAnhang.Image = new Bitmap(myStream);
                 }
                 catch (Exception ex)
-                {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                {                   
+                        MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
         }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Unternehmen
@@ -23,9 +24,9 @@ namespace Unternehmen
            switch( verwaltung.GetFirma().Einloggen(txBbenutzername.Text, txBpasswort.Text,verwaltung))
             {
                 case 0: verwaltung.Menue(); break;
-                case -1: MessageBox.Show("Konto existiert nicht"); break;
-                case -2: MessageBox.Show("Falsche Passwort"); break;
-                case -3: MessageBox.Show("Gesperrtes Konto, wenden Sie sich an den Admin"); break;
+                case -1: lbFehlermeldung.Text="Konto existiert nicht"; break;
+                case -2: lbFehlermeldung.Text="Falsche Passwort"; break;
+                case -3: lbFehlermeldung.Text="Gesperrtes Konto, wenden Sie sich an den Admin"; break;
             }
             txBpasswort.Text = txBbenutzername.Text = null;
         }
@@ -38,6 +39,21 @@ namespace Unternehmen
         private void Beenden_Label_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Panel_Left_MouseDown(object sender, MouseEventArgs e)
+        {
+            Cursor=verwaltung.Bewegen_MouseDown(e);
+        }
+
+        private void Panel_Right_MouseMove(object sender, MouseEventArgs e)
+        {
+            verwaltung.Bewegen_MouseMove(this);
+        }
+
+        private void Panel_Left_MouseUp(object sender, MouseEventArgs e)
+        {
+            Cursor=verwaltung.Bewegen_MouseUp();
         }
     }
 }

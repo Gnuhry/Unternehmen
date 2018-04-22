@@ -62,9 +62,11 @@ namespace Unternehmen
         }
         private void pnAktivAktualisieren(int index)
         {
-           // MessageBox.Show(48 * index - pnAktiv.Location.Y + "");
-             pnAktiv.Location = new Point(0,48*index);
-           // pnAktiv.Location.Offset(0, 48 * index - pnAktiv.Location.Y);
+            // MessageBox.Show(48 * index - pnAktiv.Location.Y + "");
+            pnAktiv.Location = new Point(0,48*index);
+           // Point temp = pnAktiv.Location;
+             //temp.Offset(0, 48 * index - pnAktiv.Location.Y);
+            //pnAktiv.Location = temp;
            // MessageBox.Show(pnAktiv.Location.ToString());
             //pnAktiv.Location.Offset(0, 48 * index - pnAktiv.Location.Y);
         }
@@ -89,6 +91,21 @@ namespace Unternehmen
         public void WebsiteAktualisieren()
         {
             btnWebsite.Visible = verwaltung.GetFirma().GetWeb() != "none";
+        }
+
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            Cursor = verwaltung.Bewegen_MouseDown(e);
+        }
+
+        private void panel3_MouseMove(object sender, MouseEventArgs e)
+        {
+            verwaltung.Bewegen_MouseMove(this);
+        }
+
+        private void panel3_MouseUp(object sender, MouseEventArgs e)
+        {
+            Cursor = verwaltung.Bewegen_MouseUp();
         }
     }
 }

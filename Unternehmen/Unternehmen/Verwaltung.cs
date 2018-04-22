@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -16,7 +17,9 @@ namespace Unternehmen
         private Menue_standart menue_Standart;
         private Admin chef;
         private static string Pfad = Directory.GetCurrentDirectory() + @"\Speichern.txt";
-        
+        private Control activeControl;
+        private Point previousPosition;
+
         public Verwaltung()
         {
             if (!File.Exists(Pfad))
@@ -100,6 +103,7 @@ namespace Unternehmen
         private void Chef_FormClosing(object sender, FormClosingEventArgs e)
         {
             chef = null;
+            firma.Speichern(Pfad);
         }
 
         public void AdminKalender()
@@ -198,6 +202,7 @@ namespace Unternehmen
         private void Registrieren2_FormClosed(object sender, FormClosedEventArgs e)
         {
             registrieren = null;
+            firma.Speichern(Pfad);
         }
 
         private void Menue_FormClosing(object sender, FormClosingEventArgs e)
@@ -216,6 +221,7 @@ namespace Unternehmen
         private void Registrieren_FormClosed(object sender, FormClosedEventArgs e)
         {
             registrieren = null;
+            firma.Speichern(Pfad);
             LogIn();
         }
 
@@ -230,6 +236,29 @@ namespace Unternehmen
             firma.Mitarbeiter_feuern(angemeldete_Person);
             registrieren.Close();
             menue.Close();
+        }
+        public Cursor Bewegen_MouseDown(MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                activeControl = new Control();
+                previousPosition = e.Location;
+                return Cursors.Hand;
+            }
+            return Cursors.Default;
+        }
+
+
+        public void Bewegen_MouseMove(Form form)
+        {
+            if (activeControl == null) return;
+            form.SetDesktopLocation(MousePosition.X - previousPosition.X, MousePosition.Y - previousPosition.Y);
+        }
+
+        public Cursor Bewegen_MouseUp()
+        {
+            activeControl = null;
+            return Cursors.Default;
         }
     }
 }

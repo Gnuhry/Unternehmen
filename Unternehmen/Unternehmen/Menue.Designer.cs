@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAdminPostfach = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnAdminKalender = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnAdmin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnAktiv = new System.Windows.Forms.Panel();
@@ -46,6 +45,7 @@
             this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAdminPostfach = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).BeginInit();
@@ -76,43 +76,9 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(233, 585);
             this.panel2.TabIndex = 12;
-            // 
-            // btnAdminPostfach
-            // 
-            this.btnAdminPostfach.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdminPostfach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdminPostfach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdminPostfach.BorderRadius = 0;
-            this.btnAdminPostfach.ButtonText = "Admin Postfach";
-            this.btnAdminPostfach.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdminPostfach.DisabledColor = System.Drawing.Color.Gray;
-            this.btnAdminPostfach.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnAdminPostfach.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnAdminPostfach.Iconimage = null;
-            this.btnAdminPostfach.Iconimage_right = null;
-            this.btnAdminPostfach.Iconimage_right_Selected = null;
-            this.btnAdminPostfach.Iconimage_Selected = null;
-            this.btnAdminPostfach.IconMarginLeft = 0;
-            this.btnAdminPostfach.IconMarginRight = 0;
-            this.btnAdminPostfach.IconRightVisible = true;
-            this.btnAdminPostfach.IconRightZoom = 0D;
-            this.btnAdminPostfach.IconVisible = true;
-            this.btnAdminPostfach.IconZoom = 90D;
-            this.btnAdminPostfach.IsTab = false;
-            this.btnAdminPostfach.Location = new System.Drawing.Point(0, 346);
-            this.btnAdminPostfach.Name = "btnAdminPostfach";
-            this.btnAdminPostfach.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdminPostfach.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdminPostfach.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
-            this.btnAdminPostfach.selected = false;
-            this.btnAdminPostfach.Size = new System.Drawing.Size(233, 59);
-            this.btnAdminPostfach.TabIndex = 17;
-            this.btnAdminPostfach.Text = "Admin Postfach";
-            this.btnAdminPostfach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAdminPostfach.Textcolor = System.Drawing.Color.White;
-            this.btnAdminPostfach.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminPostfach.Visible = false;
-            this.btnAdminPostfach.Click += new System.EventHandler(this.btnAdminPostfach_Click);
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
             // btnAdminKalender
             // 
@@ -417,7 +383,7 @@
             this.btnMenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.btnMenue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMenue.BorderRadius = 0;
-            this.btnMenue.ButtonText = "Hauptmenue";
+            this.btnMenue.ButtonText = "Hauptmenü";
             this.btnMenue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenue.DisabledColor = System.Drawing.Color.Gray;
             this.btnMenue.Dock = System.Windows.Forms.DockStyle.Top;
@@ -441,7 +407,7 @@
             this.btnMenue.selected = false;
             this.btnMenue.Size = new System.Drawing.Size(233, 48);
             this.btnMenue.TabIndex = 3;
-            this.btnMenue.Text = "Hauptmenue";
+            this.btnMenue.Text = "Hauptmenü";
             this.btnMenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnMenue.Textcolor = System.Drawing.Color.White;
             this.btnMenue.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -455,6 +421,9 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(233, 124);
             this.panel3.TabIndex = 0;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
+            this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
             // Firmenlogo_pictureBox
             // 
@@ -488,6 +457,47 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1181, 124);
             this.panel1.TabIndex = 11;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
+            // 
+            // btnAdminPostfach
+            // 
+            this.btnAdminPostfach.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminPostfach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminPostfach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdminPostfach.BorderRadius = 0;
+            this.btnAdminPostfach.ButtonText = "Admin Postfach";
+            this.btnAdminPostfach.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdminPostfach.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAdminPostfach.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAdminPostfach.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAdminPostfach.Iconimage = null;
+            this.btnAdminPostfach.Iconimage_right = null;
+            this.btnAdminPostfach.Iconimage_right_Selected = null;
+            this.btnAdminPostfach.Iconimage_Selected = null;
+            this.btnAdminPostfach.IconMarginLeft = 0;
+            this.btnAdminPostfach.IconMarginRight = 0;
+            this.btnAdminPostfach.IconRightVisible = true;
+            this.btnAdminPostfach.IconRightZoom = 0D;
+            this.btnAdminPostfach.IconVisible = true;
+            this.btnAdminPostfach.IconZoom = 90D;
+            this.btnAdminPostfach.IsTab = false;
+            this.btnAdminPostfach.Location = new System.Drawing.Point(0, 346);
+            this.btnAdminPostfach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdminPostfach.Name = "btnAdminPostfach";
+            this.btnAdminPostfach.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminPostfach.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminPostfach.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
+            this.btnAdminPostfach.selected = false;
+            this.btnAdminPostfach.Size = new System.Drawing.Size(233, 59);
+            this.btnAdminPostfach.TabIndex = 18;
+            this.btnAdminPostfach.Text = "Admin Postfach";
+            this.btnAdminPostfach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdminPostfach.Textcolor = System.Drawing.Color.White;
+            this.btnAdminPostfach.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminPostfach.Visible = false;
+            this.btnAdminPostfach.Click += new System.EventHandler(this.btnAdminPostfach_Click);
             // 
             // Menue
             // 
@@ -502,6 +512,9 @@
             this.Name = "Menue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menue";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).EndInit();
@@ -527,7 +540,7 @@
         private System.Windows.Forms.PictureBox Firmenlogo_pictureBox;
         private System.Windows.Forms.Panel pnAktiv;
         private Bunifu.Framework.UI.BunifuFlatButton btnAdmin;
-        private Bunifu.Framework.UI.BunifuFlatButton btnAdminPostfach;
         private Bunifu.Framework.UI.BunifuFlatButton btnAdminKalender;
+        private Bunifu.Framework.UI.BunifuFlatButton btnAdminPostfach;
     }
 }

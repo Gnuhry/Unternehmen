@@ -42,6 +42,7 @@
             this.Username_Label = new System.Windows.Forms.Label();
             this.txBbenutzername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Log_In_Label = new System.Windows.Forms.Label();
+            this.lbFehlermeldung = new System.Windows.Forms.Label();
             this.Panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).BeginInit();
             this.Panel_Right.SuspendLayout();
@@ -90,6 +91,9 @@
             this.Panel_Left.Name = "Panel_Left";
             this.Panel_Left.Size = new System.Drawing.Size(325, 557);
             this.Panel_Left.TabIndex = 4;
+            this.Panel_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseDown);
+            this.Panel_Left.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_Right_MouseMove);
+            this.Panel_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseUp);
             // 
             // Firmen_Motto
             // 
@@ -115,6 +119,7 @@
             // Panel_Right
             // 
             this.Panel_Right.BackColor = System.Drawing.Color.White;
+            this.Panel_Right.Controls.Add(this.lbFehlermeldung);
             this.Panel_Right.Controls.Add(this.Beenden_Label);
             this.Panel_Right.Controls.Add(this.txBpasswort);
             this.Panel_Right.Controls.Add(this.Password_Label);
@@ -128,6 +133,9 @@
             this.Panel_Right.Name = "Panel_Right";
             this.Panel_Right.Size = new System.Drawing.Size(358, 557);
             this.Panel_Right.TabIndex = 5;
+            this.Panel_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseDown);
+            this.Panel_Right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_Right_MouseMove);
+            this.Panel_Right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseUp);
             // 
             // Beenden_Label
             // 
@@ -217,6 +225,15 @@
             this.Log_In_Label.TabIndex = 4;
             this.Log_In_Label.Text = "Log in";
             // 
+            // lbFehlermeldung
+            // 
+            this.lbFehlermeldung.AutoSize = true;
+            this.lbFehlermeldung.Location = new System.Drawing.Point(-3, 333);
+            this.lbFehlermeldung.Name = "lbFehlermeldung";
+            this.lbFehlermeldung.Size = new System.Drawing.Size(351, 16);
+            this.lbFehlermeldung.TabIndex = 29;
+            this.lbFehlermeldung.Text = "Das ist das LAbel für die Fehlermeldungen, kannst du bearbeiten";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -254,5 +271,6 @@
         private System.Windows.Forms.Label Firmen_Motto;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txBpasswort;
         private System.Windows.Forms.Label Beenden_Label;
+        private System.Windows.Forms.Label lbFehlermeldung;
     }
 }

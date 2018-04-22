@@ -54,16 +54,16 @@ namespace Unternehmen
         {
             if (!TermsandConditionsCheckbox.Checked)
             {
-                MessageBox.Show("Terms and Condition annehmen");
+                lbFehlermeldung.Text="Terms and Condition annehmen";
                 return;
             }
             if (aa)
                 angemeldet = new Konto();
-            else if (angemeldet.Login(angemeldet.GetBenutzername(), txBPasswortA.Text) != 0) { MessageBox.Show("Altes Passwort stimmt nicht"); return; }
-            if (txBInhaber.Text.Trim() == null || txBInhaber.Text.Trim() == "") { MessageBox.Show("Kein Inhaber"); return; }
-            if (txBBenutzername.Text.Trim() == null || txBBenutzername.Text.Trim() == "") { MessageBox.Show("Keinen Benutzernamen"); return; }
-            if (txBPasswort.Text.Trim() == null || txBPasswort.Text.Trim() == "") { MessageBox.Show("Kein Passwort"); return; }
-            if (txBPasswort.Text != txBPasswort2.Text) { MessageBox.Show("Passwörter überstimmen nicht ein"); return; }
+            else if (angemeldet.Login(angemeldet.GetBenutzername(), txBPasswortA.Text) != 0) { lbFehlermeldung.Text="Altes Passwort stimmt nicht"; return; }
+            if (txBInhaber.Text.Trim() == null || txBInhaber.Text.Trim() == "") { lbFehlermeldung.Text="Kein Inhaber"; return; }
+            if (txBBenutzername.Text.Trim() == null || txBBenutzername.Text.Trim() == "") { lbFehlermeldung.Text="Keinen Benutzernamen"; return; }
+            if (txBPasswort.Text.Trim() == null || txBPasswort.Text.Trim() == "") { lbFehlermeldung.Text="Kein Passwort"; return; }
+            if (txBPasswort.Text != txBPasswort2.Text) {lbFehlermeldung.Text="Passwörter überstimmen nicht ein"; return; }
             string temp;
             try
             {
@@ -76,10 +76,10 @@ namespace Unternehmen
                 if (verwaltung.GetFirma().AddMitarbeiter(angemeldet))
                     Close();
                 else
-                    MessageBox.Show("Benutzername existiert schon");
+                    lbFehlermeldung.Text="Benutzername existiert schon";
             }
             else
-                MessageBox.Show(temp);       
+                lbFehlermeldung.Text=temp;       
         }
 
         private void btnLoschen_Click(object sender, EventArgs e)
@@ -136,6 +136,21 @@ namespace Unternehmen
                 {
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
+        }
+
+        private void Panel_Left_MouseDown(object sender, MouseEventArgs e)
+        {
+            Cursor = verwaltung.Bewegen_MouseDown(e);
+        }
+
+        private void Panel_Left_MouseMove(object sender, MouseEventArgs e)
+        {
+            verwaltung.Bewegen_MouseMove(this);
+        }
+
+        private void Panel_Left_MouseUp(object sender, MouseEventArgs e)
+        {
+            Cursor = verwaltung.Bewegen_MouseUp();
         }
     }
 }

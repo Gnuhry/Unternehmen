@@ -40,7 +40,7 @@
             // comBEmpfanger
             // 
             this.comBEmpfanger.FormattingEnabled = true;
-            this.comBEmpfanger.Location = new System.Drawing.Point(137, 81);
+            this.comBEmpfanger.Location = new System.Drawing.Point(44, 32);
             this.comBEmpfanger.Name = "comBEmpfanger";
             this.comBEmpfanger.Size = new System.Drawing.Size(121, 21);
             this.comBEmpfanger.TabIndex = 0;
@@ -48,21 +48,22 @@
             // lBoxNachrichten
             // 
             this.lBoxNachrichten.FormattingEnabled = true;
-            this.lBoxNachrichten.Location = new System.Drawing.Point(337, 127);
+            this.lBoxNachrichten.Location = new System.Drawing.Point(302, 32);
             this.lBoxNachrichten.Name = "lBoxNachrichten";
             this.lBoxNachrichten.Size = new System.Drawing.Size(120, 95);
             this.lBoxNachrichten.TabIndex = 1;
             // 
             // txBNachricht
             // 
-            this.txBNachricht.Location = new System.Drawing.Point(112, 202);
+            this.txBNachricht.Location = new System.Drawing.Point(44, 88);
+            this.txBNachricht.Multiline = true;
             this.txBNachricht.Name = "txBNachricht";
-            this.txBNachricht.Size = new System.Drawing.Size(100, 20);
+            this.txBNachricht.Size = new System.Drawing.Size(193, 121);
             this.txBNachricht.TabIndex = 2;
             // 
             // btnSenden
             // 
-            this.btnSenden.Location = new System.Drawing.Point(128, 363);
+            this.btnSenden.Location = new System.Drawing.Point(162, 394);
             this.btnSenden.Name = "btnSenden";
             this.btnSenden.Size = new System.Drawing.Size(75, 23);
             this.btnSenden.TabIndex = 3;
@@ -72,15 +73,15 @@
             // 
             // pcBAnhang
             // 
-            this.pcBAnhang.Location = new System.Drawing.Point(64, 242);
+            this.pcBAnhang.Location = new System.Drawing.Point(44, 215);
             this.pcBAnhang.Name = "pcBAnhang";
-            this.pcBAnhang.Size = new System.Drawing.Size(101, 50);
+            this.pcBAnhang.Size = new System.Drawing.Size(193, 103);
             this.pcBAnhang.TabIndex = 4;
             this.pcBAnhang.TabStop = false;
             // 
             // btnBildHochladen
             // 
-            this.btnBildHochladen.Location = new System.Drawing.Point(73, 319);
+            this.btnBildHochladen.Location = new System.Drawing.Point(44, 324);
             this.btnBildHochladen.Name = "btnBildHochladen";
             this.btnBildHochladen.Size = new System.Drawing.Size(75, 23);
             this.btnBildHochladen.TabIndex = 5;
@@ -90,9 +91,10 @@
             // 
             // Messenger
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(456, 430);
             this.Controls.Add(this.btnBildHochladen);
             this.Controls.Add(this.pcBAnhang);
             this.Controls.Add(this.btnSenden);
