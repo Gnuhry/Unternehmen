@@ -99,18 +99,19 @@
             this.btnAdminPostfach.IconVisible = true;
             this.btnAdminPostfach.IconZoom = 90D;
             this.btnAdminPostfach.IsTab = false;
-            this.btnAdminPostfach.Location = new System.Drawing.Point(0, 332);
+            this.btnAdminPostfach.Location = new System.Drawing.Point(0, 346);
             this.btnAdminPostfach.Name = "btnAdminPostfach";
             this.btnAdminPostfach.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.btnAdminPostfach.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.btnAdminPostfach.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
             this.btnAdminPostfach.selected = false;
-            this.btnAdminPostfach.Size = new System.Drawing.Size(233, 73);
+            this.btnAdminPostfach.Size = new System.Drawing.Size(233, 59);
             this.btnAdminPostfach.TabIndex = 17;
             this.btnAdminPostfach.Text = "Admin Postfach";
             this.btnAdminPostfach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAdminPostfach.Textcolor = System.Drawing.Color.White;
             this.btnAdminPostfach.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminPostfach.Visible = false;
             this.btnAdminPostfach.Click += new System.EventHandler(this.btnAdminPostfach_Click);
             // 
             // btnAdminKalender
@@ -147,6 +148,7 @@
             this.btnAdminKalender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAdminKalender.Textcolor = System.Drawing.Color.White;
             this.btnAdminKalender.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminKalender.Visible = false;
             this.btnAdminKalender.Click += new System.EventHandler(this.btnAdminKalender_Click);
             // 
             // btnAdmin
@@ -183,6 +185,7 @@
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAdmin.Textcolor = System.Drawing.Color.White;
             this.btnAdmin.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.Visible = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // pnAktiv

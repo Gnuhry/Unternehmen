@@ -23,6 +23,7 @@ namespace Unternehmen
             txBWebsite.Text = verwaltung.GetFirma().GetWeb();
             if (txBWebsite.Text == "none")
                 txBWebsite.Enabled = false;
+            chBWebsite.Checked = txBWebsite.Enabled;
             chBAutoAktiv.Checked = verwaltung.GetFirma().GetAutoRegistrieren();
             pcBFirmenlogo.Image = verwaltung.GetFirma().GetFirmenLogo();
         }
@@ -77,14 +78,20 @@ namespace Unternehmen
 
         private void txBWebsite_TextChanged(object sender, EventArgs e)
         {
-            verwaltung.GetFirma().SetWeb(txBWebsite.Text);
+            if (txBWebsite.Text.Trim() == null || txBWebsite.Text.Trim() == "")
+                verwaltung.GetFirma().SetWeb("none");
+            else
+                verwaltung.GetFirma().SetWeb(txBWebsite.Text);
+            try
+            {
+                (MdiParent as Menue).WebsiteAktualisieren();
+            }catch(Exception) { }
         }
 
         private void chBWebsite_CheckedChanged(object sender, EventArgs e)
         {
             txBWebsite.Enabled = chBWebsite.Checked;
-            if(!chBWebsite.Checked)
-                verwaltung.GetFirma().SetWeb("none");
+            txBWebsite.Text = "";
         }
 
         private void numUrlaubstage_ValueChanged(object sender, EventArgs e)
@@ -148,5 +155,6 @@ namespace Unternehmen
                 }
         }
 
+      
     }
 }

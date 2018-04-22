@@ -13,7 +13,7 @@ namespace Unternehmen
             InitializeComponent();
             this.verwaltung = verwaltung;
             if (verwaltung.GetFirma().GetWeb() == "none") btnWebsite.Visible = false;
-            if (verwaltung.GetAngemeldetePerson() == verwaltung.GetFirma().GetMitarbeiter(0)) btnAdmin.Visible = true;
+            if (verwaltung.GetAngemeldetePerson() == verwaltung.GetFirma().GetMitarbeiter(0)) { btnAdmin.Visible =btnAdminKalender.Visible=btnAdminPostfach.Visible= true; }
             Firmenlogo_pictureBox.Image = verwaltung.GetFirma().GetFirmenLogo();
         }
         private void btnKalender_Click(object sender, EventArgs e)
@@ -29,7 +29,17 @@ namespace Unternehmen
         }
         private void btnWebsite_Click(object sender, EventArgs e)
         {
-            Process.Start(verwaltung.GetFirma().GetWeb());
+            try
+            {
+                Process.Start(verwaltung.GetFirma().GetWeb());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Es gibt einen Fehler! Wenden sie ich an den Admin!");
+                Konto temp = new Konto();
+                temp.Registrieren("System", "System", "System01", DateTime.Today, null, true);
+                verwaltung.GetFirma().ReciveAdminNachricht("Fehler 01-Web", null, temp);
+            }
         }
 
         private void btnAndern_Click(object sender, EventArgs e)
@@ -75,6 +85,10 @@ namespace Unternehmen
         {
             pnAktivAktualisieren(8);
             verwaltung.Postfach();
+        }
+        public void WebsiteAktualisieren()
+        {
+            btnWebsite.Visible = verwaltung.GetFirma().GetWeb() != "none";
         }
     }
 }

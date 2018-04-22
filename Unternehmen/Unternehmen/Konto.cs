@@ -67,11 +67,11 @@ namespace Unternehmen
         }
         public int Login(string benutzername, string passwort) //0-erfolgreich; -1-Falscher Benutzername; -2-Falsches Passwort; -3-Gesperrt
         {
+            if (benutzername != this.benutzername) return -1;
             if (_Versuche++ == 3||status==0)
             {
                 status = 0; return -3;
             }
-            if (benutzername != this.benutzername) return -1;
             byte[] temp = new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.ASCII.GetBytes(passwort));
             if (temp.Length != this.passwort.Length) return -2;
             for (int f = 0; f < temp.Length; f++)

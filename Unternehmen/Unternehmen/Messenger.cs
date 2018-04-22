@@ -87,7 +87,7 @@ namespace Unternehmen
             }
             else if (txBNachricht.Text != "" && txBNachricht.Text != null && comBEmpfanger.SelectedIndex > -1)
             {
-                verwaltung.GetFirma().GetMitarbeiter(comBEmpfanger.SelectedIndex+1).ReciveNachricht(txBNachricht.Text, pcBAnhang.Image, verwaltung.GetAngemeldetePerson());
+                verwaltung.GetFirma().GetMitarbeiter(comBEmpfanger.SelectedIndex-1).ReciveNachricht(txBNachricht.Text, pcBAnhang.Image, verwaltung.GetAngemeldetePerson());
                 txBNachricht.Text = null;
             }
         }
