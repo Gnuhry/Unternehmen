@@ -45,22 +45,23 @@
             this.btnLogoHochladen = new System.Windows.Forms.Button();
             this.pcBFirmenlogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numUrlaubstage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBFirmenlogo)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // chBWebsite
             // 
             this.chBWebsite.AutoSize = true;
+            this.chBWebsite.CheckAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.chBWebsite.Checked = true;
             this.chBWebsite.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chBWebsite.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,7 +127,7 @@
             this.btnPassword.Name = "btnPassword";
             this.btnPassword.Size = new System.Drawing.Size(172, 34);
             this.btnPassword.TabIndex = 27;
-            this.btnPassword.Text = "Passwort ändern";
+            this.btnPassword.Text = "Change Password";
             this.btnPassword.UseVisualStyleBackColor = false;
             this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);
             // 
@@ -147,13 +148,13 @@
             this.chbLArbeitstage.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbLArbeitstage.FormattingEnabled = true;
             this.chbLArbeitstage.Items.AddRange(new object[] {
-            "Montag",
-            "Dienstag",
-            "Mittwoch",
-            "Donnerstag",
-            "Freitag",
-            "Samstag",
-            "Sontag"});
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
             this.chbLArbeitstage.Location = new System.Drawing.Point(16, 194);
             this.chbLArbeitstage.Name = "chbLArbeitstage";
             this.chbLArbeitstage.Size = new System.Drawing.Size(120, 154);
@@ -171,7 +172,7 @@
             this.btnSperren.Name = "btnSperren";
             this.btnSperren.Size = new System.Drawing.Size(172, 34);
             this.btnSperren.TabIndex = 24;
-            this.btnSperren.Text = "Sperren";
+            this.btnSperren.Text = "Lock";
             this.btnSperren.UseVisualStyleBackColor = false;
             this.btnSperren.Click += new System.EventHandler(this.btnSperren_Click);
             // 
@@ -186,7 +187,7 @@
             this.btnAktivieren.Name = "btnAktivieren";
             this.btnAktivieren.Size = new System.Drawing.Size(172, 34);
             this.btnAktivieren.TabIndex = 23;
-            this.btnAktivieren.Text = "Aktivieren";
+            this.btnAktivieren.Text = "Activate";
             this.btnAktivieren.UseVisualStyleBackColor = false;
             this.btnAktivieren.Click += new System.EventHandler(this.btnAktivieren_Click);
             // 
@@ -207,9 +208,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(91, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 22);
+            this.label1.Size = new System.Drawing.Size(140, 22);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Chefmenü";
+            this.label1.Text = "Administration";
             // 
             // btnFeuern
             // 
@@ -222,7 +223,7 @@
             this.btnFeuern.Name = "btnFeuern";
             this.btnFeuern.Size = new System.Drawing.Size(172, 34);
             this.btnFeuern.TabIndex = 19;
-            this.btnFeuern.Text = "Feuern";
+            this.btnFeuern.Text = "Fire";
             this.btnFeuern.UseVisualStyleBackColor = false;
             this.btnFeuern.Click += new System.EventHandler(this.btnFeuern_Click);
             // 
@@ -234,9 +235,9 @@
             this.chBAutoAktiv.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chBAutoAktiv.Location = new System.Drawing.Point(89, 18);
             this.chBAutoAktiv.Name = "chBAutoAktiv";
-            this.chBAutoAktiv.Size = new System.Drawing.Size(335, 24);
+            this.chBAutoAktiv.Size = new System.Drawing.Size(263, 24);
             this.chBAutoAktiv.TabIndex = 33;
-            this.chBAutoAktiv.Text = "Automatisch Aktiv bei Neuregistrierung";
+            this.chBAutoAktiv.Text = "Activate Accounts at Sign Up";
             this.chBAutoAktiv.UseVisualStyleBackColor = true;
             this.chBAutoAktiv.CheckedChanged += new System.EventHandler(this.chBAutoAktiv_CheckedChanged);
             // 
@@ -250,7 +251,7 @@
             this.btnLogoHochladen.Name = "btnLogoHochladen";
             this.btnLogoHochladen.Size = new System.Drawing.Size(127, 34);
             this.btnLogoHochladen.TabIndex = 35;
-            this.btnLogoHochladen.Text = "Logo Hochladen";
+            this.btnLogoHochladen.Text = "Upload Logo";
             this.btnLogoHochladen.UseVisualStyleBackColor = false;
             this.btnLogoHochladen.Click += new System.EventHandler(this.btnLogoHochladen_Click);
             // 
@@ -284,15 +285,14 @@
             this.panel2.Size = new System.Drawing.Size(319, 585);
             this.panel2.TabIndex = 38;
             // 
-            // panel1
+            // panel5
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(319, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(488, 57);
-            this.panel1.TabIndex = 39;
+            this.panel5.BackColor = System.Drawing.Color.Silver;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 57);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(319, 59);
+            this.panel5.TabIndex = 41;
             // 
             // panel3
             // 
@@ -304,6 +304,16 @@
             this.panel3.Size = new System.Drawing.Size(319, 57);
             this.panel3.TabIndex = 40;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(319, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(488, 57);
+            this.panel1.TabIndex = 39;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -311,9 +321,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(131, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(242, 22);
+            this.label4.Size = new System.Drawing.Size(138, 22);
             this.label4.TabIndex = 21;
-            this.label4.Text = "Mitarbeiter Management";
+            this.label4.Text = "Management";
             // 
             // panel4
             // 
@@ -324,15 +334,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(488, 59);
             this.panel4.TabIndex = 40;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Silver;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 57);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(319, 59);
-            this.panel5.TabIndex = 41;
             // 
             // Admin
             // 
@@ -358,10 +359,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcBFirmenlogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);

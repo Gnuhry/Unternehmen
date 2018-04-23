@@ -177,5 +177,11 @@
   <ItemGroup>
     <None Include="Resources\japanese-kanji.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-double-chevron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

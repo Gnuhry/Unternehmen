@@ -32,7 +32,6 @@
             this.lBoxNachrichten = new System.Windows.Forms.ListBox();
             this.txBNachricht = new System.Windows.Forms.TextBox();
             this.btnSenden = new System.Windows.Forms.Button();
-            this.pcBAnhang = new System.Windows.Forms.PictureBox();
             this.btnBildHochladen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,19 +40,21 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnLoschen = new System.Windows.Forms.Button();
-            this.pcBAnhangEingang = new System.Windows.Forms.PictureBox();
             this.lbSendeDatum = new System.Windows.Forms.Label();
             this.lbNachricht = new System.Windows.Forms.Label();
             this.lbSender = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pcBAnhang)).BeginInit();
+            this.pcBAnhangEingang = new System.Windows.Forms.PictureBox();
+            this.pcBAnhang = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBAnhangEingang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBAnhang)).BeginInit();
             this.SuspendLayout();
             // 
             // comBEmpfanger
             // 
+            this.comBEmpfanger.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comBEmpfanger.FormattingEnabled = true;
             this.comBEmpfanger.Location = new System.Drawing.Point(256, 51);
             this.comBEmpfanger.Name = "comBEmpfanger";
@@ -62,14 +63,16 @@
             // 
             // lBoxNachrichten
             // 
+            this.lBoxNachrichten.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lBoxNachrichten.FormattingEnabled = true;
-            this.lBoxNachrichten.Location = new System.Drawing.Point(42, 37);
+            this.lBoxNachrichten.Location = new System.Drawing.Point(45, 51);
             this.lBoxNachrichten.Name = "lBoxNachrichten";
             this.lBoxNachrichten.Size = new System.Drawing.Size(289, 95);
             this.lBoxNachrichten.TabIndex = 1;
             // 
             // txBNachricht
             // 
+            this.txBNachricht.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txBNachricht.Location = new System.Drawing.Point(57, 37);
             this.txBNachricht.Multiline = true;
             this.txBNachricht.Name = "txBNachricht";
@@ -80,35 +83,27 @@
             // 
             this.btnSenden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.btnSenden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSenden.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSenden.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSenden.ForeColor = System.Drawing.Color.White;
-            this.btnSenden.Location = new System.Drawing.Point(163, 327);
+            this.btnSenden.Location = new System.Drawing.Point(225, 327);
             this.btnSenden.Name = "btnSenden";
-            this.btnSenden.Size = new System.Drawing.Size(193, 23);
+            this.btnSenden.Size = new System.Drawing.Size(172, 34);
             this.btnSenden.TabIndex = 3;
-            this.btnSenden.Text = "Senden";
+            this.btnSenden.Text = "Send";
             this.btnSenden.UseVisualStyleBackColor = false;
             this.btnSenden.Click += new System.EventHandler(this.btnSenden_Click);
-            // 
-            // pcBAnhang
-            // 
-            this.pcBAnhang.Location = new System.Drawing.Point(57, 202);
-            this.pcBAnhang.Name = "pcBAnhang";
-            this.pcBAnhang.Size = new System.Drawing.Size(193, 103);
-            this.pcBAnhang.TabIndex = 4;
-            this.pcBAnhang.TabStop = false;
             // 
             // btnBildHochladen
             // 
             this.btnBildHochladen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.btnBildHochladen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBildHochladen.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBildHochladen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBildHochladen.ForeColor = System.Drawing.Color.White;
-            this.btnBildHochladen.Location = new System.Drawing.Point(57, 327);
+            this.btnBildHochladen.Location = new System.Drawing.Point(6, 327);
             this.btnBildHochladen.Name = "btnBildHochladen";
-            this.btnBildHochladen.Size = new System.Drawing.Size(100, 23);
+            this.btnBildHochladen.Size = new System.Drawing.Size(172, 34);
             this.btnBildHochladen.TabIndex = 5;
-            this.btnBildHochladen.Text = "Hochladen";
+            this.btnBildHochladen.Text = "Upload";
             this.btnBildHochladen.UseVisualStyleBackColor = false;
             this.btnBildHochladen.Click += new System.EventHandler(this.btnBildHochladen_Click);
             // 
@@ -130,9 +125,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(692, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 24);
+            this.label3.Size = new System.Drawing.Size(88, 25);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Ausgang";
+            this.label3.Text = "Outbox";
             // 
             // label2
             // 
@@ -141,9 +136,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 24);
+            this.label2.Size = new System.Drawing.Size(68, 25);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Eingang";
+            this.label2.Text = "Inbox";
             // 
             // panel2
             // 
@@ -183,30 +178,26 @@
             // 
             // btnLoschen
             // 
-            this.btnLoschen.Location = new System.Drawing.Point(45, 299);
+            this.btnLoschen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnLoschen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoschen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoschen.ForeColor = System.Drawing.Color.White;
+            this.btnLoschen.Location = new System.Drawing.Point(45, 431);
             this.btnLoschen.Name = "btnLoschen";
-            this.btnLoschen.Size = new System.Drawing.Size(75, 23);
+            this.btnLoschen.Size = new System.Drawing.Size(172, 34);
             this.btnLoschen.TabIndex = 6;
-            this.btnLoschen.Text = "button1";
-            this.btnLoschen.UseVisualStyleBackColor = true;
+            this.btnLoschen.Text = "Delete";
+            this.btnLoschen.UseVisualStyleBackColor = false;
             this.btnLoschen.Visible = false;
             this.btnLoschen.Click += new System.EventHandler(this.btnLoschen_Click);
-            // 
-            // pcBAnhangEingang
-            // 
-            this.pcBAnhangEingang.Location = new System.Drawing.Point(86, 238);
-            this.pcBAnhangEingang.Name = "pcBAnhangEingang";
-            this.pcBAnhangEingang.Size = new System.Drawing.Size(100, 50);
-            this.pcBAnhangEingang.TabIndex = 5;
-            this.pcBAnhangEingang.TabStop = false;
-            this.pcBAnhangEingang.Visible = false;
             // 
             // lbSendeDatum
             // 
             this.lbSendeDatum.AutoSize = true;
-            this.lbSendeDatum.Location = new System.Drawing.Point(117, 202);
+            this.lbSendeDatum.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSendeDatum.Location = new System.Drawing.Point(163, 202);
             this.lbSendeDatum.Name = "lbSendeDatum";
-            this.lbSendeDatum.Size = new System.Drawing.Size(35, 13);
+            this.lbSendeDatum.Size = new System.Drawing.Size(40, 13);
             this.lbSendeDatum.TabIndex = 4;
             this.lbSendeDatum.Text = "label1";
             this.lbSendeDatum.Visible = false;
@@ -214,9 +205,10 @@
             // lbNachricht
             // 
             this.lbNachricht.AutoSize = true;
-            this.lbNachricht.Location = new System.Drawing.Point(45, 238);
+            this.lbNachricht.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNachricht.Location = new System.Drawing.Point(42, 238);
             this.lbNachricht.Name = "lbNachricht";
-            this.lbNachricht.Size = new System.Drawing.Size(35, 13);
+            this.lbNachricht.Size = new System.Drawing.Size(40, 13);
             this.lbNachricht.TabIndex = 3;
             this.lbNachricht.Text = "label4";
             this.lbNachricht.Visible = false;
@@ -224,12 +216,30 @@
             // lbSender
             // 
             this.lbSender.AutoSize = true;
-            this.lbSender.Location = new System.Drawing.Point(45, 202);
+            this.lbSender.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSender.Location = new System.Drawing.Point(42, 202);
             this.lbSender.Name = "lbSender";
-            this.lbSender.Size = new System.Drawing.Size(35, 13);
+            this.lbSender.Size = new System.Drawing.Size(40, 13);
             this.lbSender.TabIndex = 2;
             this.lbSender.Text = "label1";
             this.lbSender.Visible = false;
+            // 
+            // pcBAnhangEingang
+            // 
+            this.pcBAnhangEingang.Location = new System.Drawing.Point(45, 375);
+            this.pcBAnhangEingang.Name = "pcBAnhangEingang";
+            this.pcBAnhangEingang.Size = new System.Drawing.Size(100, 50);
+            this.pcBAnhangEingang.TabIndex = 5;
+            this.pcBAnhangEingang.TabStop = false;
+            this.pcBAnhangEingang.Visible = false;
+            // 
+            // pcBAnhang
+            // 
+            this.pcBAnhang.Location = new System.Drawing.Point(57, 202);
+            this.pcBAnhang.Name = "pcBAnhang";
+            this.pcBAnhang.Size = new System.Drawing.Size(193, 103);
+            this.pcBAnhang.TabIndex = 4;
+            this.pcBAnhang.TabStop = false;
             // 
             // Messenger
             // 
@@ -249,7 +259,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Messenger_FormClosing);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Messenger_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Messenger_DragEnter);
-            ((System.ComponentModel.ISupportInitialize)(this.pcBAnhang)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -257,6 +266,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBAnhangEingang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBAnhang)).EndInit();
             this.ResumeLayout(false);
 
         }
