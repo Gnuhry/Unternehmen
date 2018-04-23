@@ -12,7 +12,7 @@ namespace Unternehmen
         private Login login;
         private Registrieren registrieren;
         private Menue menue;
-        private Messenger messenger;
+        private Messenger messenger,amessenger;
         private Kalender kalender,akalender;
         private Menue_standart menue_Standart;
         private Admin chef;
@@ -141,7 +141,6 @@ namespace Unternehmen
 
         private void SchliesenMenues()
         {
-            MessageBox.Show("Hey");
             for (int f = 0; f < menue.MdiChildren.Length; f++)
                 if (menue.MdiChildren[f].Visible == true)
                 {
@@ -171,15 +170,20 @@ namespace Unternehmen
         }
         public void Postfach()
         {
-            if (messenger != null) { messenger.Show(); return; }
+            if (amessenger != null) { amessenger.Show(); return; }
             SchliesenMenues();
-            messenger = new Messenger(this, true)
+            amessenger = new Messenger(this, true)
             {
                 MdiParent = menue,
                 Dock = DockStyle.Fill
             };
-            messenger.FormClosing += Messenger_FormClosing;
-            messenger.Show();
+            amessenger.FormClosing += Amessenger_FormClosing;
+            amessenger.Show();
+        }
+
+        private void Amessenger_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            amessenger = null;
         }
 
         private void Messenger_FormClosing(object sender, FormClosingEventArgs e)
