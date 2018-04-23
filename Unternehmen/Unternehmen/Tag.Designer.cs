@@ -46,13 +46,19 @@
             this.chBeFeiertag = new System.Windows.Forms.CheckBox();
             this.txBeFeiertag = new System.Windows.Forms.TextBox();
             this.LBTagesplan = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(240, 258);
+            this.label5.Location = new System.Drawing.Point(191, 203);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 13);
             this.label5.TabIndex = 30;
@@ -60,7 +66,7 @@
             // 
             // txBGNtz
             // 
-            this.txBGNtz.Location = new System.Drawing.Point(241, 274);
+            this.txBGNtz.Location = new System.Drawing.Point(192, 219);
             this.txBGNtz.Multiline = true;
             this.txBGNtz.Name = "txBGNtz";
             this.txBGNtz.Size = new System.Drawing.Size(100, 70);
@@ -69,7 +75,7 @@
             // lbFeiertag
             // 
             this.lbFeiertag.AutoSize = true;
-            this.lbFeiertag.Location = new System.Drawing.Point(202, 108);
+            this.lbFeiertag.Location = new System.Drawing.Point(153, 53);
             this.lbFeiertag.Name = "lbFeiertag";
             this.lbFeiertag.Size = new System.Drawing.Size(44, 13);
             this.lbFeiertag.TabIndex = 28;
@@ -79,7 +85,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(240, 136);
+            this.label4.Location = new System.Drawing.Point(191, 81);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 27;
@@ -89,7 +95,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(112, 315);
+            this.label3.Location = new System.Drawing.Point(63, 260);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 26;
@@ -99,7 +105,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(114, 235);
+            this.label2.Location = new System.Drawing.Point(65, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 25;
@@ -109,7 +115,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(112, 135);
+            this.label1.Location = new System.Drawing.Point(63, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 24;
@@ -117,7 +123,7 @@
             // 
             // btnZuruck
             // 
-            this.btnZuruck.Location = new System.Drawing.Point(105, 80);
+            this.btnZuruck.Location = new System.Drawing.Point(56, 25);
             this.btnZuruck.Name = "btnZuruck";
             this.btnZuruck.Size = new System.Drawing.Size(25, 23);
             this.btnZuruck.TabIndex = 23;
@@ -127,7 +133,7 @@
             // 
             // btnVor
             // 
-            this.btnVor.Location = new System.Drawing.Point(345, 80);
+            this.btnVor.Location = new System.Drawing.Point(296, 25);
             this.btnVor.Name = "btnVor";
             this.btnVor.Size = new System.Drawing.Size(28, 23);
             this.btnVor.TabIndex = 22;
@@ -138,7 +144,7 @@
             // lbGeburtstag
             // 
             this.lbGeburtstag.AutoSize = true;
-            this.lbGeburtstag.Location = new System.Drawing.Point(112, 331);
+            this.lbGeburtstag.Location = new System.Drawing.Point(63, 276);
             this.lbGeburtstag.Name = "lbGeburtstag";
             this.lbGeburtstag.Size = new System.Drawing.Size(67, 26);
             this.lbGeburtstag.TabIndex = 21;
@@ -146,7 +152,7 @@
             // 
             // txBNotizen
             // 
-            this.txBNotizen.Location = new System.Drawing.Point(243, 152);
+            this.txBNotizen.Location = new System.Drawing.Point(194, 97);
             this.txBNotizen.Multiline = true;
             this.txBNotizen.Name = "txBNotizen";
             this.txBNotizen.Size = new System.Drawing.Size(100, 100);
@@ -155,7 +161,7 @@
             // lbUrlaub
             // 
             this.lbUrlaub.AutoSize = true;
-            this.lbUrlaub.Location = new System.Drawing.Point(126, 255);
+            this.lbUrlaub.Location = new System.Drawing.Point(77, 200);
             this.lbUrlaub.Name = "lbUrlaub";
             this.lbUrlaub.Size = new System.Drawing.Size(36, 39);
             this.lbUrlaub.TabIndex = 19;
@@ -164,7 +170,7 @@
             // lbKrank
             // 
             this.lbKrank.AutoSize = true;
-            this.lbKrank.Location = new System.Drawing.Point(114, 148);
+            this.lbKrank.Location = new System.Drawing.Point(65, 93);
             this.lbKrank.Name = "lbKrank";
             this.lbKrank.Size = new System.Drawing.Size(42, 65);
             this.lbKrank.TabIndex = 18;
@@ -173,7 +179,7 @@
             // lbWochentag
             // 
             this.lbWochentag.AutoSize = true;
-            this.lbWochentag.Location = new System.Drawing.Point(179, 80);
+            this.lbWochentag.Location = new System.Drawing.Point(130, 25);
             this.lbWochentag.Name = "lbWochentag";
             this.lbWochentag.Size = new System.Drawing.Size(114, 13);
             this.lbWochentag.TabIndex = 17;
@@ -182,7 +188,7 @@
             // chBLUrlaub
             // 
             this.chBLUrlaub.FormattingEnabled = true;
-            this.chBLUrlaub.Location = new System.Drawing.Point(105, 251);
+            this.chBLUrlaub.Location = new System.Drawing.Point(56, 196);
             this.chBLUrlaub.Name = "chBLUrlaub";
             this.chBLUrlaub.Size = new System.Drawing.Size(68, 49);
             this.chBLUrlaub.TabIndex = 31;
@@ -192,7 +198,7 @@
             // chBeFeiertag
             // 
             this.chBeFeiertag.AutoSize = true;
-            this.chBeFeiertag.Location = new System.Drawing.Point(129, 36);
+            this.chBeFeiertag.Location = new System.Drawing.Point(99, 35);
             this.chBeFeiertag.Name = "chBeFeiertag";
             this.chBeFeiertag.Size = new System.Drawing.Size(80, 17);
             this.chBeFeiertag.TabIndex = 32;
@@ -203,7 +209,7 @@
             // 
             // txBeFeiertag
             // 
-            this.txBeFeiertag.Location = new System.Drawing.Point(216, 36);
+            this.txBeFeiertag.Location = new System.Drawing.Point(175, 33);
             this.txBeFeiertag.Name = "txBeFeiertag";
             this.txBeFeiertag.Size = new System.Drawing.Size(100, 20);
             this.txBeFeiertag.TabIndex = 33;
@@ -213,40 +219,72 @@
             // LBTagesplan
             // 
             this.LBTagesplan.FormattingEnabled = true;
-            this.LBTagesplan.Location = new System.Drawing.Point(403, 148);
+            this.LBTagesplan.Location = new System.Drawing.Point(93, 6);
             this.LBTagesplan.Name = "LBTagesplan";
             this.LBTagesplan.Size = new System.Drawing.Size(218, 95);
             this.LBTagesplan.TabIndex = 34;
             this.LBTagesplan.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LBTagesplan_MouseDoubleClick);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.chBeFeiertag);
+            this.panel1.Controls.Add(this.txBeFeiertag);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 77);
+            this.panel1.TabIndex = 35;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txBGNtz);
+            this.panel2.Controls.Add(this.chBLUrlaub);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.lbWochentag);
+            this.panel2.Controls.Add(this.lbKrank);
+            this.panel2.Controls.Add(this.lbFeiertag);
+            this.panel2.Controls.Add(this.lbUrlaub);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.txBNotizen);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.lbGeburtstag);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.btnVor);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.btnZuruck);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 77);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(361, 373);
+            this.panel2.TabIndex = 36;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.LBTagesplan);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(361, 77);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(439, 104);
+            this.panel3.TabIndex = 37;
             // 
             // Tag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.LBTagesplan);
-            this.Controls.Add(this.txBeFeiertag);
-            this.Controls.Add(this.chBeFeiertag);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txBGNtz);
-            this.Controls.Add(this.lbFeiertag);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnZuruck);
-            this.Controls.Add(this.btnVor);
-            this.Controls.Add(this.lbGeburtstag);
-            this.Controls.Add(this.txBNotizen);
-            this.Controls.Add(this.lbUrlaub);
-            this.Controls.Add(this.lbKrank);
-            this.Controls.Add(this.lbWochentag);
-            this.Controls.Add(this.chBLUrlaub);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.IsMdiContainer = true;
             this.Name = "Tag";
             this.Text = "Tag";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Tag_FormClosing);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -269,5 +307,8 @@
         private System.Windows.Forms.CheckBox chBeFeiertag;
         private System.Windows.Forms.TextBox txBeFeiertag;
         private System.Windows.Forms.ListBox LBTagesplan;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

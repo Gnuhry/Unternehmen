@@ -113,7 +113,9 @@ namespace Unternehmen
                 if (LBTagesplan.IndexFromPoint(e.Location) == LBTagesplan.Items.Count - 1)
                     termins.Add(new Termin(verwaltung, -1));
                 else
-                    termins.Add(new Termin(verwaltung,LBTagesplan.IndexFromPoint(e.Location)));
+                    termins.Add(new Termin(verwaltung, LBTagesplan.IndexFromPoint(e.Location)));
+                termins[termins.Count - 1].MdiParent = this;
+                termins[termins.Count - 1].Dock = DockStyle.Fill;
                 termins[termins.Count - 1].Show();
                 termins[termins.Count - 1].FormClosing += Tag_FormClosing1; 
             }
