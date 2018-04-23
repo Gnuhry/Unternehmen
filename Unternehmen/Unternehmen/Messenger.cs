@@ -10,12 +10,12 @@ namespace Unternehmen
     public partial class Messenger : Form
     {
         Verwaltung verwaltung;
-        List<NachrichtAnzeige> nachrichtAnzeiges;
         bool Chef;
+        int aktiellesIndex;
         public Messenger(Verwaltung verwaltung, bool Chef)
         {
+            aktiellesIndex = -1;
             this.Chef = Chef;
-            nachrichtAnzeiges = new List<NachrichtAnzeige>();
             InitializeComponent();
             this.verwaltung = verwaltung;
             comBEmpfanger.Items.Add("Admin");
@@ -63,18 +63,28 @@ namespace Unternehmen
         {
             if (lBoxNachrichten.IndexFromPoint(e.Location) != ListBox.NoMatches)
             {
-                nachrichtAnzeiges.Add(new NachrichtAnzeige(lBoxNachrichten.IndexFromPoint(e.Location), verwaltung,Chef));
-                nachrichtAnzeiges[nachrichtAnzeiges.Count - 1].Show();
-                nachrichtAnzeiges[nachrichtAnzeiges.Count - 1].FormClosing += NachrichtAnzeiges_FormClosing;
-
+                Nachricht_Anzeigen(lBoxNachrichten.IndexFromPoint(e.Location));
             }
         }
 
-        private void NachrichtAnzeiges_FormClosing(object sender, FormClosingEventArgs e)
+        private void Nachricht_Anzeigen(int index)
         {
-            lBoxNachrichten.Items.Clear();
-            NachrichtenLaden();
+            lbNachricht.Visible = lbSendeDatum.Visible = lbSender.Visible = btnLoschen.Visible = true;
+            if (Chef)
+            {
+                lbNachricht.Text = verwaltung.GetFirma().GetAdminNachricht(index);
+                lbSender.Text = "Von: " + verwaltung.GetFirma().GetAdminNachrichtSender(index).GetKontoInhaber();
+                lbSendeDatum.Text = verwaltung.GetFirma().GetSendeDatum(index).ToShortDateString();
+                aktiellesIndex = index;
+                return;
+            }
+            lbNachricht.Text = verwaltung.GetAngemeldetePerson().GetNachricht(index);
+            lbSender.Text = "Von: "+verwaltung.GetAngemeldetePerson().GetSender(index).GetKontoInhaber();
+            lbSendeDatum.Text = verwaltung.GetAngemeldetePerson().GetSendeDatum(index).ToShortDateString();
+            aktiellesIndex = index;
         }
+
+ 
 
         private void btnSenden_Click(object sender, EventArgs e)
         {
@@ -94,7 +104,6 @@ namespace Unternehmen
 
         private void Messenger_FormClosing(object sender, FormClosingEventArgs e)
         {
-            for (int f = 0; f < nachrichtAnzeiges.Count; f++) nachrichtAnzeiges[f].Close();
         }
 
         private void btnBildHochladen_Click(object sender, EventArgs e)
@@ -133,6 +142,18 @@ namespace Unternehmen
                 if (!validExtensions.Contains(ext))
                     e.Effect = DragDropEffects.None;
             e.Effect = DragDropEffects.Copy;
+        }
+
+        private void btnLoschen_Click(object sender, EventArgs e)
+        {
+            if (Chef)
+                verwaltung.GetFirma().RemoveNachricht(aktiellesIndex);
+            else
+            verwaltung.GetAngemeldetePerson().RemoveNachricht(aktiellesIndex);
+            lbNachricht.Visible = lbSendeDatum.Visible = lbSender.Visible = btnLoschen.Visible = false;
+            lbNachricht.Text = lbSendeDatum.Text = lbSender.Text = btnLoschen.Text = null;
+            lBoxNachrichten.Items.Clear();
+            NachrichtenLaden();
         }
     }
 }

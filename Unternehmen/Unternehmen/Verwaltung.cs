@@ -141,6 +141,7 @@ namespace Unternehmen
 
         private void SchliesenMenues()
         {
+            MessageBox.Show("Hey");
             for (int f = 0; f < menue.MdiChildren.Length; f++)
                 if (menue.MdiChildren[f].Visible == true)
                 {
