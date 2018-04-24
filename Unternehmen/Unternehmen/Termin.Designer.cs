@@ -104,7 +104,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(394, 238);
+            this.ControlBox = false;
             this.Controls.Add(this.btnFestlegen);
             this.Controls.Add(this.btnLoschen);
             this.Controls.Add(this.txBUhrzeitBis);
@@ -112,6 +113,7 @@
             this.Controls.Add(this.dTpBis);
             this.Controls.Add(this.dTPVon);
             this.Controls.Add(this.txBBeschreibung);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Termin";
             this.Text = "Termin";
             this.ResumeLayout(false);

@@ -49,7 +49,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -198,7 +197,7 @@
             // chBeFeiertag
             // 
             this.chBeFeiertag.AutoSize = true;
-            this.chBeFeiertag.Location = new System.Drawing.Point(99, 35);
+            this.chBeFeiertag.Location = new System.Drawing.Point(96, 2);
             this.chBeFeiertag.Name = "chBeFeiertag";
             this.chBeFeiertag.Size = new System.Drawing.Size(80, 17);
             this.chBeFeiertag.TabIndex = 32;
@@ -209,7 +208,7 @@
             // 
             // txBeFeiertag
             // 
-            this.txBeFeiertag.Location = new System.Drawing.Point(175, 33);
+            this.txBeFeiertag.Location = new System.Drawing.Point(192, 2);
             this.txBeFeiertag.Name = "txBeFeiertag";
             this.txBeFeiertag.Size = new System.Drawing.Size(100, 20);
             this.txBeFeiertag.TabIndex = 33;
@@ -227,8 +226,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.chBeFeiertag);
-            this.panel1.Controls.Add(this.txBeFeiertag);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -237,7 +234,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.chBeFeiertag);
             this.panel2.Controls.Add(this.txBGNtz);
+            this.panel2.Controls.Add(this.txBeFeiertag);
             this.panel2.Controls.Add(this.chBLUrlaub);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.lbWochentag);
@@ -279,8 +278,6 @@
             this.Name = "Tag";
             this.Text = "Tag";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Tag_FormClosing);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);

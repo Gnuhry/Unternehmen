@@ -65,6 +65,8 @@ namespace Unternehmen
 
             return "";
         }
+        public void SetInhaber(string KontoInhaber) => Kontoinhaber=KontoInhaber;
+        public void SetGeburtstag(DateTime Geburtstag) => this.Geburtstag = Geburtstag;
         public int Login(string benutzername, string passwort) //0-erfolgreich; -1-Falscher Benutzername; -2-Falsches Passwort; -3-Gesperrt
         {
             if (benutzername != this.benutzername) return -1;
