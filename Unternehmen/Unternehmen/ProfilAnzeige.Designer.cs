@@ -47,6 +47,15 @@
             this.txBPasswort = new System.Windows.Forms.TextBox();
             this.txBBenutzername = new System.Windows.Forms.TextBox();
             this.txBInhaber = new System.Windows.Forms.TextBox();
+            this.btnHintergrundHochladen = new System.Windows.Forms.Button();
+            this.txBEmail = new System.Windows.Forms.TextBox();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.txBAbteilung = new System.Windows.Forms.TextBox();
+            this.txBHobbys = new System.Windows.Forms.TextBox();
+            this.txBTelefon = new System.Windows.Forms.TextBox();
+            this.lbHobby = new System.Windows.Forms.Label();
+            this.lbTelefon = new System.Windows.Forms.Label();
+            this.lbAbteilung = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBProfil)).BeginInit();
             this.panel3.SuspendLayout();
@@ -74,6 +83,10 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lbAbteilung);
+            this.panel2.Controls.Add(this.lbTelefon);
+            this.panel2.Controls.Add(this.lbHobby);
+            this.panel2.Controls.Add(this.lbEmail);
             this.panel2.Controls.Add(this.lbGeburtstag);
             this.panel2.Controls.Add(this.lbStatus);
             this.panel2.Controls.Add(this.lbInhaber);
@@ -121,6 +134,11 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.txBTelefon);
+            this.panel3.Controls.Add(this.txBHobbys);
+            this.panel3.Controls.Add(this.txBAbteilung);
+            this.panel3.Controls.Add(this.txBEmail);
+            this.panel3.Controls.Add(this.btnHintergrundHochladen);
             this.panel3.Controls.Add(this.cBoxJahr);
             this.panel3.Controls.Add(this.cBoxMonat);
             this.panel3.Controls.Add(this.cBoxTag);
@@ -253,6 +271,96 @@
             this.txBInhaber.TabIndex = 0;
             this.txBInhaber.TextChanged += new System.EventHandler(this.txBInhaber_TextChanged_1);
             // 
+            // btnHintergrundHochladen
+            // 
+            this.btnHintergrundHochladen.Location = new System.Drawing.Point(5, 252);
+            this.btnHintergrundHochladen.Name = "btnHintergrundHochladen";
+            this.btnHintergrundHochladen.Size = new System.Drawing.Size(90, 23);
+            this.btnHintergrundHochladen.TabIndex = 35;
+            this.btnHintergrundHochladen.Text = "button1";
+            this.btnHintergrundHochladen.UseVisualStyleBackColor = true;
+            this.btnHintergrundHochladen.Click += new System.EventHandler(this.btnHintergrundHochladen_Click);
+            // 
+            // txBEmail
+            // 
+            this.txBEmail.Location = new System.Drawing.Point(5, 226);
+            this.txBEmail.Name = "txBEmail";
+            this.txBEmail.Size = new System.Drawing.Size(100, 20);
+            this.txBEmail.TabIndex = 36;
+            this.txBEmail.TextChanged += new System.EventHandler(this.txBEmail_TextChanged);
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Location = new System.Drawing.Point(306, 166);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(35, 13);
+            this.lbEmail.TabIndex = 4;
+            this.lbEmail.Text = "label1";
+            this.lbEmail.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
+            this.lbEmail.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseMove);
+            this.lbEmail.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseUp);
+            // 
+            // txBAbteilung
+            // 
+            this.txBAbteilung.Location = new System.Drawing.Point(5, 200);
+            this.txBAbteilung.Name = "txBAbteilung";
+            this.txBAbteilung.Size = new System.Drawing.Size(100, 20);
+            this.txBAbteilung.TabIndex = 37;
+            this.txBAbteilung.TextChanged += new System.EventHandler(this.txBAbteilung_TextChanged);
+            // 
+            // txBHobbys
+            // 
+            this.txBHobbys.Location = new System.Drawing.Point(132, 200);
+            this.txBHobbys.Name = "txBHobbys";
+            this.txBHobbys.Size = new System.Drawing.Size(100, 20);
+            this.txBHobbys.TabIndex = 38;
+            this.txBHobbys.TextChanged += new System.EventHandler(this.txBHobbys_TextChanged);
+            // 
+            // txBTelefon
+            // 
+            this.txBTelefon.Location = new System.Drawing.Point(5, 174);
+            this.txBTelefon.Name = "txBTelefon";
+            this.txBTelefon.Size = new System.Drawing.Size(100, 20);
+            this.txBTelefon.TabIndex = 39;
+            this.txBTelefon.TextChanged += new System.EventHandler(this.txBTelefon_TextChanged);
+            // 
+            // lbHobby
+            // 
+            this.lbHobby.AutoSize = true;
+            this.lbHobby.Location = new System.Drawing.Point(380, 164);
+            this.lbHobby.Name = "lbHobby";
+            this.lbHobby.Size = new System.Drawing.Size(35, 13);
+            this.lbHobby.TabIndex = 5;
+            this.lbHobby.Text = "label1";
+            this.lbHobby.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
+            this.lbHobby.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseMove);
+            this.lbHobby.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseUp);
+            // 
+            // lbTelefon
+            // 
+            this.lbTelefon.AutoSize = true;
+            this.lbTelefon.Location = new System.Drawing.Point(305, 226);
+            this.lbTelefon.Name = "lbTelefon";
+            this.lbTelefon.Size = new System.Drawing.Size(35, 13);
+            this.lbTelefon.TabIndex = 6;
+            this.lbTelefon.Text = "label1";
+            this.lbTelefon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
+            this.lbTelefon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseMove);
+            this.lbTelefon.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseUp);
+            // 
+            // lbAbteilung
+            // 
+            this.lbAbteilung.AutoSize = true;
+            this.lbAbteilung.Location = new System.Drawing.Point(164, 200);
+            this.lbAbteilung.Name = "lbAbteilung";
+            this.lbAbteilung.Size = new System.Drawing.Size(35, 13);
+            this.lbAbteilung.TabIndex = 7;
+            this.lbAbteilung.Text = "label1";
+            this.lbAbteilung.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
+            this.lbAbteilung.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseMove);
+            this.lbAbteilung.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseUp);
+            // 
             // ProfilAnzeige
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,6 +371,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ProfilAnzeige";
             this.Text = "ProfilAnzeige";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProfilAnzeige_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBProfil)).EndInit();
@@ -293,5 +402,14 @@
         private System.Windows.Forms.ComboBox cBoxJahr;
         private System.Windows.Forms.ComboBox cBoxMonat;
         private System.Windows.Forms.ComboBox cBoxTag;
+        private System.Windows.Forms.Button btnHintergrundHochladen;
+        private System.Windows.Forms.Label lbAbteilung;
+        private System.Windows.Forms.Label lbTelefon;
+        private System.Windows.Forms.Label lbHobby;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.TextBox txBTelefon;
+        private System.Windows.Forms.TextBox txBHobbys;
+        private System.Windows.Forms.TextBox txBAbteilung;
+        private System.Windows.Forms.TextBox txBEmail;
     }
 }

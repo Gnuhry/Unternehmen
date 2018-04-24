@@ -9,16 +9,25 @@ namespace Unternehmen
     [Serializable]
     public class Konto
     {
-        private string benutzername, Kontoinhaber;
+        private string benutzername, Kontoinhaber,Status,Email,Abteilung,Hobbys,Telefon;
         private byte[] passwort;
         private List<DateTime> Urlaubstage;
         private int Krankendauer, status, _Versuche, krankenC, UrlaubsC,maxTage;//0-gesperrt,1-Aktiv(Zuhause),2-Krank,3-Urlaub,4-Aktiv(arbeitend)
-        private Image Profilbild;
+        private Image Profilbild,Hintergrundbild;
         private double Arbeitszeit;
         private DateTime Geburtstag, _Anfang;
         private Notizen notizen;
         private Nachrichten nachrichten;
         private Tagesplan tagesplan;
+        private Point[] Profil;
+
+        public string Email1 { get => Email; set => Email = value; }
+        public string Abteilung1 { get => Abteilung; set => Abteilung = value; }
+        public string Telefon1 { get => Telefon; set => Telefon = value; }
+        public Image Hintergrundbild1 { get => Hintergrundbild; set => Hintergrundbild = value; }
+        public Point[] Profil1 { get => Profil; set => Profil = value; }
+        public string Status1 { get => Status; set => Status = value; }
+        public string Hobbys1 { get => Hobbys; set => Hobbys = value; }
 
         public Konto()
         {
@@ -27,6 +36,23 @@ namespace Unternehmen
             notizen = new Notizen();
             nachrichten = new Nachrichten();
             Arbeitszeit = Krankendauer = status = krankenC = UrlaubsC = 0;
+            DefaultProfilAnzeige();
+        }
+        public void SetProfilbild(Image Profil) => Profilbild = Profil;
+
+        private void DefaultProfilAnzeige()
+        {
+            Profil = new Point[8];
+            Profil[0] = new Point(0, 0);
+            Profil[1] = new Point(0, 0);
+            Profil[2] = new Point(0, 0);
+            Profil[3] = new Point(0, 0);
+            Profil[4] = new Point(0, 0);
+            Profil[5] = new Point(0, 0);
+            Profil[6] = new Point(0, 0);
+            Profil[7] = new Point(0, 0);
+            Status = Email = Abteilung = Hobbys = Telefon = null;
+            Hintergrundbild = null;
         }
 
         public string Registrieren(string Kontoinhaber, string benutzername, string passwort, DateTime Geburtstag,Image Profilbild, bool Autoregistrieren)

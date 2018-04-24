@@ -19,6 +19,7 @@ namespace Unternehmen
         private static string Pfad = Directory.GetCurrentDirectory() + @"\Speichern.txt";
         private Control activeControl;
         private Point previousPosition;
+        private ProfilAnzeige profilAnzeige;
 
         public Verwaltung()
         {
@@ -221,6 +222,23 @@ namespace Unternehmen
             chef.Close();
             angemeldete_Person = null;
             LogIn();
+        }
+        public void ProfilAnzeige()
+        {
+            if (profilAnzeige != null) { profilAnzeige.Show();return; }
+            SchliesenMenues();
+            profilAnzeige = new ProfilAnzeige(this)
+            {
+                MdiParent = menue,
+                Dock = DockStyle.Fill
+            };
+            profilAnzeige.FormClosing += ProfilAnzeige_FormClosing;
+            profilAnzeige.Show();
+        }
+
+        private void ProfilAnzeige_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            profilAnzeige = null;
         }
 
         private void Registrieren_FormClosed(object sender, FormClosedEventArgs e)

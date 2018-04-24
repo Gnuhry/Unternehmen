@@ -20,7 +20,7 @@ namespace Unternehmen
 
         public ProfilAnzeige(Verwaltung verwaltung)
         {
-            Profil = new Point[4];
+            Profil = verwaltung.GetAngemeldetePerson().Profil1;
             InitializeComponent();
             this.verwaltung = verwaltung;
             InitComboBox();
@@ -30,20 +30,31 @@ namespace Unternehmen
 
         private void InitProfil()
         {
+            Profil = verwaltung.GetAngemeldetePerson().Profil1;
             lbInhaber.Location = Profil[0];
             lbStatus.Location = Profil[1];
             lbGeburtstag.Location = Profil[2];
             pcBProfil.Location = Profil[3];
-
+            txBAbteilung.Location = Profil[4];
+            txBEmail.Location = Profil[5];
+            txBHobbys.Location = Profil[6];
+            txBTelefon.Location = Profil[7];
         }
 
         private void Init()
         {
+            BackgroundImage = verwaltung.GetAngemeldetePerson().Hintergrundbild1;
             txBBenutzername.Text = verwaltung.GetAngemeldetePerson().GetBenutzername();
             txBInhaber.Text = verwaltung.GetAngemeldetePerson().GetKontoInhaber();
             cBoxTag.SelectedIndex = verwaltung.GetAngemeldetePerson().GetGeburtstag().Day - 1;
             cBoxMonat.SelectedIndex = verwaltung.GetAngemeldetePerson().GetGeburtstag().Month - 1;
             cBoxJahr.SelectedIndex = verwaltung.GetAngemeldetePerson().GetGeburtstag().Year % DateTime.Today.Year;
+            txBEmail.Text = verwaltung.GetAngemeldetePerson().Email1;
+            txBAbteilung.Text = verwaltung.GetAngemeldetePerson().Abteilung1;
+            txBHobbys.Text = verwaltung.GetAngemeldetePerson().Hobbys1;
+            txBStatus.Text = verwaltung.GetAngemeldetePerson().Status1;
+            txBTelefon.Text = verwaltung.GetAngemeldetePerson().Telefon1;
+            pcBProfil.Image = verwaltung.GetAngemeldetePerson().GetProfilbild();
         }
         private void InitComboBox()
         {
@@ -95,6 +106,7 @@ namespace Unternehmen
 
         private void txBStatus_TextChanged(object sender, EventArgs e)
         {
+            verwaltung.GetAngemeldetePerson().Status1 = txBStatus.Text;
             lbStatus.Text = txBStatus.Text;
         }
 
@@ -106,8 +118,12 @@ namespace Unternehmen
 
         private void cBoxTag_SelectedIndexChanged(object sender, EventArgs e)
         {
-            verwaltung.GetAngemeldetePerson().SetGeburtstag(new DateTime(cBoxTag.SelectedIndex + 1, cBoxMonat.SelectedIndex + 1, DateTime.Today.Year - cBoxJahr.SelectedIndex));
-            lbGeburtstag.Text = verwaltung.GetAngemeldetePerson().GetGeburtstag().ToShortDateString();
+            try
+            {
+                verwaltung.GetAngemeldetePerson().SetGeburtstag(new DateTime(DateTime.Today.Year - cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex + 1, cBoxTag.SelectedIndex + 1 ));
+                lbGeburtstag.Text = verwaltung.GetAngemeldetePerson().GetGeburtstag().ToShortDateString();
+            }
+            catch (Exception) { }
         }
 
         private void cBoxMonat_SelectedIndexChanged(object sender, EventArgs e)
@@ -116,15 +132,22 @@ namespace Unternehmen
             for (int f = 0; f < DateTime.DaysInMonth(cBoxJahr.SelectedIndex + 1, cBoxMonat.SelectedIndex + 1); f++)
                 cBoxTag.Items.Add(f + 1);
             cBoxTag.SelectedIndex = 0;
-            verwaltung.GetAngemeldetePerson().SetGeburtstag(new DateTime(cBoxTag.SelectedIndex + 1, cBoxMonat.SelectedIndex + 1, DateTime.Today.Year - cBoxJahr.SelectedIndex));
-            lbGeburtstag.Text = verwaltung.GetAngemeldetePerson().GetGeburtstag().ToShortDateString();
+            try
+            {
+                verwaltung.GetAngemeldetePerson().SetGeburtstag(new DateTime(DateTime.Today.Year - cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex + 1, cBoxTag.SelectedIndex + 1));
+                lbGeburtstag.Text = verwaltung.GetAngemeldetePerson().GetGeburtstag().ToShortDateString();
+            }
+            catch (Exception) { }
         }
 
         private void cBoxJahr_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            verwaltung.GetAngemeldetePerson().SetGeburtstag(new DateTime(cBoxTag.SelectedIndex + 1, cBoxMonat.SelectedIndex + 1, DateTime.Today.Year - cBoxJahr.SelectedIndex));
-            lbGeburtstag.Text = verwaltung.GetAngemeldetePerson().GetGeburtstag().ToShortDateString();
+            try
+            {
+                verwaltung.GetAngemeldetePerson().SetGeburtstag(new DateTime(DateTime.Today.Year - cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex + 1, cBoxTag.SelectedIndex + 1));
+                lbGeburtstag.Text = verwaltung.GetAngemeldetePerson().GetGeburtstag().ToShortDateString();
+            }
+            catch (Exception) { }
         }
         private void Bewegen_MouseDown(object sender, MouseEventArgs e)
         {
@@ -195,14 +218,115 @@ namespace Unternehmen
                     sender.Y < lbStatus.Location.Y + lbStatus.Size.Height)
                     return false;
             }
+            if (sender_ != txBAbteilung)
+            {
+                if (txBAbteilung.Location.X < sender.X + (sender_ as Control).Width &
+                    sender.X < txBAbteilung.Location.X + txBAbteilung.Size.Width &&
+                    txBAbteilung.Location.Y < sender.Y + (sender_ as Control).Height &&
+                    sender.Y < txBAbteilung.Location.Y + txBAbteilung.Size.Height)
+                    return false;
+            }
+            if (sender_ != txBEmail)
+            {
+                if (txBEmail.Location.X < sender.X + (sender_ as Control).Width &
+                    sender.X < txBEmail.Location.X + txBEmail.Size.Width &&
+                    txBEmail.Location.Y < sender.Y + (sender_ as Control).Height &&
+                    sender.Y < txBEmail.Location.Y + txBEmail.Size.Height)
+                    return false;
+            }
+            if (sender_ != txBHobbys)
+            {
+                if (txBHobbys.Location.X < sender.X + (sender_ as Control).Width &
+                    sender.X < txBHobbys.Location.X + txBHobbys.Size.Width &&
+                    txBHobbys.Location.Y < sender.Y + (sender_ as Control).Height &&
+                    sender.Y < txBHobbys.Location.Y + txBHobbys.Size.Height)
+                    return false;
+            }
+            if (sender_ != txBStatus)
+            {
+                if (txBStatus.Location.X < sender.X + (sender_ as Control).Width &
+                    sender.X < txBStatus.Location.X + txBStatus.Size.Width &&
+                    txBStatus.Location.Y < sender.Y + (sender_ as Control).Height &&
+                    sender.Y < txBStatus.Location.Y + txBStatus.Size.Height)
+                    return false;
+            }
+            if (sender_ != txBTelefon)
+            {
+                if (txBTelefon.Location.X < sender.X + (sender_ as Control).Width &
+                    sender.X < txBTelefon.Location.X + txBTelefon.Size.Width &&
+                    txBTelefon.Location.Y < sender.Y + (sender_ as Control).Height &&
+                    sender.Y < txBTelefon.Location.Y + txBTelefon.Size.Height)
+                    return false;
+            }
             return true;
+
         }
         private void Speichern()
         {
-            Profil[0]=lbInhaber.Location;
-            Profil[1]=lbStatus.Location;
-            Profil[2]=lbGeburtstag.Location;
-            Profil[3]=pcBProfil.Location;
+            Profil[0] = lbInhaber.Location;
+            Profil[1] = lbStatus.Location;
+            Profil[2] = lbGeburtstag.Location;
+            Profil[3] = pcBProfil.Location;
+            Profil[4] = txBAbteilung.Location;
+            Profil[5] = txBEmail.Location;
+            Profil[6] = txBHobbys.Location;
+            Profil[7] = txBTelefon.Location;
+            verwaltung.GetAngemeldetePerson().Profil1 = Profil;
+            verwaltung.GetAngemeldetePerson().Hintergrundbild1 = BackgroundImage;
+            verwaltung.GetAngemeldetePerson().SetProfilbild(pcBProfil.Image);
+        }
+
+        private void btnHintergrundHochladen_Click(object sender, EventArgs e)
+        {
+            Stream myStream = null;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                InitialDirectory = "c:\\",
+                Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG",
+                FilterIndex = 2,
+                RestoreDirectory = true
+            };
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                try
+                {
+                    if ((myStream = openFileDialog1.OpenFile()) != null)
+                        using (myStream)
+                            BackgroundImage = new Bitmap(myStream);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+        }
+
+        private void txBTelefon_TextChanged(object sender, EventArgs e)
+        {
+            verwaltung.GetAngemeldetePerson().Telefon1 = txBTelefon.Text;
+            lbTelefon.Text = txBTelefon.Text;
+        }
+
+        private void txBAbteilung_TextChanged(object sender, EventArgs e)
+        {
+            verwaltung.GetAngemeldetePerson().Abteilung1 = txBAbteilung.Text;
+            lbAbteilung.Text = txBAbteilung.Text;
+        }
+
+        private void txBHobbys_TextChanged(object sender, EventArgs e)
+        {
+            verwaltung.GetAngemeldetePerson().Hobbys1 = txBHobbys.Text;
+            lbHobby.Text = txBHobbys.Text;
+        }
+
+        private void txBEmail_TextChanged(object sender, EventArgs e)
+        {
+            verwaltung.GetAngemeldetePerson().Email1 = txBEmail.Text;
+            lbEmail.Text = txBEmail.Text;
+        }
+
+        private void ProfilAnzeige_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Speichern();
         }
     }
 }

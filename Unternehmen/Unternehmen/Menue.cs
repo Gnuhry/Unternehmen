@@ -45,7 +45,7 @@ namespace Unternehmen
         private void btnAndern_Click(object sender, EventArgs e)
         {
             pnAktivAktualisieren(2);
-            verwaltung.Andern();
+            verwaltung.ProfilAnzeige();
         }
        
 
