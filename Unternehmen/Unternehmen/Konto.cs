@@ -13,7 +13,7 @@ namespace Unternehmen
         private byte[] passwort;
         private List<DateTime> Urlaubstage;
         private int Krankendauer, status, _Versuche, krankenC, UrlaubsC,maxTage;//0-gesperrt,1-Aktiv(Zuhause),2-Krank,3-Urlaub,4-Aktiv(arbeitend)
-        private Image Profilbild,Hintergrundbild;
+        private Image Profilbild;
         private double Arbeitszeit;
         private DateTime Geburtstag, _Anfang;
         private Notizen notizen;
@@ -24,7 +24,7 @@ namespace Unternehmen
         public string Email1 { get => Email; set => Email = value; }
         public string Abteilung1 { get => Abteilung; set => Abteilung = value; }
         public string Telefon1 { get => Telefon; set => Telefon = value; }
-        public Image Hintergrundbild1 { get => Hintergrundbild; set => Hintergrundbild = value; }
+       
         public Point[] Profil1 { get => Profil; set => Profil = value; }
         public string Status1 { get => Status; set => Status = value; }
         public string Hobbys1 { get => Hobbys; set => Hobbys = value; }
@@ -52,7 +52,7 @@ namespace Unternehmen
             Profil[6] = new Point(0, 0);
             Profil[7] = new Point(0, 0);
             Status = Email = Abteilung = Hobbys = Telefon = "";
-            Hintergrundbild = null;
+           
         }
 
         public string Registrieren(string Kontoinhaber, string benutzername, string passwort, DateTime Geburtstag,Image Profilbild, bool Autoregistrieren)

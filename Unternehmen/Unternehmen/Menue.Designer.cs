@@ -31,25 +31,24 @@
             this.components = new System.ComponentModel.Container();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAdminPostfach = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnAdminKalender = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnAdmin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnAktiv = new System.Windows.Forms.Panel();
             this.btnWebsite = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.Beenden_Button = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMessenger = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Daten_andern_Button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.KalenderButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenue = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnAdminPostfach = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnAdminKalender = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnAdmin = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.Beenden_Button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
+            this.Aktive_Form_Name = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -60,17 +59,16 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.panel2.Controls.Add(this.btnAdminPostfach);
-            this.panel2.Controls.Add(this.btnAdminKalender);
-            this.panel2.Controls.Add(this.btnAdmin);
             this.panel2.Controls.Add(this.pnAktiv);
             this.panel2.Controls.Add(this.btnWebsite);
-            this.panel2.Controls.Add(this.Beenden_Button);
-            this.panel2.Controls.Add(this.bunifuFlatButton4);
             this.panel2.Controls.Add(this.btnMessenger);
             this.panel2.Controls.Add(this.Daten_andern_Button);
             this.panel2.Controls.Add(this.KalenderButton);
             this.panel2.Controls.Add(this.btnMenue);
+            this.panel2.Controls.Add(this.btnAdminPostfach);
+            this.panel2.Controls.Add(this.btnAdminKalender);
+            this.panel2.Controls.Add(this.btnAdmin);
+            this.panel2.Controls.Add(this.Beenden_Button);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 124);
             this.panel2.Name = "panel2";
@@ -79,118 +77,6 @@
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
-            // 
-            // btnAdminPostfach
-            // 
-            this.btnAdminPostfach.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdminPostfach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdminPostfach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdminPostfach.BorderRadius = 0;
-            this.btnAdminPostfach.ButtonText = "Admin Messages";
-            this.btnAdminPostfach.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdminPostfach.DisabledColor = System.Drawing.Color.Gray;
-            this.btnAdminPostfach.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnAdminPostfach.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnAdminPostfach.Iconimage = null;
-            this.btnAdminPostfach.Iconimage_right = null;
-            this.btnAdminPostfach.Iconimage_right_Selected = null;
-            this.btnAdminPostfach.Iconimage_Selected = null;
-            this.btnAdminPostfach.IconMarginLeft = 0;
-            this.btnAdminPostfach.IconMarginRight = 0;
-            this.btnAdminPostfach.IconRightVisible = true;
-            this.btnAdminPostfach.IconRightZoom = 0D;
-            this.btnAdminPostfach.IconVisible = true;
-            this.btnAdminPostfach.IconZoom = 90D;
-            this.btnAdminPostfach.IsTab = false;
-            this.btnAdminPostfach.Location = new System.Drawing.Point(0, 346);
-            this.btnAdminPostfach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAdminPostfach.Name = "btnAdminPostfach";
-            this.btnAdminPostfach.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdminPostfach.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdminPostfach.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
-            this.btnAdminPostfach.selected = false;
-            this.btnAdminPostfach.Size = new System.Drawing.Size(233, 59);
-            this.btnAdminPostfach.TabIndex = 18;
-            this.btnAdminPostfach.Text = "Admin Messages";
-            this.btnAdminPostfach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAdminPostfach.Textcolor = System.Drawing.Color.White;
-            this.btnAdminPostfach.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminPostfach.Visible = false;
-            this.btnAdminPostfach.Click += new System.EventHandler(this.btnAdminPostfach_Click);
-            // 
-            // btnAdminKalender
-            // 
-            this.btnAdminKalender.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdminKalender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdminKalender.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdminKalender.BorderRadius = 0;
-            this.btnAdminKalender.ButtonText = "Admin Calendar";
-            this.btnAdminKalender.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdminKalender.DisabledColor = System.Drawing.Color.Gray;
-            this.btnAdminKalender.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnAdminKalender.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnAdminKalender.Iconimage = null;
-            this.btnAdminKalender.Iconimage_right = null;
-            this.btnAdminKalender.Iconimage_right_Selected = null;
-            this.btnAdminKalender.Iconimage_Selected = null;
-            this.btnAdminKalender.IconMarginLeft = 0;
-            this.btnAdminKalender.IconMarginRight = 0;
-            this.btnAdminKalender.IconRightVisible = true;
-            this.btnAdminKalender.IconRightZoom = 0D;
-            this.btnAdminKalender.IconVisible = true;
-            this.btnAdminKalender.IconZoom = 90D;
-            this.btnAdminKalender.IsTab = false;
-            this.btnAdminKalender.Location = new System.Drawing.Point(0, 405);
-            this.btnAdminKalender.Name = "btnAdminKalender";
-            this.btnAdminKalender.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdminKalender.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdminKalender.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
-            this.btnAdminKalender.selected = false;
-            this.btnAdminKalender.Size = new System.Drawing.Size(233, 73);
-            this.btnAdminKalender.TabIndex = 16;
-            this.btnAdminKalender.Text = "Admin Calendar";
-            this.btnAdminKalender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAdminKalender.Textcolor = System.Drawing.Color.White;
-            this.btnAdminKalender.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminKalender.Visible = false;
-            this.btnAdminKalender.Click += new System.EventHandler(this.btnAdminKalender_Click);
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdmin.BorderRadius = 0;
-            this.btnAdmin.ButtonText = "Admin Dashboard";
-            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmin.DisabledColor = System.Drawing.Color.Gray;
-            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnAdmin.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnAdmin.Iconimage = null;
-            this.btnAdmin.Iconimage_right = null;
-            this.btnAdmin.Iconimage_right_Selected = null;
-            this.btnAdmin.Iconimage_Selected = null;
-            this.btnAdmin.IconMarginLeft = 0;
-            this.btnAdmin.IconMarginRight = 0;
-            this.btnAdmin.IconRightVisible = true;
-            this.btnAdmin.IconRightZoom = 0D;
-            this.btnAdmin.IconVisible = true;
-            this.btnAdmin.IconZoom = 90D;
-            this.btnAdmin.IsTab = false;
-            this.btnAdmin.Location = new System.Drawing.Point(0, 478);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdmin.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnAdmin.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
-            this.btnAdmin.selected = false;
-            this.btnAdmin.Size = new System.Drawing.Size(233, 59);
-            this.btnAdmin.TabIndex = 15;
-            this.btnAdmin.Text = "Admin Dashboard";
-            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAdmin.Textcolor = System.Drawing.Color.White;
-            this.btnAdmin.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.Visible = false;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // pnAktiv
             // 
@@ -222,7 +108,7 @@
             this.btnWebsite.IconVisible = true;
             this.btnWebsite.IconZoom = 90D;
             this.btnWebsite.IsTab = false;
-            this.btnWebsite.Location = new System.Drawing.Point(0, 240);
+            this.btnWebsite.Location = new System.Drawing.Point(0, 192);
             this.btnWebsite.Name = "btnWebsite";
             this.btnWebsite.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.btnWebsite.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
@@ -235,77 +121,6 @@
             this.btnWebsite.Textcolor = System.Drawing.Color.White;
             this.btnWebsite.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWebsite.Click += new System.EventHandler(this.btnWebsite_Click);
-            // 
-            // Beenden_Button
-            // 
-            this.Beenden_Button.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.Beenden_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.Beenden_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Beenden_Button.BorderRadius = 0;
-            this.Beenden_Button.ButtonText = "Close";
-            this.Beenden_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Beenden_Button.DisabledColor = System.Drawing.Color.Gray;
-            this.Beenden_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Beenden_Button.Iconcolor = System.Drawing.Color.Transparent;
-            this.Beenden_Button.Iconimage = null;
-            this.Beenden_Button.Iconimage_right = null;
-            this.Beenden_Button.Iconimage_right_Selected = null;
-            this.Beenden_Button.Iconimage_Selected = null;
-            this.Beenden_Button.IconMarginLeft = 0;
-            this.Beenden_Button.IconMarginRight = 0;
-            this.Beenden_Button.IconRightVisible = true;
-            this.Beenden_Button.IconRightZoom = 0D;
-            this.Beenden_Button.IconVisible = true;
-            this.Beenden_Button.IconZoom = 90D;
-            this.Beenden_Button.IsTab = false;
-            this.Beenden_Button.Location = new System.Drawing.Point(0, 537);
-            this.Beenden_Button.Name = "Beenden_Button";
-            this.Beenden_Button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.Beenden_Button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.Beenden_Button.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
-            this.Beenden_Button.selected = false;
-            this.Beenden_Button.Size = new System.Drawing.Size(233, 48);
-            this.Beenden_Button.TabIndex = 9;
-            this.Beenden_Button.Text = "Close";
-            this.Beenden_Button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Beenden_Button.Textcolor = System.Drawing.Color.White;
-            this.Beenden_Button.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Beenden_Button.Click += new System.EventHandler(this.Beenden_Button_Click);
-            // 
-            // bunifuFlatButton4
-            // 
-            this.bunifuFlatButton4.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.bunifuFlatButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton4.BorderRadius = 0;
-            this.bunifuFlatButton4.ButtonText = "BeispielButton";
-            this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton4.Iconimage = null;
-            this.bunifuFlatButton4.Iconimage_right = null;
-            this.bunifuFlatButton4.Iconimage_right_Selected = null;
-            this.bunifuFlatButton4.Iconimage_Selected = null;
-            this.bunifuFlatButton4.IconMarginLeft = 0;
-            this.bunifuFlatButton4.IconMarginRight = 0;
-            this.bunifuFlatButton4.IconRightVisible = true;
-            this.bunifuFlatButton4.IconRightZoom = 0D;
-            this.bunifuFlatButton4.IconVisible = true;
-            this.bunifuFlatButton4.IconZoom = 90D;
-            this.bunifuFlatButton4.IsTab = false;
-            this.bunifuFlatButton4.Location = new System.Drawing.Point(0, 192);
-            this.bunifuFlatButton4.Name = "bunifuFlatButton4";
-            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
-            this.bunifuFlatButton4.selected = false;
-            this.bunifuFlatButton4.Size = new System.Drawing.Size(233, 48);
-            this.bunifuFlatButton4.TabIndex = 8;
-            this.bunifuFlatButton4.Text = "BeispielButton";
-            this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton4.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnMessenger
             // 
@@ -451,6 +266,154 @@
             this.btnMenue.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenue.Click += new System.EventHandler(this.btnMenue_Click);
             // 
+            // btnAdminPostfach
+            // 
+            this.btnAdminPostfach.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminPostfach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminPostfach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdminPostfach.BorderRadius = 0;
+            this.btnAdminPostfach.ButtonText = "Admin Messages";
+            this.btnAdminPostfach.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdminPostfach.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAdminPostfach.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAdminPostfach.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAdminPostfach.Iconimage = null;
+            this.btnAdminPostfach.Iconimage_right = null;
+            this.btnAdminPostfach.Iconimage_right_Selected = null;
+            this.btnAdminPostfach.Iconimage_Selected = null;
+            this.btnAdminPostfach.IconMarginLeft = 0;
+            this.btnAdminPostfach.IconMarginRight = 0;
+            this.btnAdminPostfach.IconRightVisible = true;
+            this.btnAdminPostfach.IconRightZoom = 0D;
+            this.btnAdminPostfach.IconVisible = true;
+            this.btnAdminPostfach.IconZoom = 90D;
+            this.btnAdminPostfach.IsTab = false;
+            this.btnAdminPostfach.Location = new System.Drawing.Point(0, 346);
+            this.btnAdminPostfach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdminPostfach.Name = "btnAdminPostfach";
+            this.btnAdminPostfach.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminPostfach.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminPostfach.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
+            this.btnAdminPostfach.selected = false;
+            this.btnAdminPostfach.Size = new System.Drawing.Size(233, 59);
+            this.btnAdminPostfach.TabIndex = 18;
+            this.btnAdminPostfach.Text = "Admin Messages";
+            this.btnAdminPostfach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdminPostfach.Textcolor = System.Drawing.Color.White;
+            this.btnAdminPostfach.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminPostfach.Visible = false;
+            this.btnAdminPostfach.Click += new System.EventHandler(this.btnAdminPostfach_Click);
+            // 
+            // btnAdminKalender
+            // 
+            this.btnAdminKalender.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminKalender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminKalender.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdminKalender.BorderRadius = 0;
+            this.btnAdminKalender.ButtonText = "Admin Calendar";
+            this.btnAdminKalender.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdminKalender.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAdminKalender.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAdminKalender.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAdminKalender.Iconimage = null;
+            this.btnAdminKalender.Iconimage_right = null;
+            this.btnAdminKalender.Iconimage_right_Selected = null;
+            this.btnAdminKalender.Iconimage_Selected = null;
+            this.btnAdminKalender.IconMarginLeft = 0;
+            this.btnAdminKalender.IconMarginRight = 0;
+            this.btnAdminKalender.IconRightVisible = true;
+            this.btnAdminKalender.IconRightZoom = 0D;
+            this.btnAdminKalender.IconVisible = true;
+            this.btnAdminKalender.IconZoom = 90D;
+            this.btnAdminKalender.IsTab = false;
+            this.btnAdminKalender.Location = new System.Drawing.Point(0, 405);
+            this.btnAdminKalender.Name = "btnAdminKalender";
+            this.btnAdminKalender.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminKalender.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdminKalender.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
+            this.btnAdminKalender.selected = false;
+            this.btnAdminKalender.Size = new System.Drawing.Size(233, 73);
+            this.btnAdminKalender.TabIndex = 16;
+            this.btnAdminKalender.Text = "Admin Calendar";
+            this.btnAdminKalender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdminKalender.Textcolor = System.Drawing.Color.White;
+            this.btnAdminKalender.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminKalender.Visible = false;
+            this.btnAdminKalender.Click += new System.EventHandler(this.btnAdminKalender_Click);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdmin.BorderRadius = 0;
+            this.btnAdmin.ButtonText = "Admin Dashboard";
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmin.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAdmin.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAdmin.Iconimage = null;
+            this.btnAdmin.Iconimage_right = null;
+            this.btnAdmin.Iconimage_right_Selected = null;
+            this.btnAdmin.Iconimage_Selected = null;
+            this.btnAdmin.IconMarginLeft = 0;
+            this.btnAdmin.IconMarginRight = 0;
+            this.btnAdmin.IconRightVisible = true;
+            this.btnAdmin.IconRightZoom = 0D;
+            this.btnAdmin.IconVisible = true;
+            this.btnAdmin.IconZoom = 90D;
+            this.btnAdmin.IsTab = false;
+            this.btnAdmin.Location = new System.Drawing.Point(0, 478);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdmin.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnAdmin.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
+            this.btnAdmin.selected = false;
+            this.btnAdmin.Size = new System.Drawing.Size(233, 59);
+            this.btnAdmin.TabIndex = 15;
+            this.btnAdmin.Text = "Admin Dashboard";
+            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdmin.Textcolor = System.Drawing.Color.White;
+            this.btnAdmin.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.Visible = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // Beenden_Button
+            // 
+            this.Beenden_Button.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.Beenden_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.Beenden_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Beenden_Button.BorderRadius = 0;
+            this.Beenden_Button.ButtonText = "Close";
+            this.Beenden_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Beenden_Button.DisabledColor = System.Drawing.Color.Gray;
+            this.Beenden_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Beenden_Button.Iconcolor = System.Drawing.Color.Transparent;
+            this.Beenden_Button.Iconimage = null;
+            this.Beenden_Button.Iconimage_right = null;
+            this.Beenden_Button.Iconimage_right_Selected = null;
+            this.Beenden_Button.Iconimage_Selected = null;
+            this.Beenden_Button.IconMarginLeft = 0;
+            this.Beenden_Button.IconMarginRight = 0;
+            this.Beenden_Button.IconRightVisible = true;
+            this.Beenden_Button.IconRightZoom = 0D;
+            this.Beenden_Button.IconVisible = true;
+            this.Beenden_Button.IconZoom = 90D;
+            this.Beenden_Button.IsTab = false;
+            this.Beenden_Button.Location = new System.Drawing.Point(0, 537);
+            this.Beenden_Button.Name = "Beenden_Button";
+            this.Beenden_Button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.Beenden_Button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.Beenden_Button.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
+            this.Beenden_Button.selected = false;
+            this.Beenden_Button.Size = new System.Drawing.Size(233, 48);
+            this.Beenden_Button.TabIndex = 9;
+            this.Beenden_Button.Text = "Close";
+            this.Beenden_Button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Beenden_Button.Textcolor = System.Drawing.Color.White;
+            this.Beenden_Button.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Beenden_Button.Click += new System.EventHandler(this.Beenden_Button_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
@@ -463,32 +426,6 @@
             this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
             this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(288, 52);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(125, 25);
-            this.bunifuCustomLabel1.TabIndex = 1;
-            this.bunifuCustomLabel1.Text = "Dashboard";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.bunifuCustomLabel1);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1181, 124);
-            this.panel1.TabIndex = 11;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
-            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
-            // 
             // Firmenlogo_pictureBox
             // 
             this.Firmenlogo_pictureBox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
@@ -498,6 +435,32 @@
             this.Firmenlogo_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Firmenlogo_pictureBox.TabIndex = 1;
             this.Firmenlogo_pictureBox.TabStop = false;
+            // 
+            // Aktive_Form_Name
+            // 
+            this.Aktive_Form_Name.AutoSize = true;
+            this.Aktive_Form_Name.BackColor = System.Drawing.Color.Transparent;
+            this.Aktive_Form_Name.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Aktive_Form_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.Aktive_Form_Name.Location = new System.Drawing.Point(288, 52);
+            this.Aktive_Form_Name.Name = "Aktive_Form_Name";
+            this.Aktive_Form_Name.Size = new System.Drawing.Size(125, 25);
+            this.Aktive_Form_Name.TabIndex = 1;
+            this.Aktive_Form_Name.Text = "Dashboard";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.Aktive_Form_Name);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1181, 124);
+            this.panel1.TabIndex = 11;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
             // Menue
             // 
@@ -517,9 +480,9 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -530,12 +493,11 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnMenue;
         private Bunifu.Framework.UI.BunifuFlatButton KalenderButton;
         private Bunifu.Framework.UI.BunifuFlatButton Beenden_Button;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         private Bunifu.Framework.UI.BunifuFlatButton btnMessenger;
         private Bunifu.Framework.UI.BunifuFlatButton Daten_andern_Button;
         private Bunifu.Framework.UI.BunifuFlatButton btnWebsite;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuCustomLabel Aktive_Form_Name;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox Firmenlogo_pictureBox;
         private System.Windows.Forms.Panel pnAktiv;

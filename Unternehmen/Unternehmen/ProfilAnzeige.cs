@@ -43,7 +43,7 @@ namespace Unternehmen
 
         private void Init()
         {
-            BackgroundImage = verwaltung.GetAngemeldetePerson().Hintergrundbild1;
+            
             txBBenutzername.Text = verwaltung.GetAngemeldetePerson().GetBenutzername();
             txBInhaber.Text = verwaltung.GetAngemeldetePerson().GetKontoInhaber();
             cBoxTag.SelectedIndex = verwaltung.GetAngemeldetePerson().GetGeburtstag().Day - 1;
@@ -271,34 +271,10 @@ namespace Unternehmen
             Profil[5] = txBEmail.Location;
             Profil[6] = txBHobbys.Location;
             Profil[7] = txBTelefon.Location;
-            verwaltung.GetAngemeldetePerson().Profil1 = Profil;
-            verwaltung.GetAngemeldetePerson().Hintergrundbild1 = BackgroundImage;
+            verwaltung.GetAngemeldetePerson().Profil1 = Profil;  
             verwaltung.GetAngemeldetePerson().SetProfilbild(pcBProfil.Image);
         }
 
-        private void btnHintergrundHochladen_Click(object sender, EventArgs e)
-        {
-            Stream myStream = null;
-            OpenFileDialog openFileDialog1 = new OpenFileDialog
-            {
-                InitialDirectory = "c:\\",
-                Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG",
-                FilterIndex = 2,
-                RestoreDirectory = true
-            };
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                try
-                {
-                    if ((myStream = openFileDialog1.OpenFile()) != null)
-                        using (myStream)
-                            BackgroundImage = new Bitmap(myStream);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
-                }
-        }
 
         private void txBTelefon_TextChanged(object sender, EventArgs e)
         {

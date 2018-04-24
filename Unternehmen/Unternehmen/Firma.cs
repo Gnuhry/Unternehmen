@@ -30,6 +30,7 @@ namespace Unternehmen
             Logo = Properties.Resources.japanese_kanji;
             Adminnachrichten = new Nachrichten();
             AutoRegistrieren = true;
+            AutoRemoveUrlaub = false;
             Web = "http://www.google.com";
             feiertage = new Feiertage();
             Arbeitstage = new bool[7];

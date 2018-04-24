@@ -18,13 +18,15 @@ namespace Unternehmen
         }
         private void btnKalender_Click(object sender, EventArgs e)
         {
-            pnAktivAktualisieren(1);
+            pnAktivAktualisieren(sender as Control);
+            Aktive_Form_Name.Text = "Calendar";
             verwaltung.Kalender();
         }
 
         private void btnMessenger_Click(object sender, EventArgs e)
         {
-            pnAktivAktualisieren(3);
+            pnAktivAktualisieren(sender as Control);
+            Aktive_Form_Name.Text = "Messenger";
             verwaltung.Messenger();
         }
         private void btnWebsite_Click(object sender, EventArgs e)
@@ -44,7 +46,8 @@ namespace Unternehmen
 
         private void btnAndern_Click(object sender, EventArgs e)
         {
-            pnAktivAktualisieren(2);
+            pnAktivAktualisieren(sender as Control);
+            Aktive_Form_Name.Text = "Edit profile";
             verwaltung.ProfilAnzeige();
         }
        
@@ -57,13 +60,14 @@ namespace Unternehmen
 
         private void btnMenue_Click(object sender, EventArgs e)
         {
-            pnAktivAktualisieren(0);
+            pnAktivAktualisieren(sender as Control);
+            Aktive_Form_Name.Text = "Dashboard";
             verwaltung.Menue_standart();
         }
-        private void pnAktivAktualisieren(int index)
+        private void pnAktivAktualisieren(Control sender)
         {
             // MessageBox.Show(48 * index - pnAktiv.Location.Y + "");
-            pnAktiv.Location = new Point(0,48*index);
+            pnAktiv.Location = sender.Location;
            // Point temp = pnAktiv.Location;
              //temp.Offset(0, 48 * index - pnAktiv.Location.Y);
             //pnAktiv.Location = temp;
@@ -73,19 +77,22 @@ namespace Unternehmen
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            pnAktivAktualisieren(10);
+            pnAktivAktualisieren(sender as Control);
+            Aktive_Form_Name.Text = "Admin Dashboard";
             verwaltung.Chef();
         }
 
         private void btnAdminKalender_Click(object sender, EventArgs e)
         {
-            pnAktivAktualisieren(9);
+            pnAktivAktualisieren(sender as Control);
+            Aktive_Form_Name.Text = "Admin Calendar";
             verwaltung.AdminKalender();
         }
 
         private void btnAdminPostfach_Click(object sender, EventArgs e)
         {
-            pnAktivAktualisieren(8);
+            pnAktivAktualisieren(sender as Control);
+            Aktive_Form_Name.Text = "Admin Messages";
             verwaltung.Postfach();
         }
         public void WebsiteAktualisieren()

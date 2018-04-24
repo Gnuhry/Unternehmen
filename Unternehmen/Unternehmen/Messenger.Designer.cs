@@ -38,18 +38,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pcBAnhang = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnLoschen = new System.Windows.Forms.Button();
+            this.pcBAnhangEingang = new System.Windows.Forms.PictureBox();
             this.lbSendeDatum = new System.Windows.Forms.Label();
             this.lbNachricht = new System.Windows.Forms.Label();
             this.lbSender = new System.Windows.Forms.Label();
-            this.pcBAnhangEingang = new System.Windows.Forms.PictureBox();
-            this.pcBAnhang = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBAnhang)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBAnhangEingang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcBAnhang)).BeginInit();
             this.SuspendLayout();
             // 
             // comBEmpfanger
@@ -115,7 +115,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(807, 108);
+            this.panel1.Size = new System.Drawing.Size(807, 57);
             this.panel1.TabIndex = 6;
             // 
             // label3
@@ -123,7 +123,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(692, 51);
+            this.label3.Location = new System.Drawing.Point(707, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 25);
             this.label3.TabIndex = 2;
@@ -134,7 +134,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 51);
+            this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 25);
             this.label2.TabIndex = 1;
@@ -144,9 +144,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(388, 108);
+            this.panel2.Location = new System.Drawing.Point(388, 57);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 477);
+            this.panel2.Size = new System.Drawing.Size(10, 528);
             this.panel2.TabIndex = 7;
             // 
             // panel3
@@ -157,10 +157,18 @@
             this.panel3.Controls.Add(this.comBEmpfanger);
             this.panel3.Controls.Add(this.btnSenden);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(398, 108);
+            this.panel3.Location = new System.Drawing.Point(398, 57);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(409, 477);
+            this.panel3.Size = new System.Drawing.Size(409, 528);
             this.panel3.TabIndex = 8;
+            // 
+            // pcBAnhang
+            // 
+            this.pcBAnhang.Location = new System.Drawing.Point(57, 202);
+            this.pcBAnhang.Name = "pcBAnhang";
+            this.pcBAnhang.Size = new System.Drawing.Size(193, 103);
+            this.pcBAnhang.TabIndex = 4;
+            this.pcBAnhang.TabStop = false;
             // 
             // panel4
             // 
@@ -171,9 +179,9 @@
             this.panel4.Controls.Add(this.lbSender);
             this.panel4.Controls.Add(this.lBoxNachrichten);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 108);
+            this.panel4.Location = new System.Drawing.Point(0, 57);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(392, 477);
+            this.panel4.Size = new System.Drawing.Size(392, 528);
             this.panel4.TabIndex = 9;
             // 
             // btnLoschen
@@ -190,6 +198,15 @@
             this.btnLoschen.UseVisualStyleBackColor = false;
             this.btnLoschen.Visible = false;
             this.btnLoschen.Click += new System.EventHandler(this.btnLoschen_Click);
+            // 
+            // pcBAnhangEingang
+            // 
+            this.pcBAnhangEingang.Location = new System.Drawing.Point(45, 375);
+            this.pcBAnhangEingang.Name = "pcBAnhangEingang";
+            this.pcBAnhangEingang.Size = new System.Drawing.Size(100, 50);
+            this.pcBAnhangEingang.TabIndex = 5;
+            this.pcBAnhangEingang.TabStop = false;
+            this.pcBAnhangEingang.Visible = false;
             // 
             // lbSendeDatum
             // 
@@ -224,23 +241,6 @@
             this.lbSender.Text = "label1";
             this.lbSender.Visible = false;
             // 
-            // pcBAnhangEingang
-            // 
-            this.pcBAnhangEingang.Location = new System.Drawing.Point(45, 375);
-            this.pcBAnhangEingang.Name = "pcBAnhangEingang";
-            this.pcBAnhangEingang.Size = new System.Drawing.Size(100, 50);
-            this.pcBAnhangEingang.TabIndex = 5;
-            this.pcBAnhangEingang.TabStop = false;
-            this.pcBAnhangEingang.Visible = false;
-            // 
-            // pcBAnhang
-            // 
-            this.pcBAnhang.Location = new System.Drawing.Point(57, 202);
-            this.pcBAnhang.Name = "pcBAnhang";
-            this.pcBAnhang.Size = new System.Drawing.Size(193, 103);
-            this.pcBAnhang.TabIndex = 4;
-            this.pcBAnhang.TabStop = false;
-            // 
             // Messenger
             // 
             this.AllowDrop = true;
@@ -263,10 +263,10 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBAnhang)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBAnhangEingang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcBAnhang)).EndInit();
             this.ResumeLayout(false);
 
         }

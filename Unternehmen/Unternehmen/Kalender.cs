@@ -243,7 +243,7 @@ namespace Unternehmen
             Inhalt[3].Text = "THU";
             Inhalt[4].Text = "FRI";
             Inhalt[5].Text = "SAT";
-            Inhalt[6].Text = "SON";
+            Inhalt[6].Text = "SUN";
             for(int f = 0; f < MaxJahre; f++)
                 cBoxJahr.Items.Add(DateTime.Today.Year+f);
             cBoxJahr.SelectedIndex = 0;

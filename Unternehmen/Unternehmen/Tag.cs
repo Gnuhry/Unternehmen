@@ -126,5 +126,10 @@ namespace Unternehmen
             LBTagesplan.Items.Clear();
             LadenTagesplan();
         }
+
+        private void Beenden_Label_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

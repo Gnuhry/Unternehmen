@@ -36,13 +36,13 @@
             this.Firmen_Motto = new System.Windows.Forms.Label();
             this.Logo_Picturebox = new System.Windows.Forms.PictureBox();
             this.Panel_Right = new System.Windows.Forms.Panel();
-            this.lbFehlermeldung = new System.Windows.Forms.Label();
             this.Beenden_Label = new System.Windows.Forms.Label();
             this.txBpasswort = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Password_Label = new System.Windows.Forms.Label();
             this.Username_Label = new System.Windows.Forms.Label();
             this.txBbenutzername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Log_In_Label = new System.Windows.Forms.Label();
+            this.lbFehlermeldung = new System.Windows.Forms.Label();
             this.Panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).BeginInit();
             this.Panel_Right.SuspendLayout();
@@ -97,7 +97,6 @@
             // 
             // Firmen_Motto
             // 
-            this.Firmen_Motto.AutoSize = true;
             this.Firmen_Motto.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Firmen_Motto.ForeColor = System.Drawing.Color.White;
             this.Firmen_Motto.Location = new System.Drawing.Point(49, 325);
@@ -136,14 +135,6 @@
             this.Panel_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseDown);
             this.Panel_Right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_Right_MouseMove);
             this.Panel_Right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseUp);
-            // 
-            // lbFehlermeldung
-            // 
-            this.lbFehlermeldung.AutoSize = true;
-            this.lbFehlermeldung.Location = new System.Drawing.Point(3, 334);
-            this.lbFehlermeldung.Name = "lbFehlermeldung";
-            this.lbFehlermeldung.Size = new System.Drawing.Size(0, 13);
-            this.lbFehlermeldung.TabIndex = 29;
             // 
             // Beenden_Label
             // 
@@ -233,6 +224,17 @@
             this.Log_In_Label.TabIndex = 4;
             this.Log_In_Label.Text = "Log in";
             // 
+            // lbFehlermeldung
+            // 
+            this.lbFehlermeldung.AutoSize = true;
+            this.lbFehlermeldung.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFehlermeldung.ForeColor = System.Drawing.Color.Red;
+            this.lbFehlermeldung.Location = new System.Drawing.Point(3, 345);
+            this.lbFehlermeldung.Name = "lbFehlermeldung";
+            this.lbFehlermeldung.Size = new System.Drawing.Size(36, 16);
+            this.lbFehlermeldung.TabIndex = 29;
+            this.lbFehlermeldung.Text = "Error";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -247,7 +249,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Panel_Left.ResumeLayout(false);
-            this.Panel_Left.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).EndInit();
             this.Panel_Right.ResumeLayout(false);
             this.Panel_Right.PerformLayout();

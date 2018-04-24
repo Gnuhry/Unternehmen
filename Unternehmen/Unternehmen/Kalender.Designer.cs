@@ -70,7 +70,7 @@
             this.btnBeantragen.Name = "btnBeantragen";
             this.btnBeantragen.Size = new System.Drawing.Size(125, 40);
             this.btnBeantragen.TabIndex = 4;
-            this.btnBeantragen.Text = "Beantragen";
+            this.btnBeantragen.Text = "Apply";
             this.btnBeantragen.UseVisualStyleBackColor = false;
             this.btnBeantragen.Click += new System.EventHandler(this.btnBeantragen_Click);
             // 
@@ -111,7 +111,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(807, 38);
+            this.panel1.Size = new System.Drawing.Size(807, 57);
             this.panel1.TabIndex = 7;
             // 
             // btnMonatvor
