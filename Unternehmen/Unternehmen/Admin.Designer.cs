@@ -45,15 +45,21 @@
             this.btnLogoHochladen = new System.Windows.Forms.Button();
             this.pcBFirmenlogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txBFirmenmotto = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txBFirmenmotto = new System.Windows.Forms.TextBox();
+            this.chBAutoRemoveUrlaub = new System.Windows.Forms.CheckBox();
+            this.lBoxNoAdmin = new System.Windows.Forms.ListBox();
+            this.lBoxAdmin = new System.Windows.Forms.ListBox();
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.btnNoAdmin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numUrlaubstage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBFirmenlogo)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -90,7 +96,7 @@
             this.btnEinsehen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEinsehen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEinsehen.ForeColor = System.Drawing.Color.White;
-            this.btnEinsehen.Location = new System.Drawing.Point(476, 416);
+            this.btnEinsehen.Location = new System.Drawing.Point(635, 543);
             this.btnEinsehen.Name = "btnEinsehen";
             this.btnEinsehen.Size = new System.Drawing.Size(172, 34);
             this.btnEinsehen.TabIndex = 30;
@@ -124,7 +130,7 @@
             this.btnPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPassword.ForeColor = System.Drawing.Color.White;
-            this.btnPassword.Location = new System.Drawing.Point(476, 364);
+            this.btnPassword.Location = new System.Drawing.Point(635, 491);
             this.btnPassword.Name = "btnPassword";
             this.btnPassword.Size = new System.Drawing.Size(172, 34);
             this.btnPassword.TabIndex = 27;
@@ -169,7 +175,7 @@
             this.btnSperren.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSperren.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSperren.ForeColor = System.Drawing.Color.White;
-            this.btnSperren.Location = new System.Drawing.Point(476, 314);
+            this.btnSperren.Location = new System.Drawing.Point(635, 441);
             this.btnSperren.Name = "btnSperren";
             this.btnSperren.Size = new System.Drawing.Size(172, 34);
             this.btnSperren.TabIndex = 24;
@@ -184,7 +190,7 @@
             this.btnAktivieren.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAktivieren.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAktivieren.ForeColor = System.Drawing.Color.White;
-            this.btnAktivieren.Location = new System.Drawing.Point(476, 261);
+            this.btnAktivieren.Location = new System.Drawing.Point(635, 388);
             this.btnAktivieren.Name = "btnAktivieren";
             this.btnAktivieren.Size = new System.Drawing.Size(172, 34);
             this.btnAktivieren.TabIndex = 23;
@@ -196,7 +202,7 @@
             // 
             this.comBMitarbeiter.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comBMitarbeiter.FormattingEnabled = true;
-            this.comBMitarbeiter.Location = new System.Drawing.Point(476, 170);
+            this.comBMitarbeiter.Location = new System.Drawing.Point(635, 297);
             this.comBMitarbeiter.Name = "comBMitarbeiter";
             this.comBMitarbeiter.Size = new System.Drawing.Size(172, 24);
             this.comBMitarbeiter.TabIndex = 22;
@@ -220,7 +226,7 @@
             this.btnFeuern.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFeuern.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFeuern.ForeColor = System.Drawing.Color.White;
-            this.btnFeuern.Location = new System.Drawing.Point(476, 209);
+            this.btnFeuern.Location = new System.Drawing.Point(635, 336);
             this.btnFeuern.Name = "btnFeuern";
             this.btnFeuern.Size = new System.Drawing.Size(172, 34);
             this.btnFeuern.TabIndex = 19;
@@ -287,9 +293,19 @@
             this.panel2.Size = new System.Drawing.Size(319, 585);
             this.panel2.TabIndex = 38;
             // 
+            // txBFirmenmotto
+            // 
+            this.txBFirmenmotto.Location = new System.Drawing.Point(16, 364);
+            this.txBFirmenmotto.Multiline = true;
+            this.txBFirmenmotto.Name = "txBFirmenmotto";
+            this.txBFirmenmotto.Size = new System.Drawing.Size(188, 50);
+            this.txBFirmenmotto.TabIndex = 42;
+            this.txBFirmenmotto.TextChanged += new System.EventHandler(this.txBFirmenmotto_TextChanged);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Silver;
+            this.panel5.Controls.Add(this.chBAutoRemoveUrlaub);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 57);
             this.panel5.Name = "panel5";
@@ -337,14 +353,59 @@
             this.panel4.Size = new System.Drawing.Size(488, 59);
             this.panel4.TabIndex = 40;
             // 
-            // txBFirmenmotto
+            // chBAutoRemoveUrlaub
             // 
-            this.txBFirmenmotto.Location = new System.Drawing.Point(16, 364);
-            this.txBFirmenmotto.Multiline = true;
-            this.txBFirmenmotto.Name = "txBFirmenmotto";
-            this.txBFirmenmotto.Size = new System.Drawing.Size(188, 50);
-            this.txBFirmenmotto.TabIndex = 42;
-            this.txBFirmenmotto.TextChanged += new System.EventHandler(this.txBFirmenmotto_TextChanged);
+            this.chBAutoRemoveUrlaub.AutoSize = true;
+            this.chBAutoRemoveUrlaub.Checked = true;
+            this.chBAutoRemoveUrlaub.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chBAutoRemoveUrlaub.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chBAutoRemoveUrlaub.Location = new System.Drawing.Point(4, 18);
+            this.chBAutoRemoveUrlaub.Name = "chBAutoRemoveUrlaub";
+            this.chBAutoRemoveUrlaub.Size = new System.Drawing.Size(315, 25);
+            this.chBAutoRemoveUrlaub.TabIndex = 34;
+            this.chBAutoRemoveUrlaub.Text = "Activate Automativ Remove Holidys";
+            this.chBAutoRemoveUrlaub.UseVisualStyleBackColor = true;
+            this.chBAutoRemoveUrlaub.CheckedChanged += new System.EventHandler(this.chBAutoRemoveUrlaub_CheckedChanged);
+            // 
+            // lBoxNoAdmin
+            // 
+            this.lBoxNoAdmin.FormattingEnabled = true;
+            this.lBoxNoAdmin.Location = new System.Drawing.Point(371, 162);
+            this.lBoxNoAdmin.Name = "lBoxNoAdmin";
+            this.lBoxNoAdmin.Size = new System.Drawing.Size(120, 95);
+            this.lBoxNoAdmin.TabIndex = 41;
+            this.lBoxNoAdmin.Visible = false;
+            // 
+            // lBoxAdmin
+            // 
+            this.lBoxAdmin.FormattingEnabled = true;
+            this.lBoxAdmin.Location = new System.Drawing.Point(614, 162);
+            this.lBoxAdmin.Name = "lBoxAdmin";
+            this.lBoxAdmin.Size = new System.Drawing.Size(120, 95);
+            this.lBoxAdmin.TabIndex = 42;
+            this.lBoxAdmin.Visible = false;
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Location = new System.Drawing.Point(510, 183);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(75, 23);
+            this.btnAdmin.TabIndex = 43;
+            this.btnAdmin.Text = "button1";
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Visible = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // btnNoAdmin
+            // 
+            this.btnNoAdmin.Location = new System.Drawing.Point(510, 212);
+            this.btnNoAdmin.Name = "btnNoAdmin";
+            this.btnNoAdmin.Size = new System.Drawing.Size(75, 23);
+            this.btnNoAdmin.TabIndex = 44;
+            this.btnNoAdmin.Text = "button1";
+            this.btnNoAdmin.UseVisualStyleBackColor = true;
+            this.btnNoAdmin.Visible = false;
+            this.btnNoAdmin.Click += new System.EventHandler(this.btnNoAdmin_Click);
             // 
             // Admin
             // 
@@ -352,6 +413,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(807, 585);
+            this.Controls.Add(this.btnNoAdmin);
+            this.Controls.Add(this.btnAdmin);
+            this.Controls.Add(this.lBoxAdmin);
+            this.Controls.Add(this.lBoxNoAdmin);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEinsehen);
@@ -370,6 +435,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcBFirmenlogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -405,5 +472,10 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txBFirmenmotto;
+        private System.Windows.Forms.CheckBox chBAutoRemoveUrlaub;
+        private System.Windows.Forms.ListBox lBoxNoAdmin;
+        private System.Windows.Forms.ListBox lBoxAdmin;
+        private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Button btnNoAdmin;
     }
 }

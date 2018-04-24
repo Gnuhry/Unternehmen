@@ -13,7 +13,7 @@ namespace Unternehmen
             InitializeComponent();
             this.verwaltung = verwaltung;
             if (verwaltung.GetFirma().GetWeb() == "none") btnWebsite.Visible = false;
-            if (verwaltung.GetAngemeldetePerson() == verwaltung.GetFirma().GetMitarbeiter(0)) { btnAdmin.Visible =btnAdminKalender.Visible=btnAdminPostfach.Visible= true; }
+            if (verwaltung.GetAngemeldetePerson() == verwaltung.GetFirma().GetMitarbeiter(0)||verwaltung.GetFirma().IsKonto(verwaltung.GetAngemeldetePerson())) { btnAdmin.Visible =btnAdminKalender.Visible=btnAdminPostfach.Visible= true; }
             Firmenlogo_pictureBox.Image = verwaltung.GetFirma().GetFirmenLogo();
         }
         private void btnKalender_Click(object sender, EventArgs e)

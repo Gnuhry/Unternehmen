@@ -11,8 +11,11 @@ namespace Unternehmen
     {
         Registrieren registrieren;
         Verwaltung verwaltung;
+        List<int> Admins, NoAdmin;
         public Admin(Verwaltung verwaltung)
         {
+            Admins = new List<int>();
+            NoAdmin = new List<int>();
             InitializeComponent();
             this.verwaltung = verwaltung;
             for (int f = 1; f<verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
@@ -27,6 +30,14 @@ namespace Unternehmen
             chBAutoAktiv.Checked = verwaltung.GetFirma().GetAutoRegistrieren();
             pcBFirmenlogo.Image = verwaltung.GetFirma().GetFirmenLogo();
             txBFirmenmotto.Text = verwaltung.GetFirma().Firmenstatus1;
+            chBAutoRemoveUrlaub.Checked = verwaltung.GetFirma().AutoRemoveUrlaub1;
+            if (verwaltung.GetAngemeldetePerson() == verwaltung.GetFirma().GetMitarbeiter(0))
+            {
+                lBoxAdmin.Visible = lBoxNoAdmin.Visible = btnAdmin.Visible=btnNoAdmin.Visible = true;
+                for (int f = 0; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
+                    if (verwaltung.GetFirma().IsKonto(verwaltung.GetFirma().GetMitarbeiter(f))) { lBoxAdmin.Items.Add(verwaltung.GetFirma().GetMitarbeiter(f).GetKontoInhaber()); Admins.Add(f); }
+                    else{ lBoxNoAdmin.Items.Add(verwaltung.GetFirma().GetMitarbeiter(f).GetKontoInhaber()); NoAdmin.Add(f); }
+            }
         }
 
         private void btnFeuern_Click(object sender, EventArgs e)
@@ -159,6 +170,29 @@ namespace Unternehmen
         private void txBFirmenmotto_TextChanged(object sender, EventArgs e)
         {
             verwaltung.GetFirma().Firmenstatus1 = txBFirmenmotto.Text;
+        }
+
+        private void chBAutoRemoveUrlaub_CheckedChanged(object sender, EventArgs e)
+        {
+            verwaltung.GetFirma().AutoRemoveUrlaub1 = chBAutoRemoveUrlaub.Checked;
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            verwaltung.GetFirma().SetAdmin(verwaltung.GetFirma().GetMitarbeiter(NoAdmin[lBoxNoAdmin.SelectedIndex]));
+            lBoxAdmin.Items.Add(verwaltung.GetFirma().GetMitarbeiter(NoAdmin[lBoxNoAdmin.SelectedIndex]).GetKontoInhaber());
+            lBoxNoAdmin.Items.Remove(verwaltung.GetFirma().GetMitarbeiter(NoAdmin[lBoxNoAdmin.SelectedIndex]).GetKontoInhaber());
+            NoAdmin.Remove(lBoxNoAdmin.SelectedIndex);
+            Admins.Add(lBoxNoAdmin.SelectedIndex);
+        }
+
+        private void btnNoAdmin_Click(object sender, EventArgs e)
+        {
+            verwaltung.GetFirma().RemoveAdmin(verwaltung.GetFirma().GetMitarbeiter(Admins[lBoxAdmin.SelectedIndex]));
+            lBoxNoAdmin.Items.Add(verwaltung.GetFirma().GetMitarbeiter(Admins[lBoxAdmin.SelectedIndex]).GetKontoInhaber());
+            lBoxAdmin.Items.Remove(verwaltung.GetFirma().GetMitarbeiter(Admins[lBoxAdmin.SelectedIndex]).GetKontoInhaber());
+            Admins.Remove(lBoxNoAdmin.SelectedIndex);
+            NoAdmin.Add(lBoxNoAdmin.SelectedIndex);
         }
     }
 }

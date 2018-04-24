@@ -10,20 +10,22 @@ namespace Unternehmen
     public class Firma
     {
         private Image Logo;
-        private List<Konto> Mitarbeiter;
+        private List<Konto> Mitarbeiter,Admins;
         private Notizen notizen;
         private bool[] Arbeitstage;
         private Feiertage feiertage;
         private DateTime date_zero;
         private string Web,Firmenstatus;
         private int MaxTage;
-        private bool AutoRegistrieren;
+        private bool AutoRegistrieren,AutoRemoveUrlaub;
         private Nachrichten Adminnachrichten;
 
         public string Firmenstatus1 { get => Firmenstatus; set => Firmenstatus = value; }
+        public bool AutoRemoveUrlaub1 { get => AutoRemoveUrlaub; set => AutoRemoveUrlaub = value; }
 
         public Firma()
         {
+            Admins = new List<Konto>();
             Firmenstatus = "We Create, We Plan\n You're Way";
             Logo = Properties.Resources.japanese_kanji;
             Adminnachrichten = new Nachrichten();
@@ -162,6 +164,7 @@ namespace Unternehmen
 
         public void Uerberprufung(DateTime Tag)
         {
+            if (!AutoRemoveUrlaub) return;
             List<int> temp = new List<int>();
             if (Urlaub_beantragen(Tag)) return;
             for(int f = 0; f < Mitarbeiter.Count; f++)
@@ -183,6 +186,9 @@ namespace Unternehmen
         public string[] GetAdminAnzeige() => Adminnachrichten.GetAnzeige();
         public DateTime GetSendeDatum(int index) => Adminnachrichten.GetSendeDatum(index);
         public void RemoveNachricht(int index) => Adminnachrichten.DeleteNachricht(index);
+        public void SetAdmin(Konto Admin) => Admins.Add(Admin);
+        public void RemoveAdmin(Konto Admin) => Admins.Remove(Admin);
+        public bool IsKonto(Konto Abfrage) => Admins.Contains(Abfrage);
 
         public void Speichern(string path)
         {

@@ -72,7 +72,6 @@ namespace Unternehmen
 
         public void Chef()
         {
-            if (firma.GetMitarbeiter(0) != angemeldete_Person) return;
             if (chef != null) { chef.Show(); return; }
             SchliesenMenues();
             chef = new Admin(this)
