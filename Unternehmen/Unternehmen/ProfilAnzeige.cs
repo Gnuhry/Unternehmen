@@ -35,10 +35,10 @@ namespace Unternehmen
             lbStatus.Location = Profil[1];
             lbGeburtstag.Location = Profil[2];
             pcBProfil.Location = Profil[3];
-            txBAbteilung.Location = Profil[4];
-            txBEmail.Location = Profil[5];
-            txBHobbys.Location = Profil[6];
-            txBTelefon.Location = Profil[7];
+            lbAbteilung.Location = Profil[4];
+            lbEmail.Location = Profil[5];
+            lbHobby.Location = Profil[6];
+            lbTelefon.Location = Profil[7];
         }
 
         private void Init()

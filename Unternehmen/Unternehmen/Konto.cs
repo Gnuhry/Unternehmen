@@ -51,7 +51,7 @@ namespace Unternehmen
             Profil[5] = new Point(0, 0);
             Profil[6] = new Point(0, 0);
             Profil[7] = new Point(0, 0);
-            Status = Email = Abteilung = Hobbys = Telefon = null;
+            Status = Email = Abteilung = Hobbys = Telefon = "";
             Hintergrundbild = null;
         }
 
