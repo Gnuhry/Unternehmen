@@ -25,7 +25,7 @@ namespace Unternehmen
         {
            for(int f = 0; f < verwaltung.GetAngemeldetePerson().GetTerminAnzahl(); f++)
                 LBTagesplan.Items.Add(verwaltung.GetAngemeldetePerson().GetTerminVon(f).ToShortDateString()+", "+verwaltung.GetAngemeldetePerson().GetTerminVon(f).ToShortTimeString() + "-" +verwaltung.GetAngemeldetePerson().GetTerminBis(f).ToShortDateString() +", "+ verwaltung.GetAngemeldetePerson().GetTerminBis(f).ToShortTimeString());
-            LBTagesplan.Items.Add("Neues Ereignis");
+            LBTagesplan.Items.Add("new event");
         }
 
         private void Laden()

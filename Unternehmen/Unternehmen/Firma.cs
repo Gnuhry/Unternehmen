@@ -15,13 +15,16 @@ namespace Unternehmen
         private bool[] Arbeitstage;
         private Feiertage feiertage;
         private DateTime date_zero;
-        private string Web;
+        private string Web,Firmenstatus;
         private int MaxTage;
         private bool AutoRegistrieren;
         private Nachrichten Adminnachrichten;
 
+        public string Firmenstatus1 { get => Firmenstatus; set => Firmenstatus = value; }
+
         public Firma()
         {
+            Firmenstatus = "We Create, We Plan\n You're Way";
             Logo = Properties.Resources.japanese_kanji;
             Adminnachrichten = new Nachrichten();
             AutoRegistrieren = true;

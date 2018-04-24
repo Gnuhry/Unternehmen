@@ -13,7 +13,7 @@ namespace Unternehmen
             this.verwaltung = verwaltung;
             InitializeComponent();
             StatusAbfrage();
-            if (verwaltung.GetAngemeldetePerson().GetStatus() == "Anwesend")
+            if (verwaltung.GetAngemeldetePerson().GetStatus() == "present")
                 btnAnwesend.Enabled = false;
             else
                 btnGehen.Enabled = false;

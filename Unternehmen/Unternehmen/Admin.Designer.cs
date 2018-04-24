@@ -50,6 +50,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txBFirmenmotto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numUrlaubstage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBFirmenlogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -67,7 +68,7 @@
             this.chBWebsite.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chBWebsite.Location = new System.Drawing.Point(16, 456);
             this.chBWebsite.Name = "chBWebsite";
-            this.chBWebsite.Size = new System.Drawing.Size(92, 17);
+            this.chBWebsite.Size = new System.Drawing.Size(93, 20);
             this.chBWebsite.TabIndex = 32;
             this.chBWebsite.Text = "Website-Link";
             this.chBWebsite.UseVisualStyleBackColor = true;
@@ -103,7 +104,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(13, 422);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.Size = new System.Drawing.Size(77, 16);
             this.label3.TabIndex = 29;
             this.label3.Text = "Urlaubstage:";
             // 
@@ -137,7 +138,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 172);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 20);
+            this.label2.Size = new System.Drawing.Size(108, 21);
             this.label2.TabIndex = 26;
             this.label2.Text = "Arbeitstage:";
             // 
@@ -197,7 +198,7 @@
             this.comBMitarbeiter.FormattingEnabled = true;
             this.comBMitarbeiter.Location = new System.Drawing.Point(476, 170);
             this.comBMitarbeiter.Name = "comBMitarbeiter";
-            this.comBMitarbeiter.Size = new System.Drawing.Size(172, 21);
+            this.comBMitarbeiter.Size = new System.Drawing.Size(172, 24);
             this.comBMitarbeiter.TabIndex = 22;
             this.comBMitarbeiter.SelectedIndexChanged += new System.EventHandler(this.comBMitarbeiter_SelectedIndexChanged);
             // 
@@ -235,7 +236,7 @@
             this.chBAutoAktiv.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chBAutoAktiv.Location = new System.Drawing.Point(89, 18);
             this.chBAutoAktiv.Name = "chBAutoAktiv";
-            this.chBAutoAktiv.Size = new System.Drawing.Size(263, 24);
+            this.chBAutoAktiv.Size = new System.Drawing.Size(264, 25);
             this.chBAutoAktiv.TabIndex = 33;
             this.chBAutoAktiv.Text = "Activate Accounts at Sign Up";
             this.chBAutoAktiv.UseVisualStyleBackColor = true;
@@ -269,6 +270,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.txBFirmenmotto);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.btnLogoHochladen);
@@ -335,6 +337,15 @@
             this.panel4.Size = new System.Drawing.Size(488, 59);
             this.panel4.TabIndex = 40;
             // 
+            // txBFirmenmotto
+            // 
+            this.txBFirmenmotto.Location = new System.Drawing.Point(16, 364);
+            this.txBFirmenmotto.Multiline = true;
+            this.txBFirmenmotto.Name = "txBFirmenmotto";
+            this.txBFirmenmotto.Size = new System.Drawing.Size(188, 50);
+            this.txBFirmenmotto.TabIndex = 42;
+            this.txBFirmenmotto.TextChanged += new System.EventHandler(this.txBFirmenmotto_TextChanged);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,5 +404,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox txBFirmenmotto;
     }
 }

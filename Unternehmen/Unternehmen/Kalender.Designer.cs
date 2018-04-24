@@ -78,18 +78,18 @@
             // 
             this.cBoxMonat.FormattingEnabled = true;
             this.cBoxMonat.Items.AddRange(new object[] {
-            "Januar",
-            "Februar",
-            "März",
+            "January",
+            "February",
+            "March",
             "April",
-            "Mai",
-            "Juni",
+            "May",
+            "June",
             "Juli",
             "August",
             "September",
-            "Oktober",
+            "October",
             "November",
-            "Dezember"});
+            "December"});
             this.cBoxMonat.Location = new System.Drawing.Point(175, 142);
             this.cBoxMonat.Name = "cBoxMonat";
             this.cBoxMonat.Size = new System.Drawing.Size(121, 21);

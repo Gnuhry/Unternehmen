@@ -26,6 +26,7 @@ namespace Unternehmen
             chBWebsite.Checked = txBWebsite.Enabled;
             chBAutoAktiv.Checked = verwaltung.GetFirma().GetAutoRegistrieren();
             pcBFirmenlogo.Image = verwaltung.GetFirma().GetFirmenLogo();
+            txBFirmenmotto.Text = verwaltung.GetFirma().Firmenstatus1;
         }
 
         private void btnFeuern_Click(object sender, EventArgs e)
@@ -153,6 +154,11 @@ namespace Unternehmen
                 {
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
+        }
+
+        private void txBFirmenmotto_TextChanged(object sender, EventArgs e)
+        {
+            verwaltung.GetFirma().Firmenstatus1 = txBFirmenmotto.Text;
         }
     }
 }

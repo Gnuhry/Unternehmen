@@ -73,13 +73,13 @@ namespace Unternehmen
             if (Chef)
             {
                 lbNachricht.Text = verwaltung.GetFirma().GetAdminNachricht(index);
-                lbSender.Text = "Von: " + verwaltung.GetFirma().GetAdminNachrichtSender(index).GetKontoInhaber();
-                lbSendeDatum.Text = verwaltung.GetFirma().GetSendeDatum(index).ToShortDateString();
+                lbSender.Text = "From: " + verwaltung.GetFirma().GetAdminNachrichtSender(index).GetKontoInhaber();
+                lbSendeDatum.Text = verwaltung.GetFirma().GetSendeDatum(index).ToShortTimeString() + " "+verwaltung.GetFirma().GetSendeDatum(index).ToShortDateString();
                 aktiellesIndex = index;
                 return;
             }
             lbNachricht.Text = verwaltung.GetAngemeldetePerson().GetNachricht(index);
-            lbSender.Text = "Von: "+verwaltung.GetAngemeldetePerson().GetSender(index).GetKontoInhaber();
+            lbSender.Text = "From: "+verwaltung.GetAngemeldetePerson().GetSender(index).GetKontoInhaber();
             lbSendeDatum.Text = verwaltung.GetAngemeldetePerson().GetSendeDatum(index).ToShortDateString();
             aktiellesIndex = index;
         }

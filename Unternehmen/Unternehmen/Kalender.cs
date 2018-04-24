@@ -14,7 +14,7 @@ namespace Unternehmen
         private List<DateTime> Urlaubstage;
         private List<Tag> tage;
         private int Month, Year;
-        private static string[] Monat = { "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" };
+        private static string[] Monat = { "January", "Feburar", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
         private static Color KrankentageC = Color.Orange, UrlaubstageC = Color.Red, VergangeneTageC = Color.LightGray, FeiertageC = Color.Green, BeantragenC = Color.Blue, keinArbeitstagC=Color.LightGray;
         public Kalender(Verwaltung verwaltung, bool Chef)
         {
@@ -158,18 +158,18 @@ namespace Unternehmen
             else if (cBoxMonat.Items.Count != 12)
             {
                 cBoxMonat.Items.Clear();
-                cBoxMonat.Items.Add("Januar");
-                cBoxMonat.Items.Add("Februar");
-                cBoxMonat.Items.Add("März");
+                cBoxMonat.Items.Add("January");
+                cBoxMonat.Items.Add("February");
+                cBoxMonat.Items.Add("March");
                 cBoxMonat.Items.Add("April");
-                cBoxMonat.Items.Add("Mai");
-                cBoxMonat.Items.Add("Juni");
-                cBoxMonat.Items.Add("Juli");
+                cBoxMonat.Items.Add("May");
+                cBoxMonat.Items.Add("June");
+                cBoxMonat.Items.Add("July");
                 cBoxMonat.Items.Add("August");
                 cBoxMonat.Items.Add("September");
-                cBoxMonat.Items.Add("Oktober");
+                cBoxMonat.Items.Add("October");
                 cBoxMonat.Items.Add("November");
-                cBoxMonat.Items.Add("Dezember");
+                cBoxMonat.Items.Add("December");
             }
             KalenderLaden();
         }
@@ -237,13 +237,13 @@ namespace Unternehmen
                 Inhalt[f] = new Label();
                 tLpKalender.Controls.Add(Inhalt[f]);
             }
-            Inhalt[0].Text = "MO";
-            Inhalt[1].Text = "DI";
-            Inhalt[2].Text = "MI";
-            Inhalt[3].Text = "DO";
-            Inhalt[4].Text = "FR";
-            Inhalt[5].Text = "SA";
-            Inhalt[6].Text = "SO";
+            Inhalt[0].Text = "MON";
+            Inhalt[1].Text = "TUE";
+            Inhalt[2].Text = "WED";
+            Inhalt[3].Text = "THU";
+            Inhalt[4].Text = "FRI";
+            Inhalt[5].Text = "SAT";
+            Inhalt[6].Text = "SON";
             for(int f = 0; f < MaxJahre; f++)
                 cBoxJahr.Items.Add(DateTime.Today.Year+f);
             cBoxJahr.SelectedIndex = 0;

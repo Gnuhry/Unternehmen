@@ -74,11 +74,11 @@ namespace Unternehmen
                 else if (x[f] > 96 && x[f] < 122) KlB = true;
                 else if (x[f] > 47 && x[f] < 58) Zahl = true;
                 else
-                    return "Keine " + '"' + x[f] + '"';
+                    return "No " + '"' + x[f] + '"';
             }
-            if (!GrB) return "Großbuchstabe fehlt";
-            if (!KlB) return "Kleinbuchstabe fehlt";
-            if (!Zahl) return "Zahl fehlt";
+            if (!GrB) return "Missing capital letter";
+            if (!KlB) return "Missing lower case letter";
+            if (!Zahl) return "Missing number";
             this.passwort = new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.ASCII.GetBytes(passwort));
 
             if (Autoregistrieren)
@@ -146,12 +146,12 @@ namespace Unternehmen
         {
             switch (status)
             {
-                case 0: return "gesperrt";
-                case 1: return "Gegangen";
-                case 2: return "Krank";
-                case 3: return "Urlaub";
-                case 4: return "Anwesend";
-                default: return "Fehler";
+                case 0: return "locked";
+                case 1: return "absent";
+                case 2: return "Ill";
+                case 3: return "Holiday";
+                case 4: return "present";
+                default: return "Error";
             }
         }
         public Image GetProfilbild() => Profilbild;
@@ -179,7 +179,7 @@ namespace Unternehmen
         public int GetNachrichtenAnzahl() => nachrichten.GetAnzahl();
         public void RemoveNachricht(int index) => nachrichten.DeleteNachricht(index);
         public DateTime GetSendeDatum(int index) => nachrichten.GetSendeDatum(index);
-        public string GetZeiten() => "Mitarbeiter: "+Kontoinhaber+"\nArbeitszeit: " + Arbeitszeit + "\nUrlaubstage dieses Jahr: " + UrlaubsC + "\nKrankentage dieses Jahr: " + krankenC;
+        public string GetZeiten() => "Employee: " + Kontoinhaber+"\nwork time: " + Arbeitszeit + "\nleave day this year: " + UrlaubsC + "\nday of illnes this year: " + krankenC;
         public void SetStatus(int status)
         {
             if (status == 1 && this.status == 0) this.status = 1;

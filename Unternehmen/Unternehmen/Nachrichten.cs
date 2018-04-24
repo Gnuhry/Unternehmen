@@ -24,13 +24,13 @@ namespace Unternehmen
             this.Sender.Add(Sender);
             this.Nachricht.Add(Nachricht);
             this.Anhang.Add(Anhang);
-            SendeDatum.Add(DateTime.Today);
+            SendeDatum.Add(DateTime.Now);
         }
         public string[] GetAnzeige()
         {
             string[] temp = new string[Sender.Count];
             for(int f = 0; f < Sender.Count; f++)
-                temp[f] = "Von: "+Sender[f].GetKontoInhaber();
+                temp[f] = "From: "+Sender[f].GetKontoInhaber();
             return temp;
         }
         public string GetNachricht(int index) => Nachricht[index];

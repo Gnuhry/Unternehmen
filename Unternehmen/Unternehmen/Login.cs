@@ -12,6 +12,7 @@ namespace Unternehmen
             InitializeComponent();
             this.verwaltung = verwaltung;
             Logo_Picturebox.Image = verwaltung.GetFirma().GetFirmenLogo();
+            Firmen_Motto.Text = verwaltung.GetFirma().Firmenstatus1;
         }
 
         private void btnRegistrieren_Click(object sender, EventArgs e)
@@ -24,9 +25,9 @@ namespace Unternehmen
            switch( verwaltung.GetFirma().Einloggen(txBbenutzername.Text, txBpasswort.Text,verwaltung))
             {
                 case 0: verwaltung.Menue(); break;
-                case -1: lbFehlermeldung.Text="Konto existiert nicht"; break;
-                case -2: lbFehlermeldung.Text="Falsche Passwort"; break;
-                case -3: lbFehlermeldung.Text="Gesperrtes Konto, wenden Sie sich an den Admin"; break;
+                case -1: lbFehlermeldung.Text="wrong username"; break;
+                case -2: lbFehlermeldung.Text="wrong password"; break;
+                case -3: lbFehlermeldung.Text="konto is locked, please contact an administrator"; break;
             }
             txBpasswort.Text = txBbenutzername.Text = null;
         }

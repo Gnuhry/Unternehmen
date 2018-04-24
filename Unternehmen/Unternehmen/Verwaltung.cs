@@ -192,25 +192,6 @@ namespace Unternehmen
             messenger = null;
         }
 
-        public void Andern()
-        {
-            if (registrieren != null) { registrieren.Show(); return; }
-            SchliesenMenues();
-            registrieren = new Registrieren(this, angemeldete_Person)
-            {
-                MdiParent = menue,
-                Dock = DockStyle.Fill
-            };
-            registrieren.FormClosed += Registrieren2_FormClosed;
-            registrieren.Show();
-        }
-
-        private void Registrieren2_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            registrieren = null;
-            firma.Speichern(Pfad);
-        }
-
         private void Menue_FormClosing(object sender, FormClosingEventArgs e)
         {
             menue = null;

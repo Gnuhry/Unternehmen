@@ -21,6 +21,7 @@ namespace Unternehmen
             pcBProfilbild.Image = Properties.Resources.ic_android_black_24dp;
             Logo_Picturebox.Image =  verwaltung.GetFirma().GetFirmenLogo();
             aa = true;
+            Firmen_Motto.Text = verwaltung.GetFirma().Firmenstatus1;
         }
         public Registrieren(Verwaltung verwaltung, Konto angemeldet)
         {
@@ -54,29 +55,29 @@ namespace Unternehmen
         {
             if (!TermsandConditionsCheckbox.Checked)
             {
-                lbFehlermeldung.Text="Terms and Condition annehmen";
+                lbFehlermeldung.Text="agree terms and condition";
                 return;
             }
             if (aa)
                 angemeldet = new Konto();
-            else if (angemeldet.Login(angemeldet.GetBenutzername(), txBPasswortA.Text) != 0) { lbFehlermeldung.Text="Altes Passwort stimmt nicht"; return; }
-            if (txBInhaber.Text.Trim() == null || txBInhaber.Text.Trim() == "") { lbFehlermeldung.Text="Kein Inhaber"; return; }
-            if (txBBenutzername.Text.Trim() == null || txBBenutzername.Text.Trim() == "") { lbFehlermeldung.Text="Keinen Benutzernamen"; return; }
-            if (txBPasswort.Text.Trim() == null || txBPasswort.Text.Trim() == "") { lbFehlermeldung.Text="Kein Passwort"; return; }
-            if (txBPasswort.Text != txBPasswort2.Text) {lbFehlermeldung.Text="Passwörter überstimmen nicht ein"; return; }
+            else if (angemeldet.Login(angemeldet.GetBenutzername(), txBPasswortA.Text) != 0) { lbFehlermeldung.Text= "prior password incorrect"; return; }
+            if (txBInhaber.Text.Trim() == null || txBInhaber.Text.Trim() == "") { lbFehlermeldung.Text="Missing name"; return; }
+            if (txBBenutzername.Text.Trim() == null || txBBenutzername.Text.Trim() == "") { lbFehlermeldung.Text="Missing username"; return; }
+            if (txBPasswort.Text.Trim() == null || txBPasswort.Text.Trim() == "") { lbFehlermeldung.Text="Missing password"; return; }
+            if (txBPasswort.Text != txBPasswort2.Text) {lbFehlermeldung.Text="passwords aren't matching"; return; }
             string temp;
             try
             {
                 //MessageBox.Show(new DateTime(DateTime.Today.Year - cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex + 1, cBoxTag.SelectedIndex + 1).ToShortDateString());
                 temp = angemeldet.Registrieren(txBInhaber.Text, txBBenutzername.Text, txBPasswort.Text, new DateTime(DateTime.Today.Year-cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex + 1, cBoxTag.SelectedIndex + 1), pcBProfilbild.Image,verwaltung.GetFirma().GetAutoRegistrieren());
             }
-            catch (Exception) { temp = "Falsches Datum"; }
+            catch (Exception) { temp = "Wrong date"; }
             if (temp == "")
             {
                 if (verwaltung.GetFirma().AddMitarbeiter(angemeldet))
                     Close();
                 else
-                    lbFehlermeldung.Text="Benutzername existiert schon";
+                    lbFehlermeldung.Text="user name is already existing";
             }
             else
                 lbFehlermeldung.Text=temp;       
