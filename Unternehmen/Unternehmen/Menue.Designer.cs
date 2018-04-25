@@ -45,10 +45,10 @@
             this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
             this.Aktive_Form_Name = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbNow = new System.Windows.Forms.Label();
             this.pcBWebsite = new System.Windows.Forms.PictureBox();
             this.pcBExit = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.lbNow = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).BeginInit();
@@ -471,9 +471,18 @@
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
+            // lbNow
+            // 
+            this.lbNow.AutoSize = true;
+            this.lbNow.Location = new System.Drawing.Point(986, 18);
+            this.lbNow.Name = "lbNow";
+            this.lbNow.Size = new System.Drawing.Size(41, 16);
+            this.lbNow.TabIndex = 4;
+            this.lbNow.Text = "label1";
+            // 
             // pcBWebsite
             // 
-            this.pcBWebsite.BackColor = System.Drawing.Color.Red;
+            this.pcBWebsite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.pcBWebsite.Image = global::Unternehmen.Properties.Resources.wifi;
             this.pcBWebsite.Location = new System.Drawing.Point(1011, 52);
             this.pcBWebsite.Name = "pcBWebsite";
@@ -485,7 +494,7 @@
             // 
             // pcBExit
             // 
-            this.pcBExit.BackColor = System.Drawing.Color.Red;
+            this.pcBExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.pcBExit.Image = global::Unternehmen.Properties.Resources.logout;
             this.pcBExit.Location = new System.Drawing.Point(1103, 52);
             this.pcBExit.Name = "pcBExit";
@@ -498,15 +507,6 @@
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.Timer_Tick);
-            // 
-            // lbNow
-            // 
-            this.lbNow.AutoSize = true;
-            this.lbNow.Location = new System.Drawing.Point(986, 18);
-            this.lbNow.Name = "lbNow";
-            this.lbNow.Size = new System.Drawing.Size(41, 16);
-            this.lbNow.TabIndex = 4;
-            this.lbNow.Text = "label1";
             // 
             // Menue
             // 
