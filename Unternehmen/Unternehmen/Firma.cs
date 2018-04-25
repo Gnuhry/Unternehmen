@@ -125,12 +125,14 @@ namespace Unternehmen
             int temp = 0;
             for (int f = 0; f < Mitarbeiter.Count; f++)
             {
-                if (Mitarbeiter[f].IsUrlaub(Tag)) temp++;
-                else if ((DateTime.Today.AddDays(Mitarbeiter[f].GetKrankentage())-Tag).TotalDays<0) temp++;
+                Console.Write(Mitarbeiter[f].GetKontoInhaber());
+                if (Mitarbeiter[f].IsUrlaub(Tag)) { temp++; Console.WriteLine("-Urlaub"); }
+                else if ((DateTime.Today.AddDays(Mitarbeiter[f].GetKrankentage()))>Tag) {temp++; Console.WriteLine("-krank"); }
+                else { Console.WriteLine(); }
             }
             if (temp < 3)
                 angemeldet.SetUrlaub(Tag);
-            else throw new Exception();
+            else Console.WriteLine("declined Day " + Tag.ToShortDateString() + " from " + angemeldet.GetKontoInhaber());
         }
         private bool Urlaub_beantragen(DateTime Tag)
         {

@@ -227,6 +227,7 @@ namespace Unternehmen
             registrieren = null;
             firma.Speichern(Pfad);
             LogIn();
+            login.MottoAktualisieren();
         }
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)

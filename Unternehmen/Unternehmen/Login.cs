@@ -19,6 +19,7 @@ namespace Unternehmen
         {
             Logo_Picturebox.Image = verwaltung.GetFirma().GetFirmenLogo();
             Firmen_Motto.Text = verwaltung.GetFirma().Firmenstatus1;
+            lbFehlermeldung.Text=txBbenutzername.Text = txBpasswort.Text = null;
         }
 
         private void btnRegistrieren_Click(object sender, EventArgs e)

@@ -63,7 +63,7 @@ namespace Unternehmen
             for (int f = 0; f < x.Length; f++)
             {
                 if (x[f] < 65 || x[f] > 122 || (x[f] > 90 && x[f] < 97))
-                    return "Kein " + x[f];
+                    return "No " + x[f];
             }
             this.benutzername = benutzername;
             //Überprüfung der Existenz des benutzernamen
@@ -132,9 +132,14 @@ namespace Unternehmen
         {
             if (!Urlaubstage.Contains(Tag))
                 Urlaubstage.Add(Tag);
-            if (Tag == DateTime.Today) status = 2;
+            if (Tag == DateTime.Today) status = 3;
         }
-        public void RemoveUrlaub(DateTime Tag) => Urlaubstage.Remove(Tag);
+        public void RemoveUrlaub(DateTime Tag)
+        {
+            Urlaubstage.Remove(Tag);
+            if (Tag == DateTime.Today)
+                status = 1;
+        }
         public void SetKrankentage(int Krankendauer)
         {
             this.Krankendauer = Krankendauer;
@@ -204,6 +209,12 @@ namespace Unternehmen
                 else { status = 2; Krankendauer++; }
             }
 
+        }
+        private void Status_Aktualisieren()
+        {
+            if (status == 0) return;
+            if (Urlaubstage.Contains(DateTime.Today)) status = 3;
+            if (Krankendauer != 0) status = 2;
         }
     }
 }

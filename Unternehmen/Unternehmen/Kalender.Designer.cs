@@ -36,6 +36,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMonatvor = new System.Windows.Forms.Button();
             this.btnMonatzuruck = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tLpKalender
@@ -70,7 +71,7 @@
             this.btnBeantragen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBeantragen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBeantragen.ForeColor = System.Drawing.Color.White;
-            this.btnBeantragen.Location = new System.Drawing.Point(175, 519);
+            this.btnBeantragen.Location = new System.Drawing.Point(175, 516);
             this.btnBeantragen.Name = "btnBeantragen";
             this.btnBeantragen.Size = new System.Drawing.Size(125, 40);
             this.btnBeantragen.TabIndex = 4;
@@ -147,6 +148,16 @@
             this.btnMonatzuruck.UseVisualStyleBackColor = false;
             this.btnMonatzuruck.Click += new System.EventHandler(this.btnMonatzuruck_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(667, 254);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnBeantragen_Click);
+            // 
             // Kalender
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -156,6 +167,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(807, 585);
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cBoxJahr);
             this.Controls.Add(this.cBoxMonat);
@@ -186,5 +198,6 @@
         private System.Windows.Forms.ComboBox cBoxMonat;
         private System.Windows.Forms.ComboBox cBoxJahr;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -135,6 +135,7 @@ namespace Unternehmen
 
         private void LadenGenemigteUrlaube(int erster)
         {
+            if (Chef) return;
             DateTime[] Urlaubstage2 = verwaltung.GetAngemeldetePerson().GetUrlaubinMonat(Month, Year);
             for (int f = 0; f < Urlaubstage2.Length; f++)
                 if (Urlaubstage2[f].Month == Month && Urlaubstage2[f].Year == Year)
@@ -228,6 +229,7 @@ namespace Unternehmen
         }
         private void LadenKrankenTage(int erster)
         {
+            if (Chef) return;
             if (Month != DateTime.Today.Month) return;
             else
                 for(int f = 0; f < verwaltung.GetAngemeldetePerson().GetKrankentage(); f++)

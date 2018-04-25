@@ -46,16 +46,12 @@ namespace Unternehmen
             txBGNtz.Text = verwaltung.GetFirma().GetNotiz(tag);
             if (Chef)
             {
-                txBeFeiertag.Visible = true;
+                txBeFeiertag.Visible=chBeFeiertag.Visible= chBLUrlaub.Visible = true;
                 txBeFeiertag.Text = verwaltung.GetFirma().GetFeirtagname(tag);
                 chBeFeiertag.Checked = verwaltung.GetFirma().GetFeirtagname(tag) != null;
-                chBeFeiertag.Visible = true;
-                chBLUrlaub.Visible = true;
                 for (int f = 0; f < verwaltung.GetFirma().Urlaubliste(tag).Length; f++)
-                    chBLUrlaub.Items.Add(verwaltung.GetFirma().Urlaubliste(tag)[f]);
-                lbFeiertag.Visible = false;
-                txBNotizen.Visible = false;
-                label4.Visible = false;
+                    chBLUrlaub.Items.Add(verwaltung.GetFirma().Urlaubliste(tag)[f],true);
+                lbUrlaub.Visible = label4.Visible = txBNotizen.Visible = lbFeiertag.Visible = false;
             }
         }
         private void Speichern()
