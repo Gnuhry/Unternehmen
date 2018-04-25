@@ -11,8 +11,6 @@ namespace Unternehmen
     public partial class Registrieren : Form
     {
         Verwaltung verwaltung;
-        Konto angemeldet;
-        bool aa;
         public Registrieren(Verwaltung verwaltung)
         {
             this.verwaltung = verwaltung;
@@ -20,27 +18,10 @@ namespace Unternehmen
             InitComboBox();
             pcBProfilbild.Image = Properties.Resources.ic_android_black_24dp;
             Logo_Picturebox.Image =  verwaltung.GetFirma().GetFirmenLogo();
-            aa = true;
             Firmen_Motto.Text = verwaltung.GetFirma().Firmenstatus1;
+            lbFehlermeldung.Text = null;
         }
-        public Registrieren(Verwaltung verwaltung, Konto angemeldet)
-        {
-           // WindowState = FormWindowState.Maximized;
-            this.verwaltung = verwaltung;
-            InitializeComponent();
-            this.angemeldet = angemeldet;
-            InitComboBox();
-            txBPasswortA.Visible = true;
-            txBInhaber.Text = angemeldet.GetKontoInhaber();
-            txBBenutzername.Text = angemeldet.GetBenutzername();
-            btnLoschen.Visible = true;
-            pcBProfilbild.Image = angemeldet.GetProfilbild();
-            cBoxTag.SelectedIndex = angemeldet.GetGeburtstag().Day - 1;
-            cBoxMonat.SelectedIndex = angemeldet.GetGeburtstag().Month - 1;
-            cBoxJahr.SelectedIndex = angemeldet.GetGeburtstag().Year%DateTime.Today.Year;
-            Logo_Picturebox.Image = verwaltung.GetFirma().GetFirmenLogo();
-            aa = false;
-        }
+       
 
         private void InitComboBox()
         {
@@ -58,9 +39,7 @@ namespace Unternehmen
                 lbFehlermeldung.Text="agree terms and condition";
                 return;
             }
-            if (aa)
-                angemeldet = new Konto();
-            else if (angemeldet.Login(angemeldet.GetBenutzername(), txBPasswortA.Text) != 0) { lbFehlermeldung.Text= "prior password incorrect"; return; }
+            Konto angemeldet = new Konto();
             if (txBInhaber.Text.Trim() == null || txBInhaber.Text.Trim() == "") { lbFehlermeldung.Text="Missing name"; return; }
             if (txBBenutzername.Text.Trim() == null || txBBenutzername.Text.Trim() == "") { lbFehlermeldung.Text="Missing username"; return; }
             if (txBPasswort.Text.Trim() == null || txBPasswort.Text.Trim() == "") { lbFehlermeldung.Text="Missing password"; return; }
@@ -83,11 +62,7 @@ namespace Unternehmen
                 lbFehlermeldung.Text=temp;       
         }
 
-        private void btnLoschen_Click(object sender, EventArgs e)
-        {
-            verwaltung.Konto_Loschen();
-        }
-
+      
         private void Registrieren_DragEnter(object sender, DragEventArgs e)
         {
             string[] validExtensions = new string[] { ".png", ".jpg" };

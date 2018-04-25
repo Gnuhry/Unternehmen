@@ -36,8 +36,10 @@
             this.btnAnwesend = new System.Windows.Forms.Button();
             this.btnBescheinigung = new System.Windows.Forms.Button();
             this.pcBBescheinigung = new System.Windows.Forms.PictureBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lBoxAnzeige = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbAbteilung = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbInhaber = new System.Windows.Forms.Label();
             this.pcBProfil = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numKrankentage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBBescheinigung)).BeginInit();
             this.panel1.SuspendLayout();
@@ -156,15 +156,16 @@
             this.pcBBescheinigung.TabIndex = 23;
             this.pcBBescheinigung.TabStop = false;
             // 
-            // listBox1
+            // lBoxAnzeige
             // 
-            this.listBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(3, 188);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(172, 184);
-            this.listBox1.TabIndex = 24;
+            this.lBoxAnzeige.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBoxAnzeige.FormattingEnabled = true;
+            this.lBoxAnzeige.ItemHeight = 21;
+            this.lBoxAnzeige.Location = new System.Drawing.Point(3, 188);
+            this.lBoxAnzeige.Name = "lBoxAnzeige";
+            this.lBoxAnzeige.Size = new System.Drawing.Size(172, 172);
+            this.lBoxAnzeige.TabIndex = 24;
+            this.lBoxAnzeige.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lBoxAnzeige_MouseDoubleClick);
             // 
             // panel1
             // 
@@ -176,6 +177,28 @@
             this.panel1.Size = new System.Drawing.Size(800, 57);
             this.panel1.TabIndex = 25;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(725, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 22);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Profile";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 22);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Status";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -183,7 +206,7 @@
             this.panel2.Controls.Add(this.btnGehen);
             this.panel2.Controls.Add(this.btnKrank);
             this.panel2.Controls.Add(this.numKrankentage);
-            this.panel2.Controls.Add(this.listBox1);
+            this.panel2.Controls.Add(this.lBoxAnzeige);
             this.panel2.Controls.Add(this.pcBBescheinigung);
             this.panel2.Controls.Add(this.btnBescheinigung);
             this.panel2.Controls.Add(this.lbStatus);
@@ -217,7 +240,7 @@
             this.lbAbteilung.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAbteilung.Location = new System.Drawing.Point(278, 139);
             this.lbAbteilung.Name = "lbAbteilung";
-            this.lbAbteilung.Size = new System.Drawing.Size(81, 20);
+            this.lbAbteilung.Size = new System.Drawing.Size(82, 21);
             this.lbAbteilung.TabIndex = 7;
             this.lbAbteilung.Text = "ELEKtriker";
             // 
@@ -227,7 +250,7 @@
             this.lbTelefon.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTelefon.Location = new System.Drawing.Point(12, 130);
             this.lbTelefon.Name = "lbTelefon";
-            this.lbTelefon.Size = new System.Drawing.Size(117, 20);
+            this.lbTelefon.Size = new System.Drawing.Size(118, 21);
             this.lbTelefon.TabIndex = 6;
             this.lbTelefon.Text = "015209440971";
             // 
@@ -237,7 +260,7 @@
             this.lbHobby.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHobby.Location = new System.Drawing.Point(10, 172);
             this.lbHobby.Name = "lbHobby";
-            this.lbHobby.Size = new System.Drawing.Size(288, 20);
+            this.lbHobby.Size = new System.Drawing.Size(289, 21);
             this.lbHobby.TabIndex = 5;
             this.lbHobby.Text = "Hobbies:Schwimmen und Basketball";
             // 
@@ -247,7 +270,7 @@
             this.lbEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmail.Location = new System.Drawing.Point(12, 98);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(206, 20);
+            this.lbEmail.Size = new System.Drawing.Size(207, 21);
             this.lbEmail.TabIndex = 4;
             this.lbEmail.Text = "Email: Trottel@blödian.de";
             // 
@@ -258,7 +281,7 @@
             this.lbGeburtstag.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.lbGeburtstag.Location = new System.Drawing.Point(12, 48);
             this.lbGeburtstag.Name = "lbGeburtstag";
-            this.lbGeburtstag.Size = new System.Drawing.Size(89, 20);
+            this.lbGeburtstag.Size = new System.Drawing.Size(90, 21);
             this.lbGeburtstag.TabIndex = 3;
             this.lbGeburtstag.Text = "24.01.2000";
             // 
@@ -268,7 +291,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(97, 252);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 20);
+            this.label1.Size = new System.Drawing.Size(162, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "Ich Lebe wie ich will";
             // 
@@ -278,7 +301,7 @@
             this.lbInhaber.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInhaber.Location = new System.Drawing.Point(12, 21);
             this.lbInhaber.Name = "lbInhaber";
-            this.lbInhaber.Size = new System.Drawing.Size(164, 22);
+            this.lbInhaber.Size = new System.Drawing.Size(154, 23);
             this.lbInhaber.TabIndex = 1;
             this.lbInhaber.Text = "Max Lukas Stolz";
             // 
@@ -290,28 +313,6 @@
             this.pcBProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcBProfil.TabIndex = 0;
             this.pcBProfil.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 22);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Status";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(725, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 22);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Profile";
             // 
             // Menue_standart
             // 
@@ -348,7 +349,7 @@
         private System.Windows.Forms.Button btnAnwesend;
         private System.Windows.Forms.Button btnBescheinigung;
         private System.Windows.Forms.PictureBox pcBBescheinigung;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lBoxAnzeige;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

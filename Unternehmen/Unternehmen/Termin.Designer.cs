@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txBUhrzeitVon = new System.Windows.Forms.MaskedTextBox();
             this.dTpBis = new System.Windows.Forms.DateTimePicker();
             this.dTPVon = new System.Windows.Forms.DateTimePicker();
-            this.txBUhrzeitBis = new System.Windows.Forms.MaskedTextBox();
             this.btnLoschen = new System.Windows.Forms.Button();
             this.btnFestlegen = new System.Windows.Forms.Button();
             this.txBBeschreibung = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -39,17 +37,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cBoxVonHour = new System.Windows.Forms.ComboBox();
+            this.cBoxVonMin = new System.Windows.Forms.ComboBox();
+            this.cBoxBisMin = new System.Windows.Forms.ComboBox();
+            this.cBoxBisHour = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // txBUhrzeitVon
-            // 
-            this.txBUhrzeitVon.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txBUhrzeitVon.Location = new System.Drawing.Point(306, 74);
-            this.txBUhrzeitVon.Mask = "90:00";
-            this.txBUhrzeitVon.Name = "txBUhrzeitVon";
-            this.txBUhrzeitVon.Size = new System.Drawing.Size(41, 21);
-            this.txBUhrzeitVon.TabIndex = 4;
-            this.txBUhrzeitVon.ValidatingType = typeof(System.DateTime);
             // 
             // dTpBis
             // 
@@ -69,16 +61,6 @@
             this.dTPVon.TabIndex = 1;
             this.dTPVon.Value = new System.DateTime(2018, 4, 19, 0, 0, 0, 0);
             this.dTPVon.ValueChanged += new System.EventHandler(this.dTPVon_ValueChanged);
-            // 
-            // txBUhrzeitBis
-            // 
-            this.txBUhrzeitBis.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txBUhrzeitBis.Location = new System.Drawing.Point(306, 101);
-            this.txBUhrzeitBis.Mask = "90:00";
-            this.txBUhrzeitBis.Name = "txBUhrzeitBis";
-            this.txBUhrzeitBis.Size = new System.Drawing.Size(41, 21);
-            this.txBUhrzeitBis.TabIndex = 5;
-            this.txBUhrzeitBis.ValidatingType = typeof(System.DateTime);
             // 
             // btnLoschen
             // 
@@ -162,6 +144,210 @@
             this.panel4.Size = new System.Drawing.Size(416, 5);
             this.panel4.TabIndex = 13;
             // 
+            // cBoxVonHour
+            // 
+            this.cBoxVonHour.FormattingEnabled = true;
+            this.cBoxVonHour.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"});
+            this.cBoxVonHour.Location = new System.Drawing.Point(306, 74);
+            this.cBoxVonHour.Name = "cBoxVonHour";
+            this.cBoxVonHour.Size = new System.Drawing.Size(29, 21);
+            this.cBoxVonHour.TabIndex = 14;
+            // 
+            // cBoxVonMin
+            // 
+            this.cBoxVonMin.FormattingEnabled = true;
+            this.cBoxVonMin.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59"});
+            this.cBoxVonMin.Location = new System.Drawing.Point(341, 74);
+            this.cBoxVonMin.Name = "cBoxVonMin";
+            this.cBoxVonMin.Size = new System.Drawing.Size(33, 21);
+            this.cBoxVonMin.TabIndex = 15;
+            // 
+            // cBoxBisMin
+            // 
+            this.cBoxBisMin.FormattingEnabled = true;
+            this.cBoxBisMin.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59"});
+            this.cBoxBisMin.Location = new System.Drawing.Point(341, 103);
+            this.cBoxBisMin.Name = "cBoxBisMin";
+            this.cBoxBisMin.Size = new System.Drawing.Size(33, 21);
+            this.cBoxBisMin.TabIndex = 17;
+            // 
+            // cBoxBisHour
+            // 
+            this.cBoxBisHour.FormattingEnabled = true;
+            this.cBoxBisHour.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"});
+            this.cBoxBisHour.Location = new System.Drawing.Point(306, 103);
+            this.cBoxBisHour.Name = "cBoxBisHour";
+            this.cBoxBisHour.Size = new System.Drawing.Size(29, 21);
+            this.cBoxBisHour.TabIndex = 16;
+            // 
             // Termin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,6 +355,10 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(426, 262);
             this.ControlBox = false;
+            this.Controls.Add(this.cBoxBisMin);
+            this.Controls.Add(this.cBoxBisHour);
+            this.Controls.Add(this.cBoxVonMin);
+            this.Controls.Add(this.cBoxVonHour);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -176,23 +366,18 @@
             this.Controls.Add(this.txBBeschreibung);
             this.Controls.Add(this.btnFestlegen);
             this.Controls.Add(this.btnLoschen);
-            this.Controls.Add(this.txBUhrzeitBis);
-            this.Controls.Add(this.txBUhrzeitVon);
             this.Controls.Add(this.dTpBis);
             this.Controls.Add(this.dTPVon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Termin";
             this.Text = "0";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.MaskedTextBox txBUhrzeitVon;
         private System.Windows.Forms.DateTimePicker dTpBis;
         private System.Windows.Forms.DateTimePicker dTPVon;
-        private System.Windows.Forms.MaskedTextBox txBUhrzeitBis;
         private System.Windows.Forms.Button btnLoschen;
         private System.Windows.Forms.Button btnFestlegen;
         private Bunifu.Framework.UI.BunifuMetroTextbox txBBeschreibung;
@@ -200,5 +385,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ComboBox cBoxVonHour;
+        private System.Windows.Forms.ComboBox cBoxVonMin;
+        private System.Windows.Forms.ComboBox cBoxBisMin;
+        private System.Windows.Forms.ComboBox cBoxBisHour;
     }
 }

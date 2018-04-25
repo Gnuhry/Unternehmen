@@ -85,7 +85,17 @@ namespace Unternehmen.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap left_arrow {
             get {
-                object obj = ResourceManager.GetObject("left-arrow", resourceCulture);
+                object obj = ResourceManager.GetObject("left_arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout {
+            get {
+                object obj = ResourceManager.GetObject("logout", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,7 +105,27 @@ namespace Unternehmen.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap right_double_chevron {
             get {
-                object obj = ResourceManager.GetObject("right-double-chevron", resourceCulture);
+                object obj = ResourceManager.GetObject("right_double_chevron", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap speech_bubbles_comment_option {
+            get {
+                object obj = ResourceManager.GetObject("speech_bubbles_comment_option", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wifi {
+            get {
+                object obj = ResourceManager.GetObject("wifi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

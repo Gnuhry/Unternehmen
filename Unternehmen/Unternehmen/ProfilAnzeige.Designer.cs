@@ -41,6 +41,7 @@
             this.lbStatus = new System.Windows.Forms.Label();
             this.pcBProfil = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.txBTelefon = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txBHobbys = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txBInhaber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -70,7 +71,7 @@
             this.lbInhaber.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInhaber.Location = new System.Drawing.Point(12, 21);
             this.lbInhaber.Name = "lbInhaber";
-            this.lbInhaber.Size = new System.Drawing.Size(164, 22);
+            this.lbInhaber.Size = new System.Drawing.Size(154, 23);
             this.lbInhaber.TabIndex = 1;
             this.lbInhaber.Text = "Max Lukas Stolz";
             this.lbInhaber.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
@@ -133,7 +134,7 @@
             this.lbAbteilung.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAbteilung.Location = new System.Drawing.Point(278, 139);
             this.lbAbteilung.Name = "lbAbteilung";
-            this.lbAbteilung.Size = new System.Drawing.Size(81, 20);
+            this.lbAbteilung.Size = new System.Drawing.Size(82, 21);
             this.lbAbteilung.TabIndex = 7;
             this.lbAbteilung.Text = "ELEKtriker";
             this.lbAbteilung.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
@@ -146,7 +147,7 @@
             this.lbTelefon.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTelefon.Location = new System.Drawing.Point(12, 130);
             this.lbTelefon.Name = "lbTelefon";
-            this.lbTelefon.Size = new System.Drawing.Size(117, 20);
+            this.lbTelefon.Size = new System.Drawing.Size(118, 21);
             this.lbTelefon.TabIndex = 6;
             this.lbTelefon.Text = "015209440971";
             this.lbTelefon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
@@ -159,7 +160,7 @@
             this.lbHobby.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHobby.Location = new System.Drawing.Point(10, 172);
             this.lbHobby.Name = "lbHobby";
-            this.lbHobby.Size = new System.Drawing.Size(288, 20);
+            this.lbHobby.Size = new System.Drawing.Size(289, 21);
             this.lbHobby.TabIndex = 5;
             this.lbHobby.Text = "Hobbies:Schwimmen und Basketball";
             this.lbHobby.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
@@ -172,7 +173,7 @@
             this.lbEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmail.Location = new System.Drawing.Point(12, 98);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(206, 20);
+            this.lbEmail.Size = new System.Drawing.Size(207, 21);
             this.lbEmail.TabIndex = 4;
             this.lbEmail.Text = "Email: Trottel@blödian.de";
             this.lbEmail.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
@@ -186,7 +187,7 @@
             this.lbGeburtstag.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.lbGeburtstag.Location = new System.Drawing.Point(12, 48);
             this.lbGeburtstag.Name = "lbGeburtstag";
-            this.lbGeburtstag.Size = new System.Drawing.Size(89, 20);
+            this.lbGeburtstag.Size = new System.Drawing.Size(90, 21);
             this.lbGeburtstag.TabIndex = 3;
             this.lbGeburtstag.Text = "24.01.2000";
             this.lbGeburtstag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
@@ -199,7 +200,7 @@
             this.lbStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStatus.Location = new System.Drawing.Point(97, 252);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(161, 20);
+            this.lbStatus.Size = new System.Drawing.Size(162, 21);
             this.lbStatus.TabIndex = 2;
             this.lbStatus.Text = "Ich Lebe wie ich will";
             this.lbStatus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
@@ -221,6 +222,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.txBTelefon);
             this.panel3.Controls.Add(this.txBHobbys);
             this.panel3.Controls.Add(this.txBInhaber);
@@ -244,6 +246,20 @@
             this.panel3.Size = new System.Drawing.Size(388, 393);
             this.panel3.TabIndex = 4;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(6, 347);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 34);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "Delete ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // txBTelefon
             // 
             this.txBTelefon.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -262,6 +278,7 @@
             this.txBTelefon.Size = new System.Drawing.Size(136, 33);
             this.txBTelefon.TabIndex = 50;
             this.txBTelefon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txBTelefon.OnValueChanged += new System.EventHandler(this.txBTelefon_TextChanged);
             // 
             // txBHobbys
             // 
@@ -309,7 +326,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(273, 208);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.Size = new System.Drawing.Size(41, 16);
             this.label3.TabIndex = 47;
             this.label3.Text = "Status";
             // 
@@ -435,7 +452,7 @@
             this.cBoxJahr.FormattingEnabled = true;
             this.cBoxJahr.Location = new System.Drawing.Point(5, 261);
             this.cBoxJahr.Name = "cBoxJahr";
-            this.cBoxJahr.Size = new System.Drawing.Size(121, 21);
+            this.cBoxJahr.Size = new System.Drawing.Size(121, 24);
             this.cBoxJahr.TabIndex = 34;
             this.cBoxJahr.SelectedIndexChanged += new System.EventHandler(this.cBoxJahr_SelectedIndexChanged);
             // 
@@ -458,7 +475,7 @@
             "Dezember"});
             this.cBoxMonat.Location = new System.Drawing.Point(5, 234);
             this.cBoxMonat.Name = "cBoxMonat";
-            this.cBoxMonat.Size = new System.Drawing.Size(121, 21);
+            this.cBoxMonat.Size = new System.Drawing.Size(121, 24);
             this.cBoxMonat.TabIndex = 33;
             this.cBoxMonat.SelectedIndexChanged += new System.EventHandler(this.cBoxMonat_SelectedIndexChanged);
             // 
@@ -468,7 +485,7 @@
             this.cBoxTag.FormattingEnabled = true;
             this.cBoxTag.Location = new System.Drawing.Point(5, 207);
             this.cBoxTag.Name = "cBoxTag";
-            this.cBoxTag.Size = new System.Drawing.Size(49, 21);
+            this.cBoxTag.Size = new System.Drawing.Size(49, 24);
             this.cBoxTag.TabIndex = 32;
             this.cBoxTag.SelectedIndexChanged += new System.EventHandler(this.cBoxTag_SelectedIndexChanged);
             // 
@@ -479,7 +496,7 @@
             this.lbFehlermeldung.ForeColor = System.Drawing.Color.Red;
             this.lbFehlermeldung.Location = new System.Drawing.Point(3, 317);
             this.lbFehlermeldung.Name = "lbFehlermeldung";
-            this.lbFehlermeldung.Size = new System.Drawing.Size(36, 16);
+            this.lbFehlermeldung.Size = new System.Drawing.Size(36, 17);
             this.lbFehlermeldung.TabIndex = 8;
             this.lbFehlermeldung.Text = "Error";
             // 
@@ -513,7 +530,7 @@
             this.btnProfilbildHochladen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfilbildHochladen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfilbildHochladen.ForeColor = System.Drawing.Color.White;
-            this.btnProfilbildHochladen.Location = new System.Drawing.Point(240, 328);
+            this.btnProfilbildHochladen.Location = new System.Drawing.Point(240, 317);
             this.btnProfilbildHochladen.Name = "btnProfilbildHochladen";
             this.btnProfilbildHochladen.Size = new System.Drawing.Size(136, 34);
             this.btnProfilbildHochladen.TabIndex = 5;
@@ -577,5 +594,6 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txBPasswort;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txBBenutzername;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txBTelefon;
+        private System.Windows.Forms.Button button1;
     }
 }

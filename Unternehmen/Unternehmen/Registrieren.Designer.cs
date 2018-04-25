@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnRegistrieren = new System.Windows.Forms.Button();
-            this.btnLoschen = new System.Windows.Forms.Button();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.Panel_Left = new System.Windows.Forms.Panel();
             this.Firmen_Motto = new System.Windows.Forms.Label();
             this.Logo_Picturebox = new System.Windows.Forms.PictureBox();
             this.Panel_right = new System.Windows.Forms.Panel();
+            this.lbFehlermeldung = new System.Windows.Forms.Label();
             this.btnHochladen = new System.Windows.Forms.Button();
             this.cBoxJahr = new System.Windows.Forms.ComboBox();
             this.cBoxMonat = new System.Windows.Forms.ComboBox();
@@ -44,8 +44,6 @@
             this.Beenden_Label = new System.Windows.Forms.Label();
             this.Termsandconditions_Label = new System.Windows.Forms.Label();
             this.TermsandConditionsCheckbox = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.New_Password_Label = new System.Windows.Forms.Label();
-            this.txBPasswortA = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.txBPasswort2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Passwort_Label = new System.Windows.Forms.Label();
@@ -56,7 +54,6 @@
             this.Ownername_Label = new System.Windows.Forms.Label();
             this.txBInhaber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Sign_Up_Label = new System.Windows.Forms.Label();
-            this.lbFehlermeldung = new System.Windows.Forms.Label();
             this.Panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).BeginInit();
             this.Panel_right.SuspendLayout();
@@ -76,21 +73,6 @@
             this.btnRegistrieren.Text = "Sign Up";
             this.btnRegistrieren.UseVisualStyleBackColor = false;
             this.btnRegistrieren.Click += new System.EventHandler(this.btnRegistrieren_Click);
-            // 
-            // btnLoschen
-            // 
-            this.btnLoschen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.btnLoschen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoschen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoschen.ForeColor = System.Drawing.Color.White;
-            this.btnLoschen.Location = new System.Drawing.Point(351, 662);
-            this.btnLoschen.Name = "btnLoschen";
-            this.btnLoschen.Size = new System.Drawing.Size(299, 38);
-            this.btnLoschen.TabIndex = 9;
-            this.btnLoschen.Text = "Delete";
-            this.btnLoschen.UseVisualStyleBackColor = false;
-            this.btnLoschen.Visible = false;
-            this.btnLoschen.Click += new System.EventHandler(this.btnLoschen_Click);
             // 
             // bunifuElipse1
             // 
@@ -118,7 +100,7 @@
             this.Firmen_Motto.ForeColor = System.Drawing.Color.White;
             this.Firmen_Motto.Location = new System.Drawing.Point(49, 386);
             this.Firmen_Motto.Name = "Firmen_Motto";
-            this.Firmen_Motto.Size = new System.Drawing.Size(223, 50);
+            this.Firmen_Motto.Size = new System.Drawing.Size(221, 48);
             this.Firmen_Motto.TabIndex = 4;
             this.Firmen_Motto.Text = "We Create, We Plan \r\n       in your Way";
             // 
@@ -144,8 +126,6 @@
             this.Panel_right.Controls.Add(this.Beenden_Label);
             this.Panel_right.Controls.Add(this.Termsandconditions_Label);
             this.Panel_right.Controls.Add(this.TermsandConditionsCheckbox);
-            this.Panel_right.Controls.Add(this.New_Password_Label);
-            this.Panel_right.Controls.Add(this.txBPasswortA);
             this.Panel_right.Controls.Add(this.label1);
             this.Panel_right.Controls.Add(this.txBPasswort2);
             this.Panel_right.Controls.Add(this.Passwort_Label);
@@ -156,7 +136,6 @@
             this.Panel_right.Controls.Add(this.Ownername_Label);
             this.Panel_right.Controls.Add(this.txBInhaber);
             this.Panel_right.Controls.Add(this.Sign_Up_Label);
-            this.Panel_right.Controls.Add(this.btnLoschen);
             this.Panel_right.Controls.Add(this.btnRegistrieren);
             this.Panel_right.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_right.Location = new System.Drawing.Point(0, 0);
@@ -166,6 +145,17 @@
             this.Panel_right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseDown);
             this.Panel_right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseMove);
             this.Panel_right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseUp);
+            // 
+            // lbFehlermeldung
+            // 
+            this.lbFehlermeldung.AutoSize = true;
+            this.lbFehlermeldung.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFehlermeldung.ForeColor = System.Drawing.Color.Red;
+            this.lbFehlermeldung.Location = new System.Drawing.Point(350, 549);
+            this.lbFehlermeldung.Name = "lbFehlermeldung";
+            this.lbFehlermeldung.Size = new System.Drawing.Size(36, 17);
+            this.lbFehlermeldung.TabIndex = 33;
+            this.lbFehlermeldung.Text = "Error";
             // 
             // btnHochladen
             // 
@@ -234,7 +224,7 @@
             this.Beenden_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Beenden_Label.Location = new System.Drawing.Point(654, 7);
             this.Beenden_Label.Name = "Beenden_Label";
-            this.Beenden_Label.Size = new System.Drawing.Size(22, 25);
+            this.Beenden_Label.Size = new System.Drawing.Size(20, 24);
             this.Beenden_Label.TabIndex = 27;
             this.Beenden_Label.Text = "x";
             this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
@@ -246,7 +236,7 @@
             this.Termsandconditions_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Termsandconditions_Label.Location = new System.Drawing.Point(393, 568);
             this.Termsandconditions_Label.Name = "Termsandconditions_Label";
-            this.Termsandconditions_Label.Size = new System.Drawing.Size(238, 20);
+            this.Termsandconditions_Label.Size = new System.Drawing.Size(239, 21);
             this.Termsandconditions_Label.TabIndex = 26;
             this.Termsandconditions_Label.Text = "I Agree Terms and Conditions";
             // 
@@ -262,40 +252,6 @@
             this.TermsandConditionsCheckbox.Size = new System.Drawing.Size(20, 20);
             this.TermsandConditionsCheckbox.TabIndex = 25;
             // 
-            // New_Password_Label
-            // 
-            this.New_Password_Label.AutoSize = true;
-            this.New_Password_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.New_Password_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.New_Password_Label.Location = new System.Drawing.Point(348, 489);
-            this.New_Password_Label.Name = "New_Password_Label";
-            this.New_Password_Label.Size = new System.Drawing.Size(117, 20);
-            this.New_Password_Label.TabIndex = 24;
-            this.New_Password_Label.Text = "Old Password:";
-            this.New_Password_Label.Visible = false;
-            // 
-            // txBPasswortA
-            // 
-            this.txBPasswortA.BackColor = System.Drawing.Color.White;
-            this.txBPasswortA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txBPasswortA.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txBPasswortA.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txBPasswortA.ForeColor = System.Drawing.Color.Black;
-            this.txBPasswortA.HintForeColor = System.Drawing.Color.Transparent;
-            this.txBPasswortA.HintText = "";
-            this.txBPasswortA.isPassword = true;
-            this.txBPasswortA.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswortA.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswortA.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswortA.LineThickness = 3;
-            this.txBPasswortA.Location = new System.Drawing.Point(351, 513);
-            this.txBPasswortA.Margin = new System.Windows.Forms.Padding(4);
-            this.txBPasswortA.Name = "txBPasswortA";
-            this.txBPasswortA.Size = new System.Drawing.Size(300, 33);
-            this.txBPasswortA.TabIndex = 23;
-            this.txBPasswortA.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txBPasswortA.Visible = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -303,7 +259,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.label1.Location = new System.Drawing.Point(348, 421);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 20);
+            this.label1.Size = new System.Drawing.Size(149, 21);
             this.label1.TabIndex = 22;
             this.label1.Text = "Repeat Password:";
             // 
@@ -335,7 +291,7 @@
             this.Passwort_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Passwort_Label.Location = new System.Drawing.Point(348, 351);
             this.Passwort_Label.Name = "Passwort_Label";
-            this.Passwort_Label.Size = new System.Drawing.Size(85, 20);
+            this.Passwort_Label.Size = new System.Drawing.Size(86, 21);
             this.Passwort_Label.TabIndex = 20;
             this.Passwort_Label.Text = "Password:";
             // 
@@ -367,7 +323,7 @@
             this.Geburtstag_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Geburtstag_Label.Location = new System.Drawing.Point(348, 290);
             this.Geburtstag_Label.Name = "Geburtstag_Label";
-            this.Geburtstag_Label.Size = new System.Drawing.Size(77, 20);
+            this.Geburtstag_Label.Size = new System.Drawing.Size(78, 21);
             this.Geburtstag_Label.TabIndex = 16;
             this.Geburtstag_Label.Text = "Birthday:";
             // 
@@ -378,7 +334,7 @@
             this.Username_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Username_Label.Location = new System.Drawing.Point(347, 222);
             this.Username_Label.Name = "Username_Label";
-            this.Username_Label.Size = new System.Drawing.Size(91, 20);
+            this.Username_Label.Size = new System.Drawing.Size(92, 21);
             this.Username_Label.TabIndex = 14;
             this.Username_Label.Text = "Username:";
             // 
@@ -410,7 +366,7 @@
             this.Ownername_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Ownername_Label.Location = new System.Drawing.Point(346, 135);
             this.Ownername_Label.Name = "Ownername_Label";
-            this.Ownername_Label.Size = new System.Drawing.Size(112, 20);
+            this.Ownername_Label.Size = new System.Drawing.Size(113, 21);
             this.Ownername_Label.TabIndex = 12;
             this.Ownername_Label.Text = "Ownername:";
             // 
@@ -442,20 +398,9 @@
             this.Sign_Up_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Sign_Up_Label.Location = new System.Drawing.Point(348, 22);
             this.Sign_Up_Label.Name = "Sign_Up_Label";
-            this.Sign_Up_Label.Size = new System.Drawing.Size(92, 25);
+            this.Sign_Up_Label.Size = new System.Drawing.Size(89, 25);
             this.Sign_Up_Label.TabIndex = 10;
             this.Sign_Up_Label.Text = "Sign Up";
-            // 
-            // lbFehlermeldung
-            // 
-            this.lbFehlermeldung.AutoSize = true;
-            this.lbFehlermeldung.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFehlermeldung.ForeColor = System.Drawing.Color.Red;
-            this.lbFehlermeldung.Location = new System.Drawing.Point(350, 549);
-            this.lbFehlermeldung.Name = "lbFehlermeldung";
-            this.lbFehlermeldung.Size = new System.Drawing.Size(36, 16);
-            this.lbFehlermeldung.TabIndex = 33;
-            this.lbFehlermeldung.Text = "Error";
             // 
             // Registrieren
             // 
@@ -483,7 +428,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnRegistrieren;
-        private System.Windows.Forms.Button btnLoschen;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Panel Panel_Left;
         private System.Windows.Forms.Label Firmen_Motto;
@@ -501,8 +445,6 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txBPasswort;
         private System.Windows.Forms.Label Termsandconditions_Label;
         private Bunifu.Framework.UI.BunifuCheckbox TermsandConditionsCheckbox;
-        private System.Windows.Forms.Label New_Password_Label;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txBPasswortA;
         private System.Windows.Forms.Label Beenden_Label;
         private System.Windows.Forms.PictureBox pcBProfilbild;
         private System.Windows.Forms.ComboBox cBoxJahr;

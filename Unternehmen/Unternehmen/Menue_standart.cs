@@ -18,6 +18,8 @@ namespace Unternehmen
             else
                 btnGehen.Enabled = false;
             numKrankentage.Value = verwaltung.GetAngemeldetePerson().GetKrankentage();
+            for (int f = 0; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
+                lBoxAnzeige.Items.Add(verwaltung.GetFirma().GetMitarbeiter(f).GetKontoInhaber());
         }
         private void btnAnwesend_Click(object sender, EventArgs e)
         {
@@ -85,6 +87,32 @@ namespace Unternehmen
                 {
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
+        }
+
+        private void lBoxAnzeige_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (lBoxAnzeige.IndexFromPoint(e.Location) != ListBox.NoMatches)
+                InitProfil(verwaltung.GetFirma().GetMitarbeiter(lBoxAnzeige.IndexFromPoint(e.Location)));
+        }
+        private void InitProfil(Konto angemeldet)
+        {
+            Point[]Profil = angemeldet.Profil1;
+            lbInhaber.Location = Profil[0];
+            lbStatus.Location = Profil[1];
+            lbGeburtstag.Location = Profil[2];
+            pcBProfil.Location = Profil[3];
+            lbAbteilung.Location = Profil[4];
+            lbEmail.Location = Profil[5];
+            lbHobby.Location = Profil[6];
+            lbTelefon.Location = Profil[7];
+            lbInhaber.Text = angemeldet.GetKontoInhaber();
+            lbStatus.Text = angemeldet.Status1;
+            lbGeburtstag.Text = angemeldet.GetGeburtstag().ToShortDateString();
+            pcBProfil.Image = angemeldet.GetProfilbild();
+            lbAbteilung.Text ="work: "+ angemeldet.Abteilung1;
+            lbEmail.Text = "E-Mail: "+angemeldet.Email1;
+            lbHobby.Text = "Hobbys: "+angemeldet.Hobbys1;
+            lbTelefon.Text = "Telefon-nr: "+angemeldet.Telefon1;
         }
     }
 }

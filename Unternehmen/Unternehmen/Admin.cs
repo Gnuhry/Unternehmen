@@ -9,7 +9,7 @@ namespace Unternehmen
 {
     public partial class Admin : Form
     {
-        Registrieren registrieren;
+        ProfilAnzeige profilAnzeige;
         Verwaltung verwaltung;
         List<int> Admins, NoAdmin;
         public Admin(Verwaltung verwaltung)
@@ -34,7 +34,7 @@ namespace Unternehmen
             if (verwaltung.GetAngemeldetePerson() == verwaltung.GetFirma().GetMitarbeiter(0))
             {
                 lBoxAdmin.Visible = lBoxNoAdmin.Visible = btnAdmin.Visible=btnNoAdmin.Visible = true;
-                for (int f = 0; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
+                for (int f = 1; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
                     if (verwaltung.GetFirma().IsKonto(verwaltung.GetFirma().GetMitarbeiter(f))) { lBoxAdmin.Items.Add(verwaltung.GetFirma().GetMitarbeiter(f).GetKontoInhaber()); Admins.Add(f); }
                     else{ lBoxNoAdmin.Items.Add(verwaltung.GetFirma().GetMitarbeiter(f).GetKontoInhaber()); NoAdmin.Add(f); }
             }
@@ -62,15 +62,15 @@ namespace Unternehmen
 
         private void btnPassword_Click(object sender, EventArgs e)
         {
-            if (registrieren != null) { registrieren.Show(); return; }
-            registrieren = new Registrieren(verwaltung,verwaltung.GetFirma().GetMitarbeiter(comBMitarbeiter.SelectedIndex + 1));
-            registrieren.Show();
-            registrieren.FormClosing += Registrieren_FormClosing;
+            if (profilAnzeige != null) { profilAnzeige.Show(); return; }
+            profilAnzeige = new ProfilAnzeige(verwaltung,verwaltung.GetFirma().GetMitarbeiter(comBMitarbeiter.SelectedIndex + 1));
+            profilAnzeige.Show();
+            profilAnzeige.FormClosing += Registrieren_FormClosing;
         }
 
         private void Registrieren_FormClosing(object sender, FormClosingEventArgs e)
         {
-            registrieren = null;
+            profilAnzeige = null;
         }
 
         private void btnEinsehen_Click(object sender, EventArgs e)

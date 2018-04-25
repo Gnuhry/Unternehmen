@@ -13,16 +13,19 @@ namespace Unternehmen
             this.index = index;
             InitializeComponent();
             dTPVon.MinDate = dTpBis.MinDate = DateTime.Today;
+            cBoxVonMin.SelectedIndex = cBoxBisMin.SelectedIndex = cBoxBisHour.SelectedIndex = cBoxVonHour.SelectedIndex = 0;
             if (index == -1) return;
             btnLoschen.Visible = true;
             //Eintragen
-            DateTime von = new DateTime(verwaltung.GetAngemeldetePerson().GetTerminVon(index).Year, verwaltung.GetAngemeldetePerson().GetTerminVon(index).Month, verwaltung.GetAngemeldetePerson().GetTerminVon(index).Day);
-            DateTime bis = new DateTime(verwaltung.GetAngemeldetePerson().GetTerminBis(index).Year, verwaltung.GetAngemeldetePerson().GetTerminBis(index).Month, verwaltung.GetAngemeldetePerson().GetTerminBis(index).Day);
+            DateTime von =verwaltung.GetAngemeldetePerson().GetTerminVon(index);
+            DateTime bis = verwaltung.GetAngemeldetePerson().GetTerminBis(index);
             dTPVon.Value = von;
             dTpBis.Value = bis;
             txBBeschreibung.Text = verwaltung.GetAngemeldetePerson().GetTerminBeschreibung(index);
-            txBUhrzeitVon.Text = verwaltung.GetAngemeldetePerson().GetTerminVon(index).Hour + ":" + verwaltung.GetAngemeldetePerson().GetTerminVon(index).Minute;
-            txBUhrzeitBis.Text = verwaltung.GetAngemeldetePerson().GetTerminBis(index).Hour + ":" + verwaltung.GetAngemeldetePerson().GetTerminBis(index).Minute;
+            cBoxVonHour.SelectedIndex = von.Hour;
+            cBoxVonMin.SelectedIndex = von.Minute;
+            cBoxBisHour.SelectedIndex = bis.Hour;
+            cBoxBisMin.SelectedIndex = bis.Minute;
         }
 
         private void btnLoschen_Click(object sender, EventArgs e)
@@ -34,12 +37,12 @@ namespace Unternehmen
         private void btnFestlegen_Click(object sender, EventArgs e)
         {
             DateTime von = dTPVon.Value, bis = dTpBis.Value;
-            von = von.AddHours(Convert.ToDouble(txBUhrzeitVon.Text.Split(':')[0]));
-            bis = bis.AddHours(Convert.ToDouble(txBUhrzeitBis.Text.Split(':')[0]));
+                von = von.AddHours(cBoxVonHour.SelectedIndex).AddMinutes(cBoxVonMin.SelectedIndex);
+                bis = bis.AddHours(cBoxBisHour.SelectedIndex).AddMinutes(cBoxBisMin.SelectedIndex);
             if (index == -1)
-                verwaltung.GetAngemeldetePerson().SetTermin(von.AddMinutes(Convert.ToDouble(txBUhrzeitVon.Text.Split(':')[1])), bis.AddMinutes(Convert.ToDouble(txBUhrzeitBis.Text.Split(':')[1])), txBBeschreibung.Text);
+                verwaltung.GetAngemeldetePerson().SetTermin(von, bis, txBBeschreibung.Text);
             else
-                verwaltung.GetAngemeldetePerson().SetTermin(von.AddMinutes(Convert.ToDouble(txBUhrzeitVon.Text.Split(':')[1])), bis.AddMinutes(Convert.ToDouble(txBUhrzeitBis.Text.Split(':')[1])), txBBeschreibung.Text,index);
+                verwaltung.GetAngemeldetePerson().SetTermin(von, bis, txBBeschreibung.Text, index);
             Close();
         }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Kalender));
             this.tLpKalender = new System.Windows.Forms.TableLayoutPanel();
             this.btnBeantragen = new System.Windows.Forms.Button();
             this.cBoxMonat = new System.Windows.Forms.ComboBox();
@@ -59,6 +60,9 @@
             this.tLpKalender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tLpKalender.Size = new System.Drawing.Size(459, 329);
             this.tLpKalender.TabIndex = 0;
+            this.tLpKalender.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tLpKalender_MouseDown);
+            this.tLpKalender.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tLpKalender_MouseMove);
+            this.tLpKalender.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tLpKalender_MouseUp);
             // 
             // btnBeantragen
             // 
@@ -120,7 +124,7 @@
             this.btnMonatvor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMonatvor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMonatvor.ForeColor = System.Drawing.Color.White;
-            this.btnMonatvor.Image = global::Unternehmen.Properties.Resources.right_double_chevron;
+            this.btnMonatvor.Image = ((System.Drawing.Image)(resources.GetObject("btnMonatvor.Image")));
             this.btnMonatvor.Location = new System.Drawing.Point(588, 102);
             this.btnMonatvor.Name = "btnMonatvor";
             this.btnMonatvor.Size = new System.Drawing.Size(46, 34);
@@ -134,7 +138,7 @@
             this.btnMonatzuruck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMonatzuruck.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMonatzuruck.ForeColor = System.Drawing.Color.White;
-            this.btnMonatzuruck.Image = global::Unternehmen.Properties.Resources.left_arrow;
+            this.btnMonatzuruck.Image = ((System.Drawing.Image)(resources.GetObject("btnMonatzuruck.Image")));
             this.btnMonatzuruck.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMonatzuruck.Location = new System.Drawing.Point(175, 102);
             this.btnMonatzuruck.Name = "btnMonatzuruck";
@@ -168,6 +172,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Kalender";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Kalender_FormClosing);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tLpKalender_MouseUp);
             this.ResumeLayout(false);
 
         }

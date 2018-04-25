@@ -43,14 +43,14 @@ namespace Unternehmen
         private void DefaultProfilAnzeige()
         {
             Profil = new Point[8];
-            Profil[0] = new Point(0, 0);
-            Profil[1] = new Point(0, 0);
-            Profil[2] = new Point(0, 0);
-            Profil[3] = new Point(0, 0);
-            Profil[4] = new Point(0, 0);
-            Profil[5] = new Point(0, 0);
-            Profil[6] = new Point(0, 0);
-            Profil[7] = new Point(0, 0);
+            Profil[0] = new Point(12, 21);
+            Profil[1] = new Point(97, 252);
+            Profil[2] = new Point(12, 48);
+            Profil[3] = new Point(258, 6);
+            Profil[4] = new Point(278, 139);
+            Profil[5] = new Point(12, 98);
+            Profil[6] = new Point(10, 172);
+            Profil[7] = new Point(12, 130);
             Status = Email = Abteilung = Hobbys = Telefon = "";
            
         }

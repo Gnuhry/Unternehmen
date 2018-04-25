@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Unternehmen
@@ -16,6 +17,9 @@ namespace Unternehmen
         private int Month, Year;
         private static string[] Monat = { "January", "Feburar", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
         private static Color KrankentageC = Color.Orange, UrlaubstageC = Color.Red, VergangeneTageC = Color.LightGray, FeiertageC = Color.Green, BeantragenC = Color.Blue, keinArbeitstagC=Color.LightGray;
+        private Control activeControl;
+        private Point previousPosition;
+
         public Kalender(Verwaltung verwaltung, bool Chef)
         {
             this.Chef = Chef;
@@ -174,6 +178,35 @@ namespace Unternehmen
             KalenderLaden();
         }
 
+        private void tLpKalender_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                activeControl = sender as Control;
+                previousPosition = e.Location;
+            }
+        }
+
+        private void tLpKalender_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (activeControl == null || activeControl != sender)
+                return;
+            else
+            {
+                if (tLpKalender.GetChildAtPoint(e.Location) == null) return;
+                if (tLpKalender.GetChildAtPoint(e.Location).Text == "") return;
+               // MessageBox.Show("Überprüfen");
+                if (tLpKalender.GetChildAtPoint(e.Location).BackColor == BeantragenC) tLpKalender.GetChildAtPoint(e.Location).BackColor = Color.Transparent;
+                else if (tLpKalender.GetChildAtPoint(e.Location).BackColor == Color.Transparent) tLpKalender.GetChildAtPoint(e.Location).BackColor = BeantragenC;
+                Thread.Sleep(10); 
+            }
+        }
+
+        private void tLpKalender_MouseUp(object sender, MouseEventArgs e)
+        {
+            activeControl = null;
+        }
+
         private void btnBeantragen_Click(object sender, EventArgs e)
         {
             Speichern();
@@ -236,6 +269,7 @@ namespace Unternehmen
             {
                 Inhalt[f] = new Label();
                 tLpKalender.Controls.Add(Inhalt[f]);
+                Inhalt[f].MouseDown += tLpKalender_MouseDown;
             }
             Inhalt[0].Text = "MON";
             Inhalt[1].Text = "TUE";

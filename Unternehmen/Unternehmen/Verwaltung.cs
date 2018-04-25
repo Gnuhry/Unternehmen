@@ -202,6 +202,7 @@ namespace Unternehmen
             chef.Close();
             angemeldete_Person = null;
             LogIn();
+            login.MottoAktualisieren();
         }
         public void ProfilAnzeige()
         {
