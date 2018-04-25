@@ -15,6 +15,8 @@ namespace Unternehmen
             if (verwaltung.GetFirma().GetWeb() == "none") btnWebsite.Visible = false;
             if (verwaltung.GetAngemeldetePerson() == verwaltung.GetFirma().GetMitarbeiter(0)||verwaltung.GetFirma().IsKonto(verwaltung.GetAngemeldetePerson())) { btnAdmin.Visible =btnAdminKalender.Visible=btnAdminPostfach.Visible= true; }
             Firmenlogo_pictureBox.Image = verwaltung.GetFirma().GetFirmenLogo();
+            timer.Enabled = true;
+            timer.Start();
         }
         private void btnKalender_Click(object sender, EventArgs e)
         {
@@ -113,6 +115,21 @@ namespace Unternehmen
         private void panel3_MouseUp(object sender, MouseEventArgs e)
         {
             Cursor = verwaltung.Bewegen_MouseUp();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            lbNow.Text = DateTime.Now.ToLongTimeString() + " " + DateTime.Now.ToLongDateString();
+        }
+
+        private void Menue_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer.Enabled = false;
+            timer.Stop();
+        }
+        public void Menue_Aktualisieren()
+        {
+            Firmenlogo_pictureBox.Image = verwaltung.GetFirma().GetFirmenLogo();
         }
     }
 }

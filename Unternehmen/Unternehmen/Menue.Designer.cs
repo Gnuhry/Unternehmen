@@ -42,17 +42,19 @@
             this.btnAdmin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Beenden_Button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
             this.Aktive_Form_Name = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
-            this.pcBExit = new System.Windows.Forms.PictureBox();
             this.pcBWebsite = new System.Windows.Forms.PictureBox();
+            this.pcBExit = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lbNow = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcBExit)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBWebsite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBExit)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -430,6 +432,16 @@
             this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
             this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
+            // Firmenlogo_pictureBox
+            // 
+            this.Firmenlogo_pictureBox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
+            this.Firmenlogo_pictureBox.Location = new System.Drawing.Point(70, 18);
+            this.Firmenlogo_pictureBox.Name = "Firmenlogo_pictureBox";
+            this.Firmenlogo_pictureBox.Size = new System.Drawing.Size(90, 90);
+            this.Firmenlogo_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Firmenlogo_pictureBox.TabIndex = 1;
+            this.Firmenlogo_pictureBox.TabStop = false;
+            // 
             // Aktive_Form_Name
             // 
             this.Aktive_Form_Name.AutoSize = true;
@@ -445,6 +457,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lbNow);
             this.panel1.Controls.Add(this.pcBWebsite);
             this.panel1.Controls.Add(this.pcBExit);
             this.panel1.Controls.Add(this.Aktive_Form_Name);
@@ -458,15 +471,17 @@
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
-            // Firmenlogo_pictureBox
+            // pcBWebsite
             // 
-            this.Firmenlogo_pictureBox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
-            this.Firmenlogo_pictureBox.Location = new System.Drawing.Point(70, 18);
-            this.Firmenlogo_pictureBox.Name = "Firmenlogo_pictureBox";
-            this.Firmenlogo_pictureBox.Size = new System.Drawing.Size(90, 90);
-            this.Firmenlogo_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Firmenlogo_pictureBox.TabIndex = 1;
-            this.Firmenlogo_pictureBox.TabStop = false;
+            this.pcBWebsite.BackColor = System.Drawing.Color.Red;
+            this.pcBWebsite.Image = global::Unternehmen.Properties.Resources.wifi;
+            this.pcBWebsite.Location = new System.Drawing.Point(1011, 52);
+            this.pcBWebsite.Name = "pcBWebsite";
+            this.pcBWebsite.Size = new System.Drawing.Size(66, 50);
+            this.pcBWebsite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcBWebsite.TabIndex = 3;
+            this.pcBWebsite.TabStop = false;
+            this.pcBWebsite.Click += new System.EventHandler(this.btnWebsite_Click);
             // 
             // pcBExit
             // 
@@ -480,17 +495,18 @@
             this.pcBExit.TabStop = false;
             this.pcBExit.Click += new System.EventHandler(this.Beenden_Button_Click);
             // 
-            // pcBWebsite
+            // timer
             // 
-            this.pcBWebsite.BackColor = System.Drawing.Color.Red;
-            this.pcBWebsite.Image = global::Unternehmen.Properties.Resources.wifi;
-            this.pcBWebsite.Location = new System.Drawing.Point(1011, 52);
-            this.pcBWebsite.Name = "pcBWebsite";
-            this.pcBWebsite.Size = new System.Drawing.Size(66, 50);
-            this.pcBWebsite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcBWebsite.TabIndex = 3;
-            this.pcBWebsite.TabStop = false;
-            this.pcBWebsite.Click += new System.EventHandler(this.btnWebsite_Click);
+            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
+            // lbNow
+            // 
+            this.lbNow.AutoSize = true;
+            this.lbNow.Location = new System.Drawing.Point(986, 18);
+            this.lbNow.Name = "lbNow";
+            this.lbNow.Size = new System.Drawing.Size(41, 16);
+            this.lbNow.TabIndex = 4;
+            this.lbNow.Text = "label1";
             // 
             // Menue
             // 
@@ -505,16 +521,17 @@
             this.Name = "Menue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menue";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menue_FormClosing);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcBExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBWebsite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -538,5 +555,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnAdminPostfach;
         private System.Windows.Forms.PictureBox pcBWebsite;
         private System.Windows.Forms.PictureBox pcBExit;
+        private System.Windows.Forms.Label lbNow;
+        private System.Windows.Forms.Timer timer;
     }
 }

@@ -264,5 +264,9 @@ namespace Unternehmen
             activeControl = null;
             return Cursors.Default;
         }
+        public void MenueAktualisieren()
+        {
+            menue.Menue_Aktualisieren()
+        }
     }
 }

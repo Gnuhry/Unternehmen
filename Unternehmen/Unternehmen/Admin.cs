@@ -129,6 +129,7 @@ namespace Unternehmen
         {
             pcBFirmenlogo.Image=new Bitmap(((string[])e.Data.GetData(DataFormats.FileDrop))[0]);
             verwaltung.GetFirma().SetFirmenLogo(pcBFirmenlogo.Image);
+            verwaltung.MenueAktualisieren();
         }
 
         private void Admin_DragEnter(object sender, DragEventArgs e)
@@ -159,6 +160,7 @@ namespace Unternehmen
                         {
                             pcBFirmenlogo.Image = new Bitmap(myStream);
                             verwaltung.GetFirma().SetFirmenLogo(pcBFirmenlogo.Image);
+                            verwaltung.MenueAktualisieren();
                         }
                 }
                 catch (Exception ex)
