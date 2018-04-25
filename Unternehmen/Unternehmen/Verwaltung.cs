@@ -266,7 +266,7 @@ namespace Unternehmen
         }
         public void MenueAktualisieren()
         {
-            menue.Menue_Aktualisieren()
+            menue.Menue_Aktualisieren();
         }
     }
 }
