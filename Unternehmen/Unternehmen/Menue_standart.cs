@@ -106,7 +106,9 @@ namespace Unternehmen
             lbEmail.Location = Profil[5];
             lbHobby.Location = Profil[6];
             lbTelefon.Location = Profil[7];
-            lbInhaber.Text = angemeldet.GetKontoInhaber();
+            if (angemeldet.Geschlecht1) lbInhaber.Text = "Mr.";
+            else lbInhaber.Text = "Ms.";
+            lbInhaber.Text += angemeldet.GetKontoInhaber();
             lbStatus.Text = angemeldet.Status1;
             lbGeburtstag.Text = angemeldet.GetGeburtstag().ToShortDateString();
             pcBProfil.Image = angemeldet.GetProfilbild();

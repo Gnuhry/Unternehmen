@@ -50,6 +50,7 @@
             this.pcBWebsite = new System.Windows.Forms.PictureBox();
             this.pcBExit = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lbName = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).BeginInit();
@@ -468,6 +469,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lbName);
             this.panel1.Controls.Add(this.pcBProfil);
             this.panel1.Controls.Add(this.lbNow);
             this.panel1.Controls.Add(this.pcBWebsite);
@@ -532,6 +534,15 @@
             // 
             this.timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(239, 9);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(112, 16);
+            this.lbName.TabIndex = 6;
+            this.lbName.Text = "Mr. Max Lukas Stolz";
+            // 
             // Menue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -583,5 +594,6 @@
         private System.Windows.Forms.Label lbNow;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.PictureBox pcBProfil;
+        private System.Windows.Forms.Label lbName;
     }
 }

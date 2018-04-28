@@ -41,7 +41,7 @@ namespace Unternehmen
             {
                 MessageBox.Show("Es gibt einen Fehler! Wenden sie ich an den Admin!");
                 Konto temp = new Konto();
-                temp.Registrieren("System", "System", "System01", DateTime.Today, null, true);
+                temp.Registrieren("System", "System", "System01", DateTime.Today, null,true, true);
                 verwaltung.GetFirma().ReciveAdminNachricht("Fehler 01-Web", null, temp);
             }
         }
@@ -131,6 +131,8 @@ namespace Unternehmen
         {
             Firmenlogo_pictureBox.Image = verwaltung.GetFirma().GetFirmenLogo();
             pcBProfil.Image = verwaltung.GetAngemeldetePerson().GetProfilbild();
+            if (verwaltung.GetAngemeldetePerson().Geschlecht1) lbName.Text = "Mr." + verwaltung.GetAngemeldetePerson().GetKontoInhaber();
+            else lbName.Text = "Ms." + verwaltung.GetAngemeldetePerson().GetKontoInhaber();
         }
     }
 }
