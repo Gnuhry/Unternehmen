@@ -59,6 +59,8 @@
             this.btnAndern = new System.Windows.Forms.Button();
             this.txBStatus = new System.Windows.Forms.TextBox();
             this.btnProfilbildHochladen = new System.Windows.Forms.Button();
+            this.rbtMann = new System.Windows.Forms.RadioButton();
+            this.rbtFrau = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBProfil)).BeginInit();
@@ -222,6 +224,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.rbtFrau);
+            this.panel3.Controls.Add(this.rbtMann);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.txBTelefon);
             this.panel3.Controls.Add(this.txBHobbys);
@@ -538,6 +542,30 @@
             this.btnProfilbildHochladen.UseVisualStyleBackColor = false;
             this.btnProfilbildHochladen.Click += new System.EventHandler(this.btnProfilbildHochladen_Click);
             // 
+            // rbtMann
+            // 
+            this.rbtMann.AutoSize = true;
+            this.rbtMann.Location = new System.Drawing.Point(6, 292);
+            this.rbtMann.Name = "rbtMann";
+            this.rbtMann.Size = new System.Drawing.Size(85, 17);
+            this.rbtMann.TabIndex = 52;
+            this.rbtMann.TabStop = true;
+            this.rbtMann.Text = "radioButton1";
+            this.rbtMann.UseVisualStyleBackColor = true;
+            this.rbtMann.CheckedChanged += new System.EventHandler(this.rbtMann_CheckedChanged);
+            // 
+            // rbtFrau
+            // 
+            this.rbtFrau.AutoSize = true;
+            this.rbtFrau.Location = new System.Drawing.Point(98, 292);
+            this.rbtFrau.Name = "rbtFrau";
+            this.rbtFrau.Size = new System.Drawing.Size(85, 17);
+            this.rbtFrau.TabIndex = 53;
+            this.rbtFrau.TabStop = true;
+            this.rbtFrau.Text = "radioButton2";
+            this.rbtFrau.UseVisualStyleBackColor = true;
+            this.rbtFrau.CheckedChanged += new System.EventHandler(this.rbtFrau_CheckedChanged);
+            // 
             // ProfilAnzeige
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,5 +623,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txBBenutzername;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txBTelefon;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton rbtFrau;
+        private System.Windows.Forms.RadioButton rbtMann;
     }
 }

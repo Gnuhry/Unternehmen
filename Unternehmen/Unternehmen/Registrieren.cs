@@ -48,7 +48,7 @@ namespace Unternehmen
             try
             {
                 //MessageBox.Show(new DateTime(DateTime.Today.Year - cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex + 1, cBoxTag.SelectedIndex + 1).ToShortDateString());
-                temp = angemeldet.Registrieren(txBInhaber.Text, txBBenutzername.Text, txBPasswort.Text, new DateTime(DateTime.Today.Year-cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex + 1, cBoxTag.SelectedIndex + 1), pcBProfilbild.Image,verwaltung.GetFirma().GetAutoRegistrieren());
+                temp = angemeldet.Registrieren(txBInhaber.Text, txBBenutzername.Text, txBPasswort.Text, new DateTime(DateTime.Today.Year - cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex + 1, cBoxTag.SelectedIndex + 1), pcBProfilbild.Image, rbtnMan.Checked, verwaltung.GetFirma().GetAutoRegistrieren());
             }
             catch (Exception) { temp = "Wrong date"; }
             if (temp == "")
@@ -127,6 +127,18 @@ namespace Unternehmen
         private void Panel_Left_MouseUp(object sender, MouseEventArgs e)
         {
             Cursor = verwaltung.Bewegen_MouseUp();
+        }
+
+        private void rbtnMan_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnMan.Checked)
+                rbtnWoman.Checked = false;
+        }
+
+        private void rbtnWoman_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnWoman.Checked)
+                rbtnMan.Checked = false;
         }
     }
 }

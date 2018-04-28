@@ -45,6 +45,7 @@
             this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
             this.Aktive_Form_Name = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pcBProfil = new System.Windows.Forms.PictureBox();
             this.lbNow = new System.Windows.Forms.Label();
             this.pcBWebsite = new System.Windows.Forms.PictureBox();
             this.pcBExit = new System.Windows.Forms.PictureBox();
@@ -53,6 +54,7 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBProfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBWebsite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBExit)).BeginInit();
             this.SuspendLayout();
@@ -115,6 +117,7 @@
             this.btnWebsite.IconZoom = 90D;
             this.btnWebsite.IsTab = false;
             this.btnWebsite.Location = new System.Drawing.Point(0, 192);
+            this.btnWebsite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnWebsite.Name = "btnWebsite";
             this.btnWebsite.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.btnWebsite.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
@@ -151,6 +154,7 @@
             this.btnMessenger.IconZoom = 90D;
             this.btnMessenger.IsTab = false;
             this.btnMessenger.Location = new System.Drawing.Point(0, 144);
+            this.btnMessenger.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMessenger.Name = "btnMessenger";
             this.btnMessenger.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.btnMessenger.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
@@ -187,6 +191,7 @@
             this.Daten_andern_Button.IconZoom = 90D;
             this.Daten_andern_Button.IsTab = false;
             this.Daten_andern_Button.Location = new System.Drawing.Point(0, 96);
+            this.Daten_andern_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Daten_andern_Button.Name = "Daten_andern_Button";
             this.Daten_andern_Button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.Daten_andern_Button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
@@ -223,6 +228,7 @@
             this.KalenderButton.IconZoom = 90D;
             this.KalenderButton.IsTab = false;
             this.KalenderButton.Location = new System.Drawing.Point(0, 48);
+            this.KalenderButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.KalenderButton.Name = "KalenderButton";
             this.KalenderButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.KalenderButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
@@ -259,6 +265,7 @@
             this.btnMenue.IconZoom = 90D;
             this.btnMenue.IsTab = false;
             this.btnMenue.Location = new System.Drawing.Point(0, 0);
+            this.btnMenue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMenue.Name = "btnMenue";
             this.btnMenue.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.btnMenue.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
@@ -333,6 +340,7 @@
             this.btnAdminKalender.IconZoom = 90D;
             this.btnAdminKalender.IsTab = false;
             this.btnAdminKalender.Location = new System.Drawing.Point(0, 405);
+            this.btnAdminKalender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminKalender.Name = "btnAdminKalender";
             this.btnAdminKalender.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.btnAdminKalender.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
@@ -370,6 +378,7 @@
             this.btnAdmin.IconZoom = 90D;
             this.btnAdmin.IsTab = false;
             this.btnAdmin.Location = new System.Drawing.Point(0, 478);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.btnAdmin.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
@@ -407,6 +416,7 @@
             this.Beenden_Button.IconZoom = 90D;
             this.Beenden_Button.IsTab = false;
             this.Beenden_Button.Location = new System.Drawing.Point(0, 537);
+            this.Beenden_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Beenden_Button.Name = "Beenden_Button";
             this.Beenden_Button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.Beenden_Button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
@@ -441,6 +451,7 @@
             this.Firmenlogo_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Firmenlogo_pictureBox.TabIndex = 1;
             this.Firmenlogo_pictureBox.TabStop = false;
+            this.Firmenlogo_pictureBox.Click += new System.EventHandler(this.btnMenue_Click);
             // 
             // Aktive_Form_Name
             // 
@@ -457,6 +468,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.pcBProfil);
             this.panel1.Controls.Add(this.lbNow);
             this.panel1.Controls.Add(this.pcBWebsite);
             this.panel1.Controls.Add(this.pcBExit);
@@ -471,10 +483,22 @@
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
+            // pcBProfil
+            // 
+            this.pcBProfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.pcBProfil.Image = global::Unternehmen.Properties.Resources.ic_android_black_24dp;
+            this.pcBProfil.Location = new System.Drawing.Point(926, 52);
+            this.pcBProfil.Name = "pcBProfil";
+            this.pcBProfil.Size = new System.Drawing.Size(66, 50);
+            this.pcBProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcBProfil.TabIndex = 5;
+            this.pcBProfil.TabStop = false;
+            this.pcBProfil.Click += new System.EventHandler(this.btnAndern_Click);
+            // 
             // lbNow
             // 
             this.lbNow.AutoSize = true;
-            this.lbNow.Location = new System.Drawing.Point(986, 18);
+            this.lbNow.Location = new System.Drawing.Point(932, 18);
             this.lbNow.Name = "lbNow";
             this.lbNow.Size = new System.Drawing.Size(41, 16);
             this.lbNow.TabIndex = 4;
@@ -530,6 +554,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBProfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBWebsite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBExit)).EndInit();
             this.ResumeLayout(false);
@@ -557,5 +582,6 @@
         private System.Windows.Forms.PictureBox pcBExit;
         private System.Windows.Forms.Label lbNow;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.PictureBox pcBProfil;
     }
 }

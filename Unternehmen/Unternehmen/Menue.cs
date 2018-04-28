@@ -14,7 +14,7 @@ namespace Unternehmen
             this.verwaltung = verwaltung;
             if (verwaltung.GetFirma().GetWeb() == "none") btnWebsite.Visible = false;
             if (verwaltung.GetAngemeldetePerson() == verwaltung.GetFirma().GetMitarbeiter(0)||verwaltung.GetFirma().IsKonto(verwaltung.GetAngemeldetePerson())) { btnAdmin.Visible =btnAdminKalender.Visible=btnAdminPostfach.Visible= true; }
-            Firmenlogo_pictureBox.Image = verwaltung.GetFirma().GetFirmenLogo();
+            Menue_Aktualisieren();
             timer.Enabled = true;
             timer.Start();
         }
@@ -130,6 +130,7 @@ namespace Unternehmen
         public void Menue_Aktualisieren()
         {
             Firmenlogo_pictureBox.Image = verwaltung.GetFirma().GetFirmenLogo();
+            pcBProfil.Image = verwaltung.GetAngemeldetePerson().GetProfilbild();
         }
     }
 }

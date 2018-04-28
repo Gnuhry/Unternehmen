@@ -20,6 +20,7 @@ namespace Unternehmen
         private Nachrichten nachrichten;
         private Tagesplan tagesplan;
         private Point[] Profil;
+        private bool Geschlecht;
 
         public string Email1 { get => Email; set => Email = value; }
         public string Abteilung1 { get => Abteilung; set => Abteilung = value; }
@@ -28,6 +29,7 @@ namespace Unternehmen
         public Point[] Profil1 { get => Profil; set => Profil = value; }
         public string Status1 { get => Status; set => Status = value; }
         public string Hobbys1 { get => Hobbys; set => Hobbys = value; }
+        public bool Geschlecht1 { get => Geschlecht; set => Geschlecht = value; }
 
         public Konto()
         {
@@ -55,7 +57,7 @@ namespace Unternehmen
            
         }
 
-        public string Registrieren(string Kontoinhaber, string benutzername, string passwort, DateTime Geburtstag,Image Profilbild, bool Autoregistrieren)
+        public string Registrieren(string Kontoinhaber, string benutzername, string passwort, DateTime Geburtstag,Image Profilbild,bool Geschlecht, bool Autoregistrieren)
         {
             char[] x = benutzername.ToCharArray();
             bool GrB = false, KlB = false, Zahl = false;
@@ -88,7 +90,7 @@ namespace Unternehmen
             this.Geburtstag = Geburtstag;
             this.Kontoinhaber = Kontoinhaber;
             this.Profilbild = Profilbild;
-
+            this.Geschlecht = Geschlecht;
             return "";
         }
         public void SetInhaber(string KontoInhaber) => Kontoinhaber=KontoInhaber;

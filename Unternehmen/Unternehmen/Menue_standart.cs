@@ -20,6 +20,7 @@ namespace Unternehmen
             numKrankentage.Value = verwaltung.GetAngemeldetePerson().GetKrankentage();
             for (int f = 0; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
                 lBoxAnzeige.Items.Add(verwaltung.GetFirma().GetMitarbeiter(f).GetKontoInhaber());
+            InitProfil(verwaltung.GetAngemeldetePerson());
         }
         private void btnAnwesend_Click(object sender, EventArgs e)
         {

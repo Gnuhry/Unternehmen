@@ -56,9 +56,11 @@ namespace Unternehmen
 
         private void Init()
         {
+            if (angemeldet.Geschlecht1) rbtMann.Checked = true;
+            else rbtFrau.Checked = true;
             
             txBBenutzername.Text = angemeldet.GetBenutzername();
-            txBInhaber.Text = angemeldet.GetKontoInhaber();
+            
             cBoxTag.SelectedIndex = angemeldet.GetGeburtstag().Day - 1;
             cBoxMonat.SelectedIndex = angemeldet.GetGeburtstag().Month - 1;
             cBoxJahr.SelectedIndex = angemeldet.GetGeburtstag().Year % DateTime.Today.Year;
@@ -68,6 +70,14 @@ namespace Unternehmen
             txBStatus.Text = angemeldet.Status1;
             txBTelefon.Text = angemeldet.Telefon1;
             pcBProfil.Image = angemeldet.GetProfilbild();
+            Inhaber();
+        }
+        private void Inhaber()
+        {
+            if(angemeldet.Geschlecht1)
+                lbInhaber.Text="Mr."+ angemeldet.GetKontoInhaber();
+            else
+                lbInhaber.Text = "Ms." + angemeldet.GetKontoInhaber();
         }
         private void InitComboBox()
         {
@@ -86,7 +96,7 @@ namespace Unternehmen
             if (txBPasswort.Text != txBPasswort2.Text) { lbFehlermeldung.Text = "passwords aren't matching"; return; }
             if (angemeldet.Login(angemeldet.GetBenutzername(), txBPasswortA.Text) == 0)
             {
-                angemeldet.Registrieren(txBInhaber.Text, txBBenutzername.Text, txBPasswort.Text, DateTime.Today, pcBProfil.Image, true);
+                angemeldet.Registrieren(txBInhaber.Text, txBBenutzername.Text, txBPasswort.Text, DateTime.Today, pcBProfil.Image,rbtMann.Checked, true);
                 txBInhaber.Text = txBBenutzername.Text = txBPasswort.Text = txBPasswort2.Text = txBPasswortA.Text = null;
             }
             else lbFehlermeldung.Text = "prior password incorrect";
@@ -321,6 +331,22 @@ namespace Unternehmen
         private void button1_Click(object sender, EventArgs e)
         {
             verwaltung.Konto_Loschen();
+        }
+
+        private void rbtMann_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!rbtMann.Checked) return;
+            angemeldet.Geschlecht1 = true;
+            rbtFrau.Checked = false;
+            Inhaber();
+        }
+
+        private void rbtFrau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!rbtFrau.Checked) return;
+            angemeldet.Geschlecht1 = false;
+            rbtMann.Checked = false;
+            Inhaber();
         }
     }
 }

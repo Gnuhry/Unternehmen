@@ -54,6 +54,8 @@
             this.Ownername_Label = new System.Windows.Forms.Label();
             this.txBInhaber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Sign_Up_Label = new System.Windows.Forms.Label();
+            this.rbtnMan = new System.Windows.Forms.RadioButton();
+            this.rbtnWoman = new System.Windows.Forms.RadioButton();
             this.Panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).BeginInit();
             this.Panel_right.SuspendLayout();
@@ -117,6 +119,8 @@
             // Panel_right
             // 
             this.Panel_right.BackColor = System.Drawing.Color.White;
+            this.Panel_right.Controls.Add(this.rbtnWoman);
+            this.Panel_right.Controls.Add(this.rbtnMan);
             this.Panel_right.Controls.Add(this.lbFehlermeldung);
             this.Panel_right.Controls.Add(this.btnHochladen);
             this.Panel_right.Controls.Add(this.cBoxJahr);
@@ -402,6 +406,30 @@
             this.Sign_Up_Label.TabIndex = 10;
             this.Sign_Up_Label.Text = "Sign Up";
             // 
+            // rbtnMan
+            // 
+            this.rbtnMan.AutoSize = true;
+            this.rbtnMan.Location = new System.Drawing.Point(354, 115);
+            this.rbtnMan.Name = "rbtnMan";
+            this.rbtnMan.Size = new System.Drawing.Size(46, 17);
+            this.rbtnMan.TabIndex = 34;
+            this.rbtnMan.TabStop = true;
+            this.rbtnMan.Text = "Man";
+            this.rbtnMan.UseVisualStyleBackColor = true;
+            this.rbtnMan.CheckedChanged += new System.EventHandler(this.rbtnMan_CheckedChanged);
+            // 
+            // rbtnWoman
+            // 
+            this.rbtnWoman.AutoSize = true;
+            this.rbtnWoman.Location = new System.Drawing.Point(406, 115);
+            this.rbtnWoman.Name = "rbtnWoman";
+            this.rbtnWoman.Size = new System.Drawing.Size(62, 17);
+            this.rbtnWoman.TabIndex = 35;
+            this.rbtnWoman.TabStop = true;
+            this.rbtnWoman.Text = "Woman";
+            this.rbtnWoman.UseVisualStyleBackColor = true;
+            this.rbtnWoman.CheckedChanged += new System.EventHandler(this.rbtnWoman_CheckedChanged);
+            // 
             // Registrieren
             // 
             this.AllowDrop = true;
@@ -452,5 +480,7 @@
         private System.Windows.Forms.ComboBox cBoxTag;
         private System.Windows.Forms.Button btnHochladen;
         private System.Windows.Forms.Label lbFehlermeldung;
+        private System.Windows.Forms.RadioButton rbtnWoman;
+        private System.Windows.Forms.RadioButton rbtnMan;
     }
 }
