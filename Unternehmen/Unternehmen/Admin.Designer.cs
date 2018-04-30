@@ -45,6 +45,8 @@
             this.btnLogoHochladen = new System.Windows.Forms.Button();
             this.pcBFirmenlogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rbtnResetEnabled = new System.Windows.Forms.RadioButton();
+            this.btnReset = new System.Windows.Forms.Button();
             this.txBFirmenmotto = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.chBAutoRemoveUrlaub = new System.Windows.Forms.CheckBox();
@@ -74,7 +76,7 @@
             this.chBWebsite.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chBWebsite.Location = new System.Drawing.Point(16, 456);
             this.chBWebsite.Name = "chBWebsite";
-            this.chBWebsite.Size = new System.Drawing.Size(92, 17);
+            this.chBWebsite.Size = new System.Drawing.Size(93, 20);
             this.chBWebsite.TabIndex = 32;
             this.chBWebsite.Text = "Website-Link";
             this.chBWebsite.UseVisualStyleBackColor = true;
@@ -110,7 +112,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(13, 422);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.Size = new System.Drawing.Size(82, 16);
             this.label3.TabIndex = 29;
             this.label3.Text = "Holiday/Year:";
             // 
@@ -144,7 +146,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 172);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 20);
+            this.label2.Size = new System.Drawing.Size(88, 21);
             this.label2.TabIndex = 26;
             this.label2.Text = "Workdays:";
             // 
@@ -204,7 +206,7 @@
             this.comBMitarbeiter.FormattingEnabled = true;
             this.comBMitarbeiter.Location = new System.Drawing.Point(483, 134);
             this.comBMitarbeiter.Name = "comBMitarbeiter";
-            this.comBMitarbeiter.Size = new System.Drawing.Size(172, 21);
+            this.comBMitarbeiter.Size = new System.Drawing.Size(172, 24);
             this.comBMitarbeiter.TabIndex = 22;
             this.comBMitarbeiter.SelectedIndexChanged += new System.EventHandler(this.comBMitarbeiter_SelectedIndexChanged);
             // 
@@ -242,7 +244,7 @@
             this.chBAutoAktiv.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chBAutoAktiv.Location = new System.Drawing.Point(89, 18);
             this.chBAutoAktiv.Name = "chBAutoAktiv";
-            this.chBAutoAktiv.Size = new System.Drawing.Size(263, 24);
+            this.chBAutoAktiv.Size = new System.Drawing.Size(264, 25);
             this.chBAutoAktiv.TabIndex = 33;
             this.chBAutoAktiv.Text = "Activate Accounts at Sign Up";
             this.chBAutoAktiv.UseVisualStyleBackColor = true;
@@ -276,6 +278,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.rbtnResetEnabled);
+            this.panel2.Controls.Add(this.btnReset);
             this.panel2.Controls.Add(this.txBFirmenmotto);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel3);
@@ -292,6 +296,35 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(348, 585);
             this.panel2.TabIndex = 38;
+            // 
+            // rbtnResetEnabled
+            // 
+            this.rbtnResetEnabled.AutoSize = true;
+            this.rbtnResetEnabled.Location = new System.Drawing.Point(85, 531);
+            this.rbtnResetEnabled.Name = "rbtnResetEnabled";
+            this.rbtnResetEnabled.Size = new System.Drawing.Size(89, 17);
+            this.rbtnResetEnabled.TabIndex = 44;
+            this.rbtnResetEnabled.TabStop = true;
+            this.rbtnResetEnabled.Text = "Enable Reset";
+            this.rbtnResetEnabled.UseVisualStyleBackColor = true;
+            this.rbtnResetEnabled.Visible = false;
+            this.rbtnResetEnabled.Click += new System.EventHandler(this.rbtnResetEnabled_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnReset.Enabled = false;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(176, 523);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(127, 34);
+            this.btnReset.TabIndex = 43;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Visible = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // txBFirmenmotto
             // 
@@ -320,7 +353,7 @@
             this.chBAutoRemoveUrlaub.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chBAutoRemoveUrlaub.Location = new System.Drawing.Point(4, 18);
             this.chBAutoRemoveUrlaub.Name = "chBAutoRemoveUrlaub";
-            this.chBAutoRemoveUrlaub.Size = new System.Drawing.Size(272, 24);
+            this.chBAutoRemoveUrlaub.Size = new System.Drawing.Size(273, 25);
             this.chBAutoRemoveUrlaub.TabIndex = 34;
             this.chBAutoRemoveUrlaub.Text = "Activate auto-remove holidays";
             this.chBAutoRemoveUrlaub.UseVisualStyleBackColor = true;
@@ -485,5 +518,7 @@
         private System.Windows.Forms.ListBox lBoxAdmin;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnNoAdmin;
+        private System.Windows.Forms.RadioButton rbtnResetEnabled;
+        private System.Windows.Forms.Button btnReset;
     }
 }

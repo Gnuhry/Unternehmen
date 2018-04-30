@@ -18,9 +18,11 @@ namespace Unternehmen
         private Control activeControl;
         private Point previousPosition;
         private Konto angemeldet;
+        bool aa;
 
         public ProfilAnzeige(Verwaltung verwaltung)
         {
+            aa = false;
             angemeldet = verwaltung.GetAngemeldetePerson();
             Profil = angemeldet.Profil1;
             InitializeComponent();
@@ -32,6 +34,7 @@ namespace Unternehmen
         }
         public ProfilAnzeige(Verwaltung verwaltung,Konto angemeldet)
         {
+            aa = true;
             this.angemeldet = angemeldet;
             Profil = angemeldet.Profil1;
             InitializeComponent();
@@ -39,6 +42,9 @@ namespace Unternehmen
             InitComboBox();
             Init();
             InitProfil();
+            txBPasswortA.Text = "-----------------------------";
+            txBPasswortA.Enabled = false;
+            Beenden_Label.Visible = true;
         }
 
         private void InitProfil()
@@ -94,7 +100,7 @@ namespace Unternehmen
             if (txBBenutzername.Text.Trim() == null || txBBenutzername.Text.Trim() == "") { lbFehlermeldung.Text = "Missing username"; return; }
             if (txBPasswort.Text.Trim() == null || txBPasswort.Text.Trim() == "") { lbFehlermeldung.Text = "Missing password"; return; }
             if (txBPasswort.Text != txBPasswort2.Text) { lbFehlermeldung.Text = "passwords aren't matching"; return; }
-            if (angemeldet.Login(angemeldet.GetBenutzername(), txBPasswortA.Text) == 0)
+            if (angemeldet.Login(angemeldet.GetBenutzername(), txBPasswortA.Text) == 0||aa)
             {
                 angemeldet.Registrieren(txBInhaber.Text, txBBenutzername.Text, txBPasswort.Text, DateTime.Today, pcBProfil.Image,rbtMann.Checked, true);
                 txBInhaber.Text = txBBenutzername.Text = txBPasswort.Text = txBPasswort2.Text = txBPasswortA.Text = null;
@@ -347,6 +353,11 @@ namespace Unternehmen
             angemeldet.Geschlecht1 = false;
             rbtMann.Checked = false;
             Inhaber();
+        }
+
+        private void Beenden_Label_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

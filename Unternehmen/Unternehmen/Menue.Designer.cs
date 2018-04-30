@@ -45,12 +45,12 @@
             this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
             this.Aktive_Form_Name = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbName = new System.Windows.Forms.Label();
             this.pcBProfil = new System.Windows.Forms.PictureBox();
             this.lbNow = new System.Windows.Forms.Label();
             this.pcBWebsite = new System.Windows.Forms.PictureBox();
             this.pcBExit = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.lbName = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).BeginInit();
@@ -485,6 +485,15 @@
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(239, 9);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(112, 16);
+            this.lbName.TabIndex = 6;
+            this.lbName.Text = "Mr. Max Lukas Stolz";
+            // 
             // pcBProfil
             // 
             this.pcBProfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
@@ -533,15 +542,6 @@
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.Timer_Tick);
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(239, 9);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(112, 16);
-            this.lbName.TabIndex = 6;
-            this.lbName.Text = "Mr. Max Lukas Stolz";
             // 
             // Menue
             // 

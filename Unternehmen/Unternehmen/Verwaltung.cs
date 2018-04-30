@@ -29,18 +29,10 @@ namespace Unternehmen
             ShowInTaskbar = false;
             InitializeComponent();
             firma = (new Firma()).Laden(Pfad);
-
-
-
-            Konto x = new Konto();
-            x.Registrieren("Admin", "Admin", "Admin1", DateTime.Today, null, true);
-            firma.AddMitarbeiter(x);
-
-            LogIn();
-
-
-
-            
+            //Konto x = new Konto();
+            //x.Registrieren("Admin", "Admin", "Admin1", DateTime.Today, null,true, true);
+            //firma.AddMitarbeiter(x);
+            LogIn();    
         }
         public Firma GetFirma() => firma;
         public Konto GetAngemeldetePerson() => angemeldete_Person;
@@ -148,6 +140,7 @@ namespace Unternehmen
                     temp.MdiParent = null;
                     temp.Close();       
                 }
+            MenueAktualisieren();
         }
 
         private void Kalender_FormClosing(object sender, FormClosingEventArgs e)
@@ -268,6 +261,11 @@ namespace Unternehmen
         public void MenueAktualisieren()
         {
             menue.Menue_Aktualisieren();
+        }
+        public void Reset()
+        {
+            if (menue != null) menue.Close();
+            firma = new Firma();
         }
     }
 }

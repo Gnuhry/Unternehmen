@@ -33,7 +33,7 @@ namespace Unternehmen
             chBAutoRemoveUrlaub.Checked = verwaltung.GetFirma().AutoRemoveUrlaub1;
             if (verwaltung.GetAngemeldetePerson() == verwaltung.GetFirma().GetMitarbeiter(0))
             {
-                lBoxAdmin.Visible = lBoxNoAdmin.Visible = btnAdmin.Visible=btnNoAdmin.Visible = true;
+                btnReset.Visible=rbtnResetEnabled.Visible= lBoxAdmin.Visible = lBoxNoAdmin.Visible = btnAdmin.Visible=btnNoAdmin.Visible = true;
                 for (int f = 1; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
                     if (verwaltung.GetFirma().IsKonto(verwaltung.GetFirma().GetMitarbeiter(f))) { lBoxAdmin.Items.Add(verwaltung.GetFirma().GetMitarbeiter(f).GetKontoInhaber()); Admins.Add(f); }
                     else{ lBoxNoAdmin.Items.Add(verwaltung.GetFirma().GetMitarbeiter(f).GetKontoInhaber()); NoAdmin.Add(f); }
@@ -186,6 +186,18 @@ namespace Unternehmen
             lBoxNoAdmin.Items.Remove(verwaltung.GetFirma().GetMitarbeiter(NoAdmin[lBoxNoAdmin.SelectedIndex]).GetKontoInhaber());
             NoAdmin.Remove(lBoxNoAdmin.SelectedIndex);
             Admins.Add(lBoxNoAdmin.SelectedIndex);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            verwaltung.Reset();
+        }
+
+        private void rbtnResetEnabled_Click(object sender, EventArgs e)
+        {
+            rbtnResetEnabled.Checked = !rbtnResetEnabled.Checked;
+            if (rbtnResetEnabled.Checked) btnReset.Enabled = true;
+            else btnReset.Enabled = false;
         }
 
         private void btnNoAdmin_Click(object sender, EventArgs e)

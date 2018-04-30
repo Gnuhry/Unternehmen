@@ -39,6 +39,11 @@ namespace Unternehmen
                 lbFehlermeldung.Text="agree terms and condition";
                 return;
             }
+            if (!(rbtnMan.Checked || rbtnWoman.Checked))
+            {
+                lbFehlermeldung.Text = "no gender";
+                return;
+            }
             Konto angemeldet = new Konto();
             if (txBInhaber.Text.Trim() == null || txBInhaber.Text.Trim() == "") { lbFehlermeldung.Text="Missing name"; return; }
             if (txBBenutzername.Text.Trim() == null || txBBenutzername.Text.Trim() == "") { lbFehlermeldung.Text="Missing username"; return; }

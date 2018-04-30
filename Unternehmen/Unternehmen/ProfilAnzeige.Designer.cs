@@ -41,6 +41,8 @@
             this.lbStatus = new System.Windows.Forms.Label();
             this.pcBProfil = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.rbtFrau = new System.Windows.Forms.RadioButton();
+            this.rbtMann = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.txBTelefon = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txBHobbys = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -59,8 +61,7 @@
             this.btnAndern = new System.Windows.Forms.Button();
             this.txBStatus = new System.Windows.Forms.TextBox();
             this.btnProfilbildHochladen = new System.Windows.Forms.Button();
-            this.rbtMann = new System.Windows.Forms.RadioButton();
-            this.rbtFrau = new System.Windows.Forms.RadioButton();
+            this.Beenden_Label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBProfil)).BeginInit();
@@ -83,6 +84,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.panel1.Controls.Add(this.Beenden_Label);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -198,9 +200,11 @@
             // 
             // lbStatus
             // 
+            this.lbStatus.AutoEllipsis = true;
             this.lbStatus.AutoSize = true;
             this.lbStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStatus.Location = new System.Drawing.Point(97, 252);
+            this.lbStatus.MinimumSize = new System.Drawing.Size(162, 21);
             this.lbStatus.Name = "lbStatus";
             this.lbStatus.Size = new System.Drawing.Size(162, 21);
             this.lbStatus.TabIndex = 2;
@@ -249,6 +253,30 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(388, 393);
             this.panel3.TabIndex = 4;
+            // 
+            // rbtFrau
+            // 
+            this.rbtFrau.AutoSize = true;
+            this.rbtFrau.Location = new System.Drawing.Point(98, 292);
+            this.rbtFrau.Name = "rbtFrau";
+            this.rbtFrau.Size = new System.Drawing.Size(85, 17);
+            this.rbtFrau.TabIndex = 53;
+            this.rbtFrau.TabStop = true;
+            this.rbtFrau.Text = "radioButton2";
+            this.rbtFrau.UseVisualStyleBackColor = true;
+            this.rbtFrau.CheckedChanged += new System.EventHandler(this.rbtFrau_CheckedChanged);
+            // 
+            // rbtMann
+            // 
+            this.rbtMann.AutoSize = true;
+            this.rbtMann.Location = new System.Drawing.Point(6, 292);
+            this.rbtMann.Name = "rbtMann";
+            this.rbtMann.Size = new System.Drawing.Size(85, 17);
+            this.rbtMann.TabIndex = 52;
+            this.rbtMann.TabStop = true;
+            this.rbtMann.Text = "radioButton1";
+            this.rbtMann.UseVisualStyleBackColor = true;
+            this.rbtMann.CheckedChanged += new System.EventHandler(this.rbtMann_CheckedChanged);
             // 
             // button1
             // 
@@ -542,29 +570,19 @@
             this.btnProfilbildHochladen.UseVisualStyleBackColor = false;
             this.btnProfilbildHochladen.Click += new System.EventHandler(this.btnProfilbildHochladen_Click);
             // 
-            // rbtMann
+            // Beenden_Label
             // 
-            this.rbtMann.AutoSize = true;
-            this.rbtMann.Location = new System.Drawing.Point(6, 292);
-            this.rbtMann.Name = "rbtMann";
-            this.rbtMann.Size = new System.Drawing.Size(85, 17);
-            this.rbtMann.TabIndex = 52;
-            this.rbtMann.TabStop = true;
-            this.rbtMann.Text = "radioButton1";
-            this.rbtMann.UseVisualStyleBackColor = true;
-            this.rbtMann.CheckedChanged += new System.EventHandler(this.rbtMann_CheckedChanged);
-            // 
-            // rbtFrau
-            // 
-            this.rbtFrau.AutoSize = true;
-            this.rbtFrau.Location = new System.Drawing.Point(98, 292);
-            this.rbtFrau.Name = "rbtFrau";
-            this.rbtFrau.Size = new System.Drawing.Size(85, 17);
-            this.rbtFrau.TabIndex = 53;
-            this.rbtFrau.TabStop = true;
-            this.rbtFrau.Text = "radioButton2";
-            this.rbtFrau.UseVisualStyleBackColor = true;
-            this.rbtFrau.CheckedChanged += new System.EventHandler(this.rbtFrau_CheckedChanged);
+            this.Beenden_Label.AutoSize = true;
+            this.Beenden_Label.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Beenden_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Beenden_Label.ForeColor = System.Drawing.Color.White;
+            this.Beenden_Label.Location = new System.Drawing.Point(780, 0);
+            this.Beenden_Label.Name = "Beenden_Label";
+            this.Beenden_Label.Size = new System.Drawing.Size(20, 24);
+            this.Beenden_Label.TabIndex = 28;
+            this.Beenden_Label.Text = "x";
+            this.Beenden_Label.Visible = false;
+            this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
             // 
             // ProfilAnzeige
             // 
@@ -625,5 +643,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RadioButton rbtFrau;
         private System.Windows.Forms.RadioButton rbtMann;
+        private System.Windows.Forms.Label Beenden_Label;
     }
 }
