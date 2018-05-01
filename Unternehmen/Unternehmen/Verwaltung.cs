@@ -33,7 +33,7 @@ namespace Unternehmen
 
 
             Konto x = new Konto();
-            x.Registrieren("Admin", "Admin", "Admin1", DateTime.Today, null, true);
+            x.Registrieren("Admin", "Admin", "Admin1", DateTime.Today, null,true,true);
             firma.AddMitarbeiter(x);
 
             LogIn();

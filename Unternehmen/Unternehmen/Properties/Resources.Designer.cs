@@ -63,6 +63,16 @@ namespace Unternehmen.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap exit {
+            get {
+                object obj = ResourceManager.GetObject("exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_android_black_24dp {
             get {
                 object obj = ResourceManager.GetObject("ic_android_black_24dp", resourceCulture);
@@ -93,16 +103,6 @@ namespace Unternehmen.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logout {
-            get {
-                object obj = ResourceManager.GetObject("logout", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap right_double_chevron {
             get {
                 object obj = ResourceManager.GetObject("right_double_chevron", resourceCulture);
@@ -113,9 +113,9 @@ namespace Unternehmen.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap speech_bubbles_comment_option {
+        internal static System.Drawing.Bitmap User {
             get {
-                object obj = ResourceManager.GetObject("speech_bubbles_comment_option", resourceCulture);
+                object obj = ResourceManager.GetObject("User", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace Unternehmen.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap wifi {
+        internal static System.Drawing.Bitmap Wifi_Black {
             get {
-                object obj = ResourceManager.GetObject("wifi", resourceCulture);
+                object obj = ResourceManager.GetObject("Wifi_Black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menue));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnAktiv = new System.Windows.Forms.Panel();
-            this.btnWebsite = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMessenger = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Daten_andern_Button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.KalenderButton = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -42,22 +42,23 @@
             this.btnAdmin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Beenden_Button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
             this.Aktive_Form_Name = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pcBProfil = new System.Windows.Forms.PictureBox();
+            this.lbName = new System.Windows.Forms.Label();
             this.lbNow = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.btnWebsite = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pcBProfil = new System.Windows.Forms.PictureBox();
             this.pcBWebsite = new System.Windows.Forms.PictureBox();
             this.pcBExit = new System.Windows.Forms.PictureBox();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.lbName = new System.Windows.Forms.Label();
+            this.Firmenlogo_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBProfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBWebsite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -95,43 +96,6 @@
             this.pnAktiv.Size = new System.Drawing.Size(5, 48);
             this.pnAktiv.TabIndex = 14;
             // 
-            // btnWebsite
-            // 
-            this.btnWebsite.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnWebsite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnWebsite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnWebsite.BorderRadius = 0;
-            this.btnWebsite.ButtonText = "Website";
-            this.btnWebsite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnWebsite.DisabledColor = System.Drawing.Color.Gray;
-            this.btnWebsite.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnWebsite.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnWebsite.Iconimage = global::Unternehmen.Properties.Resources.wifi;
-            this.btnWebsite.Iconimage_right = null;
-            this.btnWebsite.Iconimage_right_Selected = null;
-            this.btnWebsite.Iconimage_Selected = null;
-            this.btnWebsite.IconMarginLeft = 15;
-            this.btnWebsite.IconMarginRight = 0;
-            this.btnWebsite.IconRightVisible = true;
-            this.btnWebsite.IconRightZoom = 0D;
-            this.btnWebsite.IconVisible = true;
-            this.btnWebsite.IconZoom = 90D;
-            this.btnWebsite.IsTab = false;
-            this.btnWebsite.Location = new System.Drawing.Point(0, 192);
-            this.btnWebsite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnWebsite.Name = "btnWebsite";
-            this.btnWebsite.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnWebsite.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnWebsite.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
-            this.btnWebsite.selected = false;
-            this.btnWebsite.Size = new System.Drawing.Size(233, 48);
-            this.btnWebsite.TabIndex = 10;
-            this.btnWebsite.Text = "Website";
-            this.btnWebsite.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnWebsite.Textcolor = System.Drawing.Color.White;
-            this.btnWebsite.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWebsite.Click += new System.EventHandler(this.btnWebsite_Click);
-            // 
             // btnMessenger
             // 
             this.btnMessenger.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
@@ -143,7 +107,7 @@
             this.btnMessenger.DisabledColor = System.Drawing.Color.Gray;
             this.btnMessenger.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMessenger.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnMessenger.Iconimage = global::Unternehmen.Properties.Resources.speech_bubbles_comment_option;
+            this.btnMessenger.Iconimage = null;
             this.btnMessenger.Iconimage_right = null;
             this.btnMessenger.Iconimage_right_Selected = null;
             this.btnMessenger.Iconimage_Selected = null;
@@ -175,7 +139,7 @@
             this.Daten_andern_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.Daten_andern_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Daten_andern_Button.BorderRadius = 0;
-            this.Daten_andern_Button.ButtonText = "Edit profile";
+            this.Daten_andern_Button.ButtonText = "    Edit profile";
             this.Daten_andern_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Daten_andern_Button.DisabledColor = System.Drawing.Color.Gray;
             this.Daten_andern_Button.Dock = System.Windows.Forms.DockStyle.Top;
@@ -200,7 +164,7 @@
             this.Daten_andern_Button.selected = false;
             this.Daten_andern_Button.Size = new System.Drawing.Size(233, 48);
             this.Daten_andern_Button.TabIndex = 5;
-            this.Daten_andern_Button.Text = "Edit profile";
+            this.Daten_andern_Button.Text = "    Edit profile";
             this.Daten_andern_Button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Daten_andern_Button.Textcolor = System.Drawing.Color.White;
             this.Daten_andern_Button.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -212,7 +176,7 @@
             this.KalenderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.KalenderButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.KalenderButton.BorderRadius = 0;
-            this.KalenderButton.ButtonText = "Calendar";
+            this.KalenderButton.ButtonText = "  Calendar";
             this.KalenderButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.KalenderButton.DisabledColor = System.Drawing.Color.Gray;
             this.KalenderButton.Dock = System.Windows.Forms.DockStyle.Top;
@@ -237,7 +201,7 @@
             this.KalenderButton.selected = false;
             this.KalenderButton.Size = new System.Drawing.Size(233, 48);
             this.KalenderButton.TabIndex = 4;
-            this.KalenderButton.Text = "Calendar";
+            this.KalenderButton.Text = "  Calendar";
             this.KalenderButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.KalenderButton.Textcolor = System.Drawing.Color.White;
             this.KalenderButton.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -249,7 +213,7 @@
             this.btnMenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.btnMenue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMenue.BorderRadius = 0;
-            this.btnMenue.ButtonText = "Dashboard";
+            this.btnMenue.ButtonText = "    Dashboard";
             this.btnMenue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenue.DisabledColor = System.Drawing.Color.Gray;
             this.btnMenue.Dock = System.Windows.Forms.DockStyle.Top;
@@ -274,7 +238,7 @@
             this.btnMenue.selected = false;
             this.btnMenue.Size = new System.Drawing.Size(233, 48);
             this.btnMenue.TabIndex = 3;
-            this.btnMenue.Text = "Dashboard";
+            this.btnMenue.Text = "    Dashboard";
             this.btnMenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnMenue.Textcolor = System.Drawing.Color.White;
             this.btnMenue.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -405,7 +369,7 @@
             this.Beenden_Button.DisabledColor = System.Drawing.Color.Gray;
             this.Beenden_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Beenden_Button.Iconcolor = System.Drawing.Color.Transparent;
-            this.Beenden_Button.Iconimage = global::Unternehmen.Properties.Resources.logout;
+            this.Beenden_Button.Iconimage = null;
             this.Beenden_Button.Iconimage_right = null;
             this.Beenden_Button.Iconimage_right_Selected = null;
             this.Beenden_Button.Iconimage_Selected = null;
@@ -443,17 +407,6 @@
             this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
             this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
-            // Firmenlogo_pictureBox
-            // 
-            this.Firmenlogo_pictureBox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
-            this.Firmenlogo_pictureBox.Location = new System.Drawing.Point(70, 18);
-            this.Firmenlogo_pictureBox.Name = "Firmenlogo_pictureBox";
-            this.Firmenlogo_pictureBox.Size = new System.Drawing.Size(90, 90);
-            this.Firmenlogo_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Firmenlogo_pictureBox.TabIndex = 1;
-            this.Firmenlogo_pictureBox.TabStop = false;
-            this.Firmenlogo_pictureBox.Click += new System.EventHandler(this.btnMenue_Click);
-            // 
             // Aktive_Form_Name
             // 
             this.Aktive_Form_Name.AutoSize = true;
@@ -462,7 +415,7 @@
             this.Aktive_Form_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.Aktive_Form_Name.Location = new System.Drawing.Point(288, 52);
             this.Aktive_Form_Name.Name = "Aktive_Form_Name";
-            this.Aktive_Form_Name.Size = new System.Drawing.Size(123, 24);
+            this.Aktive_Form_Name.Size = new System.Drawing.Size(125, 25);
             this.Aktive_Form_Name.TabIndex = 1;
             this.Aktive_Form_Name.Text = "Dashboard";
             // 
@@ -485,10 +438,69 @@
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(239, 9);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(111, 13);
+            this.lbName.TabIndex = 6;
+            this.lbName.Text = "Mr. Max Lukas Stolz";
+            // 
+            // lbNow
+            // 
+            this.lbNow.AutoSize = true;
+            this.lbNow.Location = new System.Drawing.Point(932, 18);
+            this.lbNow.Name = "lbNow";
+            this.lbNow.Size = new System.Drawing.Size(40, 13);
+            this.lbNow.TabIndex = 4;
+            this.lbNow.Text = "label1";
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
+            // btnWebsite
+            // 
+            this.btnWebsite.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnWebsite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnWebsite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnWebsite.BorderRadius = 0;
+            this.btnWebsite.ButtonText = "Website";
+            this.btnWebsite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWebsite.DisabledColor = System.Drawing.Color.Gray;
+            this.btnWebsite.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnWebsite.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnWebsite.Iconimage = null;
+            this.btnWebsite.Iconimage_right = null;
+            this.btnWebsite.Iconimage_right_Selected = null;
+            this.btnWebsite.Iconimage_Selected = null;
+            this.btnWebsite.IconMarginLeft = 15;
+            this.btnWebsite.IconMarginRight = 0;
+            this.btnWebsite.IconRightVisible = true;
+            this.btnWebsite.IconRightZoom = 0D;
+            this.btnWebsite.IconVisible = true;
+            this.btnWebsite.IconZoom = 90D;
+            this.btnWebsite.IsTab = false;
+            this.btnWebsite.Location = new System.Drawing.Point(0, 192);
+            this.btnWebsite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnWebsite.Name = "btnWebsite";
+            this.btnWebsite.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnWebsite.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnWebsite.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
+            this.btnWebsite.selected = false;
+            this.btnWebsite.Size = new System.Drawing.Size(233, 48);
+            this.btnWebsite.TabIndex = 10;
+            this.btnWebsite.Text = "Website";
+            this.btnWebsite.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnWebsite.Textcolor = System.Drawing.Color.White;
+            this.btnWebsite.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWebsite.Click += new System.EventHandler(this.btnWebsite_Click);
+            // 
             // pcBProfil
             // 
-            this.pcBProfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.pcBProfil.Image = global::Unternehmen.Properties.Resources.ic_android_black_24dp;
+            this.pcBProfil.BackColor = System.Drawing.Color.White;
+            this.pcBProfil.Image = global::Unternehmen.Properties.Resources.User;
             this.pcBProfil.Location = new System.Drawing.Point(926, 52);
             this.pcBProfil.Name = "pcBProfil";
             this.pcBProfil.Size = new System.Drawing.Size(66, 50);
@@ -497,19 +509,10 @@
             this.pcBProfil.TabStop = false;
             this.pcBProfil.Click += new System.EventHandler(this.btnAndern_Click);
             // 
-            // lbNow
-            // 
-            this.lbNow.AutoSize = true;
-            this.lbNow.Location = new System.Drawing.Point(932, 18);
-            this.lbNow.Name = "lbNow";
-            this.lbNow.Size = new System.Drawing.Size(41, 16);
-            this.lbNow.TabIndex = 4;
-            this.lbNow.Text = "label1";
-            // 
             // pcBWebsite
             // 
-            this.pcBWebsite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.pcBWebsite.Image = global::Unternehmen.Properties.Resources.wifi;
+            this.pcBWebsite.BackColor = System.Drawing.Color.White;
+            this.pcBWebsite.Image = ((System.Drawing.Image)(resources.GetObject("pcBWebsite.Image")));
             this.pcBWebsite.Location = new System.Drawing.Point(1011, 52);
             this.pcBWebsite.Name = "pcBWebsite";
             this.pcBWebsite.Size = new System.Drawing.Size(66, 50);
@@ -520,8 +523,8 @@
             // 
             // pcBExit
             // 
-            this.pcBExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.pcBExit.Image = global::Unternehmen.Properties.Resources.logout;
+            this.pcBExit.BackColor = System.Drawing.Color.White;
+            this.pcBExit.Image = global::Unternehmen.Properties.Resources.exit;
             this.pcBExit.Location = new System.Drawing.Point(1103, 52);
             this.pcBExit.Name = "pcBExit";
             this.pcBExit.Size = new System.Drawing.Size(66, 50);
@@ -530,22 +533,20 @@
             this.pcBExit.TabStop = false;
             this.pcBExit.Click += new System.EventHandler(this.Beenden_Button_Click);
             // 
-            // timer
+            // Firmenlogo_pictureBox
             // 
-            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(239, 9);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(112, 16);
-            this.lbName.TabIndex = 6;
-            this.lbName.Text = "Mr. Max Lukas Stolz";
+            this.Firmenlogo_pictureBox.Image = global::Unternehmen.Properties.Resources.japanese_kanji;
+            this.Firmenlogo_pictureBox.Location = new System.Drawing.Point(70, 18);
+            this.Firmenlogo_pictureBox.Name = "Firmenlogo_pictureBox";
+            this.Firmenlogo_pictureBox.Size = new System.Drawing.Size(90, 90);
+            this.Firmenlogo_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Firmenlogo_pictureBox.TabIndex = 1;
+            this.Firmenlogo_pictureBox.TabStop = false;
+            this.Firmenlogo_pictureBox.Click += new System.EventHandler(this.btnMenue_Click);
             // 
             // Menue
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1181, 709);
             this.Controls.Add(this.panel2);
@@ -562,12 +563,12 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBProfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBWebsite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Firmenlogo_pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
