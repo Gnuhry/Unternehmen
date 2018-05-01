@@ -47,9 +47,9 @@
             this.txBeFeiertag = new System.Windows.Forms.TextBox();
             this.LBTagesplan = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Beenden_Label = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Beenden_Label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -120,9 +120,9 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(63, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 24;
-            this.label1.Text = "Illness:";
+            this.label1.Text = "Absent:";
             // 
             // btnZuruck
             // 
@@ -199,7 +199,7 @@
             this.chBLUrlaub.FormattingEnabled = true;
             this.chBLUrlaub.Location = new System.Drawing.Point(56, 193);
             this.chBLUrlaub.Name = "chBLUrlaub";
-            this.chBLUrlaub.Size = new System.Drawing.Size(90, 49);
+            this.chBLUrlaub.Size = new System.Drawing.Size(90, 36);
             this.chBLUrlaub.TabIndex = 31;
             this.chBLUrlaub.Visible = false;
             this.chBLUrlaub.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chBLUrlaub_ItemCheck);
@@ -247,6 +247,18 @@
             this.panel1.Size = new System.Drawing.Size(800, 57);
             this.panel1.TabIndex = 35;
             // 
+            // Beenden_Label
+            // 
+            this.Beenden_Label.AutoSize = true;
+            this.Beenden_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Beenden_Label.ForeColor = System.Drawing.Color.White;
+            this.Beenden_Label.Location = new System.Drawing.Point(766, 9);
+            this.Beenden_Label.Name = "Beenden_Label";
+            this.Beenden_Label.Size = new System.Drawing.Size(22, 25);
+            this.Beenden_Label.TabIndex = 28;
+            this.Beenden_Label.Text = "x";
+            this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -282,18 +294,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(439, 104);
             this.panel3.TabIndex = 37;
-            // 
-            // Beenden_Label
-            // 
-            this.Beenden_Label.AutoSize = true;
-            this.Beenden_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Beenden_Label.ForeColor = System.Drawing.Color.White;
-            this.Beenden_Label.Location = new System.Drawing.Point(766, 9);
-            this.Beenden_Label.Name = "Beenden_Label";
-            this.Beenden_Label.Size = new System.Drawing.Size(22, 25);
-            this.Beenden_Label.TabIndex = 28;
-            this.Beenden_Label.Text = "x";
-            this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
             // 
             // Tag
             // 

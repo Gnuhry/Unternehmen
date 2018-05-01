@@ -193,22 +193,13 @@
     <None Include="Resources\left-arrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\wifi-connection-signal-symbol %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Wifi_Black.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Wifi_Black1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Wifi_White.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\User.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wifi_Black.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

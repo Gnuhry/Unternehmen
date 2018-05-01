@@ -160,10 +160,10 @@
             // 
             this.lBoxAnzeige.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lBoxAnzeige.FormattingEnabled = true;
-            this.lBoxAnzeige.ItemHeight = 21;
+            this.lBoxAnzeige.ItemHeight = 20;
             this.lBoxAnzeige.Location = new System.Drawing.Point(3, 188);
             this.lBoxAnzeige.Name = "lBoxAnzeige";
-            this.lBoxAnzeige.Size = new System.Drawing.Size(172, 172);
+            this.lBoxAnzeige.Size = new System.Drawing.Size(172, 164);
             this.lBoxAnzeige.TabIndex = 24;
             this.lBoxAnzeige.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lBoxAnzeige_MouseDoubleClick);
             // 
@@ -240,7 +240,7 @@
             this.lbAbteilung.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAbteilung.Location = new System.Drawing.Point(278, 139);
             this.lbAbteilung.Name = "lbAbteilung";
-            this.lbAbteilung.Size = new System.Drawing.Size(82, 21);
+            this.lbAbteilung.Size = new System.Drawing.Size(81, 20);
             this.lbAbteilung.TabIndex = 7;
             this.lbAbteilung.Text = "ELEKtriker";
             // 
@@ -250,7 +250,7 @@
             this.lbTelefon.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTelefon.Location = new System.Drawing.Point(12, 130);
             this.lbTelefon.Name = "lbTelefon";
-            this.lbTelefon.Size = new System.Drawing.Size(118, 21);
+            this.lbTelefon.Size = new System.Drawing.Size(117, 20);
             this.lbTelefon.TabIndex = 6;
             this.lbTelefon.Text = "015209440971";
             // 
@@ -260,9 +260,9 @@
             this.lbHobby.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHobby.Location = new System.Drawing.Point(10, 172);
             this.lbHobby.Name = "lbHobby";
-            this.lbHobby.Size = new System.Drawing.Size(289, 21);
+            this.lbHobby.Size = new System.Drawing.Size(174, 20);
             this.lbHobby.TabIndex = 5;
-            this.lbHobby.Text = "Hobbies:Schwimmen und Basketball";
+            this.lbHobby.Text = "Hobbies: Schwimmen";
             // 
             // lbEmail
             // 
@@ -270,7 +270,7 @@
             this.lbEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmail.Location = new System.Drawing.Point(12, 98);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(207, 21);
+            this.lbEmail.Size = new System.Drawing.Size(206, 20);
             this.lbEmail.TabIndex = 4;
             this.lbEmail.Text = "Email: Trottel@blödian.de";
             // 
@@ -281,7 +281,7 @@
             this.lbGeburtstag.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.lbGeburtstag.Location = new System.Drawing.Point(12, 48);
             this.lbGeburtstag.Name = "lbGeburtstag";
-            this.lbGeburtstag.Size = new System.Drawing.Size(90, 21);
+            this.lbGeburtstag.Size = new System.Drawing.Size(89, 20);
             this.lbGeburtstag.TabIndex = 3;
             this.lbGeburtstag.Text = "24.01.2000";
             // 
@@ -291,7 +291,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(97, 252);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 21);
+            this.label1.Size = new System.Drawing.Size(161, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Ich Lebe wie ich will";
             // 
@@ -301,7 +301,7 @@
             this.lbInhaber.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInhaber.Location = new System.Drawing.Point(12, 21);
             this.lbInhaber.Name = "lbInhaber";
-            this.lbInhaber.Size = new System.Drawing.Size(154, 23);
+            this.lbInhaber.Size = new System.Drawing.Size(164, 22);
             this.lbInhaber.TabIndex = 1;
             this.lbInhaber.Text = "Max Lukas Stolz";
             // 

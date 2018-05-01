@@ -41,6 +41,8 @@
             this.lbStatus = new System.Windows.Forms.Label();
             this.pcBProfil = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.rbtFrau = new System.Windows.Forms.RadioButton();
+            this.rbtMann = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.txBTelefon = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txBHobbys = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -59,8 +61,6 @@
             this.btnAndern = new System.Windows.Forms.Button();
             this.txBStatus = new System.Windows.Forms.TextBox();
             this.btnProfilbildHochladen = new System.Windows.Forms.Button();
-            this.rbtMann = new System.Windows.Forms.RadioButton();
-            this.rbtFrau = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBProfil)).BeginInit();
@@ -73,7 +73,7 @@
             this.lbInhaber.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInhaber.Location = new System.Drawing.Point(12, 21);
             this.lbInhaber.Name = "lbInhaber";
-            this.lbInhaber.Size = new System.Drawing.Size(154, 23);
+            this.lbInhaber.Size = new System.Drawing.Size(164, 22);
             this.lbInhaber.TabIndex = 1;
             this.lbInhaber.Text = "Max Lukas Stolz";
             this.lbInhaber.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
@@ -136,7 +136,7 @@
             this.lbAbteilung.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAbteilung.Location = new System.Drawing.Point(278, 139);
             this.lbAbteilung.Name = "lbAbteilung";
-            this.lbAbteilung.Size = new System.Drawing.Size(82, 21);
+            this.lbAbteilung.Size = new System.Drawing.Size(81, 20);
             this.lbAbteilung.TabIndex = 7;
             this.lbAbteilung.Text = "ELEKtriker";
             this.lbAbteilung.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
@@ -149,7 +149,7 @@
             this.lbTelefon.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTelefon.Location = new System.Drawing.Point(12, 130);
             this.lbTelefon.Name = "lbTelefon";
-            this.lbTelefon.Size = new System.Drawing.Size(118, 21);
+            this.lbTelefon.Size = new System.Drawing.Size(117, 20);
             this.lbTelefon.TabIndex = 6;
             this.lbTelefon.Text = "015209440971";
             this.lbTelefon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
@@ -162,7 +162,7 @@
             this.lbHobby.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHobby.Location = new System.Drawing.Point(10, 172);
             this.lbHobby.Name = "lbHobby";
-            this.lbHobby.Size = new System.Drawing.Size(289, 21);
+            this.lbHobby.Size = new System.Drawing.Size(288, 20);
             this.lbHobby.TabIndex = 5;
             this.lbHobby.Text = "Hobbies:Schwimmen und Basketball";
             this.lbHobby.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
@@ -175,7 +175,7 @@
             this.lbEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmail.Location = new System.Drawing.Point(12, 98);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(207, 21);
+            this.lbEmail.Size = new System.Drawing.Size(206, 20);
             this.lbEmail.TabIndex = 4;
             this.lbEmail.Text = "Email: Trottel@blödian.de";
             this.lbEmail.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
@@ -189,7 +189,7 @@
             this.lbGeburtstag.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.lbGeburtstag.Location = new System.Drawing.Point(12, 48);
             this.lbGeburtstag.Name = "lbGeburtstag";
-            this.lbGeburtstag.Size = new System.Drawing.Size(90, 21);
+            this.lbGeburtstag.Size = new System.Drawing.Size(89, 20);
             this.lbGeburtstag.TabIndex = 3;
             this.lbGeburtstag.Text = "24.01.2000";
             this.lbGeburtstag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
@@ -202,7 +202,7 @@
             this.lbStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStatus.Location = new System.Drawing.Point(97, 252);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(162, 21);
+            this.lbStatus.Size = new System.Drawing.Size(161, 20);
             this.lbStatus.TabIndex = 2;
             this.lbStatus.Text = "Ich Lebe wie ich will";
             this.lbStatus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bewegen_MouseDown);
@@ -249,6 +249,32 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(388, 393);
             this.panel3.TabIndex = 4;
+            // 
+            // rbtFrau
+            // 
+            this.rbtFrau.AutoSize = true;
+            this.rbtFrau.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtFrau.Location = new System.Drawing.Point(106, 292);
+            this.rbtFrau.Name = "rbtFrau";
+            this.rbtFrau.Size = new System.Drawing.Size(64, 17);
+            this.rbtFrau.TabIndex = 53;
+            this.rbtFrau.TabStop = true;
+            this.rbtFrau.Text = "Female";
+            this.rbtFrau.UseVisualStyleBackColor = true;
+            this.rbtFrau.CheckedChanged += new System.EventHandler(this.rbtFrau_CheckedChanged);
+            // 
+            // rbtMann
+            // 
+            this.rbtMann.AutoSize = true;
+            this.rbtMann.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtMann.Location = new System.Drawing.Point(6, 292);
+            this.rbtMann.Name = "rbtMann";
+            this.rbtMann.Size = new System.Drawing.Size(53, 17);
+            this.rbtMann.TabIndex = 52;
+            this.rbtMann.TabStop = true;
+            this.rbtMann.Text = "Male";
+            this.rbtMann.UseVisualStyleBackColor = true;
+            this.rbtMann.CheckedChanged += new System.EventHandler(this.rbtMann_CheckedChanged);
             // 
             // button1
             // 
@@ -330,7 +356,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(273, 208);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 16);
+            this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 47;
             this.label3.Text = "Status";
             // 
@@ -456,7 +482,7 @@
             this.cBoxJahr.FormattingEnabled = true;
             this.cBoxJahr.Location = new System.Drawing.Point(5, 261);
             this.cBoxJahr.Name = "cBoxJahr";
-            this.cBoxJahr.Size = new System.Drawing.Size(121, 24);
+            this.cBoxJahr.Size = new System.Drawing.Size(121, 21);
             this.cBoxJahr.TabIndex = 34;
             this.cBoxJahr.SelectedIndexChanged += new System.EventHandler(this.cBoxJahr_SelectedIndexChanged);
             // 
@@ -479,7 +505,7 @@
             "Dezember"});
             this.cBoxMonat.Location = new System.Drawing.Point(5, 234);
             this.cBoxMonat.Name = "cBoxMonat";
-            this.cBoxMonat.Size = new System.Drawing.Size(121, 24);
+            this.cBoxMonat.Size = new System.Drawing.Size(121, 21);
             this.cBoxMonat.TabIndex = 33;
             this.cBoxMonat.SelectedIndexChanged += new System.EventHandler(this.cBoxMonat_SelectedIndexChanged);
             // 
@@ -489,7 +515,7 @@
             this.cBoxTag.FormattingEnabled = true;
             this.cBoxTag.Location = new System.Drawing.Point(5, 207);
             this.cBoxTag.Name = "cBoxTag";
-            this.cBoxTag.Size = new System.Drawing.Size(49, 24);
+            this.cBoxTag.Size = new System.Drawing.Size(49, 21);
             this.cBoxTag.TabIndex = 32;
             this.cBoxTag.SelectedIndexChanged += new System.EventHandler(this.cBoxTag_SelectedIndexChanged);
             // 
@@ -500,7 +526,7 @@
             this.lbFehlermeldung.ForeColor = System.Drawing.Color.Red;
             this.lbFehlermeldung.Location = new System.Drawing.Point(3, 317);
             this.lbFehlermeldung.Name = "lbFehlermeldung";
-            this.lbFehlermeldung.Size = new System.Drawing.Size(36, 17);
+            this.lbFehlermeldung.Size = new System.Drawing.Size(36, 16);
             this.lbFehlermeldung.TabIndex = 8;
             this.lbFehlermeldung.Text = "Error";
             // 
@@ -541,30 +567,6 @@
             this.btnProfilbildHochladen.Text = "Upload";
             this.btnProfilbildHochladen.UseVisualStyleBackColor = false;
             this.btnProfilbildHochladen.Click += new System.EventHandler(this.btnProfilbildHochladen_Click);
-            // 
-            // rbtMann
-            // 
-            this.rbtMann.AutoSize = true;
-            this.rbtMann.Location = new System.Drawing.Point(6, 292);
-            this.rbtMann.Name = "rbtMann";
-            this.rbtMann.Size = new System.Drawing.Size(85, 17);
-            this.rbtMann.TabIndex = 52;
-            this.rbtMann.TabStop = true;
-            this.rbtMann.Text = "radioButton1";
-            this.rbtMann.UseVisualStyleBackColor = true;
-            this.rbtMann.CheckedChanged += new System.EventHandler(this.rbtMann_CheckedChanged);
-            // 
-            // rbtFrau
-            // 
-            this.rbtFrau.AutoSize = true;
-            this.rbtFrau.Location = new System.Drawing.Point(98, 292);
-            this.rbtFrau.Name = "rbtFrau";
-            this.rbtFrau.Size = new System.Drawing.Size(85, 17);
-            this.rbtFrau.TabIndex = 53;
-            this.rbtFrau.TabStop = true;
-            this.rbtFrau.Text = "radioButton2";
-            this.rbtFrau.UseVisualStyleBackColor = true;
-            this.rbtFrau.CheckedChanged += new System.EventHandler(this.rbtFrau_CheckedChanged);
             // 
             // ProfilAnzeige
             // 
