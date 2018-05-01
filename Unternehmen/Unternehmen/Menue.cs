@@ -39,10 +39,10 @@ namespace Unternehmen
             }
             catch (Exception)
             {
-                MessageBox.Show("Es gibt einen Fehler! Wenden sie ich an den Admin!");
+                MessageBox.Show("Error! Please Contact an Adminstrator!");
                 Konto temp = new Konto();
                 temp.Registrieren("System", "System", "System01", DateTime.Today, null,true, true);
-                verwaltung.GetFirma().ReciveAdminNachricht("Fehler 01-Web", null, temp);
+                verwaltung.GetFirma().ReciveAdminNachricht("Error 01-Web", null, temp);
             }
         }
 

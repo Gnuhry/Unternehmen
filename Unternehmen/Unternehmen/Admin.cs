@@ -82,7 +82,7 @@ namespace Unternehmen
         private void comBMitarbeiter_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnAktivieren.Enabled = btnFeuern.Enabled = btnPassword.Enabled = btnSperren.Enabled = btnEinsehen.Enabled = true;
-            if (verwaltung.GetFirma().GetMitarbeiter(comBMitarbeiter.SelectedIndex + 1).GetStatus() != "gesperrt")
+            if (verwaltung.GetFirma().GetMitarbeiter(comBMitarbeiter.SelectedIndex + 1).GetStatus() != "Locked")
                 btnAktivieren.Enabled = false;
             else
                 btnSperren.Enabled = false;

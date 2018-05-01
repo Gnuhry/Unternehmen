@@ -302,13 +302,13 @@ namespace Unternehmen
         private void txBTelefon_TextChanged(object sender, EventArgs e)
         {
             angemeldet.Telefon1 = txBTelefon.Text;
-            lbTelefon.Text = "telefon-nbr.:"+txBTelefon.Text;
+            lbTelefon.Text = "Phone Nr:"+txBTelefon.Text;
         }
 
         private void txBAbteilung_TextChanged(object sender, EventArgs e)
         {
             angemeldet.Abteilung1 = txBAbteilung.Text;
-            lbAbteilung.Text = "work: "+txBAbteilung.Text;
+            lbAbteilung.Text = "Work: "+txBAbteilung.Text;
         }
 
         private void txBHobbys_TextChanged(object sender, EventArgs e)
@@ -320,7 +320,7 @@ namespace Unternehmen
         private void txBEmail_TextChanged(object sender, EventArgs e)
         {
             angemeldet.Email1 = txBEmail.Text;
-            lbEmail.Text = "E-Mail-adress: "+txBEmail.Text;
+            lbEmail.Text = "E-Mail: "+txBEmail.Text;
         }
 
         private void ProfilAnzeige_FormClosing(object sender, FormClosingEventArgs e)

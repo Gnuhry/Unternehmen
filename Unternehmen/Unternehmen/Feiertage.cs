@@ -63,7 +63,7 @@ namespace Unternehmen
             Feiertag[count] = Feiertag[0].AddDays(50); Feiertagname[count++] = "Pfingstmontag";
             Feiertag[count] = Feiertag[0].AddDays(60); Feiertagname[count++] = "Fronleichnam";
 
-            Feiertag[count] = Feiertag[count].AddDays(23); Feiertag[count] = Feiertag[count].AddMonths(11); Feiertagname[count++] = "Heilg Abend";
+            Feiertag[count] = Feiertag[count].AddDays(23); Feiertag[count] = Feiertag[count].AddMonths(11); Feiertagname[count++] = "Heilig Abend";
             DateTime weih = Feiertag[count - 1];
             for (int f = 0; f < 6; f++)
             {

@@ -34,7 +34,7 @@ namespace Unternehmen
                 case 0: verwaltung.Menue(); break;
                 case -1: lbFehlermeldung.Text="wrong username"; break;
                 case -2: lbFehlermeldung.Text="wrong password"; break;
-                case -3: lbFehlermeldung.Text="konto is locked, please contact an administrator"; break;
+                case -3: lbFehlermeldung.Text="Account is locked, please contact an administrator"; break;
             }
             txBpasswort.Text = txBbenutzername.Text = null;
         }

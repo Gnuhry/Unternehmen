@@ -69,7 +69,7 @@
             this.btnKrank.Name = "btnKrank";
             this.btnKrank.Size = new System.Drawing.Size(172, 50);
             this.btnKrank.TabIndex = 20;
-            this.btnKrank.Text = "Krankentage bestätigen";
+            this.btnKrank.Text = "Accept";
             this.btnKrank.UseVisualStyleBackColor = false;
             this.btnKrank.Click += new System.EventHandler(this.btnKrankentage_Click);
             // 
@@ -101,7 +101,7 @@
             this.btnZeiten.Name = "btnZeiten";
             this.btnZeiten.Size = new System.Drawing.Size(172, 34);
             this.btnZeiten.TabIndex = 17;
-            this.btnZeiten.Text = "Zeiten einsehen";
+            this.btnZeiten.Text = "Check Worktimes";
             this.btnZeiten.UseVisualStyleBackColor = false;
             this.btnZeiten.Click += new System.EventHandler(this.btnZeiten_Click);
             // 
@@ -115,7 +115,7 @@
             this.btnGehen.Name = "btnGehen";
             this.btnGehen.Size = new System.Drawing.Size(172, 34);
             this.btnGehen.TabIndex = 16;
-            this.btnGehen.Text = "Gehen";
+            this.btnGehen.Text = "Absent";
             this.btnGehen.UseVisualStyleBackColor = false;
             this.btnGehen.Click += new System.EventHandler(this.btnGehen_Click);
             // 
@@ -129,7 +129,7 @@
             this.btnAnwesend.Name = "btnAnwesend";
             this.btnAnwesend.Size = new System.Drawing.Size(172, 34);
             this.btnAnwesend.TabIndex = 15;
-            this.btnAnwesend.Text = "Anwesend";
+            this.btnAnwesend.Text = "Present";
             this.btnAnwesend.UseVisualStyleBackColor = false;
             this.btnAnwesend.Click += new System.EventHandler(this.btnAnwesend_Click);
             // 
@@ -143,7 +143,7 @@
             this.btnBescheinigung.Name = "btnBescheinigung";
             this.btnBescheinigung.Size = new System.Drawing.Size(172, 58);
             this.btnBescheinigung.TabIndex = 22;
-            this.btnBescheinigung.Text = "Krankenbescheinigung hochladen";
+            this.btnBescheinigung.Text = "Upload";
             this.btnBescheinigung.UseVisualStyleBackColor = false;
             this.btnBescheinigung.Click += new System.EventHandler(this.btnBescheinigung_Click);
             // 
@@ -291,9 +291,9 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(97, 252);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 20);
+            this.label1.Size = new System.Drawing.Size(58, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Ich Lebe wie ich will";
+            this.label1.Text = "Status";
             // 
             // lbInhaber
             // 
