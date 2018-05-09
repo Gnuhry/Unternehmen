@@ -47,9 +47,9 @@
             this.txBeFeiertag = new System.Windows.Forms.TextBox();
             this.LBTagesplan = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Beenden_Label = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Beenden_Label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -61,7 +61,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(191, 203);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 13);
+            this.label5.Size = new System.Drawing.Size(80, 15);
             this.label5.TabIndex = 30;
             this.label5.Text = "Global Notes:";
             // 
@@ -80,7 +80,7 @@
             this.lbFeiertag.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFeiertag.Location = new System.Drawing.Point(153, 53);
             this.lbFeiertag.Name = "lbFeiertag";
-            this.lbFeiertag.Size = new System.Drawing.Size(49, 13);
+            this.lbFeiertag.Size = new System.Drawing.Size(50, 16);
             this.lbFeiertag.TabIndex = 28;
             this.lbFeiertag.Text = "Neujahr";
             // 
@@ -90,7 +90,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(191, 81);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.Size = new System.Drawing.Size(41, 15);
             this.label4.TabIndex = 27;
             this.label4.Text = "Notes:";
             // 
@@ -100,7 +100,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(63, 260);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.Size = new System.Drawing.Size(54, 15);
             this.label3.TabIndex = 26;
             this.label3.Text = "Birthday:";
             // 
@@ -110,7 +110,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(65, 180);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(47, 15);
             this.label2.TabIndex = 25;
             this.label2.Text = "Day off:";
             // 
@@ -120,13 +120,13 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(63, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(42, 15);
             this.label1.TabIndex = 24;
             this.label1.Text = "Illness:";
             // 
             // btnZuruck
             // 
-            this.btnZuruck.Location = new System.Drawing.Point(56, 25);
+            this.btnZuruck.Location = new System.Drawing.Point(246, 13);
             this.btnZuruck.Name = "btnZuruck";
             this.btnZuruck.Size = new System.Drawing.Size(25, 23);
             this.btnZuruck.TabIndex = 23;
@@ -136,7 +136,7 @@
             // 
             // btnVor
             // 
-            this.btnVor.Location = new System.Drawing.Point(296, 25);
+            this.btnVor.Location = new System.Drawing.Point(417, 17);
             this.btnVor.Name = "btnVor";
             this.btnVor.Size = new System.Drawing.Size(28, 23);
             this.btnVor.TabIndex = 22;
@@ -150,7 +150,7 @@
             this.lbGeburtstag.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGeburtstag.Location = new System.Drawing.Point(63, 276);
             this.lbGeburtstag.Name = "lbGeburtstag";
-            this.lbGeburtstag.Size = new System.Drawing.Size(75, 26);
+            this.lbGeburtstag.Size = new System.Drawing.Size(76, 32);
             this.lbGeburtstag.TabIndex = 21;
             this.lbGeburtstag.Text = "Lennard (18)\r\nLukas (19)\r\n";
             // 
@@ -169,7 +169,7 @@
             this.lbUrlaub.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUrlaub.Location = new System.Drawing.Point(71, 193);
             this.lbUrlaub.Name = "lbUrlaub";
-            this.lbUrlaub.Size = new System.Drawing.Size(38, 39);
+            this.lbUrlaub.Size = new System.Drawing.Size(39, 48);
             this.lbUrlaub.TabIndex = 19;
             this.lbUrlaub.Text = "Timon\r\nJonas\r\nFelix\r\n";
             // 
@@ -179,7 +179,7 @@
             this.lbKrank.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbKrank.Location = new System.Drawing.Point(65, 93);
             this.lbKrank.Name = "lbKrank";
-            this.lbKrank.Size = new System.Drawing.Size(47, 65);
+            this.lbKrank.Size = new System.Drawing.Size(48, 80);
             this.lbKrank.TabIndex = 18;
             this.lbKrank.Text = "Günter\r\nHerbert\r\nKlaus\r\nMickey\r\nMax K.";
             // 
@@ -187,9 +187,9 @@
             // 
             this.lbWochentag.AutoSize = true;
             this.lbWochentag.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWochentag.Location = new System.Drawing.Point(130, 25);
+            this.lbWochentag.Location = new System.Drawing.Point(282, 17);
             this.lbWochentag.Name = "lbWochentag";
-            this.lbWochentag.Size = new System.Drawing.Size(128, 13);
+            this.lbWochentag.Size = new System.Drawing.Size(129, 16);
             this.lbWochentag.TabIndex = 17;
             this.lbWochentag.Text = "Montag 1.Januar 2000";
             // 
@@ -199,7 +199,7 @@
             this.chBLUrlaub.FormattingEnabled = true;
             this.chBLUrlaub.Location = new System.Drawing.Point(56, 193);
             this.chBLUrlaub.Name = "chBLUrlaub";
-            this.chBLUrlaub.Size = new System.Drawing.Size(90, 49);
+            this.chBLUrlaub.Size = new System.Drawing.Size(90, 36);
             this.chBLUrlaub.TabIndex = 31;
             this.chBLUrlaub.Visible = false;
             this.chBLUrlaub.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chBLUrlaub_ItemCheck);
@@ -210,7 +210,7 @@
             this.chBeFeiertag.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chBeFeiertag.Location = new System.Drawing.Point(56, 3);
             this.chBeFeiertag.Name = "chBeFeiertag";
-            this.chBeFeiertag.Size = new System.Drawing.Size(48, 17);
+            this.chBeFeiertag.Size = new System.Drawing.Size(49, 20);
             this.chBeFeiertag.TabIndex = 32;
             this.chBeFeiertag.Text = "Free";
             this.chBeFeiertag.UseVisualStyleBackColor = true;
@@ -231,21 +231,37 @@
             // 
             this.LBTagesplan.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBTagesplan.FormattingEnabled = true;
+            this.LBTagesplan.ItemHeight = 16;
             this.LBTagesplan.Location = new System.Drawing.Point(93, 6);
             this.LBTagesplan.Name = "LBTagesplan";
-            this.LBTagesplan.Size = new System.Drawing.Size(218, 95);
+            this.LBTagesplan.Size = new System.Drawing.Size(218, 84);
             this.LBTagesplan.TabIndex = 34;
             this.LBTagesplan.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LBTagesplan_MouseDoubleClick);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.Beenden_Label);
+            this.panel1.Controls.Add(this.lbWochentag);
+            this.panel1.Controls.Add(this.btnVor);
+            this.panel1.Controls.Add(this.btnZuruck);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 57);
             this.panel1.TabIndex = 35;
+            // 
+            // Beenden_Label
+            // 
+            this.Beenden_Label.AutoSize = true;
+            this.Beenden_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Beenden_Label.ForeColor = System.Drawing.Color.White;
+            this.Beenden_Label.Location = new System.Drawing.Point(766, 9);
+            this.Beenden_Label.Name = "Beenden_Label";
+            this.Beenden_Label.Size = new System.Drawing.Size(20, 24);
+            this.Beenden_Label.TabIndex = 28;
+            this.Beenden_Label.Text = "x";
+            this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
             // 
             // panel2
             // 
@@ -254,7 +270,6 @@
             this.panel2.Controls.Add(this.txBGNtz);
             this.panel2.Controls.Add(this.txBeFeiertag);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.lbWochentag);
             this.panel2.Controls.Add(this.lbKrank);
             this.panel2.Controls.Add(this.lbFeiertag);
             this.panel2.Controls.Add(this.lbUrlaub);
@@ -263,9 +278,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.lbGeburtstag);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.btnVor);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.btnZuruck);
             this.panel2.Controls.Add(this.chBLUrlaub);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 57);
@@ -282,18 +295,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(439, 104);
             this.panel3.TabIndex = 37;
-            // 
-            // Beenden_Label
-            // 
-            this.Beenden_Label.AutoSize = true;
-            this.Beenden_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Beenden_Label.ForeColor = System.Drawing.Color.White;
-            this.Beenden_Label.Location = new System.Drawing.Point(766, 9);
-            this.Beenden_Label.Name = "Beenden_Label";
-            this.Beenden_Label.Size = new System.Drawing.Size(22, 25);
-            this.Beenden_Label.TabIndex = 28;
-            this.Beenden_Label.Text = "x";
-            this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
             // 
             // Tag
             // 

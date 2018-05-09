@@ -58,22 +58,23 @@
             this.comBEmpfanger.FormattingEnabled = true;
             this.comBEmpfanger.Location = new System.Drawing.Point(256, 51);
             this.comBEmpfanger.Name = "comBEmpfanger";
-            this.comBEmpfanger.Size = new System.Drawing.Size(147, 21);
+            this.comBEmpfanger.Size = new System.Drawing.Size(147, 24);
             this.comBEmpfanger.TabIndex = 0;
             // 
             // lBoxNachrichten
             // 
             this.lBoxNachrichten.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lBoxNachrichten.FormattingEnabled = true;
+            this.lBoxNachrichten.ItemHeight = 16;
             this.lBoxNachrichten.Location = new System.Drawing.Point(45, 51);
             this.lBoxNachrichten.Name = "lBoxNachrichten";
-            this.lBoxNachrichten.Size = new System.Drawing.Size(289, 95);
+            this.lBoxNachrichten.Size = new System.Drawing.Size(289, 84);
             this.lBoxNachrichten.TabIndex = 1;
             // 
             // txBNachricht
             // 
             this.txBNachricht.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txBNachricht.Location = new System.Drawing.Point(57, 37);
+            this.txBNachricht.Location = new System.Drawing.Point(46, 40);
             this.txBNachricht.Multiline = true;
             this.txBNachricht.Name = "txBNachricht";
             this.txBNachricht.Size = new System.Drawing.Size(193, 143);
@@ -81,7 +82,7 @@
             // 
             // btnSenden
             // 
-            this.btnSenden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnSenden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnSenden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSenden.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSenden.ForeColor = System.Drawing.Color.White;
@@ -95,7 +96,7 @@
             // 
             // btnBildHochladen
             // 
-            this.btnBildHochladen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnBildHochladen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnBildHochladen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBildHochladen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBildHochladen.ForeColor = System.Drawing.Color.White;
@@ -109,7 +110,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -125,7 +126,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(707, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 25);
+            this.label3.Size = new System.Drawing.Size(86, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "Outbox";
             // 
@@ -136,13 +137,13 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 25);
+            this.label2.Size = new System.Drawing.Size(66, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Inbox";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(388, 57);
             this.panel2.Name = "panel2";
@@ -186,11 +187,11 @@
             // 
             // btnLoschen
             // 
-            this.btnLoschen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnLoschen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnLoschen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoschen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoschen.ForeColor = System.Drawing.Color.White;
-            this.btnLoschen.Location = new System.Drawing.Point(45, 431);
+            this.btnLoschen.Location = new System.Drawing.Point(166, 289);
             this.btnLoschen.Name = "btnLoschen";
             this.btnLoschen.Size = new System.Drawing.Size(172, 34);
             this.btnLoschen.TabIndex = 6;
@@ -201,7 +202,7 @@
             // 
             // pcBAnhangEingang
             // 
-            this.pcBAnhangEingang.Location = new System.Drawing.Point(45, 375);
+            this.pcBAnhangEingang.Location = new System.Drawing.Point(45, 273);
             this.pcBAnhangEingang.Name = "pcBAnhangEingang";
             this.pcBAnhangEingang.Size = new System.Drawing.Size(100, 50);
             this.pcBAnhangEingang.TabIndex = 5;
@@ -214,7 +215,7 @@
             this.lbSendeDatum.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSendeDatum.Location = new System.Drawing.Point(163, 202);
             this.lbSendeDatum.Name = "lbSendeDatum";
-            this.lbSendeDatum.Size = new System.Drawing.Size(40, 13);
+            this.lbSendeDatum.Size = new System.Drawing.Size(41, 16);
             this.lbSendeDatum.TabIndex = 4;
             this.lbSendeDatum.Text = "label1";
             this.lbSendeDatum.Visible = false;
@@ -225,7 +226,7 @@
             this.lbNachricht.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNachricht.Location = new System.Drawing.Point(42, 238);
             this.lbNachricht.Name = "lbNachricht";
-            this.lbNachricht.Size = new System.Drawing.Size(40, 13);
+            this.lbNachricht.Size = new System.Drawing.Size(41, 16);
             this.lbNachricht.TabIndex = 3;
             this.lbNachricht.Text = "label4";
             this.lbNachricht.Visible = false;
@@ -236,7 +237,7 @@
             this.lbSender.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSender.Location = new System.Drawing.Point(42, 202);
             this.lbSender.Name = "lbSender";
-            this.lbSender.Size = new System.Drawing.Size(40, 13);
+            this.lbSender.Size = new System.Drawing.Size(41, 16);
             this.lbSender.TabIndex = 2;
             this.lbSender.Text = "label1";
             this.lbSender.Visible = false;

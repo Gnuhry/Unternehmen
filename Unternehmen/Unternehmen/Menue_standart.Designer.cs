@@ -60,7 +60,7 @@
             // 
             // btnKrank
             // 
-            this.btnKrank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnKrank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnKrank.Enabled = false;
             this.btnKrank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKrank.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,7 +93,7 @@
             // 
             // btnZeiten
             // 
-            this.btnZeiten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnZeiten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnZeiten.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnZeiten.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnZeiten.ForeColor = System.Drawing.Color.White;
@@ -107,7 +107,7 @@
             // 
             // btnGehen
             // 
-            this.btnGehen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnGehen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnGehen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGehen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGehen.ForeColor = System.Drawing.Color.White;
@@ -121,7 +121,7 @@
             // 
             // btnAnwesend
             // 
-            this.btnAnwesend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnAnwesend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnAnwesend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnwesend.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnwesend.ForeColor = System.Drawing.Color.White;
@@ -135,7 +135,7 @@
             // 
             // btnBescheinigung
             // 
-            this.btnBescheinigung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnBescheinigung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnBescheinigung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBescheinigung.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBescheinigung.ForeColor = System.Drawing.Color.White;
@@ -318,7 +318,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);

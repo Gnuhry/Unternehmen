@@ -56,7 +56,7 @@ namespace Unternehmen
 
         private void Beenden_Button_Click(object sender, EventArgs e)
         {
-            Beenden_Button.Enabled = false;
+          //  Beenden_Button.Enabled = false;
             Close();
         }
 

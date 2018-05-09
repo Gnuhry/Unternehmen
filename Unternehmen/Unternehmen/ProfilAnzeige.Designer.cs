@@ -30,6 +30,7 @@
         {
             this.lbInhaber = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Beenden_Label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -44,16 +45,16 @@
             this.rbtFrau = new System.Windows.Forms.RadioButton();
             this.rbtMann = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.txBTelefon = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txBHobbys = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txBInhaber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txBTelefon = new System.Windows.Forms.TextBox();
+            this.txBHobbys = new System.Windows.Forms.TextBox();
+            this.txBInhaber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txBEmail = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txBAbteilung = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txBPasswortA = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txBPasswort2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txBPasswort = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txBBenutzername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txBEmail = new System.Windows.Forms.TextBox();
+            this.txBAbteilung = new System.Windows.Forms.TextBox();
+            this.txBPasswortA = new System.Windows.Forms.TextBox();
+            this.txBPasswort2 = new System.Windows.Forms.TextBox();
+            this.txBPasswort = new System.Windows.Forms.TextBox();
+            this.txBBenutzername = new System.Windows.Forms.TextBox();
             this.cBoxJahr = new System.Windows.Forms.ComboBox();
             this.cBoxMonat = new System.Windows.Forms.ComboBox();
             this.cBoxTag = new System.Windows.Forms.ComboBox();
@@ -61,7 +62,6 @@
             this.btnAndern = new System.Windows.Forms.Button();
             this.txBStatus = new System.Windows.Forms.TextBox();
             this.btnProfilbildHochladen = new System.Windows.Forms.Button();
-            this.Beenden_Label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBProfil)).BeginInit();
@@ -92,6 +92,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 57);
             this.panel1.TabIndex = 2;
+            // 
+            // Beenden_Label
+            // 
+            this.Beenden_Label.AutoSize = true;
+            this.Beenden_Label.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Beenden_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Beenden_Label.ForeColor = System.Drawing.Color.White;
+            this.Beenden_Label.Location = new System.Drawing.Point(780, 0);
+            this.Beenden_Label.Name = "Beenden_Label";
+            this.Beenden_Label.Size = new System.Drawing.Size(20, 24);
+            this.Beenden_Label.TabIndex = 28;
+            this.Beenden_Label.Text = "x";
+            this.Beenden_Label.Visible = false;
+            this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
             // 
             // label2
             // 
@@ -297,60 +311,36 @@
             this.txBTelefon.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txBTelefon.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txBTelefon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txBTelefon.HintForeColor = System.Drawing.Color.Silver;
-            this.txBTelefon.HintText = "Tele-Number";
-            this.txBTelefon.isPassword = false;
-            this.txBTelefon.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBTelefon.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBTelefon.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBTelefon.LineThickness = 3;
             this.txBTelefon.Location = new System.Drawing.Point(4, 47);
             this.txBTelefon.Margin = new System.Windows.Forms.Padding(4);
             this.txBTelefon.Name = "txBTelefon";
-            this.txBTelefon.Size = new System.Drawing.Size(136, 33);
+            this.txBTelefon.Size = new System.Drawing.Size(136, 23);
             this.txBTelefon.TabIndex = 50;
-            this.txBTelefon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txBTelefon.OnValueChanged += new System.EventHandler(this.txBTelefon_TextChanged);
+            this.txBTelefon.TextChanged += new System.EventHandler(this.txBTelefon_TextChanged);
             // 
             // txBHobbys
             // 
             this.txBHobbys.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txBHobbys.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txBHobbys.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txBHobbys.HintForeColor = System.Drawing.Color.Silver;
-            this.txBHobbys.HintText = "Hobbies";
-            this.txBHobbys.isPassword = false;
-            this.txBHobbys.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBHobbys.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBHobbys.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBHobbys.LineThickness = 3;
             this.txBHobbys.Location = new System.Drawing.Point(4, 167);
             this.txBHobbys.Margin = new System.Windows.Forms.Padding(4);
             this.txBHobbys.Name = "txBHobbys";
-            this.txBHobbys.Size = new System.Drawing.Size(136, 33);
+            this.txBHobbys.Size = new System.Drawing.Size(136, 23);
             this.txBHobbys.TabIndex = 49;
-            this.txBHobbys.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txBHobbys.OnValueChanged += new System.EventHandler(this.txBHobbys_TextChanged);
+            this.txBHobbys.TextChanged += new System.EventHandler(this.txBHobbys_TextChanged);
             // 
             // txBInhaber
             // 
             this.txBInhaber.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txBInhaber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txBInhaber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txBInhaber.HintForeColor = System.Drawing.Color.Silver;
-            this.txBInhaber.HintText = "Ownername";
-            this.txBInhaber.isPassword = false;
-            this.txBInhaber.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBInhaber.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBInhaber.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBInhaber.LineThickness = 3;
-            this.txBInhaber.Location = new System.Drawing.Point(4, 10);
+            this.txBInhaber.Location = new System.Drawing.Point(6, 16);
             this.txBInhaber.Margin = new System.Windows.Forms.Padding(4);
             this.txBInhaber.Name = "txBInhaber";
-            this.txBInhaber.Size = new System.Drawing.Size(136, 33);
+            this.txBInhaber.Size = new System.Drawing.Size(136, 23);
             this.txBInhaber.TabIndex = 48;
-            this.txBInhaber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txBInhaber.OnValueChanged += new System.EventHandler(this.txBInhaber_TextChanged_1);
+            this.txBInhaber.TextChanged += new System.EventHandler(this.txBInhaber_TextChanged_1);
             // 
             // label3
             // 
@@ -367,116 +357,68 @@
             this.txBEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txBEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txBEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txBEmail.HintForeColor = System.Drawing.Color.Silver;
-            this.txBEmail.HintText = "Email";
-            this.txBEmail.isPassword = false;
-            this.txBEmail.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBEmail.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBEmail.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBEmail.LineThickness = 3;
             this.txBEmail.Location = new System.Drawing.Point(4, 126);
             this.txBEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txBEmail.Name = "txBEmail";
-            this.txBEmail.Size = new System.Drawing.Size(136, 33);
+            this.txBEmail.Size = new System.Drawing.Size(136, 23);
             this.txBEmail.TabIndex = 46;
-            this.txBEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txBEmail.OnValueChanged += new System.EventHandler(this.txBEmail_TextChanged);
+            this.txBEmail.TextChanged += new System.EventHandler(this.txBEmail_TextChanged);
             // 
             // txBAbteilung
             // 
             this.txBAbteilung.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txBAbteilung.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txBAbteilung.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txBAbteilung.HintForeColor = System.Drawing.Color.Silver;
-            this.txBAbteilung.HintText = "Job Name";
-            this.txBAbteilung.isPassword = false;
-            this.txBAbteilung.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBAbteilung.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBAbteilung.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBAbteilung.LineThickness = 3;
             this.txBAbteilung.Location = new System.Drawing.Point(4, 85);
             this.txBAbteilung.Margin = new System.Windows.Forms.Padding(4);
             this.txBAbteilung.Name = "txBAbteilung";
-            this.txBAbteilung.Size = new System.Drawing.Size(136, 33);
+            this.txBAbteilung.Size = new System.Drawing.Size(136, 23);
             this.txBAbteilung.TabIndex = 45;
-            this.txBAbteilung.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txBAbteilung.OnValueChanged += new System.EventHandler(this.txBAbteilung_TextChanged);
+            this.txBAbteilung.TextChanged += new System.EventHandler(this.txBAbteilung_TextChanged);
             // 
             // txBPasswortA
             // 
             this.txBPasswortA.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txBPasswortA.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txBPasswortA.ForeColor = System.Drawing.Color.Black;
-            this.txBPasswortA.HintForeColor = System.Drawing.Color.Silver;
-            this.txBPasswortA.HintText = "Old Password";
-            this.txBPasswortA.isPassword = false;
-            this.txBPasswortA.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswortA.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswortA.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswortA.LineThickness = 3;
             this.txBPasswortA.Location = new System.Drawing.Point(240, 46);
             this.txBPasswortA.Margin = new System.Windows.Forms.Padding(4);
             this.txBPasswortA.Name = "txBPasswortA";
-            this.txBPasswortA.Size = new System.Drawing.Size(136, 33);
+            this.txBPasswortA.Size = new System.Drawing.Size(136, 23);
             this.txBPasswortA.TabIndex = 43;
-            this.txBPasswortA.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txBPasswort2
             // 
             this.txBPasswort2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txBPasswort2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txBPasswort2.ForeColor = System.Drawing.Color.Black;
-            this.txBPasswort2.HintForeColor = System.Drawing.Color.Silver;
-            this.txBPasswort2.HintText = "Repeat Password";
-            this.txBPasswort2.isPassword = false;
-            this.txBPasswort2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswort2.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswort2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswort2.LineThickness = 3;
             this.txBPasswort2.Location = new System.Drawing.Point(240, 125);
             this.txBPasswort2.Margin = new System.Windows.Forms.Padding(4);
             this.txBPasswort2.Name = "txBPasswort2";
-            this.txBPasswort2.Size = new System.Drawing.Size(136, 33);
+            this.txBPasswort2.Size = new System.Drawing.Size(136, 23);
             this.txBPasswort2.TabIndex = 42;
-            this.txBPasswort2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txBPasswort
             // 
             this.txBPasswort.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txBPasswort.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txBPasswort.ForeColor = System.Drawing.Color.Black;
-            this.txBPasswort.HintForeColor = System.Drawing.Color.Silver;
-            this.txBPasswort.HintText = "Password";
-            this.txBPasswort.isPassword = false;
-            this.txBPasswort.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswort.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswort.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBPasswort.LineThickness = 3;
             this.txBPasswort.Location = new System.Drawing.Point(240, 84);
             this.txBPasswort.Margin = new System.Windows.Forms.Padding(4);
             this.txBPasswort.Name = "txBPasswort";
-            this.txBPasswort.Size = new System.Drawing.Size(136, 33);
+            this.txBPasswort.Size = new System.Drawing.Size(136, 23);
             this.txBPasswort.TabIndex = 41;
-            this.txBPasswort.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txBBenutzername
             // 
             this.txBBenutzername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txBBenutzername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txBBenutzername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txBBenutzername.HintForeColor = System.Drawing.Color.Silver;
-            this.txBBenutzername.HintText = "Username";
-            this.txBBenutzername.isPassword = false;
-            this.txBBenutzername.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBBenutzername.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBBenutzername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBBenutzername.LineThickness = 3;
             this.txBBenutzername.Location = new System.Drawing.Point(240, 8);
             this.txBBenutzername.Margin = new System.Windows.Forms.Padding(4);
             this.txBBenutzername.Name = "txBBenutzername";
-            this.txBBenutzername.Size = new System.Drawing.Size(136, 33);
+            this.txBBenutzername.Size = new System.Drawing.Size(136, 23);
             this.txBBenutzername.TabIndex = 40;
-            this.txBBenutzername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // cBoxJahr
             // 
@@ -570,20 +512,6 @@
             this.btnProfilbildHochladen.UseVisualStyleBackColor = false;
             this.btnProfilbildHochladen.Click += new System.EventHandler(this.btnProfilbildHochladen_Click);
             // 
-            // Beenden_Label
-            // 
-            this.Beenden_Label.AutoSize = true;
-            this.Beenden_Label.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Beenden_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Beenden_Label.ForeColor = System.Drawing.Color.White;
-            this.Beenden_Label.Location = new System.Drawing.Point(780, 0);
-            this.Beenden_Label.Name = "Beenden_Label";
-            this.Beenden_Label.Size = new System.Drawing.Size(20, 24);
-            this.Beenden_Label.TabIndex = 28;
-            this.Beenden_Label.Text = "x";
-            this.Beenden_Label.Visible = false;
-            this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
-            // 
             // ProfilAnzeige
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -630,16 +558,16 @@
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txBHobbys;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txBInhaber;
+        private System.Windows.Forms.TextBox txBHobbys;
+        private System.Windows.Forms.TextBox txBInhaber;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txBEmail;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txBAbteilung;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txBPasswortA;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txBPasswort2;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txBPasswort;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txBBenutzername;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txBTelefon;
+        private System.Windows.Forms.TextBox txBEmail;
+        private System.Windows.Forms.TextBox txBAbteilung;
+        private  System.Windows.Forms.TextBox txBPasswortA;
+        private  System.Windows.Forms.TextBox txBPasswort2;
+        private  System.Windows.Forms.TextBox txBPasswort;
+        private  System.Windows.Forms.TextBox txBBenutzername;
+        private  System.Windows.Forms.TextBox txBTelefon;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RadioButton rbtFrau;
         private System.Windows.Forms.RadioButton rbtMann;

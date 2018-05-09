@@ -32,7 +32,7 @@
             this.dTPVon = new System.Windows.Forms.DateTimePicker();
             this.btnLoschen = new System.Windows.Forms.Button();
             this.btnFestlegen = new System.Windows.Forms.Button();
-            this.txBBeschreibung = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txBBeschreibung = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -93,14 +93,9 @@
             // 
             // txBBeschreibung
             // 
-            this.txBBeschreibung.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBBeschreibung.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBBeschreibung.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBBeschreibung.BorderThickness = 3;
             this.txBBeschreibung.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txBBeschreibung.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txBBeschreibung.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txBBeschreibung.isPassword = false;
             this.txBBeschreibung.Location = new System.Drawing.Point(91, 129);
             this.txBBeschreibung.Margin = new System.Windows.Forms.Padding(4);
             this.txBBeschreibung.Name = "txBBeschreibung";
@@ -380,7 +375,7 @@
         private System.Windows.Forms.DateTimePicker dTPVon;
         private System.Windows.Forms.Button btnLoschen;
         private System.Windows.Forms.Button btnFestlegen;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txBBeschreibung;
+       private System.Windows.Forms.TextBox txBBeschreibung;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
