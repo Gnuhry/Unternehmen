@@ -185,13 +185,13 @@
     <None Include="Resources\left-arrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logout.png" />
+    <None Include="Resources\User.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\speech-bubbles-comment-option.png" />
+    <None Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\wifi.png" />
+    <None Include="Resources\Wifi_Black.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

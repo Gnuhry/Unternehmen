@@ -13,7 +13,7 @@ namespace Unternehmen
             this.verwaltung = verwaltung;
             InitializeComponent();
             StatusAbfrage();
-            if (verwaltung.GetAngemeldetePerson().GetStatus() == "present")
+            if (verwaltung.GetAngemeldetePerson().GetStatus() == "Present")
                 btnAnwesend.Enabled = false;
             else
                 btnGehen.Enabled = false;
@@ -114,8 +114,8 @@ namespace Unternehmen
             pcBProfil.Image = angemeldet.GetProfilbild();
             lbAbteilung.Text ="work: "+ angemeldet.Abteilung1;
             lbEmail.Text = "E-Mail: "+angemeldet.Email1;
-            lbHobby.Text = "Hobbys: "+angemeldet.Hobbys1;
-            lbTelefon.Text = "Telefon-nr: "+angemeldet.Telefon1;
+            lbHobby.Text = "Hobbies: "+angemeldet.Hobbys1;
+            lbTelefon.Text = "Phone Nr: "+angemeldet.Telefon1;
         }
     }
 }

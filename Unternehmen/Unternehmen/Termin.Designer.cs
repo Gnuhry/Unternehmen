@@ -72,7 +72,7 @@
             this.btnLoschen.Name = "btnLoschen";
             this.btnLoschen.Size = new System.Drawing.Size(172, 34);
             this.btnLoschen.TabIndex = 7;
-            this.btnLoschen.Text = "Löschen";
+            this.btnLoschen.Text = "Delete";
             this.btnLoschen.UseVisualStyleBackColor = false;
             this.btnLoschen.Visible = false;
             this.btnLoschen.Click += new System.EventHandler(this.btnLoschen_Click);
@@ -87,7 +87,7 @@
             this.btnFestlegen.Name = "btnFestlegen";
             this.btnFestlegen.Size = new System.Drawing.Size(172, 34);
             this.btnFestlegen.TabIndex = 8;
-            this.btnFestlegen.Text = "Festlegen";
+            this.btnFestlegen.Text = "Done";
             this.btnFestlegen.UseVisualStyleBackColor = false;
             this.btnFestlegen.Click += new System.EventHandler(this.btnFestlegen_Click);
             // 
