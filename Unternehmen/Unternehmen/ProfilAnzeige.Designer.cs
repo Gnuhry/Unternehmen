@@ -30,6 +30,7 @@
         {
             this.lbInhaber = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Beenden_Label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -61,7 +62,6 @@
             this.btnAndern = new System.Windows.Forms.Button();
             this.txBStatus = new System.Windows.Forms.TextBox();
             this.btnProfilbildHochladen = new System.Windows.Forms.Button();
-            this.Beenden_Label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBProfil)).BeginInit();
@@ -92,6 +92,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 57);
             this.panel1.TabIndex = 2;
+            // 
+            // Beenden_Label
+            // 
+            this.Beenden_Label.AutoSize = true;
+            this.Beenden_Label.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Beenden_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Beenden_Label.ForeColor = System.Drawing.Color.White;
+            this.Beenden_Label.Location = new System.Drawing.Point(780, 0);
+            this.Beenden_Label.Name = "Beenden_Label";
+            this.Beenden_Label.Size = new System.Drawing.Size(20, 24);
+            this.Beenden_Label.TabIndex = 28;
+            this.Beenden_Label.Text = "x";
+            this.Beenden_Label.Visible = false;
+            this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
             // 
             // label2
             // 
@@ -569,20 +583,6 @@
             this.btnProfilbildHochladen.Text = "Upload";
             this.btnProfilbildHochladen.UseVisualStyleBackColor = false;
             this.btnProfilbildHochladen.Click += new System.EventHandler(this.btnProfilbildHochladen_Click);
-            // 
-            // Beenden_Label
-            // 
-            this.Beenden_Label.AutoSize = true;
-            this.Beenden_Label.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Beenden_Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Beenden_Label.ForeColor = System.Drawing.Color.White;
-            this.Beenden_Label.Location = new System.Drawing.Point(780, 0);
-            this.Beenden_Label.Name = "Beenden_Label";
-            this.Beenden_Label.Size = new System.Drawing.Size(20, 24);
-            this.Beenden_Label.TabIndex = 28;
-            this.Beenden_Label.Text = "x";
-            this.Beenden_Label.Visible = false;
-            this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
             // 
             // ProfilAnzeige
             // 
