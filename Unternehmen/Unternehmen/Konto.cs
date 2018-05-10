@@ -27,6 +27,8 @@ namespace Unternehmen
         public string Telefon1 { get => Telefon; set => Telefon = value; }
        
         public Point[] Profil1 { get => Profil; set => Profil = value; }
+        public void SetProfil(Point[] Punkte) => Profil = Punkte;
+        public Point[] GetProfil() => Profil;
         public string Status1 { get => Status; set => Status = value; }
         public string Hobbys1 { get => Hobbys; set => Hobbys = value; }
         public bool Geschlecht1 { get => Geschlecht; set => Geschlecht = value; }
@@ -194,12 +196,16 @@ namespace Unternehmen
         }
         public void SetMaxTage(int MaxTage) => maxTage = MaxTage;
         public void SetTermin(DateTime von, DateTime bis, string Beschreibung) => tagesplan.SetTermin(von, bis, Beschreibung);
+        public void SetTermin(DateTime von, string Beschreibung,string wiederholung) => tagesplan.SetTermin(von, Beschreibung,wiederholung);
         public void SetTermin(DateTime von, DateTime bis, string Beschreibung,int index) => tagesplan.SetTermin(von, bis, Beschreibung,index);
+        public void SetTermin(DateTime von, string Beschreibung, int index, string wiederholung) => tagesplan.SetTermin(von, Beschreibung,wiederholung, index);
 
+        public int GetIndex(DateTime tag, int index) => tagesplan.GetIndex(tag, index);
         public DateTime GetTerminVon(int index) => tagesplan.GetVon(index);
         public DateTime GetTerminBis(int index) => tagesplan.GetBis(index);
         public string GetTerminBeschreibung(int index) => tagesplan.GetBeschreibung(index);
         public void DeleteTermin(int index) => tagesplan.DeleteBeschreibung(index);
+        public string[] GetTerminAnzeige(DateTime tag) => tagesplan.GetBeschreibungen(tag);
         public int GetTerminAnzahl() => tagesplan.GetAnzahl();
         public void Neuer_Tag()
         {

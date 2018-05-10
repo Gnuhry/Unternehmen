@@ -41,12 +41,21 @@
             this.cBoxVonMin = new System.Windows.Forms.ComboBox();
             this.cBoxBisMin = new System.Windows.Forms.ComboBox();
             this.cBoxBisHour = new System.Windows.Forms.ComboBox();
+            this.chBMo = new System.Windows.Forms.CheckBox();
+            this.chBDienstag = new System.Windows.Forms.CheckBox();
+            this.chBDonnerstag = new System.Windows.Forms.CheckBox();
+            this.chBMittwoch = new System.Windows.Forms.CheckBox();
+            this.chBFreitag = new System.Windows.Forms.CheckBox();
+            this.chBSamstag = new System.Windows.Forms.CheckBox();
+            this.chBSonntag = new System.Windows.Forms.CheckBox();
+            this.chBMonatlich = new System.Windows.Forms.CheckBox();
+            this.chBJahrlich = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // dTpBis
             // 
             this.dTpBis.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dTpBis.Location = new System.Drawing.Point(91, 101);
+            this.dTpBis.Location = new System.Drawing.Point(72, 39);
             this.dTpBis.Name = "dTpBis";
             this.dTpBis.Size = new System.Drawing.Size(200, 21);
             this.dTpBis.TabIndex = 2;
@@ -55,7 +64,7 @@
             // dTPVon
             // 
             this.dTPVon.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dTPVon.Location = new System.Drawing.Point(91, 74);
+            this.dTPVon.Location = new System.Drawing.Point(72, 12);
             this.dTPVon.Name = "dTPVon";
             this.dTPVon.Size = new System.Drawing.Size(200, 21);
             this.dTPVon.TabIndex = 1;
@@ -68,7 +77,7 @@
             this.btnLoschen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoschen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoschen.ForeColor = System.Drawing.Color.White;
-            this.btnLoschen.Location = new System.Drawing.Point(132, 209);
+            this.btnLoschen.Location = new System.Drawing.Point(227, 209);
             this.btnLoschen.Name = "btnLoschen";
             this.btnLoschen.Size = new System.Drawing.Size(172, 34);
             this.btnLoschen.TabIndex = 7;
@@ -83,7 +92,7 @@
             this.btnFestlegen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFestlegen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFestlegen.ForeColor = System.Drawing.Color.White;
-            this.btnFestlegen.Location = new System.Drawing.Point(132, 169);
+            this.btnFestlegen.Location = new System.Drawing.Point(36, 209);
             this.btnFestlegen.Name = "btnFestlegen";
             this.btnFestlegen.Size = new System.Drawing.Size(172, 34);
             this.btnFestlegen.TabIndex = 8;
@@ -101,7 +110,7 @@
             this.txBBeschreibung.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txBBeschreibung.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txBBeschreibung.isPassword = false;
-            this.txBBeschreibung.Location = new System.Drawing.Point(91, 129);
+            this.txBBeschreibung.Location = new System.Drawing.Point(99, 169);
             this.txBBeschreibung.Margin = new System.Windows.Forms.Padding(4);
             this.txBBeschreibung.Name = "txBBeschreibung";
             this.txBBeschreibung.Size = new System.Drawing.Size(256, 33);
@@ -172,7 +181,7 @@
             "21",
             "22",
             "23"});
-            this.cBoxVonHour.Location = new System.Drawing.Point(306, 74);
+            this.cBoxVonHour.Location = new System.Drawing.Point(287, 12);
             this.cBoxVonHour.Name = "cBoxVonHour";
             this.cBoxVonHour.Size = new System.Drawing.Size(29, 21);
             this.cBoxVonHour.TabIndex = 14;
@@ -241,7 +250,7 @@
             "57",
             "58",
             "59"});
-            this.cBoxVonMin.Location = new System.Drawing.Point(341, 74);
+            this.cBoxVonMin.Location = new System.Drawing.Point(322, 12);
             this.cBoxVonMin.Name = "cBoxVonMin";
             this.cBoxVonMin.Size = new System.Drawing.Size(33, 21);
             this.cBoxVonMin.TabIndex = 15;
@@ -310,7 +319,7 @@
             "57",
             "58",
             "59"});
-            this.cBoxBisMin.Location = new System.Drawing.Point(341, 103);
+            this.cBoxBisMin.Location = new System.Drawing.Point(322, 41);
             this.cBoxBisMin.Name = "cBoxBisMin";
             this.cBoxBisMin.Size = new System.Drawing.Size(33, 21);
             this.cBoxBisMin.TabIndex = 17;
@@ -343,10 +352,109 @@
             "21",
             "22",
             "23"});
-            this.cBoxBisHour.Location = new System.Drawing.Point(306, 103);
+            this.cBoxBisHour.Location = new System.Drawing.Point(287, 41);
             this.cBoxBisHour.Name = "cBoxBisHour";
             this.cBoxBisHour.Size = new System.Drawing.Size(29, 21);
             this.cBoxBisHour.TabIndex = 16;
+            // 
+            // chBMo
+            // 
+            this.chBMo.AutoSize = true;
+            this.chBMo.Location = new System.Drawing.Point(35, 75);
+            this.chBMo.Name = "chBMo";
+            this.chBMo.Size = new System.Drawing.Size(64, 17);
+            this.chBMo.TabIndex = 18;
+            this.chBMo.Text = "Monday";
+            this.chBMo.UseVisualStyleBackColor = true;
+            this.chBMo.CheckedChanged += new System.EventHandler(this.CheckedChangedWochentag);
+            // 
+            // chBDienstag
+            // 
+            this.chBDienstag.AutoSize = true;
+            this.chBDienstag.Location = new System.Drawing.Point(99, 75);
+            this.chBDienstag.Name = "chBDienstag";
+            this.chBDienstag.Size = new System.Drawing.Size(67, 17);
+            this.chBDienstag.TabIndex = 19;
+            this.chBDienstag.Text = "Tuesday";
+            this.chBDienstag.UseVisualStyleBackColor = true;
+            this.chBDienstag.CheckedChanged += new System.EventHandler(this.CheckedChangedWochentag);
+            // 
+            // chBDonnerstag
+            // 
+            this.chBDonnerstag.AutoSize = true;
+            this.chBDonnerstag.Location = new System.Drawing.Point(261, 75);
+            this.chBDonnerstag.Name = "chBDonnerstag";
+            this.chBDonnerstag.Size = new System.Drawing.Size(70, 17);
+            this.chBDonnerstag.TabIndex = 20;
+            this.chBDonnerstag.Text = "Thursday";
+            this.chBDonnerstag.UseVisualStyleBackColor = true;
+            this.chBDonnerstag.CheckedChanged += new System.EventHandler(this.CheckedChangedWochentag);
+            // 
+            // chBMittwoch
+            // 
+            this.chBMittwoch.AutoSize = true;
+            this.chBMittwoch.Location = new System.Drawing.Point(172, 75);
+            this.chBMittwoch.Name = "chBMittwoch";
+            this.chBMittwoch.Size = new System.Drawing.Size(83, 17);
+            this.chBMittwoch.TabIndex = 20;
+            this.chBMittwoch.Text = "Wednesday";
+            this.chBMittwoch.UseVisualStyleBackColor = true;
+            this.chBMittwoch.CheckedChanged += new System.EventHandler(this.CheckedChangedWochentag);
+            // 
+            // chBFreitag
+            // 
+            this.chBFreitag.AutoSize = true;
+            this.chBFreitag.Location = new System.Drawing.Point(35, 98);
+            this.chBFreitag.Name = "chBFreitag";
+            this.chBFreitag.Size = new System.Drawing.Size(54, 17);
+            this.chBFreitag.TabIndex = 21;
+            this.chBFreitag.Text = "Friday";
+            this.chBFreitag.UseVisualStyleBackColor = true;
+            this.chBFreitag.CheckedChanged += new System.EventHandler(this.CheckedChangedWochentag);
+            // 
+            // chBSamstag
+            // 
+            this.chBSamstag.AutoSize = true;
+            this.chBSamstag.Location = new System.Drawing.Point(98, 98);
+            this.chBSamstag.Name = "chBSamstag";
+            this.chBSamstag.Size = new System.Drawing.Size(68, 17);
+            this.chBSamstag.TabIndex = 22;
+            this.chBSamstag.Text = "Saturday";
+            this.chBSamstag.UseVisualStyleBackColor = true;
+            this.chBSamstag.CheckedChanged += new System.EventHandler(this.CheckedChangedWochentag);
+            // 
+            // chBSonntag
+            // 
+            this.chBSonntag.AutoSize = true;
+            this.chBSonntag.Location = new System.Drawing.Point(172, 98);
+            this.chBSonntag.Name = "chBSonntag";
+            this.chBSonntag.Size = new System.Drawing.Size(62, 17);
+            this.chBSonntag.TabIndex = 23;
+            this.chBSonntag.Text = "Sunday";
+            this.chBSonntag.UseVisualStyleBackColor = true;
+            this.chBSonntag.CheckedChanged += new System.EventHandler(this.CheckedChangedWochentag);
+            // 
+            // chBMonatlich
+            // 
+            this.chBMonatlich.AutoSize = true;
+            this.chBMonatlich.Location = new System.Drawing.Point(72, 140);
+            this.chBMonatlich.Name = "chBMonatlich";
+            this.chBMonatlich.Size = new System.Drawing.Size(63, 17);
+            this.chBMonatlich.TabIndex = 24;
+            this.chBMonatlich.Text = "Monthly";
+            this.chBMonatlich.UseVisualStyleBackColor = true;
+            this.chBMonatlich.CheckedChanged += new System.EventHandler(this.chBMonatlich_CheckedChanged);
+            // 
+            // chBJahrlich
+            // 
+            this.chBJahrlich.AutoSize = true;
+            this.chBJahrlich.Location = new System.Drawing.Point(217, 140);
+            this.chBJahrlich.Name = "chBJahrlich";
+            this.chBJahrlich.Size = new System.Drawing.Size(55, 17);
+            this.chBJahrlich.TabIndex = 25;
+            this.chBJahrlich.Text = "Yearly";
+            this.chBJahrlich.UseVisualStyleBackColor = true;
+            this.chBJahrlich.CheckedChanged += new System.EventHandler(this.chBJahrlich_CheckedChanged);
             // 
             // Termin
             // 
@@ -355,6 +463,15 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(426, 262);
             this.ControlBox = false;
+            this.Controls.Add(this.chBJahrlich);
+            this.Controls.Add(this.chBMonatlich);
+            this.Controls.Add(this.chBSonntag);
+            this.Controls.Add(this.chBSamstag);
+            this.Controls.Add(this.chBFreitag);
+            this.Controls.Add(this.chBMittwoch);
+            this.Controls.Add(this.chBDonnerstag);
+            this.Controls.Add(this.chBDienstag);
+            this.Controls.Add(this.chBMo);
             this.Controls.Add(this.cBoxBisMin);
             this.Controls.Add(this.cBoxBisHour);
             this.Controls.Add(this.cBoxVonMin);
@@ -372,6 +489,7 @@
             this.Name = "Termin";
             this.Text = "0";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -389,5 +507,14 @@
         private System.Windows.Forms.ComboBox cBoxVonMin;
         private System.Windows.Forms.ComboBox cBoxBisMin;
         private System.Windows.Forms.ComboBox cBoxBisHour;
+        private System.Windows.Forms.CheckBox chBMo;
+        private System.Windows.Forms.CheckBox chBDienstag;
+        private System.Windows.Forms.CheckBox chBDonnerstag;
+        private System.Windows.Forms.CheckBox chBMittwoch;
+        private System.Windows.Forms.CheckBox chBFreitag;
+        private System.Windows.Forms.CheckBox chBSamstag;
+        private System.Windows.Forms.CheckBox chBSonntag;
+        private System.Windows.Forms.CheckBox chBMonatlich;
+        private System.Windows.Forms.CheckBox chBJahrlich;
     }
 }

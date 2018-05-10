@@ -97,7 +97,7 @@ namespace Unternehmen
         }
         private void InitProfil(Konto angemeldet)
         {
-            Point[]Profil = angemeldet.Profil1;
+            Point[]Profil = angemeldet.GetProfil();
             lbInhaber.Location = Profil[0];
             lbStatus.Location = Profil[1];
             lbGeburtstag.Location = Profil[2];

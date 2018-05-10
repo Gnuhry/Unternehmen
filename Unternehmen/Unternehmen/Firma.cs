@@ -160,6 +160,7 @@ namespace Unternehmen
                     {
                         if (temp++ == index)
                         {
+                            Mitarbeiter[f].ReciveNachricht("-Automatische Nachricht-\n Ihr Urlaub am " + tag.ToShortDateString() + " wurde gecanceled!\n Bei Beschwerden den Admin kontaktieren", null, null);
                             Mitarbeiter[f].RemoveUrlaub(tag);
                         }
                     }

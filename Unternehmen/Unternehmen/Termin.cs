@@ -20,7 +20,11 @@ namespace Unternehmen
             DateTime von =verwaltung.GetAngemeldetePerson().GetTerminVon(index);
             DateTime bis = verwaltung.GetAngemeldetePerson().GetTerminBis(index);
             dTPVon.Value = von;
-            dTpBis.Value = bis;
+            try
+            {
+                dTpBis.Value = bis;
+            }
+            catch (Exception) { }
             txBBeschreibung.Text = verwaltung.GetAngemeldetePerson().GetTerminBeschreibung(index);
             cBoxVonHour.SelectedIndex = von.Hour;
             cBoxVonMin.SelectedIndex = von.Minute;
@@ -39,16 +43,68 @@ namespace Unternehmen
             DateTime von = dTPVon.Value, bis = dTpBis.Value;
                 von = von.AddHours(cBoxVonHour.SelectedIndex).AddMinutes(cBoxVonMin.SelectedIndex);
                 bis = bis.AddHours(cBoxBisHour.SelectedIndex).AddMinutes(cBoxBisMin.SelectedIndex);
-            if (index == -1)
-                verwaltung.GetAngemeldetePerson().SetTermin(von, bis, txBBeschreibung.Text);
+            if (chBDienstag.Checked || chBDonnerstag.Checked || chBFreitag.Checked || chBMittwoch.Checked || chBMo.Checked || chBSamstag.Checked || chBSonntag.Checked || chBJahrlich.Checked || chBMonatlich.Checked)
+            {
+                string wiederholung;
+                if (chBMo.Checked) wiederholung = "1";
+                else wiederholung = "0";
+                if (chBDienstag.Checked) wiederholung+= "1";
+                else wiederholung+= "0";
+                if (chBMittwoch.Checked) wiederholung += "1";
+                else wiederholung += "0";
+                if (chBDonnerstag.Checked) wiederholung += "1";
+                else wiederholung += "0";
+                if (chBFreitag.Checked) wiederholung += "1";
+                else wiederholung += "0";
+                if (chBSamstag.Checked) wiederholung += "1";
+                else wiederholung += "0";
+                if (chBSonntag.Checked) wiederholung += "1";
+                else wiederholung += "0";
+                if (chBMonatlich.Checked) wiederholung += "1";
+                else wiederholung += "0";
+                if (chBJahrlich.Checked) wiederholung += "1";
+                else wiederholung += "0";
+                if (index == -1)
+                    verwaltung.GetAngemeldetePerson().SetTermin(von, txBBeschreibung.Text,wiederholung);
+                else
+                    verwaltung.GetAngemeldetePerson().SetTermin(von, txBBeschreibung.Text, index,wiederholung);
+            }
             else
-                verwaltung.GetAngemeldetePerson().SetTermin(von, bis, txBBeschreibung.Text, index);
+            {
+                if (index == -1)
+                    verwaltung.GetAngemeldetePerson().SetTermin(von, bis, txBBeschreibung.Text);
+                else
+                    verwaltung.GetAngemeldetePerson().SetTermin(von, bis, txBBeschreibung.Text, index);
+            }
             Close();
         }
 
         private void dTPVon_ValueChanged(object sender, EventArgs e)
         {
             dTpBis.MinDate = dTPVon.Value;
+        }
+
+        private void CheckedChangedWochentag(object sender, EventArgs e)
+        {
+            if (chBDienstag.Checked || chBDonnerstag.Checked || chBFreitag.Checked || chBMittwoch.Checked || chBMo.Checked || chBSamstag.Checked || chBSonntag.Checked)
+                chBMonatlich.Checked = chBJahrlich.Checked = dTpBis.Enabled = false;
+            else dTpBis.Enabled = true;
+        }
+
+        private void chBMonatlich_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chBMonatlich.Checked)
+                dTpBis.Enabled=chBJahrlich.Checked = chBDienstag.Checked = chBDonnerstag.Checked = chBFreitag.Checked = chBMittwoch.Checked = chBMo.Checked = chBSamstag.Checked = chBSonntag.Checked = false;
+            else dTpBis.Enabled = true;
+
+        }
+
+        private void chBJahrlich_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chBJahrlich.Checked)
+                dTpBis.Enabled=chBMonatlich.Checked = chBDienstag.Checked = chBDonnerstag.Checked = chBFreitag.Checked = chBMittwoch.Checked = chBMo.Checked = chBSamstag.Checked = chBSonntag.Checked = false;
+            else
+                dTpBis.Enabled = true;
         }
     }
 }

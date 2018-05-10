@@ -54,9 +54,16 @@ namespace Unternehmen
         {
             if (e.Button == MouseButtons.Right)
                 if (lBoxNachrichten.IndexFromPoint(e.Location) != ListBox.NoMatches)
-                    for (int f = 0; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
-                        if (verwaltung.GetFirma().GetMitarbeiter(f) == verwaltung.GetAngemeldetePerson().GetSender(lBoxNachrichten.IndexFromPoint(e.Location)))
-                            comBEmpfanger.SelectedIndex = f+1;
+                    if (verwaltung.GetAngemeldetePerson().GetSender(lBoxNachrichten.IndexFromPoint(e.Location)) != null)
+                    {
+                        for (int f = 0; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
+                            if (verwaltung.GetFirma().GetMitarbeiter(f) == verwaltung.GetAngemeldetePerson().GetSender(lBoxNachrichten.IndexFromPoint(e.Location)))
+                                comBEmpfanger.SelectedIndex = f;
+                    }
+                    else
+                    {
+                        comBEmpfanger.SelectedIndex = 0;
+                    }
         }
 
         private void LBoxNachrichten_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -73,14 +80,19 @@ namespace Unternehmen
             if (Chef)
             {
                 lbNachricht.Text = verwaltung.GetFirma().GetAdminNachricht(index);
-                lbSender.Text = "From: " + verwaltung.GetFirma().GetAdminNachrichtSender(index).GetKontoInhaber();
+                if (verwaltung.GetFirma().GetAdminNachrichtSender(index).GetKontoInhaber() == null)
+                    lbSender.Text = "From: Admin";
+                else
+                    lbSender.Text = "From: " + verwaltung.GetFirma().GetAdminNachrichtSender(index).GetKontoInhaber();
                 lbSendeDatum.Text = verwaltung.GetFirma().GetSendeDatum(index).ToShortTimeString() + " "+verwaltung.GetFirma().GetSendeDatum(index).ToShortDateString();
                 aktiellesIndex = index;
+                pcBAnhangEingang.Image = verwaltung.GetFirma().GetAdminAnhang(index);
                 return;
             }
             lbNachricht.Text = verwaltung.GetAngemeldetePerson().GetNachricht(index);
             lbSender.Text = "From: "+verwaltung.GetAngemeldetePerson().GetSender(index).GetKontoInhaber();
             lbSendeDatum.Text = verwaltung.GetAngemeldetePerson().GetSendeDatum(index).ToShortDateString();
+            pcBAnhangEingang.Image = verwaltung.GetAngemeldetePerson().GetAnhang(index);
             aktiellesIndex = index;
         }
 
@@ -151,7 +163,8 @@ namespace Unternehmen
             else
             verwaltung.GetAngemeldetePerson().RemoveNachricht(aktiellesIndex);
             lbNachricht.Visible = lbSendeDatum.Visible = lbSender.Visible = btnLoschen.Visible = false;
-            lbNachricht.Text = lbSendeDatum.Text = lbSender.Text = btnLoschen.Text = null;
+            lbNachricht.Text = lbSendeDatum.Text = lbSender.Text = btnLoschen.Text= null;
+            pcBAnhangEingang.Image = null;
             lBoxNachrichten.Items.Clear();
             NachrichtenLaden();
         }

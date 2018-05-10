@@ -24,7 +24,6 @@ namespace Unternehmen
         {
             aa = false;
             angemeldet = verwaltung.GetAngemeldetePerson();
-            Profil = angemeldet.Profil1;
             InitializeComponent();
             this.verwaltung = verwaltung;
             InitComboBox();
@@ -36,7 +35,6 @@ namespace Unternehmen
         {
             aa = true;
             this.angemeldet = angemeldet;
-            Profil = angemeldet.Profil1;
             InitializeComponent();
             this.verwaltung = verwaltung;
             InitComboBox();
@@ -49,7 +47,7 @@ namespace Unternehmen
 
         private void InitProfil()
         {
-            Profil = angemeldet.Profil1;
+            Profil = angemeldet.GetProfil();
             lbInhaber.Location = Profil[0];
             lbStatus.Location = Profil[1];
             lbGeburtstag.Location = Profil[2];
@@ -198,6 +196,7 @@ namespace Unternehmen
             {
                 Point location = (sender as Control).Location;
                 location.Offset(e.Location.X - previousPosition.X, e.Location.Y - previousPosition.Y);
+                Console.WriteLine(location.ToString());
                 if (Randuerberprufung(location, sender))
                     (sender as Control).Location = location;
             }
@@ -214,7 +213,7 @@ namespace Unternehmen
             if (sender.X < 0 || sender.X + (sender_ as Control).Width > panel2.Width)
                 return false;
             if (sender.Y < 0 || sender.Y + (sender_ as Control).Height > panel2.Height)
-                return false;
+                return false;/*
             if (sender_ != pcBProfil)
             {
                 if (pcBProfil.Location.X < sender.X + (sender_ as Control).Width &
@@ -286,7 +285,7 @@ namespace Unternehmen
                     txBTelefon.Location.Y < sender.Y + (sender_ as Control).Height &&
                     sender.Y < txBTelefon.Location.Y + txBTelefon.Size.Height)
                     return false;
-            }
+            }*/
             return true;
 
         }
@@ -296,11 +295,11 @@ namespace Unternehmen
             Profil[1] = lbStatus.Location;
             Profil[2] = lbGeburtstag.Location;
             Profil[3] = pcBProfil.Location;
-            Profil[4] = txBAbteilung.Location;
-            Profil[5] = txBEmail.Location;
-            Profil[6] = txBHobbys.Location;
-            Profil[7] = txBTelefon.Location;
-            angemeldet.Profil1 = Profil;  
+            Profil[4] = lbAbteilung.Location;
+            Profil[5] = lbEmail.Location;
+            Profil[6] = lbHobby.Location;
+            Profil[7] = lbTelefon.Location;
+            angemeldet.SetProfil(Profil);
             angemeldet.SetProfilbild(pcBProfil.Image);
         }
 
