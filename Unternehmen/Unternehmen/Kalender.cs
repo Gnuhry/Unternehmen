@@ -15,7 +15,7 @@ namespace Unternehmen
         private List<DateTime> Urlaubstage;
         private List<Tag> tage;
         private int Month, Year;
-        private static string[] Monat = { "January", "Feburar", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+        private static string[] Monat = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
         private static Color KrankentageC = Color.Orange, UrlaubstageC = Color.Red, VergangeneTageC = Color.LightGray, FeiertageC = Color.Green, BeantragenC = Color.Blue, keinArbeitstagC=Color.LightGray;
         private Control activeControl;
         private Point previousPosition;

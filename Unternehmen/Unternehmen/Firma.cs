@@ -101,7 +101,7 @@ namespace Unternehmen
             List<string> temp = new List<string>();
             for (int f = 0; f < Mitarbeiter.Count; f++)
                 if (Mitarbeiter[f].IsGeburtstag(Tag))
-                    temp.Add(Mitarbeiter[f].GetBenutzername()+" ("+(Mitarbeiter[f].GetGeburtstag().Year-DateTime.Today.Year)+")");
+                    temp.Add(Mitarbeiter[f].GetBenutzername()+" ("+(Tag.Year- Mitarbeiter[f].GetGeburtstag().Year) +")");
             return temp.ToArray();
         }
         public bool GetArbeitstag(int Tag) => Arbeitstage[Tag];

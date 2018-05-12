@@ -19,17 +19,23 @@ namespace Unternehmen
             //Eintragen
             DateTime von =verwaltung.GetAngemeldetePerson().GetTerminVon(index);
             DateTime bis = verwaltung.GetAngemeldetePerson().GetTerminBis(index);
-            dTPVon.Value = von;
-            try
-            {
-                dTpBis.Value = bis;
-            }
-            catch (Exception) { }
+            dTPVon.Value = von.Date;
+            dTpBis.Value = bis.Date;
             txBBeschreibung.Text = verwaltung.GetAngemeldetePerson().GetTerminBeschreibung(index);
             cBoxVonHour.SelectedIndex = von.Hour;
             cBoxVonMin.SelectedIndex = von.Minute;
             cBoxBisHour.SelectedIndex = bis.Hour;
             cBoxBisMin.SelectedIndex = bis.Minute;
+            bool[] temp = verwaltung.GetAngemeldetePerson().GetTerminWiederholung(index);
+            chBMo.Checked = temp[0];
+            chBDienstag.Checked = temp[1];
+            chBMittwoch.Checked = temp[2];
+            chBDonnerstag.Checked = temp[3];
+            chBFreitag.Checked = temp[4];
+            chBSamstag.Checked = temp[5];
+            chBSonntag.Checked = temp[6];
+            chBMonatlich.Checked = temp[7];
+            chBJahrlich.Checked = temp[8];
         }
 
         private void btnLoschen_Click(object sender, EventArgs e)
@@ -42,10 +48,10 @@ namespace Unternehmen
         {
             DateTime von = dTPVon.Value, bis = dTpBis.Value;
                 von = von.AddHours(cBoxVonHour.SelectedIndex).AddMinutes(cBoxVonMin.SelectedIndex);
-                bis = bis.AddHours(cBoxBisHour.SelectedIndex).AddMinutes(cBoxBisMin.SelectedIndex);
-            if (chBDienstag.Checked || chBDonnerstag.Checked || chBFreitag.Checked || chBMittwoch.Checked || chBMo.Checked || chBSamstag.Checked || chBSonntag.Checked || chBJahrlich.Checked || chBMonatlich.Checked)
-            {
-                string wiederholung;
+            if (!dTpBis.Enabled)
+                bis = DateTime.Today;
+            bis = bis.AddHours(cBoxBisHour.SelectedIndex).AddMinutes(cBoxBisMin.SelectedIndex);
+            string wiederholung;
                 if (chBMo.Checked) wiederholung = "1";
                 else wiederholung = "0";
                 if (chBDienstag.Checked) wiederholung+= "1";
@@ -65,17 +71,9 @@ namespace Unternehmen
                 if (chBJahrlich.Checked) wiederholung += "1";
                 else wiederholung += "0";
                 if (index == -1)
-                    verwaltung.GetAngemeldetePerson().SetTermin(von, txBBeschreibung.Text,wiederholung);
+                    verwaltung.GetAngemeldetePerson().SetTermin(von,bis, txBBeschreibung.Text,wiederholung);
                 else
-                    verwaltung.GetAngemeldetePerson().SetTermin(von, txBBeschreibung.Text, index,wiederholung);
-            }
-            else
-            {
-                if (index == -1)
-                    verwaltung.GetAngemeldetePerson().SetTermin(von, bis, txBBeschreibung.Text);
-                else
-                    verwaltung.GetAngemeldetePerson().SetTermin(von, bis, txBBeschreibung.Text, index);
-            }
+                    verwaltung.GetAngemeldetePerson().SetTermin(von,bis, txBBeschreibung.Text, index,wiederholung);          
             Close();
         }
 

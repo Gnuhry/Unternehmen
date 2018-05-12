@@ -35,6 +35,8 @@
             this.Firmen_Motto = new System.Windows.Forms.Label();
             this.Logo_Picturebox = new System.Windows.Forms.PictureBox();
             this.Panel_right = new System.Windows.Forms.Panel();
+            this.rbtnWoman = new System.Windows.Forms.RadioButton();
+            this.rbtnMan = new System.Windows.Forms.RadioButton();
             this.lbFehlermeldung = new System.Windows.Forms.Label();
             this.btnHochladen = new System.Windows.Forms.Button();
             this.cBoxJahr = new System.Windows.Forms.ComboBox();
@@ -54,8 +56,6 @@
             this.Ownername_Label = new System.Windows.Forms.Label();
             this.txBInhaber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Sign_Up_Label = new System.Windows.Forms.Label();
-            this.rbtnMan = new System.Windows.Forms.RadioButton();
-            this.rbtnWoman = new System.Windows.Forms.RadioButton();
             this.Panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).BeginInit();
             this.Panel_right.SuspendLayout();
@@ -149,6 +149,30 @@
             this.Panel_right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseDown);
             this.Panel_right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseMove);
             this.Panel_right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseUp);
+            // 
+            // rbtnWoman
+            // 
+            this.rbtnWoman.AutoSize = true;
+            this.rbtnWoman.Location = new System.Drawing.Point(406, 115);
+            this.rbtnWoman.Name = "rbtnWoman";
+            this.rbtnWoman.Size = new System.Drawing.Size(62, 17);
+            this.rbtnWoman.TabIndex = 35;
+            this.rbtnWoman.TabStop = true;
+            this.rbtnWoman.Text = "Woman";
+            this.rbtnWoman.UseVisualStyleBackColor = true;
+            this.rbtnWoman.CheckedChanged += new System.EventHandler(this.rbtnWoman_CheckedChanged);
+            // 
+            // rbtnMan
+            // 
+            this.rbtnMan.AutoSize = true;
+            this.rbtnMan.Location = new System.Drawing.Point(354, 115);
+            this.rbtnMan.Name = "rbtnMan";
+            this.rbtnMan.Size = new System.Drawing.Size(46, 17);
+            this.rbtnMan.TabIndex = 34;
+            this.rbtnMan.TabStop = true;
+            this.rbtnMan.Text = "Man";
+            this.rbtnMan.UseVisualStyleBackColor = true;
+            this.rbtnMan.CheckedChanged += new System.EventHandler(this.rbtnMan_CheckedChanged);
             // 
             // lbFehlermeldung
             // 
@@ -287,6 +311,7 @@
             this.txBPasswort2.Size = new System.Drawing.Size(300, 33);
             this.txBPasswort2.TabIndex = 21;
             this.txBPasswort2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txBPasswort2.OnValueChanged += new System.EventHandler(this.txBPasswort2_OnValueChanged);
             // 
             // Passwort_Label
             // 
@@ -319,6 +344,8 @@
             this.txBPasswort.Size = new System.Drawing.Size(300, 33);
             this.txBPasswort.TabIndex = 19;
             this.txBPasswort.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txBPasswort.OnValueChanged += new System.EventHandler(this.txBPasswort_OnValueChanged);
+            this.txBPasswort.BackColorChanged += new System.EventHandler(this.txBPasswort_BackColorChanged);
             // 
             // Geburtstag_Label
             // 
@@ -362,6 +389,8 @@
             this.txBBenutzername.Size = new System.Drawing.Size(300, 33);
             this.txBBenutzername.TabIndex = 13;
             this.txBBenutzername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txBBenutzername.BackColorChanged += new System.EventHandler(this.txBBenutzername_BackColorChanged);
+            this.txBBenutzername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txBBenutzername_KeyPress);
             // 
             // Ownername_Label
             // 
@@ -394,6 +423,9 @@
             this.txBInhaber.Size = new System.Drawing.Size(300, 33);
             this.txBInhaber.TabIndex = 11;
             this.txBInhaber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txBInhaber.OnValueChanged += new System.EventHandler(this.txBInhaber_OnValueChanged_1);
+            this.txBInhaber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txBInhaber_KeyDown);
+            this.txBInhaber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txBInhaber_KeyPress);
             // 
             // Sign_Up_Label
             // 
@@ -405,30 +437,6 @@
             this.Sign_Up_Label.Size = new System.Drawing.Size(89, 25);
             this.Sign_Up_Label.TabIndex = 10;
             this.Sign_Up_Label.Text = "Sign Up";
-            // 
-            // rbtnMan
-            // 
-            this.rbtnMan.AutoSize = true;
-            this.rbtnMan.Location = new System.Drawing.Point(354, 115);
-            this.rbtnMan.Name = "rbtnMan";
-            this.rbtnMan.Size = new System.Drawing.Size(46, 17);
-            this.rbtnMan.TabIndex = 34;
-            this.rbtnMan.TabStop = true;
-            this.rbtnMan.Text = "Man";
-            this.rbtnMan.UseVisualStyleBackColor = true;
-            this.rbtnMan.CheckedChanged += new System.EventHandler(this.rbtnMan_CheckedChanged);
-            // 
-            // rbtnWoman
-            // 
-            this.rbtnWoman.AutoSize = true;
-            this.rbtnWoman.Location = new System.Drawing.Point(406, 115);
-            this.rbtnWoman.Name = "rbtnWoman";
-            this.rbtnWoman.Size = new System.Drawing.Size(62, 17);
-            this.rbtnWoman.TabIndex = 35;
-            this.rbtnWoman.TabStop = true;
-            this.rbtnWoman.Text = "Woman";
-            this.rbtnWoman.UseVisualStyleBackColor = true;
-            this.rbtnWoman.CheckedChanged += new System.EventHandler(this.rbtnWoman_CheckedChanged);
             // 
             // Registrieren
             // 

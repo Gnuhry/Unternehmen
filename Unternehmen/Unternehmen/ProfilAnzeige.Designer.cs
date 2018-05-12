@@ -500,7 +500,6 @@
             this.cBoxJahr.Name = "cBoxJahr";
             this.cBoxJahr.Size = new System.Drawing.Size(121, 24);
             this.cBoxJahr.TabIndex = 34;
-            this.cBoxJahr.SelectedIndexChanged += new System.EventHandler(this.cBoxJahr_SelectedIndexChanged);
             // 
             // cBoxMonat
             // 
@@ -523,7 +522,6 @@
             this.cBoxMonat.Name = "cBoxMonat";
             this.cBoxMonat.Size = new System.Drawing.Size(121, 24);
             this.cBoxMonat.TabIndex = 33;
-            this.cBoxMonat.SelectedIndexChanged += new System.EventHandler(this.cBoxMonat_SelectedIndexChanged);
             // 
             // cBoxTag
             // 
@@ -533,7 +531,6 @@
             this.cBoxTag.Name = "cBoxTag";
             this.cBoxTag.Size = new System.Drawing.Size(49, 24);
             this.cBoxTag.TabIndex = 32;
-            this.cBoxTag.SelectedIndexChanged += new System.EventHandler(this.cBoxTag_SelectedIndexChanged);
             // 
             // lbFehlermeldung
             // 

@@ -113,7 +113,7 @@ namespace Unternehmen
 
         }
         public string GetBenutzername() => benutzername;
-        public bool IsGeburtstag(DateTime Tag) => Tag == Geburtstag;
+        public bool IsGeburtstag(DateTime Tag) => Tag.Month == Geburtstag.Month&&Tag.Day==Geburtstag.Day;
         public string GetKontoInhaber() => Kontoinhaber;
         public DateTime GetGeburtstag() => Geburtstag;
         public DateTime[] GetUrlaubinMonat(int Monat, int Year)
@@ -195,15 +195,13 @@ namespace Unternehmen
             else status = 0;
         }
         public void SetMaxTage(int MaxTage) => maxTage = MaxTage;
-        public void SetTermin(DateTime von, DateTime bis, string Beschreibung) => tagesplan.SetTermin(von, bis, Beschreibung);
-        public void SetTermin(DateTime von, string Beschreibung,string wiederholung) => tagesplan.SetTermin(von, Beschreibung,wiederholung);
-        public void SetTermin(DateTime von, DateTime bis, string Beschreibung,int index) => tagesplan.SetTermin(von, bis, Beschreibung,index);
-        public void SetTermin(DateTime von, string Beschreibung, int index, string wiederholung) => tagesplan.SetTermin(von, Beschreibung,wiederholung, index);
+        public void SetTermin(DateTime von, DateTime bis, string Beschreibung,string wiederholung) => tagesplan.SetTermin(von, bis, Beschreibung,wiederholung);
+        public void SetTermin(DateTime von, DateTime bis, string Beschreibung, int index, string wiederholung) => tagesplan.SetTermin(von,bis, Beschreibung,wiederholung, index);
 
-        public int GetIndex(DateTime tag, int index) => tagesplan.GetIndex(tag, index);
         public DateTime GetTerminVon(int index) => tagesplan.GetVon(index);
         public DateTime GetTerminBis(int index) => tagesplan.GetBis(index);
         public string GetTerminBeschreibung(int index) => tagesplan.GetBeschreibung(index);
+        public bool[] GetTerminWiederholung(int index) => tagesplan.GetWiederholung(index);
         public void DeleteTermin(int index) => tagesplan.DeleteBeschreibung(index);
         public string[] GetTerminAnzeige(DateTime tag) => tagesplan.GetBeschreibungen(tag);
         public int GetTerminAnzahl() => tagesplan.GetAnzahl();

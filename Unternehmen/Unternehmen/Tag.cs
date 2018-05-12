@@ -27,7 +27,11 @@ namespace Unternehmen
                 if(tag.Date>=verwaltung.GetAngemeldetePerson().GetTerminVon(f).Date&& tag.Date < verwaltung.GetAngemeldetePerson().GetTerminBis(f).Date)
                 LBTagesplan.Items.Add(verwaltung.GetAngemeldetePerson().GetTerminVon(f).ToShortDateString()+", "+verwaltung.GetAngemeldetePerson().GetTerminVon(f).ToShortTimeString() + "-" +verwaltung.GetAngemeldetePerson().GetTerminBis(f).ToShortDateString() +", "+ verwaltung.GetAngemeldetePerson().GetTerminBis(f).ToShortTimeString());
             */
-            LBTagesplan.Items.AddRange(verwaltung.GetAngemeldetePerson().GetTerminAnzeige(tag));
+            string[] temp = verwaltung.GetAngemeldetePerson().GetTerminAnzeige(tag);
+            for (int f = 0; f < temp.Length; f++)
+            {
+                LBTagesplan.Items.Add(temp[f].Split(';')[0]);
+            }
             LBTagesplan.Items.Add("new event");
         }
 
@@ -43,7 +47,7 @@ namespace Unternehmen
                 lbKrank.Text += verwaltung.GetFirma().Krankenliste(tag)[f] + "\n";
             for (int f = 0; f < verwaltung.GetFirma().Geburtstagliste(tag).Length; f++)
                 lbGeburtstag.Text += verwaltung.GetFirma().Geburtstagliste(tag)[f]+"\n";
-            lbWochentag.Text = tag.ToShortDateString();
+            lbWochentag.Text = tag.DayOfWeek+" "+tag.ToShortDateString();
             lbFeiertag.Text = verwaltung.GetFirma().GetFeirtagname(tag);
             txBNotizen.Text = verwaltung.GetAngemeldetePerson().GetNotiz(tag);
             txBGNtz.Text = verwaltung.GetFirma().GetNotiz(tag);
@@ -105,16 +109,15 @@ namespace Unternehmen
             if (e.NewValue == CheckState.Unchecked)
                 verwaltung.GetFirma().UrlaubDeleten(tag, e.Index);
         }
-
         private void LBTagesplan_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (LBTagesplan.IndexFromPoint(e.Location) != ListBox.NoMatches)
             {
-                if (termins != null) termins.Close();
+                if (termins != null) { termins.FormClosing -= Tag_FormClosing1;  termins.Close(); termins = null; }
                 if (LBTagesplan.IndexFromPoint(e.Location) == LBTagesplan.Items.Count - 1)
                     termins=new Termin(verwaltung, -1);
                 else
-                    termins=new Termin(verwaltung,verwaltung.GetAngemeldetePerson().GetIndex(tag, LBTagesplan.IndexFromPoint(e.Location)));
+                    termins=new Termin(verwaltung,Convert.ToInt32(verwaltung.GetAngemeldetePerson().GetTerminAnzeige(tag)[LBTagesplan.IndexFromPoint(e.Location)].Split(';')[1]));
                 termins.MdiParent = this;
                 termins.Dock = DockStyle.Fill;
                 termins.Show();

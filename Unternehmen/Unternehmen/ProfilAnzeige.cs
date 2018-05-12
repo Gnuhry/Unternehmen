@@ -67,13 +67,18 @@ namespace Unternehmen
             
             cBoxTag.SelectedIndex = angemeldet.GetGeburtstag().Day - 1;
             cBoxMonat.SelectedIndex = angemeldet.GetGeburtstag().Month - 1;
-            cBoxJahr.SelectedIndex = angemeldet.GetGeburtstag().Year % DateTime.Today.Year;
+            cBoxJahr.SelectedIndex = ( DateTime.Today.Year- angemeldet.GetGeburtstag().Year);
+            lbGeburtstag.Text = angemeldet.GetGeburtstag().ToShortDateString();
+            cBoxTag.SelectedIndexChanged += cBoxTag_SelectedIndexChanged;
+            cBoxMonat.SelectedIndexChanged += cBoxMonat_SelectedIndexChanged;
+            cBoxJahr.SelectedIndexChanged += cBoxJahr_SelectedIndexChanged;
             txBEmail.Text = angemeldet.Email1;
             txBAbteilung.Text = angemeldet.Abteilung1;
             txBHobbys.Text = angemeldet.Hobbys1;
             txBStatus.Text = angemeldet.Status1;
             txBTelefon.Text = angemeldet.Telefon1;
             pcBProfil.Image = angemeldet.GetProfilbild();
+            txBInhaber.Text = angemeldet.GetKontoInhaber();
             Inhaber();
         }
         private void Inhaber()
