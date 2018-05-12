@@ -74,7 +74,7 @@
             this.chBWebsite.Checked = true;
             this.chBWebsite.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chBWebsite.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chBWebsite.Location = new System.Drawing.Point(16, 456);
+            this.chBWebsite.Location = new System.Drawing.Point(16, 402);
             this.chBWebsite.Name = "chBWebsite";
             this.chBWebsite.Size = new System.Drawing.Size(93, 20);
             this.chBWebsite.TabIndex = 32;
@@ -85,7 +85,7 @@
             // txBWebsite
             // 
             this.txBWebsite.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txBWebsite.Location = new System.Drawing.Point(16, 478);
+            this.txBWebsite.Location = new System.Drawing.Point(16, 424);
             this.txBWebsite.Name = "txBWebsite";
             this.txBWebsite.Size = new System.Drawing.Size(209, 21);
             this.txBWebsite.TabIndex = 31;
@@ -98,7 +98,7 @@
             this.btnEinsehen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEinsehen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEinsehen.ForeColor = System.Drawing.Color.White;
-            this.btnEinsehen.Location = new System.Drawing.Point(483, 379);
+            this.btnEinsehen.Location = new System.Drawing.Point(579, 171);
             this.btnEinsehen.Name = "btnEinsehen";
             this.btnEinsehen.Size = new System.Drawing.Size(172, 34);
             this.btnEinsehen.TabIndex = 30;
@@ -110,7 +110,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 422);
+            this.label3.Location = new System.Drawing.Point(13, 374);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 16);
             this.label3.TabIndex = 29;
@@ -119,7 +119,7 @@
             // numUrlaubstage
             // 
             this.numUrlaubstage.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numUrlaubstage.Location = new System.Drawing.Point(95, 420);
+            this.numUrlaubstage.Location = new System.Drawing.Point(95, 372);
             this.numUrlaubstage.Name = "numUrlaubstage";
             this.numUrlaubstage.Size = new System.Drawing.Size(40, 21);
             this.numUrlaubstage.TabIndex = 28;
@@ -132,7 +132,7 @@
             this.btnPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPassword.ForeColor = System.Drawing.Color.White;
-            this.btnPassword.Location = new System.Drawing.Point(483, 328);
+            this.btnPassword.Location = new System.Drawing.Point(492, 285);
             this.btnPassword.Name = "btnPassword";
             this.btnPassword.Size = new System.Drawing.Size(172, 34);
             this.btnPassword.TabIndex = 27;
@@ -144,7 +144,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 172);
+            this.label2.Location = new System.Drawing.Point(12, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 21);
             this.label2.TabIndex = 26;
@@ -164,7 +164,7 @@
             "Friday",
             "Saturday",
             "Sunday"});
-            this.chbLArbeitstage.Location = new System.Drawing.Point(16, 194);
+            this.chbLArbeitstage.Location = new System.Drawing.Point(16, 156);
             this.chbLArbeitstage.Name = "chbLArbeitstage";
             this.chbLArbeitstage.Size = new System.Drawing.Size(120, 154);
             this.chbLArbeitstage.TabIndex = 25;
@@ -177,7 +177,7 @@
             this.btnSperren.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSperren.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSperren.ForeColor = System.Drawing.Color.White;
-            this.btnSperren.Location = new System.Drawing.Point(483, 278);
+            this.btnSperren.Location = new System.Drawing.Point(579, 224);
             this.btnSperren.Name = "btnSperren";
             this.btnSperren.Size = new System.Drawing.Size(172, 34);
             this.btnSperren.TabIndex = 24;
@@ -192,7 +192,7 @@
             this.btnAktivieren.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAktivieren.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAktivieren.ForeColor = System.Drawing.Color.White;
-            this.btnAktivieren.Location = new System.Drawing.Point(483, 225);
+            this.btnAktivieren.Location = new System.Drawing.Point(383, 224);
             this.btnAktivieren.Name = "btnAktivieren";
             this.btnAktivieren.Size = new System.Drawing.Size(172, 34);
             this.btnAktivieren.TabIndex = 23;
@@ -204,7 +204,7 @@
             // 
             this.comBMitarbeiter.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comBMitarbeiter.FormattingEnabled = true;
-            this.comBMitarbeiter.Location = new System.Drawing.Point(483, 134);
+            this.comBMitarbeiter.Location = new System.Drawing.Point(492, 131);
             this.comBMitarbeiter.Name = "comBMitarbeiter";
             this.comBMitarbeiter.Size = new System.Drawing.Size(172, 24);
             this.comBMitarbeiter.TabIndex = 22;
@@ -228,7 +228,7 @@
             this.btnFeuern.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFeuern.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFeuern.ForeColor = System.Drawing.Color.White;
-            this.btnFeuern.Location = new System.Drawing.Point(483, 173);
+            this.btnFeuern.Location = new System.Drawing.Point(383, 171);
             this.btnFeuern.Name = "btnFeuern";
             this.btnFeuern.Size = new System.Drawing.Size(172, 34);
             this.btnFeuern.TabIndex = 19;
@@ -256,7 +256,7 @@
             this.btnLogoHochladen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogoHochladen.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogoHochladen.ForeColor = System.Drawing.Color.White;
-            this.btnLogoHochladen.Location = new System.Drawing.Point(176, 278);
+            this.btnLogoHochladen.Location = new System.Drawing.Point(176, 240);
             this.btnLogoHochladen.Name = "btnLogoHochladen";
             this.btnLogoHochladen.Size = new System.Drawing.Size(127, 34);
             this.btnLogoHochladen.TabIndex = 35;
@@ -268,7 +268,7 @@
             // 
             this.pcBFirmenlogo.BackColor = System.Drawing.Color.White;
             this.pcBFirmenlogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pcBFirmenlogo.Location = new System.Drawing.Point(189, 172);
+            this.pcBFirmenlogo.Location = new System.Drawing.Point(189, 134);
             this.pcBFirmenlogo.Name = "pcBFirmenlogo";
             this.pcBFirmenlogo.Size = new System.Drawing.Size(100, 100);
             this.pcBFirmenlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -278,6 +278,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.rbtnResetEnabled);
             this.panel2.Controls.Add(this.btnReset);
             this.panel2.Controls.Add(this.txBFirmenmotto);
@@ -300,7 +301,7 @@
             // rbtnResetEnabled
             // 
             this.rbtnResetEnabled.AutoSize = true;
-            this.rbtnResetEnabled.Location = new System.Drawing.Point(85, 531);
+            this.rbtnResetEnabled.Location = new System.Drawing.Point(256, 349);
             this.rbtnResetEnabled.Name = "rbtnResetEnabled";
             this.rbtnResetEnabled.Size = new System.Drawing.Size(89, 17);
             this.rbtnResetEnabled.TabIndex = 44;
@@ -317,9 +318,9 @@
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(176, 523);
+            this.btnReset.Location = new System.Drawing.Point(256, 374);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(127, 34);
+            this.btnReset.Size = new System.Drawing.Size(92, 32);
             this.btnReset.TabIndex = 43;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
@@ -328,7 +329,7 @@
             // 
             // txBFirmenmotto
             // 
-            this.txBFirmenmotto.Location = new System.Drawing.Point(16, 364);
+            this.txBFirmenmotto.Location = new System.Drawing.Point(16, 316);
             this.txBFirmenmotto.Multiline = true;
             this.txBFirmenmotto.Name = "txBFirmenmotto";
             this.txBFirmenmotto.Size = new System.Drawing.Size(188, 50);
@@ -342,7 +343,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 57);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(348, 59);
+            this.panel5.Size = new System.Drawing.Size(346, 59);
             this.panel5.TabIndex = 41;
             // 
             // chBAutoRemoveUrlaub
@@ -366,7 +367,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(348, 57);
+            this.panel3.Size = new System.Drawing.Size(346, 57);
             this.panel3.TabIndex = 40;
             // 
             // panel1
@@ -403,7 +404,7 @@
             // lBoxNoAdmin
             // 
             this.lBoxNoAdmin.FormattingEnabled = true;
-            this.lBoxNoAdmin.Location = new System.Drawing.Point(354, 478);
+            this.lBoxNoAdmin.Location = new System.Drawing.Point(365, 358);
             this.lBoxNoAdmin.Name = "lBoxNoAdmin";
             this.lBoxNoAdmin.Size = new System.Drawing.Size(120, 95);
             this.lBoxNoAdmin.TabIndex = 41;
@@ -412,7 +413,7 @@
             // lBoxAdmin
             // 
             this.lBoxAdmin.FormattingEnabled = true;
-            this.lBoxAdmin.Location = new System.Drawing.Point(661, 478);
+            this.lBoxAdmin.Location = new System.Drawing.Point(675, 349);
             this.lBoxAdmin.Name = "lBoxAdmin";
             this.lBoxAdmin.Size = new System.Drawing.Size(120, 95);
             this.lBoxAdmin.TabIndex = 42;
@@ -424,7 +425,7 @@
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Location = new System.Drawing.Point(483, 489);
+            this.btnAdmin.Location = new System.Drawing.Point(497, 360);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(172, 34);
             this.btnAdmin.TabIndex = 43;
@@ -439,7 +440,7 @@
             this.btnNoAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNoAdmin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNoAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnNoAdmin.Location = new System.Drawing.Point(483, 539);
+            this.btnNoAdmin.Location = new System.Drawing.Point(497, 410);
             this.btnNoAdmin.Name = "btnNoAdmin";
             this.btnNoAdmin.Size = new System.Drawing.Size(172, 34);
             this.btnNoAdmin.TabIndex = 44;

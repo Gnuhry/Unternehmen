@@ -36,7 +36,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMonatvor = new System.Windows.Forms.Button();
             this.btnMonatzuruck = new System.Windows.Forms.Button();
+            this.lBoxTage = new System.Windows.Forms.ListBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.lbUrlaubstageC = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tLpKalender
@@ -49,7 +55,7 @@
             this.tLpKalender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tLpKalender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tLpKalender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tLpKalender.Location = new System.Drawing.Point(175, 169);
+            this.tLpKalender.Location = new System.Drawing.Point(76, 145);
             this.tLpKalender.Name = "tLpKalender";
             this.tLpKalender.RowCount = 7;
             this.tLpKalender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -71,7 +77,7 @@
             this.btnBeantragen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBeantragen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBeantragen.ForeColor = System.Drawing.Color.White;
-            this.btnBeantragen.Location = new System.Drawing.Point(175, 516);
+            this.btnBeantragen.Location = new System.Drawing.Point(670, 434);
             this.btnBeantragen.Name = "btnBeantragen";
             this.btnBeantragen.Size = new System.Drawing.Size(125, 40);
             this.btnBeantragen.TabIndex = 4;
@@ -95,7 +101,7 @@
             "October",
             "November",
             "December"});
-            this.cBoxMonat.Location = new System.Drawing.Point(175, 142);
+            this.cBoxMonat.Location = new System.Drawing.Point(76, 118);
             this.cBoxMonat.Name = "cBoxMonat";
             this.cBoxMonat.Size = new System.Drawing.Size(121, 21);
             this.cBoxMonat.TabIndex = 5;
@@ -104,7 +110,7 @@
             // cBoxJahr
             // 
             this.cBoxJahr.FormattingEnabled = true;
-            this.cBoxJahr.Location = new System.Drawing.Point(513, 142);
+            this.cBoxJahr.Location = new System.Drawing.Point(414, 118);
             this.cBoxJahr.Name = "cBoxJahr";
             this.cBoxJahr.Size = new System.Drawing.Size(121, 21);
             this.cBoxJahr.TabIndex = 6;
@@ -126,7 +132,7 @@
             this.btnMonatvor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMonatvor.ForeColor = System.Drawing.Color.White;
             this.btnMonatvor.Image = ((System.Drawing.Image)(resources.GetObject("btnMonatvor.Image")));
-            this.btnMonatvor.Location = new System.Drawing.Point(588, 102);
+            this.btnMonatvor.Location = new System.Drawing.Point(489, 78);
             this.btnMonatvor.Name = "btnMonatvor";
             this.btnMonatvor.Size = new System.Drawing.Size(46, 34);
             this.btnMonatvor.TabIndex = 2;
@@ -141,22 +147,90 @@
             this.btnMonatzuruck.ForeColor = System.Drawing.Color.White;
             this.btnMonatzuruck.Image = ((System.Drawing.Image)(resources.GetObject("btnMonatzuruck.Image")));
             this.btnMonatzuruck.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMonatzuruck.Location = new System.Drawing.Point(175, 102);
+            this.btnMonatzuruck.Location = new System.Drawing.Point(76, 78);
             this.btnMonatzuruck.Name = "btnMonatzuruck";
             this.btnMonatzuruck.Size = new System.Drawing.Size(46, 34);
             this.btnMonatzuruck.TabIndex = 1;
             this.btnMonatzuruck.UseVisualStyleBackColor = false;
             this.btnMonatzuruck.Click += new System.EventHandler(this.btnMonatzuruck_Click);
             // 
+            // lBoxTage
+            // 
+            this.lBoxTage.FormattingEnabled = true;
+            this.lBoxTage.Location = new System.Drawing.Point(541, 327);
+            this.lBoxTage.Name = "lBoxTage";
+            this.lBoxTage.Size = new System.Drawing.Size(120, 147);
+            this.lBoxTage.TabIndex = 8;
+            this.lBoxTage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lBoxTage_KeyDown);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(541, 292);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(196, 20);
+            this.dateTimePicker1.TabIndex = 9;
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(667, 254);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(738, 287);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnBeantragen_Click);
+            this.button1.Size = new System.Drawing.Size(57, 30);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Add";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(569, 118);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 147);
+            this.listBox1.TabIndex = 11;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(695, 176);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(96, 30);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Remove";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(667, 327);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(87, 30);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Remove";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // lbUrlaubstageC
+            // 
+            this.lbUrlaubstageC.AutoSize = true;
+            this.lbUrlaubstageC.Location = new System.Drawing.Point(695, 125);
+            this.lbUrlaubstageC.Name = "lbUrlaubstageC";
+            this.lbUrlaubstageC.Size = new System.Drawing.Size(35, 13);
+            this.lbUrlaubstageC.TabIndex = 14;
+            this.lbUrlaubstageC.Text = "label1";
             // 
             // Kalender
             // 
@@ -167,7 +241,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(807, 585);
             this.ControlBox = false;
+            this.Controls.Add(this.lbUrlaubstageC);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.lBoxTage);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cBoxJahr);
             this.Controls.Add(this.cBoxMonat);
@@ -186,6 +266,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Kalender_FormClosing);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tLpKalender_MouseUp);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -198,6 +279,12 @@
         private System.Windows.Forms.ComboBox cBoxMonat;
         private System.Windows.Forms.ComboBox cBoxJahr;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox lBoxTage;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lbUrlaubstageC;
     }
 }

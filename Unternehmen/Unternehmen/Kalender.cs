@@ -90,8 +90,8 @@ namespace Unternehmen
         {
             if (e.Button == MouseButtons.Right&&!Chef)
             {
-                if ((sender as Label).BackColor == BeantragenC) (sender as Label).BackColor = Color.Transparent;
-                else if ((sender as Label).BackColor == Color.Transparent) (sender as Label).BackColor = BeantragenC;
+                if ((sender as Label).BackColor == BeantragenC) { (sender as Label).BackColor = Color.Transparent; lBoxTage.Items.Remove(Convert.ToDateTime((sender as Label).Text + "." + Month + "." + Year).ToShortDateString()); }
+                else if ((sender as Label).BackColor == Color.Transparent) { (sender as Label).BackColor = BeantragenC; lBoxTage.Items.Add((sender as Label).Text + "." + Month + "." + Year);ItemsSortieren(); }
             }
             else
             {
@@ -196,9 +196,9 @@ namespace Unternehmen
             {
                 if (tLpKalender.GetChildAtPoint(e.Location) == null) return;
                 if (tLpKalender.GetChildAtPoint(e.Location).Text == "") return;
-               // MessageBox.Show("Überprüfen");
-                if (tLpKalender.GetChildAtPoint(e.Location).BackColor == BeantragenC) tLpKalender.GetChildAtPoint(e.Location).BackColor = Color.Transparent;
-                else if (tLpKalender.GetChildAtPoint(e.Location).BackColor == Color.Transparent) tLpKalender.GetChildAtPoint(e.Location).BackColor = BeantragenC;
+                // MessageBox.Show("Überprüfen");
+                if (tLpKalender.GetChildAtPoint(e.Location).BackColor == BeantragenC) { tLpKalender.GetChildAtPoint(e.Location).BackColor = Color.Transparent; lBoxTage.Items.Remove(Convert.ToDateTime(tLpKalender.GetChildAtPoint(e.Location).Text+"."+Month+"."+Year).ToShortDateString()); }
+                else if (tLpKalender.GetChildAtPoint(e.Location).BackColor == Color.Transparent) { tLpKalender.GetChildAtPoint(e.Location).BackColor = BeantragenC; lBoxTage.Items.Add(tLpKalender.GetChildAtPoint(e.Location).Text + "." + Month + "." + Year);ItemsSortieren(); }
                 Thread.Sleep(10); 
             }
         }
@@ -207,6 +207,88 @@ namespace Unternehmen
         {
             activeControl = null;
         }
+        private void ItemsSortieren()
+        {
+            List<DateTime> help = new List<DateTime>();
+            DateTime[] temp = new DateTime[lBoxTage.Items.Count];
+            for(int f = 0; f < temp.Length; f++)
+            {
+                help.Add(Convert.ToDateTime(lBoxTage.Items[f]));
+            }
+            help.Sort();
+            lBoxTage.Items.Clear();
+            for(int f = 0; f < help.Count; f++)
+            {
+                lBoxTage.Items.Add(help[f].ToShortDateString());
+            }
+            
+        }
+
+        private void lBoxTage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Delete&&lBoxTage.SelectedIndex>=0)
+            {
+                DateTime temp = Convert.ToDateTime(lBoxTage.Items[lBoxTage.SelectedIndex]);
+                if (temp.Month == Month && temp.Year == Year)
+                {
+                    for (int f = 0; f < Inhalt.Length; f++)
+                    {
+                        if (Inhalt[f].Text == "1")
+                        {
+                            Inhalt[f + temp.Day - 1].BackColor = Color.Transparent;
+                        }
+                    }
+                }
+                Urlaubstage.Remove(temp);
+                lBoxTage.Items.RemoveAt(lBoxTage.SelectedIndex);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (verwaltung.GetFirma().IsFeiertag(dateTimePicker1.Value)) return;
+            switch (dateTimePicker1.Value.DayOfWeek)
+            {
+                case DayOfWeek.Monday: if (!verwaltung.GetFirma().GetArbeitstag(0)) return; break;
+                case DayOfWeek.Tuesday: if (!verwaltung.GetFirma().GetArbeitstag(1)) return; break;
+                case DayOfWeek.Wednesday: if (!verwaltung.GetFirma().GetArbeitstag(2)) return; break;
+                case DayOfWeek.Thursday: if (!verwaltung.GetFirma().GetArbeitstag(3)) return; break;
+                case DayOfWeek.Friday: if (!verwaltung.GetFirma().GetArbeitstag(4)) return; break;
+                case DayOfWeek.Saturday: if (!verwaltung.GetFirma().GetArbeitstag(5)) return; break;
+                case DayOfWeek.Sunday: if (!verwaltung.GetFirma().GetArbeitstag(6)) return; break;
+            }
+            if (verwaltung.GetAngemeldetePerson().IsUrlaub(dateTimePicker1.Value)) return;
+            if (!lBoxTage.Items.Contains(dateTimePicker1.Value.ToShortDateString()))
+                lBoxTage.Items.Add(dateTimePicker1.Value.ToShortDateString());
+            if (!Urlaubstage.Contains(dateTimePicker1.Value))
+                Urlaubstage.Add(dateTimePicker1.Value);
+            if (dateTimePicker1.Value.Month == Month && dateTimePicker1.Value.Year == Year)
+            {
+                for(int f = 0; f < Inhalt.Length; f++)
+                {
+                    if (Inhalt[f].Text == "1")
+                    {
+                        Inhalt[f - 1 + dateTimePicker1.Value.Day].BackColor = BeantragenC;
+                    }
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            lBoxTage_KeyDown(lBoxTage, new KeyEventArgs(Keys.Delete));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex >= 0)
+            {
+                verwaltung.GetAngemeldetePerson().RemoveUrlaub(Convert.ToDateTime(listBox1.Items[listBox1.SelectedIndex]));
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+                KalenderLaden();
+                lbUrlaubstageC.Text = "Übrige Urlaubstage: " + (verwaltung.GetFirma().GetMaxTage() - verwaltung.GetAngemeldetePerson().GetUerlaubstageC());
+            }
+        }
 
         private void btnBeantragen_Click(object sender, EventArgs e)
         {
@@ -214,6 +296,13 @@ namespace Unternehmen
             for (int f = 0; f < Urlaubstage.Count; f++) 
                 verwaltung.GetFirma().Urlaub_beantragen(Urlaubstage[f],verwaltung.GetAngemeldetePerson());
             Urlaubstage = new List<DateTime>();
+            listBox1.Items.Clear();
+            for (int f = 0; f < verwaltung.GetAngemeldetePerson().GetUrlaub().Length; f++)
+            {
+                listBox1.Items.Add(verwaltung.GetAngemeldetePerson().GetUrlaub()[f]);
+            }
+            lBoxTage.Items.Clear();
+            lbUrlaubstageC.Text = "Übrige Urlaubstage: " + (verwaltung.GetFirma().GetMaxTage() - verwaltung.GetAngemeldetePerson().GetUerlaubstageC());
             KalenderLaden();
         }
 
@@ -264,6 +353,7 @@ namespace Unternehmen
 
         private void Init()
         {
+            lbUrlaubstageC.Text = "Übrige Urlaubstage: " + (verwaltung.GetFirma().GetMaxTage() - verwaltung.GetAngemeldetePerson().GetUerlaubstageC());
             btnBeantragen.Visible = !Chef;
             btnMonatzuruck.Enabled = false;
             Inhalt = new Label[47];
@@ -272,6 +362,12 @@ namespace Unternehmen
                 Inhalt[f] = new Label();
                 tLpKalender.Controls.Add(Inhalt[f]);
                 Inhalt[f].MouseDown += tLpKalender_MouseDown;
+            }
+            dateTimePicker1.MinDate = DateTime.Today;
+            dateTimePicker1.MaxDate = DateTime.Today.AddYears(9);
+            for(int f = 0; f < verwaltung.GetAngemeldetePerson().GetUrlaub().Length; f++)
+            {
+                listBox1.Items.Add(verwaltung.GetAngemeldetePerson().GetUrlaub()[f]);
             }
             Inhalt[0].Text = "MON";
             Inhalt[1].Text = "TUE";

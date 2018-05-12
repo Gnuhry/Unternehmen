@@ -126,20 +126,22 @@ namespace Unternehmen
             }
             return temp.ToArray();
         }
-        public bool IsUrlaub(DateTime Tag)
+        public DateTime[] GetUrlaub()
         {
-            for (int f = 0; f < Urlaubstage.Count; f++)
-                if (Tag == Urlaubstage[f]) return true;
-            return false;
+            return Urlaubstage.ToArray();
         }
         public void SetUrlaub(DateTime Tag)
         {
             if (!Urlaubstage.Contains(Tag))
                 Urlaubstage.Add(Tag);
             if (Tag == DateTime.Today) status = 3;
+            UrlaubsC++;
         }
+        public int GetUerlaubstageC() => UrlaubsC;
+        public bool IsUrlaub(DateTime Tag) => Urlaubstage.Contains(Tag);
         public void RemoveUrlaub(DateTime Tag)
         {
+            UrlaubsC--;
             Urlaubstage.Remove(Tag);
             if (Tag == DateTime.Today)
                 status = 1;
