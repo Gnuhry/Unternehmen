@@ -53,12 +53,28 @@ namespace Unternehmen
             txBGNtz.Text = verwaltung.GetFirma().GetNotiz(tag);
             if (Chef)
             {
-                txBeFeiertag.Visible=chBeFeiertag.Visible= chBLUrlaub.Visible = true;
+                txBeFeiertag.Visible = chBeFeiertag.Visible = chBLUrlaub.Visible = true;
                 txBeFeiertag.Text = verwaltung.GetFirma().GetFeirtagname(tag);
                 chBeFeiertag.Checked = verwaltung.GetFirma().GetFeirtagname(tag) != null;
                 for (int f = 0; f < verwaltung.GetFirma().Urlaubliste(tag).Length; f++)
-                    chBLUrlaub.Items.Add(verwaltung.GetFirma().Urlaubliste(tag)[f],true);
-                lbUrlaub.Visible = label4.Visible = txBNotizen.Visible = lbFeiertag.Visible = false;
+                    chBLUrlaub.Items.Add(verwaltung.GetFirma().Urlaubliste(tag)[f], true);
+                lbUrlaub.Visible = label4.Visible = txBNotizen.Visible = lbFeiertag.Visible = btnLogin.Visible = false;
+            }
+            else
+            {
+                btnLogin.Text = "Urlaub beantragen";
+                if (verwaltung.GetFirma().IsFeiertag(tag)) btnLogin.Text = "Urlaub entfernen";
+                switch (tag.DayOfWeek)
+                {
+                    case DayOfWeek.Monday: if (!verwaltung.GetFirma().GetArbeitstag(0)) btnLogin.Text = "Urlaub entfernen"; break;
+                    case DayOfWeek.Tuesday: if (!verwaltung.GetFirma().GetArbeitstag(1)) btnLogin.Text = "Urlaub entfernen"; break;
+                    case DayOfWeek.Wednesday: if (!verwaltung.GetFirma().GetArbeitstag(2)) btnLogin.Text = "Urlaub entfernen"; break;
+                    case DayOfWeek.Thursday: if (!verwaltung.GetFirma().GetArbeitstag(3)) btnLogin.Text = "Urlaub entfernen"; break;
+                    case DayOfWeek.Friday: if (!verwaltung.GetFirma().GetArbeitstag(4)) btnLogin.Text = "Urlaub entfernen"; break;
+                    case DayOfWeek.Saturday: if (!verwaltung.GetFirma().GetArbeitstag(5)) btnLogin.Text = "Urlaub entfernen"; break;
+                    case DayOfWeek.Sunday: if (!verwaltung.GetFirma().GetArbeitstag(6)) btnLogin.Text = "Urlaub entfernen"; break;
+                }
+                if (verwaltung.GetAngemeldetePerson().IsUrlaub(tag)) btnLogin.Text = "Urlaub entfernen";
             }
             LadenTagesplan();
         }
@@ -135,6 +151,15 @@ namespace Unternehmen
         private void Beenden_Label_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (btnLogin.Text == "Urlaub beantragen")
+                verwaltung.GetFirma().Urlaub_beantragen(tag, verwaltung.GetAngemeldetePerson());
+            else
+                verwaltung.GetAngemeldetePerson().RemoveUrlaub(tag);
+            Laden();
         }
     }
 }

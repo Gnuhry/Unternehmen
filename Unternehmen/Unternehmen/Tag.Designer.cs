@@ -50,6 +50,7 @@
             this.Beenden_Label = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -263,6 +264,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnLogin);
             this.panel2.Controls.Add(this.chBeFeiertag);
             this.panel2.Controls.Add(this.txBGNtz);
             this.panel2.Controls.Add(this.txBeFeiertag);
@@ -295,6 +297,20 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(439, 104);
             this.panel3.TabIndex = 37;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(89, 347);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(154, 34);
+            this.btnLogin.TabIndex = 34;
+            this.btnLogin.Text = "Urlaub beantragen";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // Tag
             // 
@@ -342,5 +358,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label Beenden_Label;
+        private System.Windows.Forms.Button btnLogin;
     }
 }

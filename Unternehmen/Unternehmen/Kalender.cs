@@ -96,7 +96,18 @@ namespace Unternehmen
             else
             {
                 tage.Add(new Tag(verwaltung, new DateTime(Year, Month, Convert.ToInt32((sender as Label).Text)),Chef));
+                tage[tage.Count - 1].FormClosing += Kalender_FormClosing1;
                 tage[tage.Count - 1].Show();
+            }
+        }
+
+        private void Kalender_FormClosing1(object sender, FormClosingEventArgs e)
+        {
+            KalenderLaden();
+            listBox1.Items.Clear();
+            for (int f = 0; f < verwaltung.GetAngemeldetePerson().GetUrlaub().Length; f++)
+            {
+                listBox1.Items.Add(verwaltung.GetAngemeldetePerson().GetUrlaub()[f]);
             }
         }
 

@@ -134,6 +134,7 @@ namespace Unternehmen
         {
             if (!Urlaubstage.Contains(Tag))
                 Urlaubstage.Add(Tag);
+            Urlaubstage.Sort();
             if (Tag == DateTime.Today) status = 3;
             UrlaubsC++;
         }
@@ -141,10 +142,9 @@ namespace Unternehmen
         public bool IsUrlaub(DateTime Tag) => Urlaubstage.Contains(Tag);
         public void RemoveUrlaub(DateTime Tag)
         {
+            if (Tag == DateTime.Today) return;
             UrlaubsC--;
             Urlaubstage.Remove(Tag);
-            if (Tag == DateTime.Today)
-                status = 1;
         }
         public void SetKrankentage(int Krankendauer)
         {
