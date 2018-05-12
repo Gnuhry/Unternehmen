@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 //948;585
 namespace Unternehmen
@@ -133,6 +134,12 @@ namespace Unternehmen
             pcBProfil.Image = verwaltung.GetAngemeldetePerson().GetProfilbild();
             if (verwaltung.GetAngemeldetePerson().Geschlecht1) lbName.Text = "Mr." + verwaltung.GetAngemeldetePerson().GetKontoInhaber();
             else lbName.Text = "Ms." + verwaltung.GetAngemeldetePerson().GetKontoInhaber();
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            string temp= Directory.GetCurrentDirectory().Split(Path.DirectorySeparatorChar)[0]+@"\"+Directory.GetCurrentDirectory().Split(Path.DirectorySeparatorChar)[1] + @"\" + Directory.GetCurrentDirectory().Split(Path.DirectorySeparatorChar)[2] +@"\" + Directory.GetCurrentDirectory().Split(Path.DirectorySeparatorChar)[3] +@"\" + Directory.GetCurrentDirectory().Split(Path.DirectorySeparatorChar)[4] +@"\" + Directory.GetCurrentDirectory().Split(Path.DirectorySeparatorChar)[5] +@"\" + Directory.GetCurrentDirectory().Split(Path.DirectorySeparatorChar)[6] +@"\" + Directory.GetCurrentDirectory().Split(Path.DirectorySeparatorChar)[7]; 
+            Process.Start( temp+@"\Properties\Pushy.exe");
         }
     }
 }
