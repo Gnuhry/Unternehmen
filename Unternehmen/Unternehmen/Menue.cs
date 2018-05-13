@@ -49,7 +49,7 @@ namespace Unternehmen
 
         private void btnAndern_Click(object sender, EventArgs e)
         {
-            pnAktivAktualisieren(sender as Control);
+            pnAktivAktualisieren(Daten_andern_Button);
             Aktive_Form_Name.Text = "Edit profile";
             verwaltung.ProfilAnzeige();
         }

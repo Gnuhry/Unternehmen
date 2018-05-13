@@ -113,6 +113,7 @@ namespace Unternehmen
                 }
                 return;
             }
+            lbUrlaubstageC.Text = "Firmen eigene Feiertage: " + verwaltung.GetFirma().GetEigeneFeiertage().Length;
             listBox1.Items.Clear();
             for (int f = 0; f < verwaltung.GetAngemeldetePerson().GetUrlaub().Length; f++)
             {
@@ -275,6 +276,7 @@ namespace Unternehmen
                 {
                     lBoxTage.Items.Add(verwaltung.GetFirma().GetEigeneFeiertage()[f]);
                 }
+                lbUrlaubstageC.Text = "Firmen eigene Feiertage: " + verwaltung.GetFirma().GetEigeneFeiertage().Length;
                 KalenderLaden();
             }
             else
@@ -313,17 +315,12 @@ namespace Unternehmen
             if (lBoxTage.SelectedIndex < 0) return;
             if (Chef)
             {
-                try
-                {
-                    string x = verwaltung.GetFirma().GetEigeneFeiertage()[lBoxTage.SelectedIndex].Split('-')[0].Split('.')[2];
+                if (verwaltung.GetFirma().GetEigeneFeiertage()[lBoxTage.SelectedIndex].Split('-')[0].Split('.').Length == 3)
                     verwaltung.GetFirma().DeleteFeiertag(Convert.ToDateTime(verwaltung.GetFirma().GetEigeneFeiertage()[lBoxTage.SelectedIndex].Split('-')[0]));
-                }
-                catch (Exception)
-                {
-                    verwaltung.GetFirma().DeleteFeiertag(new DateTime(1753,Convert.ToInt32(verwaltung.GetFirma().GetEigeneFeiertage()[lBoxTage.SelectedIndex].Split('.')[1].Split('-')[0]), Convert.ToInt32(verwaltung.GetFirma().GetEigeneFeiertage()[lBoxTage.SelectedIndex].Split('.')[0])));
-
-                }
+                else
+                    verwaltung.GetFirma().DeleteFeiertag(new DateTime(1753, Convert.ToInt32(verwaltung.GetFirma().GetEigeneFeiertage()[lBoxTage.SelectedIndex].Split('.')[1].Split('-')[0]), Convert.ToInt32(verwaltung.GetFirma().GetEigeneFeiertage()[lBoxTage.SelectedIndex].Split('.')[0])));
                 lBoxTage.Items.RemoveAt(lBoxTage.SelectedIndex);
+                lbUrlaubstageC.Text = "Firmen eigene Feiertage: " + verwaltung.GetFirma().GetEigeneFeiertage().Length;
                 KalenderLaden();
             }
             else
