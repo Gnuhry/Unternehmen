@@ -43,6 +43,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.lbUrlaubstageC = new System.Windows.Forms.Label();
+            this.txBBeschreibung = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tLpKalender
@@ -166,9 +167,11 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(541, 292);
+            this.dateTimePicker1.MaxDate = new System.DateTime(1753, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(196, 20);
             this.dateTimePicker1.TabIndex = 9;
+            this.dateTimePicker1.Value = new System.DateTime(1753, 12, 31, 0, 0, 0, 0);
             // 
             // button1
             // 
@@ -188,9 +191,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(569, 118);
+            this.listBox1.Location = new System.Drawing.Point(590, 118);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 147);
+            this.listBox1.Size = new System.Drawing.Size(217, 147);
             this.listBox1.TabIndex = 11;
             // 
             // button2
@@ -199,7 +202,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(695, 176);
+            this.button2.Location = new System.Drawing.Point(711, 88);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 30);
             this.button2.TabIndex = 12;
@@ -214,7 +217,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(667, 327);
+            this.button3.Location = new System.Drawing.Point(667, 358);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(87, 30);
             this.button3.TabIndex = 13;
@@ -226,11 +229,19 @@
             // lbUrlaubstageC
             // 
             this.lbUrlaubstageC.AutoSize = true;
-            this.lbUrlaubstageC.Location = new System.Drawing.Point(695, 125);
+            this.lbUrlaubstageC.Location = new System.Drawing.Point(587, 69);
             this.lbUrlaubstageC.Name = "lbUrlaubstageC";
             this.lbUrlaubstageC.Size = new System.Drawing.Size(35, 13);
             this.lbUrlaubstageC.TabIndex = 14;
             this.lbUrlaubstageC.Text = "label1";
+            // 
+            // txBBeschreibung
+            // 
+            this.txBBeschreibung.Location = new System.Drawing.Point(695, 318);
+            this.txBBeschreibung.Name = "txBBeschreibung";
+            this.txBBeschreibung.Size = new System.Drawing.Size(100, 20);
+            this.txBBeschreibung.TabIndex = 15;
+            this.txBBeschreibung.Visible = false;
             // 
             // Kalender
             // 
@@ -241,6 +252,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(807, 585);
             this.ControlBox = false;
+            this.Controls.Add(this.txBBeschreibung);
             this.Controls.Add(this.lbUrlaubstageC);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -286,5 +298,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lbUrlaubstageC;
+        private System.Windows.Forms.TextBox txBBeschreibung;
     }
 }

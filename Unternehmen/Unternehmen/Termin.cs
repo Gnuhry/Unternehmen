@@ -7,12 +7,13 @@ namespace Unternehmen
     {
         Verwaltung verwaltung;
         int index;
-        public Termin(Verwaltung verwaltung,int index)
+        public Termin(Verwaltung verwaltung,int index,DateTime date)
         {
             this.verwaltung = verwaltung;
             this.index = index;
             InitializeComponent();
             dTPVon.MinDate = dTpBis.MinDate = DateTime.Today;
+            dTPVon.Value = date;
             cBoxVonMin.SelectedIndex = cBoxBisMin.SelectedIndex = cBoxBisHour.SelectedIndex = cBoxVonHour.SelectedIndex = 0;
             if (index == -1) return;
             btnLoschen.Visible = true;

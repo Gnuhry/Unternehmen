@@ -22,74 +22,84 @@ namespace Unternehmen
         {
             TerminVon.Add(am); TerminBis.Add(bis); this.Beschreibung.Add(Beschreibung); this.Wiederholung.Add(Wiederholung);
         }
-        public void SetTermin(DateTime am, DateTime bis, string Beschreibung, string Wiederholung,int index)
+        public void SetTermin(DateTime am, DateTime bis, string Beschreibung, string Wiederholung, int index)
         {
-            TerminVon[index]=am; TerminBis[index]=bis; this.Beschreibung[index]=Beschreibung; this.Wiederholung[index]=Wiederholung;
+            TerminVon[index] = am; TerminBis[index] = bis; this.Beschreibung[index] = Beschreibung; this.Wiederholung[index] = Wiederholung;
         }
         public string[] GetBeschreibungen(DateTime Tag)
         {
             List<string> temp = new List<string>();
-            for(int f = 0; f < TerminVon.Count; f++)
+            for (int f = 0; f < TerminVon.Count; f++)
             {
-                Console.WriteLine(Beschreibung[f]);
+               // Console.WriteLine(Beschreibung[f]);
                 char[] help = Wiederholung[f].ToCharArray();
                 switch (Tag.DayOfWeek)
                 {
                     case DayOfWeek.Monday:
                         if (help[0] == '1')
                             if (Tag > TerminVon[f])
-                                temp.Add(Beschreibung[f]+";"+f);
+                                temp.Add(TerminVon[f].Hour + ":" + TerminVon[f].Minute + "-" + TerminBis[f].Hour + ":" + TerminBis[f].Minute + ": " + Beschreibung[f] + ";" + f);
                         break;
                     case DayOfWeek.Tuesday:
                         if (help[1] == '1')
                             if (Tag > TerminVon[f])
-                                temp.Add(Beschreibung[f] + ";" + f);
+                                temp.Add(TerminVon[f].Hour + ":" + TerminVon[f].Minute + "-" + TerminBis[f].Hour + ":" + TerminBis[f].Minute + ": " + Beschreibung[f] + ";" + f);
                         break;
                     case DayOfWeek.Wednesday:
                         if (help[2] == '1')
                             if (Tag > TerminVon[f])
-                                temp.Add(Beschreibung[f] + ";" + f);
+                                temp.Add(TerminVon[f].Hour + ":" + TerminVon[f].Minute + "-" + TerminBis[f].Hour + ":" + TerminBis[f].Minute + ": " + Beschreibung[f] + ";" + f);
                         break;
                     case DayOfWeek.Thursday:
                         if (help[3] == '1')
                             if (Tag > TerminVon[f])
-                                temp.Add(Beschreibung[f] + ";" + f);
+                                temp.Add(TerminVon[f].Hour + ":" + TerminVon[f].Minute + "-" + TerminBis[f].Hour + ":" + TerminBis[f].Minute + ": " + Beschreibung[f] + ";" + f);
                         break;
                     case DayOfWeek.Friday:
                         if (help[4] == '1')
                             if (Tag > TerminVon[f])
-                                temp.Add(Beschreibung[f] + ";" + f);
+                                temp.Add(TerminVon[f].Hour + ":" + TerminVon[f].Minute + "-" + TerminBis[f].Hour + ":" + TerminBis[f].Minute + ": " + Beschreibung[f] + ";" + f);
                         break;
                     case DayOfWeek.Saturday:
                         if (help[5] == '1')
                             if (Tag > TerminVon[f])
-                                temp.Add(Beschreibung[f] + ";" + f);
+                                temp.Add(TerminVon[f].Hour + ":" + TerminVon[f].Minute + "-" + TerminBis[f].Hour + ":" + TerminBis[f].Minute + ": " + Beschreibung[f] + ";" + f);
                         break;
                     case DayOfWeek.Sunday:
                         if (help[6] == '1')
                             if (Tag > TerminVon[f])
-                                temp.Add(Beschreibung[f] + ";" + f);
+                                temp.Add(TerminVon[f].Hour + ":" + TerminVon[f].Minute + "-" + TerminBis[f].Hour + ":" + TerminBis[f].Minute + ": " + Beschreibung[f] + ";" + f);
                         break;
-                    }
+                }
                 if (help[0] + "" + help[1] + help[2] + help[3] + help[4] + help[5] + help[6] == "0000000")
                 {
                     if (help[7] == '1')
                     {
                         if (Tag.Day == TerminVon[f].Day)
-                            temp.Add(Beschreibung[f] + ";" + f);
+                            temp.Add(TerminVon[f].Hour + ":" + TerminVon[f].Minute + "-" + TerminBis[f].Hour + ":" + TerminBis[f].Minute + ": " + Beschreibung[f] + ";" + f);
                     }
                     else if (help[8] == '1')
                     {
                         if (Tag.Day == TerminVon[f].Day && Tag.Month == TerminVon[f].Month)
-                            temp.Add(Beschreibung[f] + ";" + f);
+                            temp.Add(TerminVon[f].Hour + ":" + TerminVon[f].Minute + "-" + TerminBis[f].Hour + ":" + TerminBis[f].Minute + ": " + Beschreibung[f] + ";" + f);
                     }
                     else
                     {
-                        if (DateTime.Compare(Tag,TerminVon[f])>=0&&DateTime.Compare(Tag,TerminBis[f])<0)
-                            temp.Add(Beschreibung[f] + ";" + f);
+                        if (DateTime.Compare(Tag, TerminVon[f]) >= 0 && DateTime.Compare(Tag, TerminBis[f]) < 0)
+                        {
+                            if (TerminVon[f].Date == Tag.Date && TerminBis[f].Date == Tag.Date)
+                            {
+                                temp.Add(TerminVon[f].Hour + ":" + TerminVon[f].Minute + "-" + TerminBis[f].Hour + ":" + TerminBis[f].Minute + ": " + Beschreibung[f] + ";" + f);
+                            }
+                            else if (TerminVon[f].Date == Tag.Date)
+                                temp.Add(TerminVon[f].Hour + TerminVon[f].Minute + "-...: " + Beschreibung[f] + ";" + f);
+                            else if (TerminBis[f].Date == Tag.Date)
+                                temp.Add("...-" + TerminBis[f].Hour + ":" + TerminBis[f].Minute + ": " + Beschreibung[f] + ";" + f);
+                            else
+                                temp.Add(Beschreibung[f] + ";" + f);
+                        }
                     }
                 }
-
             }
             return temp.ToArray();
         }

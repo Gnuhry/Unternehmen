@@ -195,7 +195,7 @@ namespace Unternehmen
 
         private void rbtnResetEnabled_Click(object sender, EventArgs e)
         {
-            rbtnResetEnabled.Checked = !rbtnResetEnabled.Checked;
+            //rbtnResetEnabled.Checked = !rbtnResetEnabled.Checked;
             if (rbtnResetEnabled.Checked) btnReset.Enabled = true;
             else btnReset.Enabled = false;
         }

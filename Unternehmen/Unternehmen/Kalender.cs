@@ -104,6 +104,15 @@ namespace Unternehmen
         private void Kalender_FormClosing1(object sender, FormClosingEventArgs e)
         {
             KalenderLaden();
+            if (Chef)
+            {
+                lBoxTage.Items.Clear();
+                for (int f = 0; f < verwaltung.GetFirma().GetEigeneFeiertage().Length; f++)
+                {
+                    lBoxTage.Items.Add(verwaltung.GetFirma().GetEigeneFeiertage()[f]);
+                }
+                return;
+            }
             listBox1.Items.Clear();
             for (int f = 0; f < verwaltung.GetAngemeldetePerson().GetUrlaub().Length; f++)
             {
@@ -257,29 +266,43 @@ namespace Unternehmen
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (verwaltung.GetFirma().IsFeiertag(dateTimePicker1.Value)) return;
-            switch (dateTimePicker1.Value.DayOfWeek)
+            if (Chef)
             {
-                case DayOfWeek.Monday: if (!verwaltung.GetFirma().GetArbeitstag(0)) return; break;
-                case DayOfWeek.Tuesday: if (!verwaltung.GetFirma().GetArbeitstag(1)) return; break;
-                case DayOfWeek.Wednesday: if (!verwaltung.GetFirma().GetArbeitstag(2)) return; break;
-                case DayOfWeek.Thursday: if (!verwaltung.GetFirma().GetArbeitstag(3)) return; break;
-                case DayOfWeek.Friday: if (!verwaltung.GetFirma().GetArbeitstag(4)) return; break;
-                case DayOfWeek.Saturday: if (!verwaltung.GetFirma().GetArbeitstag(5)) return; break;
-                case DayOfWeek.Sunday: if (!verwaltung.GetFirma().GetArbeitstag(6)) return; break;
-            }
-            if (verwaltung.GetAngemeldetePerson().IsUrlaub(dateTimePicker1.Value)) return;
-            if (!lBoxTage.Items.Contains(dateTimePicker1.Value.ToShortDateString()))
-                lBoxTage.Items.Add(dateTimePicker1.Value.ToShortDateString());
-            if (!Urlaubstage.Contains(dateTimePicker1.Value))
-                Urlaubstage.Add(dateTimePicker1.Value);
-            if (dateTimePicker1.Value.Month == Month && dateTimePicker1.Value.Year == Year)
-            {
-                for(int f = 0; f < Inhalt.Length; f++)
+                verwaltung.GetFirma().SetFeiertag(dateTimePicker1.Value, txBBeschreibung.Text);
+                txBBeschreibung.Text = null;
+                lBoxTage.Items.Clear();
+                for (int f = 0; f < verwaltung.GetFirma().GetEigeneFeiertage().Length; f++)
                 {
-                    if (Inhalt[f].Text == "1")
+                    lBoxTage.Items.Add(verwaltung.GetFirma().GetEigeneFeiertage()[f]);
+                }
+                KalenderLaden();
+            }
+            else
+            {
+                if (verwaltung.GetFirma().IsFeiertag(dateTimePicker1.Value)) return;
+                switch (dateTimePicker1.Value.DayOfWeek)
+                {
+                    case DayOfWeek.Monday: if (!verwaltung.GetFirma().GetArbeitstag(0)) return; break;
+                    case DayOfWeek.Tuesday: if (!verwaltung.GetFirma().GetArbeitstag(1)) return; break;
+                    case DayOfWeek.Wednesday: if (!verwaltung.GetFirma().GetArbeitstag(2)) return; break;
+                    case DayOfWeek.Thursday: if (!verwaltung.GetFirma().GetArbeitstag(3)) return; break;
+                    case DayOfWeek.Friday: if (!verwaltung.GetFirma().GetArbeitstag(4)) return; break;
+                    case DayOfWeek.Saturday: if (!verwaltung.GetFirma().GetArbeitstag(5)) return; break;
+                    case DayOfWeek.Sunday: if (!verwaltung.GetFirma().GetArbeitstag(6)) return; break;
+                }
+                if (verwaltung.GetAngemeldetePerson().IsUrlaub(dateTimePicker1.Value)) return;
+                if (!lBoxTage.Items.Contains(dateTimePicker1.Value.ToShortDateString()))
+                    lBoxTage.Items.Add(dateTimePicker1.Value.ToShortDateString());
+                if (!Urlaubstage.Contains(dateTimePicker1.Value))
+                    Urlaubstage.Add(dateTimePicker1.Value);
+                if (dateTimePicker1.Value.Month == Month && dateTimePicker1.Value.Year == Year)
+                {
+                    for (int f = 0; f < Inhalt.Length; f++)
                     {
-                        Inhalt[f - 1 + dateTimePicker1.Value.Day].BackColor = BeantragenC;
+                        if (Inhalt[f].Text == "1")
+                        {
+                            Inhalt[f - 1 + dateTimePicker1.Value.Day].BackColor = BeantragenC;
+                        }
                     }
                 }
             }
@@ -287,6 +310,23 @@ namespace Unternehmen
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (lBoxTage.SelectedIndex < 0) return;
+            if (Chef)
+            {
+                try
+                {
+                    string x = verwaltung.GetFirma().GetEigeneFeiertage()[lBoxTage.SelectedIndex].Split('-')[0].Split('.')[2];
+                    verwaltung.GetFirma().DeleteFeiertag(Convert.ToDateTime(verwaltung.GetFirma().GetEigeneFeiertage()[lBoxTage.SelectedIndex].Split('-')[0]));
+                }
+                catch (Exception)
+                {
+                    verwaltung.GetFirma().DeleteFeiertag(new DateTime(1753,Convert.ToInt32(verwaltung.GetFirma().GetEigeneFeiertage()[lBoxTage.SelectedIndex].Split('.')[1].Split('-')[0]), Convert.ToInt32(verwaltung.GetFirma().GetEigeneFeiertage()[lBoxTage.SelectedIndex].Split('.')[0])));
+
+                }
+                lBoxTage.Items.RemoveAt(lBoxTage.SelectedIndex);
+                KalenderLaden();
+            }
+            else
             lBoxTage_KeyDown(lBoxTage, new KeyEventArgs(Keys.Delete));
         }
 
@@ -364,7 +404,6 @@ namespace Unternehmen
 
         private void Init()
         {
-            lbUrlaubstageC.Text = "Übrige Urlaubstage: " + (verwaltung.GetFirma().GetMaxTage() - verwaltung.GetAngemeldetePerson().GetUerlaubstageC());
             btnBeantragen.Visible = !Chef;
             btnMonatzuruck.Enabled = false;
             Inhalt = new Label[47];
@@ -374,11 +413,29 @@ namespace Unternehmen
                 tLpKalender.Controls.Add(Inhalt[f]);
                 Inhalt[f].MouseDown += tLpKalender_MouseDown;
             }
-            dateTimePicker1.MinDate = DateTime.Today;
-            dateTimePicker1.MaxDate = DateTime.Today.AddYears(9);
-            for(int f = 0; f < verwaltung.GetAngemeldetePerson().GetUrlaub().Length; f++)
+            if (Chef) {
+                txBBeschreibung.Visible = true;
+                button2.Visible = false;
+                lbUrlaubstageC.Text = "Firmen eigene Feiertage: "+verwaltung.GetFirma().GetEigeneFeiertage().Length;
+                for (int f = 0; f < verwaltung.GetFirma().GetGesetzlicheFeiertage(Year).Length; f++)
+                {
+                    listBox1.Items.Add(verwaltung.GetFirma().GetGesetzlicheFeiertage(Year)[f]);
+                }
+                for (int f = 0; f < verwaltung.GetFirma().GetEigeneFeiertage().Length; f++)
+                {
+                    lBoxTage.Items.Add(verwaltung.GetFirma().GetEigeneFeiertage()[f]);
+                }
+            }
+            else
             {
-                listBox1.Items.Add(verwaltung.GetAngemeldetePerson().GetUrlaub()[f]);
+                lbUrlaubstageC.Text = "Übrige Urlaubstage: " + (verwaltung.GetFirma().GetMaxTage() - verwaltung.GetAngemeldetePerson().GetUerlaubstageC());
+                dateTimePicker1.MaxDate = DateTime.Today.AddYears(9);
+                dateTimePicker1.MinDate = DateTime.Today;
+
+                for (int f = 0; f < verwaltung.GetAngemeldetePerson().GetUrlaub().Length; f++)
+                {
+                    listBox1.Items.Add(verwaltung.GetAngemeldetePerson().GetUrlaub()[f]);
+                }
             }
             Inhalt[0].Text = "MON";
             Inhalt[1].Text = "TUE";

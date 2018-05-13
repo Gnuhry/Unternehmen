@@ -59,6 +59,12 @@ namespace Unternehmen
                 for (int f = 0; f < verwaltung.GetFirma().Urlaubliste(tag).Length; f++)
                     chBLUrlaub.Items.Add(verwaltung.GetFirma().Urlaubliste(tag)[f], true);
                 lbUrlaub.Visible = label4.Visible = txBNotizen.Visible = lbFeiertag.Visible = btnLogin.Visible = false;
+                if (verwaltung.GetFirma().IsFeiertagAnderbar(tag))
+                {
+                    chBeFeiertag.Enabled = txBeFeiertag.Enabled = true;
+                }
+                else
+                    chBeFeiertag.Enabled = txBeFeiertag.Enabled = false;
             }
             else
             {
@@ -108,7 +114,7 @@ namespace Unternehmen
 
         private void chBeFeiertag_CheckedChanged(object sender, EventArgs e)
         {
-            if (chBeFeiertag.Checked) 
+            if (chBeFeiertag.Checked&&verwaltung.GetFirma().IsFeiertagAnderbar(tag)) 
                 verwaltung.GetFirma().SetFeiertag(tag, txBeFeiertag.Text);
             else
                 verwaltung.GetFirma().DeleteFeiertag(tag);
@@ -116,7 +122,7 @@ namespace Unternehmen
 
         private void txBeFeiertag_TextChanged(object sender, EventArgs e)
         {
-            if(chBeFeiertag.Checked)
+            if(chBeFeiertag.Checked&&!verwaltung.GetFirma().IsFeiertagAnderbar(tag))
                 verwaltung.GetFirma().SetFeiertag(tag, txBeFeiertag.Text);
         }
 
@@ -131,9 +137,9 @@ namespace Unternehmen
             {
                 if (termins != null) { termins.FormClosing -= Tag_FormClosing1;  termins.Close(); termins = null; }
                 if (LBTagesplan.IndexFromPoint(e.Location) == LBTagesplan.Items.Count - 1)
-                    termins=new Termin(verwaltung, -1);
+                    termins=new Termin(verwaltung, -1,tag);
                 else
-                    termins=new Termin(verwaltung,Convert.ToInt32(verwaltung.GetAngemeldetePerson().GetTerminAnzeige(tag)[LBTagesplan.IndexFromPoint(e.Location)].Split(';')[1]));
+                    termins=new Termin(verwaltung,Convert.ToInt32(verwaltung.GetAngemeldetePerson().GetTerminAnzeige(tag)[LBTagesplan.IndexFromPoint(e.Location)].Split(';')[1]),tag);
                 termins.MdiParent = this;
                 termins.Dock = DockStyle.Fill;
                 termins.Show();

@@ -39,6 +39,7 @@ namespace Unternehmen
             Mitarbeiter = new List<Konto>();
             date_zero = DateTime.Today;
             notizen = new Notizen();
+            MaxTage = 30;
         }
         public void SetMaxTage(int MaxTage)
         {
@@ -116,6 +117,7 @@ namespace Unternehmen
 
         public string GetFeirtagname(DateTime Tag) => feiertage.getFeierTag(Tag);
         public bool IsFeiertag(DateTime Tag) => feiertage.getFeierTag(Tag)!=null;
+        public bool IsFeiertagAnderbar(DateTime Tag) => feiertage.IsAnderbar(Tag);
         public void DeleteFeiertag(DateTime Tag) => feiertage.RemoveFeiertag(Tag);
         public void SetFirmenLogo(Image Logo) => this.Logo = Logo;
         public Image GetFirmenLogo() => Logo;
@@ -193,6 +195,8 @@ namespace Unternehmen
         public void SetAdmin(Konto Admin) => Admins.Add(Admin);
         public void RemoveAdmin(Konto Admin) => Admins.Remove(Admin);
         public bool IsKonto(Konto Abfrage) => Admins.Contains(Abfrage);
+        public string[] GetGesetzlicheFeiertage(int Jahr) => feiertage.GetGesetzlicheFeiertage(Jahr);
+        public string[] GetEigeneFeiertage() => feiertage.GetEigeneFeiertage();
 
         public void Speichern(string path)
         {

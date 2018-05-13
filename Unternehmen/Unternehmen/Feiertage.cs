@@ -21,27 +21,42 @@ namespace Unternehmen
 
         public string getFeierTag(DateTime Tag)
         {
+           // Console.WriteLine("Hey");
             SetFeiertage(Tag.Year);
             string erg = "";
             for (int f = 0; f < Feiertag.Length; f++)
             {
-                if (Feiertag[f] == Tag )
+                if (Feiertag[f] == Tag)
+                {
                     erg += Feiertagname[f] + "\n";
+                    //Console.WriteLine("1-"+Feiertagname[f]);
+                }
             }
-            for(int f = 0; f < eigeneFeiertage.Count; f++)
+            for (int f = 0; f < eigeneFeiertage.Count; f++)
             {
-                if(eigeneFeiertage[f] == Tag)
+                if (eigeneFeiertage[f].Year == 1753)
+                {
+                    if (eigeneFeiertage[f].Month == Tag.Month && eigeneFeiertage[f].Day == Tag.Day)
+                    {
+                        erg += eigeneFeiertagename[f] + "\n";
+                      //  Console.WriteLine("2-" + Feiertagname[f]);
+                    }
+                }
+                else
+                if (eigeneFeiertage[f] == Tag)
+                {
                     erg += eigeneFeiertagename[f] + "\n";
+                   // Console.WriteLine("3-" + Feiertagname[f]);
+                }
             }
-            if (erg == "")
-                return null;
+            if (erg=="") return null;
             return erg;
         }
 
         private void SetFeiertage(int Jahr)
         {
             int count = 0;
-            Feiertag = new DateTime[40];
+            Feiertag = new DateTime[32];
             Feiertagname = new string[Feiertag.Length];
 
             for (int f = 0; f < Feiertag.Length; f++) { Feiertag[f] = new DateTime(Jahr, 1, 1); }
@@ -74,7 +89,6 @@ namespace Unternehmen
             Feiertag[count] = weih.AddDays(-7); Feiertagname[count++] = "3. Advent";
             Feiertag[count] = weih.AddDays(-14); Feiertagname[count++] = "2. Advent";
             Feiertag[count] = weih.AddDays(-21); Feiertagname[count++] = "1. Advent";
-            Feiertag[count] = weih.AddDays(-28); Feiertagname[count++] = "Christkönig";
 
 
 
@@ -97,12 +111,33 @@ namespace Unternehmen
             Feiertag[count] = Feiertag[count].AddDays(30); Feiertag[count] = Feiertag[count].AddMonths(11); Feiertagname[count++] = "Silvester";
         }
 
+        public bool IsAnderbar(DateTime Tag)
+        {
+            SetFeiertage(Tag.Year);
+            if (Feiertag.Contains(Tag)) return false;
+                for (int f = 0; f < eigeneFeiertage.Count; f++)
+                {
+                    if (eigeneFeiertage[f].Month == Tag.Month && eigeneFeiertage[f].Day == Tag.Day)
+                    {
+                        if (eigeneFeiertage[f].Year == 1753)
+                        {
+                            return false;
+                        }
+                    }
 
+            }
+            return true;
+
+        }
         public void SetFeiertag(string Name, DateTime Tag)
         {
             if (eigeneFeiertage.Contains(Tag))
             {
                 eigeneFeiertagename[eigeneFeiertage.BinarySearch(Tag)] = Name;
+            }
+            else if(eigeneFeiertage.Contains(new DateTime(1753, Tag.Month, Tag.Day)))
+            {
+                return;
             }
             else
             {
@@ -112,11 +147,44 @@ namespace Unternehmen
         }
         public void RemoveFeiertag(DateTime Tag)
         {
+            Console.WriteLine(Tag.ToShortDateString());
             if (eigeneFeiertage.Contains(Tag))
             {
                 eigeneFeiertagename.RemoveAt(eigeneFeiertage.BinarySearch(Tag));
                 eigeneFeiertage.Remove(Tag);
             }
+        }
+        public string[] GetGesetzlicheFeiertage(int Jahr)
+        {
+            SetFeiertage(Jahr);
+            string[] temp=new string[Feiertag.Length];
+            for(int f = 0; f < Feiertag.Length; f++)
+            {
+                temp[f] = Feiertag[f].ToShortDateString() + "- " + Feiertagname[f];
+            }
+            return temp;
+        }
+        public string[] GetEigeneFeiertage()
+        {
+            string[] temp = new string[eigeneFeiertage.Count];
+            for (int f = 0; f < eigeneFeiertage.Count; f++)
+            {
+                if (eigeneFeiertage[f].Year == 1753)
+                {
+                    if (eigeneFeiertage[f].Day < 10)
+                        temp[f] = "0" + eigeneFeiertage[f].Day+".";
+                    else
+                        temp[f] = eigeneFeiertage[f].Day + ".";
+                    if (eigeneFeiertage[f].Month < 10)
+                        temp[f] += "0" + eigeneFeiertage[f].Month;
+                    else
+                        temp[f] += eigeneFeiertage[f].Month + "";
+                    temp[f] +="- " + eigeneFeiertagename[f];
+                }
+                else
+                temp[f] = eigeneFeiertage[f].ToShortDateString() + "- " + eigeneFeiertagename[f];
+            }
+            return temp;
         }
     }
 }

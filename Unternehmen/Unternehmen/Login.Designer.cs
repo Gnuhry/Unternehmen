@@ -36,13 +36,15 @@
             this.Firmen_Motto = new System.Windows.Forms.Label();
             this.Logo_Picturebox = new System.Windows.Forms.PictureBox();
             this.Panel_Right = new System.Windows.Forms.Panel();
+            this.lbFehlermeldung = new System.Windows.Forms.Label();
             this.Beenden_Label = new System.Windows.Forms.Label();
-            this.txBpasswort = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Password_Label = new System.Windows.Forms.Label();
             this.Username_Label = new System.Windows.Forms.Label();
-            this.txBbenutzername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Log_In_Label = new System.Windows.Forms.Label();
-            this.lbFehlermeldung = new System.Windows.Forms.Label();
+            this.txBbenutzername = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txBpasswort = new System.Windows.Forms.TextBox();
             this.Panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_Picturebox)).BeginInit();
             this.Panel_Right.SuspendLayout();
@@ -118,14 +120,16 @@
             // Panel_Right
             // 
             this.Panel_Right.BackColor = System.Drawing.Color.White;
+            this.Panel_Right.Controls.Add(this.panel2);
+            this.Panel_Right.Controls.Add(this.txBpasswort);
+            this.Panel_Right.Controls.Add(this.panel1);
+            this.Panel_Right.Controls.Add(this.txBbenutzername);
             this.Panel_Right.Controls.Add(this.lbFehlermeldung);
             this.Panel_Right.Controls.Add(this.Beenden_Label);
-            this.Panel_Right.Controls.Add(this.txBpasswort);
             this.Panel_Right.Controls.Add(this.Password_Label);
             this.Panel_Right.Controls.Add(this.btnRegistrieren);
             this.Panel_Right.Controls.Add(this.btnLogin);
             this.Panel_Right.Controls.Add(this.Username_Label);
-            this.Panel_Right.Controls.Add(this.txBbenutzername);
             this.Panel_Right.Controls.Add(this.Log_In_Label);
             this.Panel_Right.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_Right.Location = new System.Drawing.Point(325, 0);
@@ -136,6 +140,17 @@
             this.Panel_Right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_Right_MouseMove);
             this.Panel_Right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_Left_MouseUp);
             // 
+            // lbFehlermeldung
+            // 
+            this.lbFehlermeldung.AutoSize = true;
+            this.lbFehlermeldung.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFehlermeldung.ForeColor = System.Drawing.Color.Red;
+            this.lbFehlermeldung.Location = new System.Drawing.Point(3, 345);
+            this.lbFehlermeldung.Name = "lbFehlermeldung";
+            this.lbFehlermeldung.Size = new System.Drawing.Size(36, 17);
+            this.lbFehlermeldung.TabIndex = 29;
+            this.lbFehlermeldung.Text = "Error";
+            // 
             // Beenden_Label
             // 
             this.Beenden_Label.AutoSize = true;
@@ -143,32 +158,10 @@
             this.Beenden_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Beenden_Label.Location = new System.Drawing.Point(330, 4);
             this.Beenden_Label.Name = "Beenden_Label";
-            this.Beenden_Label.Size = new System.Drawing.Size(22, 25);
+            this.Beenden_Label.Size = new System.Drawing.Size(20, 24);
             this.Beenden_Label.TabIndex = 28;
             this.Beenden_Label.Text = "x";
             this.Beenden_Label.Click += new System.EventHandler(this.Beenden_Label_Click);
-            // 
-            // txBpasswort
-            // 
-            this.txBpasswort.BackColor = System.Drawing.Color.White;
-            this.txBpasswort.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txBpasswort.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txBpasswort.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txBpasswort.ForeColor = System.Drawing.Color.Black;
-            this.txBpasswort.HintForeColor = System.Drawing.Color.Black;
-            this.txBpasswort.HintText = "";
-            this.txBpasswort.isPassword = true;
-            this.txBpasswort.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBpasswort.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBpasswort.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBpasswort.LineThickness = 3;
-            this.txBpasswort.Location = new System.Drawing.Point(30, 251);
-            this.txBpasswort.Margin = new System.Windows.Forms.Padding(4);
-            this.txBpasswort.Name = "txBpasswort";
-            this.txBpasswort.Size = new System.Drawing.Size(300, 33);
-            this.txBpasswort.TabIndex = 9;
-            this.txBpasswort.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txBpasswort.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txBpasswort_KeyDown);
             // 
             // Password_Label
             // 
@@ -177,7 +170,7 @@
             this.Password_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Password_Label.Location = new System.Drawing.Point(26, 227);
             this.Password_Label.Name = "Password_Label";
-            this.Password_Label.Size = new System.Drawing.Size(85, 20);
+            this.Password_Label.Size = new System.Drawing.Size(86, 21);
             this.Password_Label.TabIndex = 8;
             this.Password_Label.Text = "Password:";
             // 
@@ -186,32 +179,11 @@
             this.Username_Label.AutoSize = true;
             this.Username_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Username_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.Username_Label.Location = new System.Drawing.Point(26, 137);
+            this.Username_Label.Location = new System.Drawing.Point(26, 131);
             this.Username_Label.Name = "Username_Label";
-            this.Username_Label.Size = new System.Drawing.Size(91, 20);
+            this.Username_Label.Size = new System.Drawing.Size(92, 21);
             this.Username_Label.TabIndex = 6;
             this.Username_Label.Text = "Username:";
-            // 
-            // txBbenutzername
-            // 
-            this.txBbenutzername.BackColor = System.Drawing.Color.White;
-            this.txBbenutzername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txBbenutzername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txBbenutzername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txBbenutzername.ForeColor = System.Drawing.Color.Black;
-            this.txBbenutzername.HintForeColor = System.Drawing.Color.Gray;
-            this.txBbenutzername.HintText = "Username";
-            this.txBbenutzername.isPassword = false;
-            this.txBbenutzername.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBbenutzername.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBbenutzername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.txBbenutzername.LineThickness = 3;
-            this.txBbenutzername.Location = new System.Drawing.Point(30, 161);
-            this.txBbenutzername.Margin = new System.Windows.Forms.Padding(4);
-            this.txBbenutzername.Name = "txBbenutzername";
-            this.txBbenutzername.Size = new System.Drawing.Size(300, 33);
-            this.txBbenutzername.TabIndex = 5;
-            this.txBbenutzername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // Log_In_Label
             // 
@@ -220,24 +192,50 @@
             this.Log_In_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
             this.Log_In_Label.Location = new System.Drawing.Point(25, 54);
             this.Log_In_Label.Name = "Log_In_Label";
-            this.Log_In_Label.Size = new System.Drawing.Size(78, 25);
+            this.Log_In_Label.Size = new System.Drawing.Size(72, 25);
             this.Log_In_Label.TabIndex = 4;
             this.Log_In_Label.Text = "Log in";
             // 
-            // lbFehlermeldung
+            // txBbenutzername
             // 
-            this.lbFehlermeldung.AutoSize = true;
-            this.lbFehlermeldung.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFehlermeldung.ForeColor = System.Drawing.Color.Red;
-            this.lbFehlermeldung.Location = new System.Drawing.Point(3, 345);
-            this.lbFehlermeldung.Name = "lbFehlermeldung";
-            this.lbFehlermeldung.Size = new System.Drawing.Size(36, 16);
-            this.lbFehlermeldung.TabIndex = 29;
-            this.lbFehlermeldung.Text = "Error";
+            this.txBbenutzername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txBbenutzername.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txBbenutzername.Location = new System.Drawing.Point(30, 158);
+            this.txBbenutzername.Name = "txBbenutzername";
+            this.txBbenutzername.Size = new System.Drawing.Size(300, 15);
+            this.txBbenutzername.TabIndex = 30;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Red;
+            this.panel1.Location = new System.Drawing.Point(30, 175);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(296, 3);
+            this.panel1.TabIndex = 31;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Red;
+            this.panel2.Location = new System.Drawing.Point(30, 269);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(296, 3);
+            this.panel2.TabIndex = 33;
+            // 
+            // txBpasswort
+            // 
+            this.txBpasswort.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txBpasswort.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txBpasswort.Location = new System.Drawing.Point(30, 252);
+            this.txBpasswort.Name = "txBpasswort";
+            this.txBpasswort.PasswordChar = '*';
+            this.txBpasswort.Size = new System.Drawing.Size(300, 15);
+            this.txBpasswort.TabIndex = 32;
+            this.txBpasswort.UseSystemPasswordChar = true;
+            this.txBpasswort.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txBpasswort_KeyDown);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 557);
             this.Controls.Add(this.Panel_Right);
@@ -266,11 +264,13 @@
         private System.Windows.Forms.Panel Panel_Right;
         private System.Windows.Forms.Label Password_Label;
         private System.Windows.Forms.Label Username_Label;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txBbenutzername;
         private System.Windows.Forms.Label Log_In_Label;
         private System.Windows.Forms.Label Firmen_Motto;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txBpasswort;
         private System.Windows.Forms.Label Beenden_Label;
         private System.Windows.Forms.Label lbFehlermeldung;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txBbenutzername;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txBpasswort;
     }
 }

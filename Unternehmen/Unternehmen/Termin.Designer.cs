@@ -183,7 +183,7 @@
             "23"});
             this.cBoxVonHour.Location = new System.Drawing.Point(287, 12);
             this.cBoxVonHour.Name = "cBoxVonHour";
-            this.cBoxVonHour.Size = new System.Drawing.Size(29, 21);
+            this.cBoxVonHour.Size = new System.Drawing.Size(42, 21);
             this.cBoxVonHour.TabIndex = 14;
             // 
             // cBoxVonMin
@@ -250,9 +250,9 @@
             "57",
             "58",
             "59"});
-            this.cBoxVonMin.Location = new System.Drawing.Point(322, 12);
+            this.cBoxVonMin.Location = new System.Drawing.Point(335, 12);
             this.cBoxVonMin.Name = "cBoxVonMin";
-            this.cBoxVonMin.Size = new System.Drawing.Size(33, 21);
+            this.cBoxVonMin.Size = new System.Drawing.Size(42, 21);
             this.cBoxVonMin.TabIndex = 15;
             // 
             // cBoxBisMin
@@ -319,9 +319,9 @@
             "57",
             "58",
             "59"});
-            this.cBoxBisMin.Location = new System.Drawing.Point(322, 41);
+            this.cBoxBisMin.Location = new System.Drawing.Point(335, 41);
             this.cBoxBisMin.Name = "cBoxBisMin";
-            this.cBoxBisMin.Size = new System.Drawing.Size(33, 21);
+            this.cBoxBisMin.Size = new System.Drawing.Size(42, 21);
             this.cBoxBisMin.TabIndex = 17;
             // 
             // cBoxBisHour
@@ -354,7 +354,7 @@
             "23"});
             this.cBoxBisHour.Location = new System.Drawing.Point(287, 41);
             this.cBoxBisHour.Name = "cBoxBisHour";
-            this.cBoxBisHour.Size = new System.Drawing.Size(29, 21);
+            this.cBoxBisHour.Size = new System.Drawing.Size(44, 21);
             this.cBoxBisHour.TabIndex = 16;
             // 
             // chBMo
