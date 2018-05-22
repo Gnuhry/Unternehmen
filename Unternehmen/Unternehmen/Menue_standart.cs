@@ -54,6 +54,7 @@ namespace Unternehmen
             for (int f = 0; f < (int)numKrankentage.Value; f++)
                 verwaltung.GetFirma().Uerberprufung(DateTime.Today.AddDays(f));
             verwaltung.GetFirma().ReciveAdminNachricht("-Automatische Nachricht-\nKrankenbescheinigung von " + verwaltung.GetAngemeldetePerson().GetKontoInhaber() + "\n für " + numKrankentage.Value + " Tage", pcBBescheinigung.Image, verwaltung.GetAngemeldetePerson());
+            pcBBescheinigung.Image = null;
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)

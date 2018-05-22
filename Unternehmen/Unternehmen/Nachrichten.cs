@@ -11,6 +11,7 @@ namespace Unternehmen
         private List<string> Nachricht;
         private List<Image> Anhang;
         private List<DateTime> SendeDatum;
+        private List<Tagesplan> DatumAnfrage;
 
         public Nachrichten()
         {
@@ -18,6 +19,7 @@ namespace Unternehmen
             Nachricht = new List<string>();
             Anhang = new List<Image>();
             SendeDatum = new List<DateTime>();
+            DatumAnfrage = new List<Tagesplan>();
         }
         public void Recive(Konto Sender,string Nachricht, Image Anhang)
         {
@@ -25,12 +27,28 @@ namespace Unternehmen
             this.Nachricht.Add(Nachricht);
             this.Anhang.Add(Anhang);
             SendeDatum.Add(DateTime.Now);
+            DatumAnfrage.Add(null);
         }
+        //public void Recive(Konto Sender, string Nachricht, Tagesplan Anhang)
+        //{
+        //    this.Sender.Add(Sender);
+        //    this.Nachricht.Add(Nachricht);
+        //    this.Anhang.Add(null);
+        //    SendeDatum.Add(DateTime.Now);
+        //    DatumAnfrage.Add(Anhang);
+        //}
+        //public bool IsDatumAnfrage(int index) => DatumAnfrage[index] != null;
+        //public Tagesplan GetTagesplan(int index) => DatumAnfrage[index];
         public string[] GetAnzeige()
         {
             string[] temp = new string[Sender.Count];
-            for(int f = 0; f < Sender.Count; f++)
-                temp[f] = "From: "+Sender[f].GetKontoInhaber();
+            for (int f = 0; f < Sender.Count; f++)
+            {
+                if(Sender[f]==null)
+                    temp[f] = "From: Admin";
+                else
+                    temp[f] = "From: " + Sender[f].GetKontoInhaber();
+            }
             return temp;
         }
         public string GetNachricht(int index) => Nachricht[index];

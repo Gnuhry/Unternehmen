@@ -86,9 +86,9 @@ namespace Unternehmen
         {
             int temp = cBoxTag.SelectedIndex;
             cBoxTag.Items.Clear();
-            for (int f = 0; f < DateTime.DaysInMonth(cBoxJahr.SelectedIndex+1, cBoxMonat.SelectedIndex+1); f++)
+            for (int f = 0; f < DateTime.DaysInMonth(DateTime.Today.Year-cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex+1); f++)
                 cBoxTag.Items.Add(f + 1);
-            if (temp < DateTime.DaysInMonth(cBoxJahr.SelectedIndex + 1, cBoxMonat.SelectedIndex + 1))
+            if (temp < DateTime.DaysInMonth(DateTime.Today.Year-cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex + 1))
                 cBoxTag.SelectedIndex = temp;
             else
                 cBoxTag.SelectedIndex = 0;

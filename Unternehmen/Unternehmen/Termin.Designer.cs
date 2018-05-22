@@ -437,7 +437,7 @@
             // chBMonatlich
             // 
             this.chBMonatlich.AutoSize = true;
-            this.chBMonatlich.Location = new System.Drawing.Point(72, 140);
+            this.chBMonatlich.Location = new System.Drawing.Point(261, 98);
             this.chBMonatlich.Name = "chBMonatlich";
             this.chBMonatlich.Size = new System.Drawing.Size(63, 17);
             this.chBMonatlich.TabIndex = 24;
@@ -448,7 +448,7 @@
             // chBJahrlich
             // 
             this.chBJahrlich.AutoSize = true;
-            this.chBJahrlich.Location = new System.Drawing.Point(217, 140);
+            this.chBJahrlich.Location = new System.Drawing.Point(337, 86);
             this.chBJahrlich.Name = "chBJahrlich";
             this.chBJahrlich.Size = new System.Drawing.Size(55, 17);
             this.chBJahrlich.TabIndex = 25;

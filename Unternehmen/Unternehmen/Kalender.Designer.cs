@@ -44,6 +44,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.lbUrlaubstageC = new System.Windows.Forms.Label();
             this.txBBeschreibung = new System.Windows.Forms.TextBox();
+            this.cBoxTagFeiertag = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // tLpKalender
@@ -243,6 +244,16 @@
             this.txBBeschreibung.TabIndex = 15;
             this.txBBeschreibung.Visible = false;
             // 
+            // cBoxTagFeiertag
+            // 
+            this.cBoxTagFeiertag.FormattingEnabled = true;
+            this.cBoxTagFeiertag.Location = new System.Drawing.Point(590, 91);
+            this.cBoxTagFeiertag.Name = "cBoxTagFeiertag";
+            this.cBoxTagFeiertag.Size = new System.Drawing.Size(115, 21);
+            this.cBoxTagFeiertag.TabIndex = 16;
+            this.cBoxTagFeiertag.Visible = false;
+            this.cBoxTagFeiertag.SelectedIndexChanged += new System.EventHandler(this.cBoxTagFeiertag_SelectedIndexChanged);
+            // 
             // Kalender
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -252,6 +263,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(807, 585);
             this.ControlBox = false;
+            this.Controls.Add(this.cBoxTagFeiertag);
             this.Controls.Add(this.txBBeschreibung);
             this.Controls.Add(this.lbUrlaubstageC);
             this.Controls.Add(this.button3);
@@ -299,5 +311,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lbUrlaubstageC;
         private System.Windows.Forms.TextBox txBBeschreibung;
+        private System.Windows.Forms.ComboBox cBoxTagFeiertag;
     }
 }

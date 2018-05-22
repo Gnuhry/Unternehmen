@@ -54,15 +54,31 @@ namespace Unternehmen
         {
             if (e.Button == MouseButtons.Right)
                 if (lBoxNachrichten.IndexFromPoint(e.Location) != ListBox.NoMatches)
-                    if (verwaltung.GetAngemeldetePerson().GetSender(lBoxNachrichten.IndexFromPoint(e.Location)) != null)
+                    if (!Chef)
                     {
-                        for (int f = 0; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
-                            if (verwaltung.GetFirma().GetMitarbeiter(f) == verwaltung.GetAngemeldetePerson().GetSender(lBoxNachrichten.IndexFromPoint(e.Location)))
-                                comBEmpfanger.SelectedIndex = f;
+                        if (verwaltung.GetAngemeldetePerson().GetSender(lBoxNachrichten.IndexFromPoint(e.Location)) != null)
+                        {
+                            for (int f = 0; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
+                                if (verwaltung.GetFirma().GetMitarbeiter(f) == verwaltung.GetAngemeldetePerson().GetSender(lBoxNachrichten.IndexFromPoint(e.Location)))
+                                    comBEmpfanger.SelectedIndex = f+1;
+                        }
+                        else
+                        {
+                            comBEmpfanger.SelectedIndex = 0;
+                        }
                     }
                     else
                     {
-                        comBEmpfanger.SelectedIndex = 0;
+                        if (verwaltung.GetFirma().GetAdminNachrichtSender(lBoxNachrichten.IndexFromPoint(e.Location)) != null)
+                        {
+                            for (int f = 0; f < verwaltung.GetFirma().GetMitarbeiterAnzahl(); f++)
+                                if (verwaltung.GetFirma().GetMitarbeiter(f) == verwaltung.GetFirma().GetAdminNachrichtSender(lBoxNachrichten.IndexFromPoint(e.Location)))
+                                    comBEmpfanger.SelectedIndex = f+1;
+                        }
+                        else
+                        {
+                            comBEmpfanger.SelectedIndex = 0;
+                        }
                     }
         }
 
@@ -90,7 +106,10 @@ namespace Unternehmen
                 return;
             }
             lbNachricht.Text = verwaltung.GetAngemeldetePerson().GetNachricht(index);
-            lbSender.Text = "From: "+verwaltung.GetAngemeldetePerson().GetSender(index).GetKontoInhaber();
+            if(verwaltung.GetAngemeldetePerson().GetSender(index)==null)
+                lbSender.Text = "From: Admin";
+            else
+                lbSender.Text = "From: "+verwaltung.GetAngemeldetePerson().GetSender(index).GetKontoInhaber();
             lbSendeDatum.Text = verwaltung.GetAngemeldetePerson().GetSendeDatum(index).ToShortDateString();
             pcBAnhangEingang.Image = verwaltung.GetAngemeldetePerson().GetAnhang(index);
             aktiellesIndex = index;
@@ -102,15 +121,30 @@ namespace Unternehmen
         {
 
             txBNachricht.Text = txBNachricht.Text.Trim();
-            if(txBNachricht.Text != "" && txBNachricht.Text != null && comBEmpfanger.SelectedIndex == 0)
-            {
-                verwaltung.GetFirma().ReciveAdminNachricht(txBNachricht.Text, pcBAnhang.Image, verwaltung.GetAngemeldetePerson());
-                txBNachricht.Text = null;
+            if (Chef) {
+                if (txBNachricht.Text != "" && txBNachricht.Text != null && comBEmpfanger.SelectedIndex == 0)
+                {
+                    verwaltung.GetFirma().ReciveAdminNachricht(txBNachricht.Text, pcBAnhang.Image, null);
+                    txBNachricht.Text = null;
+                }
+                else if (txBNachricht.Text != "" && txBNachricht.Text != null && comBEmpfanger.SelectedIndex > -1)
+                {
+                    verwaltung.GetFirma().GetMitarbeiter(comBEmpfanger.SelectedIndex - 1).ReciveNachricht(txBNachricht.Text, pcBAnhang.Image, null);
+                    txBNachricht.Text = null;
+                }
             }
-            else if (txBNachricht.Text != "" && txBNachricht.Text != null && comBEmpfanger.SelectedIndex > -1)
+            else
             {
-                verwaltung.GetFirma().GetMitarbeiter(comBEmpfanger.SelectedIndex-1).ReciveNachricht(txBNachricht.Text, pcBAnhang.Image, verwaltung.GetAngemeldetePerson());
-                txBNachricht.Text = null;
+                if (txBNachricht.Text != "" && txBNachricht.Text != null && comBEmpfanger.SelectedIndex == 0)
+                {
+                    verwaltung.GetFirma().ReciveAdminNachricht(txBNachricht.Text, pcBAnhang.Image, verwaltung.GetAngemeldetePerson());
+                    txBNachricht.Text = null;
+                }
+                else if (txBNachricht.Text != "" && txBNachricht.Text != null && comBEmpfanger.SelectedIndex > -1)
+                {
+                    verwaltung.GetFirma().GetMitarbeiter(comBEmpfanger.SelectedIndex - 1).ReciveNachricht(txBNachricht.Text, pcBAnhang.Image, verwaltung.GetAngemeldetePerson());
+                    txBNachricht.Text = null;
+                }
             }
         }
 

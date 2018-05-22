@@ -183,6 +183,9 @@ namespace Unternehmen
         public void SetNotizen(string Nachricht, DateTime Tag) => notizen.AddNotiz(Nachricht, Tag);
         public string GetNotiz(DateTime Tag) => notizen.GetNachricht(Tag);
         public void ReciveNachricht(string nachricht, Image Anhang, Konto sender) => nachrichten.Recive(sender, nachricht, Anhang);
+       // public void ReciveNachricht(string nachricht, Tagesplan Anhang, Konto sender) => nachrichten.Recive(sender, nachricht, Anhang);
+        //public bool IsDatumAnfrage(int index) => nachrichten.IsDatumAnfrage(index);
+        //public Tagesplan GetTagesplan(int index) => nachrichten.GetTagesplan(index);
         public string[] GetAnzeige() => nachrichten.GetAnzeige();
         public string GetNachricht(int index) => nachrichten.GetNachricht(index);
         public Image GetAnhang(int index) => nachrichten.GetAnhang(index);

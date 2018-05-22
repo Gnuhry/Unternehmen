@@ -71,10 +71,28 @@ namespace Unternehmen
                 else wiederholung += "0";
                 if (chBJahrlich.Checked) wiederholung += "1";
                 else wiederholung += "0";
-                if (index == -1)
-                    verwaltung.GetAngemeldetePerson().SetTermin(von,bis, txBBeschreibung.Text,wiederholung);
-                else
-                    verwaltung.GetAngemeldetePerson().SetTermin(von,bis, txBBeschreibung.Text, index,wiederholung);          
+            if (index == -1)
+            {
+                verwaltung.GetAngemeldetePerson().SetTermin(von, bis, txBBeschreibung.Text, wiederholung);
+                //if (listBox1.Items.Count > 0)
+                //{
+                //    for (int f = 0; f < listBox1.Items.Count; f++)
+                //    {
+                //        for (int g = 0; g < verwaltung.GetFirma().GetMitarbeiterAnzahl(); g++)
+                //        {
+                //            if (verwaltung.GetFirma().GetMitarbeiter(g).GetKontoInhaber() == listBox1.Items[f]+"")
+                //            {
+                //                Tagesplan temp = new Tagesplan();
+                //                temp.SetTermin(von, bis, txBBeschreibung.Text, wiederholung);
+                //                verwaltung.GetFirma().GetMitarbeiter(g).ReciveNachricht("Terminvorschlag: " + txBBeschreibung.Text + "\nVon: " + von.ToShortTimeString() + ", " + von.ToLongDateString() + "\nBis: " + bis.ToShortTimeString() + ", " + bis.ToLongDateString(), temp, verwaltung.GetAngemeldetePerson());
+                //            }
+                //        }
+                //    }
+                //}
+            }
+            else
+                verwaltung.GetAngemeldetePerson().SetTermin(von, bis, txBBeschreibung.Text, index, wiederholung);
+            
             Close();
         }
 

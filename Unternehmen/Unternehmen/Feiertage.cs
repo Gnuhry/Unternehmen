@@ -26,6 +26,14 @@ namespace Unternehmen
             string erg = "";
             for (int f = 0; f < Feiertag.Length; f++)
             {
+                /*while(Feiertagname[f].Trim() == null|| Feiertagname[f].Trim() == "")
+                {
+                    if (!(++f < Feiertag.Length))
+                    {
+                        if (erg == "") return null;
+                        return erg;
+                    }
+                }*/
                 if (Feiertag[f] == Tag)
                 {
                     erg += Feiertagname[f] + "\n";
@@ -43,7 +51,7 @@ namespace Unternehmen
                     }
                 }
                 else
-                if (eigeneFeiertage[f] == Tag)
+                if (eigeneFeiertage[f] == Tag )
                 {
                     erg += eigeneFeiertagename[f] + "\n";
                    // Console.WriteLine("3-" + Feiertagname[f]);
@@ -131,6 +139,7 @@ namespace Unternehmen
         }
         public void SetFeiertag(string Name, DateTime Tag)
         {
+            if (Name.Trim() == null || Name.Trim() == "") return;
             if (eigeneFeiertage.Contains(Tag))
             {
                 eigeneFeiertagename[eigeneFeiertage.BinarySearch(Tag)] = Name;

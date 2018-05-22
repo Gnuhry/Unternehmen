@@ -338,6 +338,12 @@ namespace Unternehmen
             }
         }
 
+        private void cBoxTagFeiertag_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            listBox1.Items.AddRange(verwaltung.GetFirma().GetGesetzlicheFeiertage((int)cBoxTagFeiertag.SelectedItem));
+        }
+
         private void btnBeantragen_Click(object sender, EventArgs e)
         {
             Speichern();
@@ -411,7 +417,11 @@ namespace Unternehmen
                 Inhalt[f].MouseDown += tLpKalender_MouseDown;
             }
             if (Chef) {
-                txBBeschreibung.Visible = true;
+                txBBeschreibung.Visible =cBoxTagFeiertag.Visible= true;
+                for(int f = DateTime.Today.Year; f < DateTime.Today.Year + 10; f++)
+                {
+                    cBoxTagFeiertag.Items.Add(f);
+                }
                 button2.Visible = false;
                 lbUrlaubstageC.Text = "Firmen eigene Feiertage: "+verwaltung.GetFirma().GetEigeneFeiertage().Length;
                 for (int f = 0; f < verwaltung.GetFirma().GetGesetzlicheFeiertage(Year).Length; f++)
@@ -422,6 +432,7 @@ namespace Unternehmen
                 {
                     lBoxTage.Items.Add(verwaltung.GetFirma().GetEigeneFeiertage()[f]);
                 }
+                cBoxTagFeiertag.SelectedIndex = 0;
             }
             else
             {

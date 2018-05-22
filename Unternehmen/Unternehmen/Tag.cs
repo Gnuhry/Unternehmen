@@ -29,9 +29,7 @@ namespace Unternehmen
             */
             string[] temp = verwaltung.GetAngemeldetePerson().GetTerminAnzeige(tag);
             for (int f = 0; f < temp.Length; f++)
-            {
                 LBTagesplan.Items.Add(temp[f].Split(';')[0]);
-            }
             LBTagesplan.Items.Add("new event");
         }
 
@@ -55,7 +53,8 @@ namespace Unternehmen
             {
                 txBeFeiertag.Visible = chBeFeiertag.Visible = chBLUrlaub.Visible = true;
                 txBeFeiertag.Text = verwaltung.GetFirma().GetFeirtagname(tag);
-                chBeFeiertag.Checked = verwaltung.GetFirma().GetFeirtagname(tag) != null;
+                Console.WriteLine("IsFeiertag: " + verwaltung.GetFirma().IsFeiertag(tag)+","+verwaltung.GetFirma().GetFeirtagname(tag)+",");
+                chBeFeiertag.Checked = verwaltung.GetFirma().IsFeiertag(tag);
                 for (int f = 0; f < verwaltung.GetFirma().Urlaubliste(tag).Length; f++)
                     chBLUrlaub.Items.Add(verwaltung.GetFirma().Urlaubliste(tag)[f], true);
                 lbUrlaub.Visible = label4.Visible = txBNotizen.Visible = lbFeiertag.Visible = btnLogin.Visible = false;
@@ -122,8 +121,10 @@ namespace Unternehmen
 
         private void txBeFeiertag_TextChanged(object sender, EventArgs e)
         {
-            if(chBeFeiertag.Checked&&!verwaltung.GetFirma().IsFeiertagAnderbar(tag))
+            if (chBeFeiertag.Checked && verwaltung.GetFirma().IsFeiertagAnderbar(tag))
+            {
                 verwaltung.GetFirma().SetFeiertag(tag, txBeFeiertag.Text);
+            }
         }
 
         private void chBLUrlaub_ItemCheck(object sender, ItemCheckEventArgs e)
