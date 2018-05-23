@@ -47,6 +47,7 @@ namespace Unternehmen
             notizen = new Notizen();
             nachrichten = new Nachrichten();
             Arbeitszeit = Krankendauer = status = krankenC = UrlaubsC = 0;
+            Status = "";
             DefaultProfilAnzeige();
         }
         public void SetProfilbild(Image Profil) => Profilbild = Profil;

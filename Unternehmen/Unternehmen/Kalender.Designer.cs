@@ -45,6 +45,7 @@
             this.lbUrlaubstageC = new System.Windows.Forms.Label();
             this.txBBeschreibung = new System.Windows.Forms.TextBox();
             this.cBoxTagFeiertag = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tLpKalender
@@ -173,6 +174,7 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(196, 20);
             this.dateTimePicker1.TabIndex = 9;
             this.dateTimePicker1.Value = new System.DateTime(1753, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker1.Visible = false;
             // 
             // button1
             // 
@@ -187,6 +189,7 @@
             this.button1.Text = "Add";
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBox1
@@ -254,6 +257,15 @@
             this.cBoxTagFeiertag.Visible = false;
             this.cBoxTagFeiertag.SelectedIndexChanged += new System.EventHandler(this.cBoxTagFeiertag_SelectedIndexChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(542, 273);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Regelmäßige Feiertage";
+            // 
             // Kalender
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -263,6 +275,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(807, 585);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cBoxTagFeiertag);
             this.Controls.Add(this.txBBeschreibung);
             this.Controls.Add(this.lbUrlaubstageC);
@@ -312,5 +325,6 @@
         private System.Windows.Forms.Label lbUrlaubstageC;
         private System.Windows.Forms.TextBox txBBeschreibung;
         private System.Windows.Forms.ComboBox cBoxTagFeiertag;
+        private System.Windows.Forms.Label label1;
     }
 }

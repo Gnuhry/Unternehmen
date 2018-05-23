@@ -217,6 +217,8 @@ namespace Unternehmen
             if (!KlB) { txBPasswort.BackColor = Color.Red; return; }
             if (!Zahl) { txBPasswort.BackColor = Color.Red; return; }
             txBPasswort.BackColor = Color.White;
+            if (txBPasswort.BackColor == Color.Red) txBPasswort.Font = new Font(txBPasswort.Font, FontStyle.Bold);
+            else txBPasswort.Font = new Font(txBPasswort.Font, FontStyle.Regular);
         }
 
         private void txBPasswort_BackColorChanged(object sender, EventArgs e)
