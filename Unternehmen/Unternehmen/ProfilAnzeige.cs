@@ -132,6 +132,7 @@ namespace Unternehmen
                         {
                             verwaltung.GetAngemeldetePerson().SetProfilbild(openFileDialog1.FileName);
                             Bild = verwaltung.GetAngemeldetePerson().GetProfilBildPath();
+                            pcBProfil.Image = verwaltung.GetAngemeldetePerson().GetProfilbild();
                         }
                 }
                 catch (Exception ex)

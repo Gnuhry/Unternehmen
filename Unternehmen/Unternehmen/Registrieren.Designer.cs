@@ -197,6 +197,7 @@
             this.btnHochladen.TabIndex = 32;
             this.btnHochladen.Text = "Profilbild hochladen";
             this.btnHochladen.UseVisualStyleBackColor = false;
+            this.btnHochladen.Visible = false;
             this.btnHochladen.Click += new System.EventHandler(this.btnHochladen_Click);
             // 
             // cBoxJahr
@@ -244,6 +245,7 @@
             this.pcBProfilbild.Size = new System.Drawing.Size(100, 100);
             this.pcBProfilbild.TabIndex = 28;
             this.pcBProfilbild.TabStop = false;
+            this.pcBProfilbild.Visible = false;
             // 
             // Beenden_Label
             // 

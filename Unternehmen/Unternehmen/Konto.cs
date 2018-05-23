@@ -55,7 +55,11 @@ namespace Unternehmen
         public void SetProfilbild(string Pfad)
         {
             Profilbild = Path.GetExtension(Pfad);
-            File.Copy(Pfad, Directory.GetCurrentDirectory() + @"\"+Kontoinhaber + Profilbild, true);
+            try
+            {
+                File.Copy(Pfad, Directory.GetCurrentDirectory() + @"\" + Kontoinhaber + Profilbild, true);
+            }
+            catch (Exception) { }
         }
 
         private void DefaultProfilAnzeige()

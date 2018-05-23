@@ -106,6 +106,7 @@
             this.btnBildHochladen.TabIndex = 5;
             this.btnBildHochladen.Text = "Upload";
             this.btnBildHochladen.UseVisualStyleBackColor = false;
+            this.btnBildHochladen.Visible = false;
             this.btnBildHochladen.Click += new System.EventHandler(this.btnBildHochladen_Click);
             // 
             // panel1
