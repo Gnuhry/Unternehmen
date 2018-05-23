@@ -32,8 +32,6 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnAktiv = new System.Windows.Forms.Panel();
-            this.btnWebsite = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnMessenger = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Daten_andern_Button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.KalenderButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenue = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -51,6 +49,8 @@
             this.pcBWebsite = new System.Windows.Forms.PictureBox();
             this.pcBExit = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.btnMessenger = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnWebsite = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -96,80 +96,6 @@
             this.pnAktiv.Name = "pnAktiv";
             this.pnAktiv.Size = new System.Drawing.Size(5, 48);
             this.pnAktiv.TabIndex = 14;
-            // 
-            // btnWebsite
-            // 
-            this.btnWebsite.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnWebsite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnWebsite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnWebsite.BorderRadius = 0;
-            this.btnWebsite.ButtonText = "Website";
-            this.btnWebsite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnWebsite.DisabledColor = System.Drawing.Color.Gray;
-            this.btnWebsite.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnWebsite.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnWebsite.Iconimage = global::Unternehmen.Properties.Resources.wifi;
-            this.btnWebsite.Iconimage_right = null;
-            this.btnWebsite.Iconimage_right_Selected = null;
-            this.btnWebsite.Iconimage_Selected = null;
-            this.btnWebsite.IconMarginLeft = 15;
-            this.btnWebsite.IconMarginRight = 0;
-            this.btnWebsite.IconRightVisible = true;
-            this.btnWebsite.IconRightZoom = 0D;
-            this.btnWebsite.IconVisible = true;
-            this.btnWebsite.IconZoom = 90D;
-            this.btnWebsite.IsTab = false;
-            this.btnWebsite.Location = new System.Drawing.Point(0, 192);
-            this.btnWebsite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnWebsite.Name = "btnWebsite";
-            this.btnWebsite.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnWebsite.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnWebsite.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
-            this.btnWebsite.selected = false;
-            this.btnWebsite.Size = new System.Drawing.Size(233, 48);
-            this.btnWebsite.TabIndex = 10;
-            this.btnWebsite.Text = "Website";
-            this.btnWebsite.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnWebsite.Textcolor = System.Drawing.Color.White;
-            this.btnWebsite.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWebsite.Click += new System.EventHandler(this.btnWebsite_Click);
-            // 
-            // btnMessenger
-            // 
-            this.btnMessenger.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnMessenger.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnMessenger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMessenger.BorderRadius = 0;
-            this.btnMessenger.ButtonText = "Messenger";
-            this.btnMessenger.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMessenger.DisabledColor = System.Drawing.Color.Gray;
-            this.btnMessenger.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMessenger.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnMessenger.Iconimage = global::Unternehmen.Properties.Resources.speech_bubbles_comment_option;
-            this.btnMessenger.Iconimage_right = null;
-            this.btnMessenger.Iconimage_right_Selected = null;
-            this.btnMessenger.Iconimage_Selected = null;
-            this.btnMessenger.IconMarginLeft = 15;
-            this.btnMessenger.IconMarginRight = 0;
-            this.btnMessenger.IconRightVisible = true;
-            this.btnMessenger.IconRightZoom = 0D;
-            this.btnMessenger.IconVisible = true;
-            this.btnMessenger.IconZoom = 90D;
-            this.btnMessenger.IsTab = false;
-            this.btnMessenger.Location = new System.Drawing.Point(0, 144);
-            this.btnMessenger.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMessenger.Name = "btnMessenger";
-            this.btnMessenger.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnMessenger.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnMessenger.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
-            this.btnMessenger.selected = false;
-            this.btnMessenger.Size = new System.Drawing.Size(233, 48);
-            this.btnMessenger.TabIndex = 7;
-            this.btnMessenger.Text = "Messenger";
-            this.btnMessenger.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnMessenger.Textcolor = System.Drawing.Color.White;
-            this.btnMessenger.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMessenger.Click += new System.EventHandler(this.btnMessenger_Click);
             // 
             // Daten_andern_Button
             // 
@@ -407,7 +333,7 @@
             this.Beenden_Button.DisabledColor = System.Drawing.Color.Gray;
             this.Beenden_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Beenden_Button.Iconcolor = System.Drawing.Color.Transparent;
-            this.Beenden_Button.Iconimage = global::Unternehmen.Properties.Resources.logout;
+            this.Beenden_Button.Iconimage = null;
             this.Beenden_Button.Iconimage_right = null;
             this.Beenden_Button.Iconimage_right_Selected = null;
             this.Beenden_Button.Iconimage_Selected = null;
@@ -545,6 +471,80 @@
             // 
             this.timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
+            // btnMessenger
+            // 
+            this.btnMessenger.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnMessenger.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnMessenger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMessenger.BorderRadius = 0;
+            this.btnMessenger.ButtonText = "Messenger";
+            this.btnMessenger.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMessenger.DisabledColor = System.Drawing.Color.Gray;
+            this.btnMessenger.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMessenger.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnMessenger.Iconimage = null;
+            this.btnMessenger.Iconimage_right = null;
+            this.btnMessenger.Iconimage_right_Selected = null;
+            this.btnMessenger.Iconimage_Selected = null;
+            this.btnMessenger.IconMarginLeft = 15;
+            this.btnMessenger.IconMarginRight = 0;
+            this.btnMessenger.IconRightVisible = true;
+            this.btnMessenger.IconRightZoom = 0D;
+            this.btnMessenger.IconVisible = true;
+            this.btnMessenger.IconZoom = 90D;
+            this.btnMessenger.IsTab = false;
+            this.btnMessenger.Location = new System.Drawing.Point(0, 144);
+            this.btnMessenger.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMessenger.Name = "btnMessenger";
+            this.btnMessenger.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnMessenger.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnMessenger.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
+            this.btnMessenger.selected = false;
+            this.btnMessenger.Size = new System.Drawing.Size(233, 73);
+            this.btnMessenger.TabIndex = 7;
+            this.btnMessenger.Text = "Messenger";
+            this.btnMessenger.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnMessenger.Textcolor = System.Drawing.Color.White;
+            this.btnMessenger.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMessenger.Click += new System.EventHandler(this.btnMessenger_Click);
+            // 
+            // btnWebsite
+            // 
+            this.btnWebsite.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnWebsite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnWebsite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnWebsite.BorderRadius = 0;
+            this.btnWebsite.ButtonText = "Website";
+            this.btnWebsite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWebsite.DisabledColor = System.Drawing.Color.Gray;
+            this.btnWebsite.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnWebsite.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnWebsite.Iconimage = null;
+            this.btnWebsite.Iconimage_right = null;
+            this.btnWebsite.Iconimage_right_Selected = null;
+            this.btnWebsite.Iconimage_Selected = null;
+            this.btnWebsite.IconMarginLeft = 15;
+            this.btnWebsite.IconMarginRight = 0;
+            this.btnWebsite.IconRightVisible = true;
+            this.btnWebsite.IconRightZoom = 0D;
+            this.btnWebsite.IconVisible = true;
+            this.btnWebsite.IconZoom = 90D;
+            this.btnWebsite.IsTab = false;
+            this.btnWebsite.Location = new System.Drawing.Point(0, 217);
+            this.btnWebsite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnWebsite.Name = "btnWebsite";
+            this.btnWebsite.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnWebsite.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnWebsite.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
+            this.btnWebsite.selected = false;
+            this.btnWebsite.Size = new System.Drawing.Size(233, 59);
+            this.btnWebsite.TabIndex = 10;
+            this.btnWebsite.Text = "Website";
+            this.btnWebsite.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnWebsite.Textcolor = System.Drawing.Color.White;
+            this.btnWebsite.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWebsite.Click += new System.EventHandler(this.btnWebsite_Click);
+            // 
             // bunifuFlatButton1
             // 
             this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
@@ -567,14 +567,14 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 240);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 276);
             this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(180)))));
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(233, 59);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(233, 73);
             this.bunifuFlatButton1.TabIndex = 19;
             this.bunifuFlatButton1.Text = "Pushy";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -617,9 +617,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnMenue;
         private Bunifu.Framework.UI.BunifuFlatButton KalenderButton;
         private Bunifu.Framework.UI.BunifuFlatButton Beenden_Button;
-        private Bunifu.Framework.UI.BunifuFlatButton btnMessenger;
         private Bunifu.Framework.UI.BunifuFlatButton Daten_andern_Button;
-        private Bunifu.Framework.UI.BunifuFlatButton btnWebsite;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuCustomLabel Aktive_Form_Name;
         private System.Windows.Forms.Panel panel3;
@@ -634,6 +632,8 @@
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.PictureBox pcBProfil;
         private System.Windows.Forms.Label lbName;
+        private Bunifu.Framework.UI.BunifuFlatButton btnWebsite;
+        private Bunifu.Framework.UI.BunifuFlatButton btnMessenger;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
     }
 }
