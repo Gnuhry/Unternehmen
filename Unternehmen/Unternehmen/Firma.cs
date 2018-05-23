@@ -20,8 +20,11 @@ namespace Unternehmen
         private bool AutoRegistrieren,AutoRemoveUrlaub;
         private Nachrichten Adminnachrichten;
 
+        public string GetFirmenstatus() => Firmenstatus;
+        public void SetFirmenstatus(string Firmenstatus) => this.Firmenstatus = Firmenstatus;
+        public bool GetAutoRemoveUrlaub() => AutoRemoveUrlaub;
+        public void SetAutoRemoveUrlaub(bool AutoRemoveUrlaub) => this.AutoRemoveUrlaub = AutoRemoveUrlaub;
         public string Firmenstatus1 { get => Firmenstatus; set => Firmenstatus = value; }
-        public bool AutoRemoveUrlaub1 { get => AutoRemoveUrlaub; set => AutoRemoveUrlaub = value; }
 
         public Firma()
         {

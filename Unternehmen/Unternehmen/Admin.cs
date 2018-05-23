@@ -29,8 +29,8 @@ namespace Unternehmen
             chBWebsite.Checked = txBWebsite.Enabled;
             chBAutoAktiv.Checked = verwaltung.GetFirma().GetAutoRegistrieren();
             pcBFirmenlogo.Image = verwaltung.GetFirma().GetFirmenLogo();
-            txBFirmenmotto.Text = verwaltung.GetFirma().Firmenstatus1;
-            chBAutoRemoveUrlaub.Checked = verwaltung.GetFirma().AutoRemoveUrlaub1;
+            txBFirmenmotto.Text = verwaltung.GetFirma().GetFirmenstatus();
+            chBAutoRemoveUrlaub.Checked = verwaltung.GetFirma().GetAutoRemoveUrlaub();
             if (verwaltung.GetAngemeldetePerson() == verwaltung.GetFirma().GetMitarbeiter(0))
             {
                 btnReset.Visible=rbtnResetEnabled.Visible= lBoxAdmin.Visible = lBoxNoAdmin.Visible = btnAdmin.Visible=btnNoAdmin.Visible = true;
@@ -171,12 +171,12 @@ namespace Unternehmen
 
         private void txBFirmenmotto_TextChanged(object sender, EventArgs e)
         {
-            verwaltung.GetFirma().Firmenstatus1 = txBFirmenmotto.Text;
+            verwaltung.GetFirma().SetFirmenstatus(txBFirmenmotto.Text);
         }
 
         private void chBAutoRemoveUrlaub_CheckedChanged(object sender, EventArgs e)
         {
-            verwaltung.GetFirma().AutoRemoveUrlaub1 = chBAutoRemoveUrlaub.Checked;
+            verwaltung.GetFirma().SetAutoRemoveUrlaub(chBAutoRemoveUrlaub.Checked);
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)

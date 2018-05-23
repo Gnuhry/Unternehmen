@@ -18,7 +18,7 @@ namespace Unternehmen
             InitComboBox();
             pcBProfilbild.Image = Properties.Resources.ic_android_black_24dp;
             Logo_Picturebox.Image =  verwaltung.GetFirma().GetFirmenLogo();
-            Firmen_Motto.Text = verwaltung.GetFirma().Firmenstatus1;
+            Firmen_Motto.Text = verwaltung.GetFirma().GetFirmenstatus();
             lbFehlermeldung.Text = null;
         }
        

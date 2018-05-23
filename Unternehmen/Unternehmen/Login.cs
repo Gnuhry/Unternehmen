@@ -12,13 +12,13 @@ namespace Unternehmen
             InitializeComponent();
             this.verwaltung = verwaltung;
             Logo_Picturebox.Image = verwaltung.GetFirma().GetFirmenLogo();
-            Firmen_Motto.Text = verwaltung.GetFirma().Firmenstatus1;
+            Firmen_Motto.Text = verwaltung.GetFirma().GetFirmenstatus();
             lbFehlermeldung.Text = null;
         }
         public void MottoAktualisieren()
         {
             Logo_Picturebox.Image = verwaltung.GetFirma().GetFirmenLogo();
-            Firmen_Motto.Text = verwaltung.GetFirma().Firmenstatus1;
+            Firmen_Motto.Text = verwaltung.GetFirma().GetFirmenstatus();
             lbFehlermeldung.Text=txBbenutzername.Text = txBpasswort.Text = null;
         }
 
