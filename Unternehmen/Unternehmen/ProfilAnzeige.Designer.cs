@@ -273,10 +273,10 @@
             this.rbtFrau.AutoSize = true;
             this.rbtFrau.Location = new System.Drawing.Point(98, 292);
             this.rbtFrau.Name = "rbtFrau";
-            this.rbtFrau.Size = new System.Drawing.Size(85, 17);
+            this.rbtFrau.Size = new System.Drawing.Size(62, 17);
             this.rbtFrau.TabIndex = 53;
             this.rbtFrau.TabStop = true;
-            this.rbtFrau.Text = "radioButton2";
+            this.rbtFrau.Text = "Woman";
             this.rbtFrau.UseVisualStyleBackColor = true;
             this.rbtFrau.CheckedChanged += new System.EventHandler(this.rbtFrau_CheckedChanged);
             // 
@@ -285,10 +285,10 @@
             this.rbtMann.AutoSize = true;
             this.rbtMann.Location = new System.Drawing.Point(6, 292);
             this.rbtMann.Name = "rbtMann";
-            this.rbtMann.Size = new System.Drawing.Size(85, 17);
+            this.rbtMann.Size = new System.Drawing.Size(46, 17);
             this.rbtMann.TabIndex = 52;
             this.rbtMann.TabStop = true;
-            this.rbtMann.Text = "radioButton1";
+            this.rbtMann.Text = "Man";
             this.rbtMann.UseVisualStyleBackColor = true;
             this.rbtMann.CheckedChanged += new System.EventHandler(this.rbtMann_CheckedChanged);
             // 
