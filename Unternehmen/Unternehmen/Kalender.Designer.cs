@@ -265,6 +265,7 @@
             this.label1.Size = new System.Drawing.Size(116, 13);
             this.label1.TabIndex = 17;
             this.label1.Text = "Regelmäßige Feiertage";
+            this.label1.Visible = false;
             // 
             // Kalender
             // 

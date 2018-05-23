@@ -34,6 +34,11 @@ namespace Unternehmen
             //firma.AddMitarbeiter(x);
             LogIn();    
         }
+        public void UpdateAdmin()
+        {
+            chef.Close();
+            Chef();
+        }
         public Firma GetFirma() => firma;
         public Konto GetAngemeldetePerson() => angemeldete_Person;
         public void LogIn()

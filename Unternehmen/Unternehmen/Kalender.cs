@@ -417,7 +417,7 @@ namespace Unternehmen
                 Inhalt[f].MouseDown += tLpKalender_MouseDown;
             }
             if (Chef) {
-                txBBeschreibung.Visible=dateTimePicker1.Visible=button1.Visible =cBoxTagFeiertag.Visible= true;
+                txBBeschreibung.Visible=dateTimePicker1.Visible=button1.Visible=label1.Visible =cBoxTagFeiertag.Visible= true;
                 for(int f = DateTime.Today.Year; f < DateTime.Today.Year + 10; f++)
                 {
                     cBoxTagFeiertag.Items.Add(f);

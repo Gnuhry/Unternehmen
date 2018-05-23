@@ -187,6 +187,10 @@ namespace Unternehmen
             lBoxNoAdmin.Items.Remove(verwaltung.GetFirma().GetMitarbeiter(NoAdmin[lBoxNoAdmin.SelectedIndex]).GetKontoInhaber());
             NoAdmin.Remove(lBoxNoAdmin.SelectedIndex);
             Admins.Add(lBoxNoAdmin.SelectedIndex);
+
+            lBoxAdmin.Update();
+            lBoxNoAdmin.Update();
+            verwaltung.UpdateAdmin();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -208,6 +212,10 @@ namespace Unternehmen
             lBoxAdmin.Items.Remove(verwaltung.GetFirma().GetMitarbeiter(Admins[lBoxAdmin.SelectedIndex]).GetKontoInhaber());
             Admins.Remove(lBoxNoAdmin.SelectedIndex);
             NoAdmin.Add(lBoxNoAdmin.SelectedIndex);
+            lBoxAdmin.Update();
+            lBoxNoAdmin.Update();
+            verwaltung.UpdateAdmin();
+
         }
     }
 }
