@@ -60,7 +60,7 @@ namespace Unternehmen
 
         private void Init()
         {
-            if (angemeldet.Geschlecht1) rbtMann.Checked = true;
+            if (angemeldet.GetGeschlecht()) rbtMann.Checked = true;
             else rbtFrau.Checked = true;
             
             txBBenutzername.Text = angemeldet.GetBenutzername();
@@ -72,18 +72,18 @@ namespace Unternehmen
             cBoxTag.SelectedIndexChanged += cBoxTag_SelectedIndexChanged;
             cBoxMonat.SelectedIndexChanged += cBoxMonat_SelectedIndexChanged;
             cBoxJahr.SelectedIndexChanged += cBoxJahr_SelectedIndexChanged;
-            txBEmail.Text = angemeldet.Email1;
-            txBAbteilung.Text = angemeldet.Abteilung1;
-            txBHobbys.Text = angemeldet.Hobbys1;
-            txBStatus.Text = angemeldet.Status1;
-            txBTelefon.Text = angemeldet.Telefon1;
+            txBEmail.Text = angemeldet.GetEmail();
+            txBAbteilung.Text = angemeldet.GetAbteilung();
+            txBHobbys.Text = angemeldet.GetHobby();
+            txBStatus.Text = angemeldet.GetStatus_();
+            txBTelefon.Text = angemeldet.GetTelefon();
             pcBProfil.Image = angemeldet.GetProfilbild();
             txBInhaber.Text = angemeldet.GetKontoInhaber();
             Inhaber();
         }
         private void Inhaber()
         {
-            if(angemeldet.Geschlecht1)
+            if(angemeldet.GetGeschlecht())
                 lbInhaber.Text="Mr."+ angemeldet.GetKontoInhaber();
             else
                 lbInhaber.Text = "Ms." + angemeldet.GetKontoInhaber();
@@ -138,7 +138,7 @@ namespace Unternehmen
 
         private void txBStatus_TextChanged(object sender, EventArgs e)
         {
-            angemeldet.Status1 = txBStatus.Text;
+            angemeldet.SetStatus(txBStatus.Text);
             lbStatus.Text = txBStatus.Text;
         }
 
@@ -315,25 +315,25 @@ namespace Unternehmen
 
         private void txBTelefon_TextChanged(object sender, EventArgs e)
         {
-            angemeldet.Telefon1 = txBTelefon.Text;
+            angemeldet.SetTelefon(txBTelefon.Text);
             lbTelefon.Text = "telefon-nbr.:"+txBTelefon.Text;
         }
 
         private void txBAbteilung_TextChanged(object sender, EventArgs e)
         {
-            angemeldet.Abteilung1 = txBAbteilung.Text;
+            angemeldet.SetAbteilung(txBAbteilung.Text);
             lbAbteilung.Text = "work: "+txBAbteilung.Text;
         }
 
         private void txBHobbys_TextChanged(object sender, EventArgs e)
         {
-            angemeldet.Hobbys1 = txBHobbys.Text;
+            angemeldet.SetHobby(txBHobbys.Text);
             lbHobby.Text = "Hobbies: "+txBHobbys.Text;
         }
 
         private void txBEmail_TextChanged(object sender, EventArgs e)
         {
-            angemeldet.Email1 = txBEmail.Text;
+            angemeldet.SetEmail(txBEmail.Text);
             lbEmail.Text = "E-Mail-adress: "+txBEmail.Text;
         }
 
@@ -350,7 +350,7 @@ namespace Unternehmen
         private void rbtMann_CheckedChanged(object sender, EventArgs e)
         {
             if (!rbtMann.Checked) return;
-            angemeldet.Geschlecht1 = true;
+            angemeldet.SetGeschlecht(true);
             rbtFrau.Checked = false;
             Inhaber();
         }
@@ -358,7 +358,7 @@ namespace Unternehmen
         private void rbtFrau_CheckedChanged(object sender, EventArgs e)
         {
             if (!rbtFrau.Checked) return;
-            angemeldet.Geschlecht1 = false;
+            angemeldet.SetGeschlecht(false);
             rbtMann.Checked = false;
             Inhaber();
         }

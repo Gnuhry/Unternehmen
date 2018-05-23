@@ -132,7 +132,7 @@ namespace Unternehmen
         {
             Firmenlogo_pictureBox.Image = verwaltung.GetFirma().GetFirmenLogo();
             pcBProfil.Image = verwaltung.GetAngemeldetePerson().GetProfilbild();
-            if (verwaltung.GetAngemeldetePerson().Geschlecht1) lbName.Text = "Mr." + verwaltung.GetAngemeldetePerson().GetKontoInhaber();
+            if (verwaltung.GetAngemeldetePerson().GetGeschlecht()) lbName.Text = "Mr." + verwaltung.GetAngemeldetePerson().GetKontoInhaber();
             else lbName.Text = "Ms." + verwaltung.GetAngemeldetePerson().GetKontoInhaber();
         }
 

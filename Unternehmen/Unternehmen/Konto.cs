@@ -22,16 +22,23 @@ namespace Unternehmen
         private Point[] Profil;
         private bool Geschlecht;
 
-        public string Email1 { get => Email; set => Email = value; }
-        public string Abteilung1 { get => Abteilung; set => Abteilung = value; }
-        public string Telefon1 { get => Telefon; set => Telefon = value; }
+
+
+        public string GetEmail() => Email;
+        public void SetEmail(string Email) => this.Email = Email;
+        public string GetAbteilung() => Abteilung;
+        public void SetAbteilung(string Abteilung) => this.Abteilung = Abteilung;
+        public string GetTelefon() => Telefon;
+        public void SetTelefon(string Telefon) => this.Telefon = Telefon;
+        public string GetStatus_() => Status;
+        public void SetStatus(string Status) => this.Status = Status;
+        public string GetHobby() => Hobbys;
+        public void SetHobby(string Hobbys) => this.Hobbys = Hobbys;
+        public bool GetGeschlecht() => Geschlecht;
+        public void SetGeschlecht(bool Geschlecht) => this.Geschlecht = Geschlecht;
        
-        public Point[] Profil1 { get => Profil; set => Profil = value; }
         public void SetProfil(Point[] Punkte) => Profil = Punkte;
         public Point[] GetProfil() => Profil;
-        public string Status1 { get => Status; set => Status = value; }
-        public string Hobbys1 { get => Hobbys; set => Hobbys = value; }
-        public bool Geschlecht1 { get => Geschlecht; set => Geschlecht = value; }
 
         public Konto()
         {

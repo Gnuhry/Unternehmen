@@ -107,16 +107,16 @@ namespace Unternehmen
             lbEmail.Location = Profil[5];
             lbHobby.Location = Profil[6];
             lbTelefon.Location = Profil[7];
-            if (angemeldet.Geschlecht1) lbInhaber.Text = "Mr.";
+            if (angemeldet.GetGeschlecht()) lbInhaber.Text = "Mr.";
             else lbInhaber.Text = "Ms.";
             lbInhaber.Text += angemeldet.GetKontoInhaber();
-            lbStatus.Text = angemeldet.Status1;
+            lbStatus.Text = angemeldet.GetStatus_();
             lbGeburtstag.Text = angemeldet.GetGeburtstag().ToShortDateString();
             pcBProfil.Image = angemeldet.GetProfilbild();
-            lbAbteilung.Text ="work: "+ angemeldet.Abteilung1;
-            lbEmail.Text = "E-Mail: "+angemeldet.Email1;
-            lbHobby.Text = "Hobbys: "+angemeldet.Hobbys1;
-            lbTelefon.Text = "Telefon-nr: "+angemeldet.Telefon1;
+            lbAbteilung.Text ="work: "+ angemeldet.GetAbteilung();
+            lbEmail.Text = "E-Mail: "+angemeldet.GetEmail();
+            lbHobby.Text = "Hobbys: "+angemeldet.GetHobby();
+            lbTelefon.Text = "Telefon-nr: "+angemeldet.GetTelefon();
         }
     }
 }
