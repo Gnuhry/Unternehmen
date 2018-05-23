@@ -24,7 +24,6 @@ namespace Unternehmen
         public void SetFirmenstatus(string Firmenstatus) => this.Firmenstatus = Firmenstatus;
         public bool GetAutoRemoveUrlaub() => AutoRemoveUrlaub;
         public void SetAutoRemoveUrlaub(bool AutoRemoveUrlaub) => this.AutoRemoveUrlaub = AutoRemoveUrlaub;
-        public string Firmenstatus1 { get => Firmenstatus; set => Firmenstatus = value; }
 
         public Firma()
         {
