@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -13,7 +14,7 @@ namespace Unternehmen
         private byte[] passwort;
         private List<DateTime> Urlaubstage;
         private int Krankendauer, status, _Versuche, krankenC, UrlaubsC,maxTage;//0-gesperrt,1-Aktiv(Zuhause),2-Krank,3-Urlaub,4-Aktiv(arbeitend)
-        private Image Profilbild;
+        private string Profilbild;
         private double Arbeitszeit;
         private DateTime Geburtstag, _Anfang;
         private Notizen notizen;
@@ -50,7 +51,12 @@ namespace Unternehmen
             Status = "";
             DefaultProfilAnzeige();
         }
-        public void SetProfilbild(Image Profil) => Profilbild = Profil;
+
+        public void SetProfilbild(string Pfad)
+        {
+            Profilbild = Path.GetExtension(Pfad);
+            File.Copy(Pfad, Directory.GetCurrentDirectory() + @"\"+Kontoinhaber + Profilbild, true);
+        }
 
         private void DefaultProfilAnzeige()
         {
@@ -67,7 +73,7 @@ namespace Unternehmen
            
         }
 
-        public string Registrieren(string Kontoinhaber, string benutzername, string passwort, DateTime Geburtstag,Image Profilbild,bool Geschlecht, bool Autoregistrieren)
+        public string Registrieren(string Kontoinhaber, string benutzername, string passwort, DateTime Geburtstag,string Profilbild,bool Geschlecht, bool Autoregistrieren)
         {
             char[] x = benutzername.ToCharArray();
             bool GrB = false, KlB = false, Zahl = false;
@@ -173,7 +179,8 @@ namespace Unternehmen
                 default: return "Error";
             }
         }
-        public Image GetProfilbild() => Profilbild;
+        public string GetProfilBildPath() => Directory.GetCurrentDirectory() + @"\" + Kontoinhaber + Profilbild;
+        public Image GetProfilbild() { try { return Image.FromFile(Directory.GetCurrentDirectory() + @"\"+Kontoinhaber + Profilbild); } catch (Exception) { return Properties.Resources.ic_android_black_24dp; } }
         public double GetArbeitszeit() => Arbeitszeit;
 
         public void Anwesend()

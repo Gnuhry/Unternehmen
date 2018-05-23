@@ -128,7 +128,7 @@ namespace Unternehmen
         private void Admin_DragDrop(object sender, DragEventArgs e)
         {
             pcBFirmenlogo.Image=new Bitmap(((string[])e.Data.GetData(DataFormats.FileDrop))[0]);
-            verwaltung.GetFirma().SetFirmenLogo(pcBFirmenlogo.Image);
+            verwaltung.GetFirma().SetFirmenLogo(((string[])e.Data.GetData(DataFormats.FileDrop))[0]);
             verwaltung.MenueAktualisieren();
         }
 
@@ -159,7 +159,8 @@ namespace Unternehmen
                         using (myStream)
                         {
                             pcBFirmenlogo.Image = new Bitmap(myStream);
-                            verwaltung.GetFirma().SetFirmenLogo(pcBFirmenlogo.Image);
+                            myStream.Dispose();
+                            verwaltung.GetFirma().SetFirmenLogo(openFileDialog1.FileName);
                             verwaltung.MenueAktualisieren();
                         }
                 }

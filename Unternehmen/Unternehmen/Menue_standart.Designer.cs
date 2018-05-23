@@ -61,7 +61,6 @@
             // btnKrank
             // 
             this.btnKrank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(49)))), ((int)(((byte)(75)))));
-            this.btnKrank.Enabled = false;
             this.btnKrank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKrank.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKrank.ForeColor = System.Drawing.Color.White;
@@ -145,6 +144,7 @@
             this.btnBescheinigung.TabIndex = 22;
             this.btnBescheinigung.Text = "Krankenbescheinigung hochladen";
             this.btnBescheinigung.UseVisualStyleBackColor = false;
+            this.btnBescheinigung.Visible = false;
             this.btnBescheinigung.Click += new System.EventHandler(this.btnBescheinigung_Click);
             // 
             // pcBBescheinigung
@@ -155,6 +155,7 @@
             this.pcBBescheinigung.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcBBescheinigung.TabIndex = 23;
             this.pcBBescheinigung.TabStop = false;
+            this.pcBBescheinigung.Visible = false;
             // 
             // lBoxAnzeige
             // 

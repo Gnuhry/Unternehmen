@@ -13,6 +13,7 @@ namespace Unternehmen
 {
     public partial class ProfilAnzeige : Form
     {
+        string Bild;
         Point[] Profil;
         Verwaltung verwaltung;
         private Control activeControl;
@@ -60,6 +61,7 @@ namespace Unternehmen
 
         private void Init()
         {
+            Bild = verwaltung.GetAngemeldetePerson().GetProfilBildPath();
             if (angemeldet.GetGeschlecht()) rbtMann.Checked = true;
             else rbtFrau.Checked = true;
             
@@ -105,7 +107,7 @@ namespace Unternehmen
             if (txBPasswort.Text != txBPasswort2.Text) { lbFehlermeldung.Text = "passwords aren't matching"; return; }
             if (angemeldet.Login(angemeldet.GetBenutzername(), txBPasswortA.Text) == 0||aa)
             {
-                angemeldet.Registrieren(txBInhaber.Text, txBBenutzername.Text, txBPasswort.Text, DateTime.Today, pcBProfil.Image,rbtMann.Checked, true);
+                angemeldet.Registrieren(txBInhaber.Text, txBBenutzername.Text, txBPasswort.Text, DateTime.Today, Bild,rbtMann.Checked, true);
                 txBInhaber.Text = txBBenutzername.Text = txBPasswort.Text = txBPasswort2.Text = txBPasswortA.Text = null;
             }
             else lbFehlermeldung.Text = "prior password incorrect";
@@ -127,7 +129,10 @@ namespace Unternehmen
                 {
                     if ((myStream = openFileDialog1.OpenFile()) != null)
                         using (myStream)
-                            pcBProfil.Image = new Bitmap(myStream);
+                        {
+                            verwaltung.GetAngemeldetePerson().SetProfilbild(openFileDialog1.FileName);
+                            Bild = verwaltung.GetAngemeldetePerson().GetProfilBildPath();
+                        }
                 }
                 catch (Exception ex)
                 {
@@ -309,7 +314,7 @@ namespace Unternehmen
             Profil[6] = lbHobby.Location;
             Profil[7] = lbTelefon.Location;
             angemeldet.SetProfil(Profil);
-            angemeldet.SetProfilbild(pcBProfil.Image);
+            angemeldet.SetProfilbild(Bild);
         }
 
 

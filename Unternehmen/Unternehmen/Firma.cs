@@ -9,15 +9,15 @@ namespace Unternehmen
     [Serializable]
     public class Firma
     {
-        private Image Logo;
-        private List<Konto> Mitarbeiter,Admins;
+        private string Logo;
+        private List<Konto> Mitarbeiter, Admins;
         private Notizen notizen;
         private bool[] Arbeitstage;
         private Feiertage feiertage;
         private DateTime date_zero;
-        private string Web,Firmenstatus;
+        private string Web, Firmenstatus;
         private int MaxTage;
-        private bool AutoRegistrieren,AutoRemoveUrlaub;
+        private bool AutoRegistrieren, AutoRemoveUrlaub;
         private Nachrichten Adminnachrichten;
 
         public string GetFirmenstatus() => Firmenstatus;
@@ -29,7 +29,7 @@ namespace Unternehmen
         {
             Admins = new List<Konto>();
             Firmenstatus = "We Create, We Plan\n You're Way";
-            Logo = Properties.Resources.japanese_kanji;
+            //Logo = Properties.Resources.japanese_kanji;
             Adminnachrichten = new Nachrichten();
             AutoRegistrieren = true;
             AutoRemoveUrlaub = false;
@@ -52,15 +52,15 @@ namespace Unternehmen
         public int GetMaxTage() => MaxTage;
         public int Einloggen(string benutzername, string passwort, Verwaltung verwaltung)
         {
-            for(int f = 0; f < Mitarbeiter.Count; f++)
+            for (int f = 0; f < Mitarbeiter.Count; f++)
             {
-                switch (Mitarbeiter[f].Login(benutzername,passwort))
+                switch (Mitarbeiter[f].Login(benutzername, passwort))
                 {
                     case 0: verwaltung.SetAngemeldetePerson(Mitarbeiter[f]); return 0;
                     case -1: break;
                     case -2: return -1;
                     case -3: return -3;
-                }  
+                }
             }
             return -1;
         }
@@ -86,8 +86,8 @@ namespace Unternehmen
         public string[] Krankenliste(DateTime Tag)
         {
             List<string> temp = new List<string>();
-            for(int f = 0; f < Mitarbeiter.Count; f++)
-                if ((Tag-DateTime.Today).TotalDays < Mitarbeiter[f].GetKrankentage())
+            for (int f = 0; f < Mitarbeiter.Count; f++)
+                if ((Tag - DateTime.Today).TotalDays < Mitarbeiter[f].GetKrankentage())
                     temp.Add(Mitarbeiter[f].GetBenutzername());
             return temp.ToArray();
         }
@@ -95,8 +95,8 @@ namespace Unternehmen
         {
             List<string> temp = new List<string>();
             for (int f = 0; f < Mitarbeiter.Count; f++)
-                    if (Mitarbeiter[f].IsUrlaub(Tag))
-                        temp.Add(Mitarbeiter[f].GetBenutzername());
+                if (Mitarbeiter[f].IsUrlaub(Tag))
+                    temp.Add(Mitarbeiter[f].GetBenutzername());
             return temp.ToArray();
         }
         public string[] Geburtstagliste(DateTime Tag)
@@ -104,7 +104,7 @@ namespace Unternehmen
             List<string> temp = new List<string>();
             for (int f = 0; f < Mitarbeiter.Count; f++)
                 if (Mitarbeiter[f].IsGeburtstag(Tag))
-                    temp.Add(Mitarbeiter[f].GetBenutzername()+" ("+(Tag.Year- Mitarbeiter[f].GetGeburtstag().Year) +")");
+                    temp.Add(Mitarbeiter[f].GetBenutzername() + " (" + (Tag.Year - Mitarbeiter[f].GetGeburtstag().Year) + ")");
             return temp.ToArray();
         }
         public bool GetArbeitstag(int Tag) => Arbeitstage[Tag];
@@ -118,11 +118,17 @@ namespace Unternehmen
         }
 
         public string GetFeirtagname(DateTime Tag) => feiertage.getFeierTag(Tag);
-        public bool IsFeiertag(DateTime Tag) => feiertage.getFeierTag(Tag)!=null;
+        public bool IsFeiertag(DateTime Tag) => feiertage.getFeierTag(Tag) != null;
         public bool IsFeiertagAnderbar(DateTime Tag) => feiertage.IsAnderbar(Tag);
         public void DeleteFeiertag(DateTime Tag) => feiertage.RemoveFeiertag(Tag);
-        public void SetFirmenLogo(Image Logo) => this.Logo = Logo;
-        public Image GetFirmenLogo() => Logo;
+        public void SetFirmenLogo(string Pfad)
+        {
+            Logo = Path.GetExtension(Pfad);
+            File.Copy(Pfad, Directory.GetCurrentDirectory() + @"\Firmenlogo" + Logo, true);
+        }
+
+
+        public Image GetFirmenLogo() { try { return Image.FromFile(Directory.GetCurrentDirectory() + @"\Firmenlogo" + Logo); } catch (Exception) { return Properties.Resources.japanese_kanji;  } }
 
         public void Urlaub_beantragen(DateTime Tag, Konto angemeldet)
         {

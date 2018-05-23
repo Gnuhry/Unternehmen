@@ -10,6 +10,7 @@ namespace Unternehmen
 {
     public partial class Registrieren : Form
     {
+        string Bild;
         Verwaltung verwaltung;
         public Registrieren(Verwaltung verwaltung)
         {
@@ -53,7 +54,7 @@ namespace Unternehmen
             try
             {
                 //MessageBox.Show(new DateTime(DateTime.Today.Year - cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex + 1, cBoxTag.SelectedIndex + 1).ToShortDateString());
-                temp = angemeldet.Registrieren(txBInhaber.Text, txBBenutzername.Text, txBPasswort.Text, new DateTime(DateTime.Today.Year - cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex + 1, cBoxTag.SelectedIndex + 1), pcBProfilbild.Image, rbtnMan.Checked, verwaltung.GetFirma().GetAutoRegistrieren());
+                temp = angemeldet.Registrieren(txBInhaber.Text, txBBenutzername.Text, txBPasswort.Text, new DateTime(DateTime.Today.Year - cBoxJahr.SelectedIndex, cBoxMonat.SelectedIndex + 1, cBoxTag.SelectedIndex + 1), Bild, rbtnMan.Checked, verwaltung.GetFirma().GetAutoRegistrieren());
             }
             catch (Exception) { temp = "Wrong date"; }
             if (temp == "")
@@ -80,6 +81,7 @@ namespace Unternehmen
         private void Registrieren_DragDrop(object sender, DragEventArgs e)
         {
             pcBProfilbild.Image = new Bitmap(((string[])e.Data.GetData(DataFormats.FileDrop))[0]);
+            Bild = ((string[])e.Data.GetData(DataFormats.FileDrop))[0];
         }
 
         private void cBoxMonat_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,7 +117,10 @@ namespace Unternehmen
                 {
                     if ((myStream = openFileDialog1.OpenFile()) != null)
                         using (myStream)
+                        {
                             pcBProfilbild.Image = new Bitmap(myStream);
+                            Bild = openFileDialog1.FileName;
+                        }
                 }
                 catch (Exception ex)
                 {
